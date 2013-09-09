@@ -6,7 +6,8 @@ filetype indent on
 filetype plugin on
 
 set encoding=utf-8
-set clipboard=unnamed
+set clipboard+=autoselect
+set clipboard+=unnamed
 set nocompatible
 compiler ruby
 
