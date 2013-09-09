@@ -9,6 +9,7 @@ set encoding=utf-8
 set clipboard+=autoselect
 set clipboard+=unnamed
 set nocompatible
+set scrolloff=5
 compiler ruby
 
 set hlsearch
@@ -28,6 +29,8 @@ set autoindent
 set smartindent
 set cursorline
 set noswapfile
+
+
 
 inoremap {} {}<Left>
 inoremap <> <><Left>
