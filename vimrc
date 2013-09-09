@@ -58,6 +58,9 @@ map  <leader>l :Align
 map  <C-n> :NERDTreeToggle<CR>
 nmap <leader>r :<C-u>source $MYVIMRC<CR>
 
+" If no files were specified, open with NERDTree.
+autocmd vimenter * if !argc() | NERDTree | endif
+
 " Fix Cursor in TMUX
 if exists('$TMUX')
   let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
