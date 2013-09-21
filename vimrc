@@ -30,8 +30,6 @@ set smartindent
 set cursorline
 set noswapfile
 
-
-
 inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap [] []<Left>
@@ -51,9 +49,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
-
-noremap ;  :
-noremap :  ;
 
 let mapleader = ','
 nmap <leader>d :NERDTreeToggle<CR>
