@@ -49,10 +49,10 @@ let g:accelerated_jk_acceleration_table = [10,5,3]
 nmap j <Plug>(accelerated_jk_gj)
 nmap k <Plug>(accelerated_jk_gk)
 
-nmap <Leader>d ;NERDTreeToggle<CR>
-nmap <Leader>f ;NERDTreeFind<CR>
-map  <Leader>l ;Align
-nmap <Leader>r ;<C-u>source $MYVIMRC<CR>
+nmap <Leader>d :NERDTreeToggle<CR>
+nmap <Leader>f :NERDTreeFind<CR>
+map  <Leader>l :Align
+nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 
 " If no files were specified, open with NERDTree.
 autocmd vimenter * if !argc() | NERDTree | endif
