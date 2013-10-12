@@ -6,7 +6,7 @@ set expandtab
 set shiftwidth=2
 set smartindent
 set autoindent
-set clipboard=unnamed
+set clipboard+=unnamed
 set smartcase
 set noswapfile
 set scrolloff=5
