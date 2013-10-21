@@ -13,6 +13,7 @@ set scrolloff=5
 set backupdir=~/.vim/tmp
 set cursorline
 set number
+set ambiwidth=double " Also need iTerm configuration
 
 let mapleader=","
 
