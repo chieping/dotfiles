@@ -17,9 +17,6 @@ set ambiwidth=double
 
 let mapleader=","
 
-highlight WhitespaceEOL ctermbg=red guibg=red
-match WhitespaceEOL /\s\+$/
-
 inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap [] []<Left>
@@ -64,3 +61,5 @@ let g:solarized_termtrans=1
 set background=dark
 colorscheme solarized
 
+highlight WhitespaceEOL ctermbg=red guibg=red
+match WhitespaceEOL /\s\+$/
