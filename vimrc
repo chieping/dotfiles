@@ -2,6 +2,7 @@ execute pathogen#infect()
 
 syntax enable
 
+set laststatus=2
 set expandtab
 set shiftwidth=2
 set smartindent
@@ -74,6 +75,10 @@ endfunction
 autocmd vimenter * if !argc() | NERDTree | endif
 
 let NERDTreeShowHidden=1
+
+let g:lightline = {
+      \ 'colorscheme': 'solarized'
+      \ }
 
 let g:solarized_termtrans=1
 set background=dark
