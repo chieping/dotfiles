@@ -73,8 +73,6 @@ endfunction
 " If no files were specified, open with NERDTree.
 autocmd vimenter * if !argc() | NERDTree | endif
 
-let NERDTreeShowHidden=1
-
 let g:lightline = {
         \ 'colorscheme': 'solarized',
         \ 'mode_map': {'c': 'NORMAL'},
