@@ -14,6 +14,7 @@ set backupdir=~/.vim/tmp
 set cursorline
 set number
 set ambiwidth=double " Also need iTerm configuration
+set backspace=2 " make backspace work like most other apps
 
 let mapleader=","
 
