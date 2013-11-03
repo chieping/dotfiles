@@ -1,3 +1,11 @@
+" installed plugins {{{
+" bookmarktoolvar-hint.js
+" migemized_find.js (depend on _libly.js, addon XUL/Migemo)
+" migemo_hint.js
+" forcefocuscontent.js
+" _libly.js
+" }}}
+
 let mapleader=","
 
 set focuscontent
