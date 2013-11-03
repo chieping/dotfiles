@@ -1,11 +1,11 @@
 noremap j 3j
 noremap k 3k
 
-noremap h gT
-noremap l gt
+nnoremap h gT
+nnoremap l gt
 
-noremap <S-h> h
-noremap <S-l> l
+nnoremap <S-h> h
+nnoremap <S-l> l
 
 :style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
