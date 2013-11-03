@@ -9,7 +9,7 @@ set autoindent
 set clipboard+=unnamed
 set smartcase
 set noswapfile
-set scrolloff=5
+set scrolloff=100
 set backupdir=~/.vim/tmp
 set cursorline
 set number
