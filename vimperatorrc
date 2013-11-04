@@ -18,5 +18,9 @@ nnoremap l gt
 nnoremap <S-h> h
 nnoremap <S-l> l
 
-:style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+nnoremap Ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
+nnoremap Ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
+nnoremap Yt :js util.copyToClipboard(buffer.title)<CR>
+nnoremap Yu :js util.copyToClipboard(buffer.URL)<CR>
 
+:style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
