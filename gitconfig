@@ -1,6 +1,8 @@
 [user]
 	email = takashi.honda.01@gmail.com
-	name = chieping
+  name = chieping
+[core]
+    excludesfile = ~/.gitignore
 [color]
 	ui = auto
 [alias]
