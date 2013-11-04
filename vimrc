@@ -60,14 +60,14 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 
 nmap <Leader>t  :TlistToggle<CR>
 
-call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
-call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
-call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>-')
-call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>+')
-call submode#map('winsize', 'n', '', '>', '<C-w>>')
-call submode#map('winsize', 'n', '', '<', '<C-w><')
-call submode#map('winsize', 'n', '', '+', '<C-w>-')
-call submode#map('winsize', 'n', '', '-', '<C-w>+')
+call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
+call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')
+call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>-')
+call submode#enter_with('winsize', 'n', '', '<C-w>J', '<C-w>+')
+call submode#map('winsize', 'n', '', 'L', '<C-w>>')
+call submode#map('winsize', 'n', '', 'H', '<C-w><')
+call submode#map('winsize', 'n', '', 'K', '<C-w>-')
+call submode#map('winsize', 'n', '', 'J', '<C-w>+')
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
