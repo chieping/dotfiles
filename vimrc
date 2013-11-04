@@ -61,6 +61,12 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>t  :TlistToggle<CR>
 
 let g:submode_timeout=0
+
+map <C-w>L <C-w>>
+map <C-w>H <C-w><
+map <C-w>K <C-w>-
+map <C-w>J <C-w>+
+
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')
 call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>-')
