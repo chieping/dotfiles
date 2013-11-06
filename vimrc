@@ -4,6 +4,7 @@ syntax enable
 
 set expandtab
 set shiftwidth=2
+set softtabstop=2
 set smartindent
 set autoindent
 set clipboard+=unnamed
