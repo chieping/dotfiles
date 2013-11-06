@@ -68,6 +68,9 @@ map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
 
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')
 call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>-')
