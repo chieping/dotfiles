@@ -21,7 +21,6 @@ autoload colors
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='TERM=xterm-256color /Applications/MacVim.app/Contents/MacOS/mvim'
 alias be='bundle exec'
-alias c='clear'
 
 # GNU lsの色設定がなんかよくわからなかったからとりあえずBSDのlsでいいかなって
 alias ls='/bin/ls -Gp'
