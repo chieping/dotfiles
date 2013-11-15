@@ -18,6 +18,9 @@ nnoremap l gt
 nnoremap <S-h> h
 nnoremap <S-l> l
 
+" Searching selected text on visual mode
+vnoremap P y<Esc><Esc>P
+
 nnoremap Ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 nnoremap Ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
 nnoremap Yt :js util.copyToClipboard(buffer.title)<CR>
