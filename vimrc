@@ -1,3 +1,8 @@
+if has('kaoriya')
+  " Suppress to overwrite key mappings
+  let plugin_dicwin_disable = 1
+endif
+
 execute pathogen#infect()
 
 syntax enable
@@ -19,7 +24,7 @@ set backspace=2 " make backspace work like most other apps
 
 let mapleader=","
 
-map <Leader>p :set invpaste<CR>:set paste?<CR>
+nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
 nmap <Leader>v :tabedit $MYVIMRC<CR>
