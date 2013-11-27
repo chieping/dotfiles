@@ -22,6 +22,9 @@ let mapleader=","
 map <Leader>p :set invpaste<CR>:set paste?<CR>
 set pastetoggle=<Leader>p
 
+nmap <Leader>v :tabedit $MYVIMRC<CR>
+nmap <Leader>r :<C-u>source $MYVIMRC<CR>
+
 inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap [] []<Left>
@@ -53,7 +56,6 @@ nmap k <Plug>(accelerated_jk_gk)
 
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>f :NERDTreeFind<CR>
-nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
