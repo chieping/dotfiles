@@ -19,6 +19,9 @@ set backspace=2 " make backspace work like most other apps
 
 let mapleader=","
 
+map <Leader>p :set invpaste<CR>:set paste?<CR>
+set pastetoggle=<Leader>p
+
 inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap [] []<Left>
