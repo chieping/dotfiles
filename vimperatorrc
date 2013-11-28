@@ -8,6 +8,7 @@
 let mapleader=","
 
 set focuscontent
+set showstatuslinks=2
 
 nnoremap j 3j
 nnoremap k 3k
