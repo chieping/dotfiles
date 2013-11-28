@@ -1,4 +1,4 @@
-" installed plugins {{{
+" using plugin list {{{
 " bookmarktoolvar-hint.js
 " migemo_find.js
 " migemo_hint.js
@@ -9,6 +9,10 @@ let mapleader=","
 
 set focuscontent
 set showstatuslinks=2
+
+noremap <M-f> /
+cnoremap <M-f> <C-u>\
+inoremap <M-f> <ESC>/
 
 nnoremap j 3j
 nnoremap k 3k
