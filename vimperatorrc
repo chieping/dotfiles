@@ -23,6 +23,10 @@ nnoremap l gt
 nnoremap <S-h> h
 nnoremap <S-l> l
 
+" Swap opening links default behavior by hint
+nnoremap f <S-f>
+nnoremap <S-f> f
+
 " Searching selected text on visual mode
 vnoremap P y<Esc><Esc>P
 
