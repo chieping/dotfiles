@@ -3,6 +3,11 @@ if has('kaoriya')
   let plugin_dicwin_disable = 1
 endif
 
+" Map ✠ (U+2720) to <S-CR>, so we have <S-CR> mapped to ✠ in iTerm2 and
+" ✠ mapped back to <S-CR> in Vim.
+imap ✠ <S-CR>
+map ✠ <S-CR>
+
 execute pathogen#infect()
 
 syntax enable
@@ -29,6 +34,10 @@ set pastetoggle=<Leader>p
 
 nmap <Leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>r :<C-u>source $MYVIMRC<CR>
+
+" <S-CR> needs special setting on CLI Vim
+inoremap <S-CR> <Esc>o
+nnoremap <S-CR> o
 
 inoremap {} {}<Left>
 inoremap <> <><Left>
