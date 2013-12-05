@@ -9,6 +9,7 @@ let mapleader=","
 
 set focuscontent
 set showstatuslinks=2
+set defsearch=google
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
