@@ -23,7 +23,7 @@ nnoremap l gt
 nnoremap <S-h> h
 nnoremap <S-l> l
 
-" Swap opening links default behavior by hint
+" Swap opening links behavior by hint
 nnoremap f <S-f>
 nnoremap <S-f> f
 
@@ -37,3 +37,6 @@ nnoremap Yu :js util.copyToClipboard(buffer.URL)<CR>
 nnoremap Ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 
 :style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+highlight StatusLine color: black; background: transparent; font-weight: normal;
+
