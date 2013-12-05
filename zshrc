@@ -23,8 +23,9 @@ alias gvim='TERM=xterm-256color /Applications/MacVim.app/Contents/MacOS/mvim'
 alias be='bundle exec'
 
 # GNU lsの色設定がなんかよくわからなかったからとりあえずBSDのlsでいいかなって
+alias l='/bin/ls -Gpal'
 alias ls='/bin/ls -Gp'
-alias ll='/bin/ls -l'
+alias ll='/bin/ls -Gpl'
 alias diff=colordiff
 autoload -U compinit && compinit
 
