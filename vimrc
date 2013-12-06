@@ -39,6 +39,8 @@ nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 inoremap <S-CR> <Esc>o
 nnoremap <S-CR> o
 
+vnoremap <CR> y
+
 inoremap {} {}<Left>
 inoremap <> <><Left>
 inoremap [] []<Left>
