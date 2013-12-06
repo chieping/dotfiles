@@ -22,12 +22,12 @@ nnoremap k 3k
 nnoremap h gT
 nnoremap l gt
 
-nnoremap <S-h> h
-nnoremap <S-l> l
+nnoremap H h
+nnoremap L l
 
 " Swap opening links behavior by hint
-nnoremap f <S-f>
-nnoremap <S-f> f
+nnoremap f F
+nnoremap F f
 
 " Searching selected text on visual mode
 vnoremap P y<Esc><Esc>P
