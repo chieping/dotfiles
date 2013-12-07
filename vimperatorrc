@@ -4,6 +4,7 @@
 " migemo_find.js
 " migemo_hint.js
 " forcefocuscontent.js
+" lookupDictionary.js
 " }}}
 
 let mapleader=","
@@ -11,6 +12,8 @@ let mapleader=","
 set focuscontent
 set showstatuslinks=2
 set defsearch=google
+set titlestring=Firefox
+
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
