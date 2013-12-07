@@ -14,6 +14,7 @@ set showstatuslinks=2
 set defsearch=google
 set titlestring=Firefox
 
+nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
