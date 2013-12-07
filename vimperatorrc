@@ -16,6 +16,8 @@ noremap <M-f> /
 cnoremap <M-f> <C-u>\
 inoremap <M-f> <ESC>/
 
+nnoremap d :tabclose -select lastactive<CR>
+
 nnoremap j 3j
 nnoremap k 3k
 
