@@ -32,6 +32,8 @@ let mapleader=","
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
+nnoremap U :redo<cr>
+
 nmap <Leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 
@@ -39,6 +41,7 @@ nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 inoremap <S-CR> <Esc>o
 nnoremap <S-CR> o
 
+" Yank like Tmux copy mode
 vnoremap <CR> y
 
 inoremap {} {}<Left>
