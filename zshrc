@@ -2,6 +2,8 @@ setopt print_eight_bit
 export LANG=ja_JP.UTF-8
 setopt no_flow_control
 export TERM=screen-256color
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+[ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -16,6 +18,7 @@ ZSH_THEME="gallois"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias diff="colordiff"
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -57,8 +60,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/Users/t_honda/.rbenv/shims:/usr/local/opt/coreutils/libexec/gnubin:/Users/t_honda/Library/Haskell/bin:/Users/t_honda/bin:/Users/t_honda/.rbenv/bin:/Users/t_honda/.nvm/v0.10.13/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:/Users/t_honda/Library/Haskell/bin:/Users/t_honda/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
+export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -73,6 +76,5 @@ export PATH="/Users/t_honda/.rbenv/shims:/usr/local/opt/coreutils/libexec/gnubin
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-
 tmux -u
+

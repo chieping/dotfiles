@@ -21,11 +21,13 @@ set clipboard+=unnamed
 set smartcase
 set noswapfile
 set scrolloff=100
+set helpheight=100
 set backupdir=~/.vim/tmp
 set cursorline
 set number
-set ambiwidth=double " Also need iTerm configuration
-set backspace=2 " make backspace work like most other apps
+set ambiwidth=double "Also need iTerm configuration(But tmux sucks...)
+set backspace=2      "Make backspace work like most other apps
+set whichwrap=h,l    "Keys which can stride over
 
 let mapleader=","
 

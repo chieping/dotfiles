@@ -2,7 +2,7 @@
 	email = takashi.honda.01@gmail.com
   name = chieping
 [core]
-    excludesfile = ~/.gitignore
+    excludesfile = /opt/boxen/config/git/gitignore
 [color]
 	ui = auto
 [alias]
@@ -17,3 +17,9 @@
   dic = diff --cached
 [push]
 	default = simple
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https
