@@ -16,7 +16,7 @@ set titlestring=Firefox
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
-" Open dictionary with command-line-buffer
+" Open dictionary with command-line-buffer (depends on lookupDictionary.js)
 nnoremap <Leader>a Y :eijiro <M-v><CR>
 
 noremap <M-f> /
@@ -39,9 +39,6 @@ nnoremap f F
 nnoremap F f
 
 nnoremap ^ +
-
-" Searching selected text on visual mode
-vnoremap P y<Esc><Esc>P
 
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 nnoremap ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
