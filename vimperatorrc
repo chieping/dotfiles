@@ -35,6 +35,8 @@ nnoremap L l
 nnoremap f F
 nnoremap F f
 
+nnoremap ^ +
+
 " Searching selected text on visual mode
 vnoremap P y<Esc><Esc>P
 
