@@ -50,3 +50,22 @@ nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
 
+" Make Vimperator's "Y"ank behave like Edit-Copy
+" http://phaseportrait.blogspot.jp/2008/12/make-vimperators-yank-behave-like-edit.html
+js <<EOF
+mappings.addUserMap([modes.NORMAL], ["Y"],
+    "Yank the currently selected text",
+    function () {
+        buffer.getCurrentWord();
+        events.feedkeys("<C-v>" +
+          (/^Mac/.test(navigator.platform) ?
+            "<M-c>"
+            : "<C-c>"), true);
+        setTimeout( function () {
+          liberator.echo("Yanked "
+                         + util.readFromClipboard(),
+                         commandline.FORCE_SINGLELINE);
+        }, 20 );
+    });
+EOF
+
