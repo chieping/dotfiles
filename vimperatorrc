@@ -16,6 +16,9 @@ set titlestring=Firefox
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
+" Open dictionary with command-line-buffer
+nnoremap <Leader>a Y :eijiro <M-v><CR>
+
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
 inoremap <M-f> <ESC>/
