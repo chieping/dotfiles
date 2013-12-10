@@ -76,5 +76,6 @@ export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:/usr/local/man:
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# TODO: attach/new-session considered launching
 tmux -u
 
