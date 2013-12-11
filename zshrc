@@ -20,6 +20,10 @@ ZSH_THEME="gallois"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias diff="colordiff"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vup='vagrant up --no-provision'
+alias vst='vagrant status'
+alias vp='vagrant provision'
+alias vd='vagrant destroy'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -55,7 +59,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow vagrant common-aliases gnu-utils ruby osx bundler brew tmux)
+plugins=(git gitfast git-flow vagrant common-aliases gnu-utils ruby osx bundler brew tmux)
 
 source $ZSH/oh-my-zsh.sh
 
