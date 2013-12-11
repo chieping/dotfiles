@@ -1,3 +1,34 @@
+if has('vim_starting')
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+
+call neobundle#rc(expand('~/.vim/bundle/'))
+
+NeoBundleFetch 'Shougo/neobundle.vim'
+
+NeoBundle 'rhysd/accelerated-jk'
+NeoBundle 'rking/ag.vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'rodjek/vim-puppet'
+"NeoBundle 'thoughtbot/vim-rspec'
+NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'kana/vim-smartword'
+NeoBundle 'kana/vim-submode'
+NeoBundle 'tpope/vim-surround'
+
+filetype plugin on
+
+NeoBundleCheck
+
 if has('kaoriya')
   " Suppress to overwrite key mappings
   let plugin_dicwin_disable = 1
@@ -7,8 +38,6 @@ endif
 " ✠ mapped back to <S-CR> in Vim.
 imap ✠ <S-CR>
 map ✠ <S-CR>
-
-execute pathogen#infect()
 
 syntax enable
 

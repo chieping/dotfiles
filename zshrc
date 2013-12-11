@@ -2,6 +2,7 @@ setopt print_eight_bit
 export LANG=ja_JP.UTF-8
 setopt no_flow_control
 export TERM=screen-256color
+export EDITOR=vim
 
 [ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh # TODO: use boxen::profile instead??
 [ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh
