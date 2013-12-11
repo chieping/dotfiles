@@ -2,7 +2,8 @@ setopt print_eight_bit
 export LANG=ja_JP.UTF-8
 setopt no_flow_control
 export TERM=screen-256color
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh
+
+[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh # TODO: use boxen::profile instead??
 [ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh
 
 # Path to your oh-my-zsh configuration.
@@ -60,8 +61,16 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:/Users/t_honda/Library/Haskell/bin:/Users/t_honda/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$PATH"
-export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:/usr/local/man:$MANPATH"
+export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
+export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+
+if [ -f ~/.dircolors ]; then
+    if type dircolors > /dev/null 2>&1; then
+        eval $(dircolors ~/.dircolors)
+    elif type gdircolors > /dev/null 2>&1; then
+        eval $(gdircolors ~/.dircolors)
+    fi
+fi
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -76,6 +85,16 @@ export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:/usr/local/man:
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-# TODO: attach/new-session considered launching
-tmux -u
-
+if [ -z "$TMUX" -a -z "$STY" ]; then
+    if type tmuxx >/dev/null 2>&1; then
+        tmuxx
+    elif type tmux >/dev/null 2>&1; then
+        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
+            tmux attach && echo "tmux attached session "
+        else
+            tmux new-session && echo "tmux created new session"
+        fi
+    elif type screen >/dev/null 2>&1; then
+        screen -rx || screen -D -RR
+    fi
+fi
