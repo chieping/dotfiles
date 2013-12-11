@@ -69,11 +69,15 @@ export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:/us
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -f ~/.dircolors ]; then
-    if type dircolors > /dev/null 2>&1; then
-        eval $(dircolors ~/.dircolors)
-    elif type gdircolors > /dev/null 2>&1; then
-        eval $(gdircolors ~/.dircolors)
-    fi
+  if type dircolors > /dev/null 2>&1; then
+    eval $(dircolors ~/.dircolors)
+  elif type gdircolors > /dev/null 2>&1; then
+    eval $(gdircolors ~/.dircolors)
+  fi
+fi
+
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
 # # Preferred editor for local and remote sessions
@@ -90,15 +94,26 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 if [ -z "$TMUX" -a -z "$STY" ]; then
-    if type tmuxx >/dev/null 2>&1; then
-        tmuxx
-    elif type tmux >/dev/null 2>&1; then
-        if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-            tmux attach && echo "tmux attached session "
-        else
-            tmux new-session && echo "tmux created new session"
-        fi
-    elif type screen >/dev/null 2>&1; then
-        screen -rx || screen -D -RR
+  if type tmuxx >/dev/null 2>&1; then
+    tmuxx
+  elif type tmux >/dev/null 2>&1; then
+    if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
+      tmux attach && echo "tmux attached session "
+    else
+      tmux new-session && echo "tmux created new session"
     fi
+  elif type screen >/dev/null 2>&1; then
+    screen -rx || screen -D -RR
+  fi
 fi
+
+man() {
+  env LESS_TERMCAP_mb=$'\E[01;31m' \
+  LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+  LESS_TERMCAP_me=$'\E[0m' \
+  LESS_TERMCAP_se=$'\E[0m' \
+  LESS_TERMCAP_so=$'\E[38;5;246m' \
+  LESS_TERMCAP_ue=$'\E[0m' \
+  LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+  man "$@"
+}
