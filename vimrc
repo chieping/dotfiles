@@ -6,7 +6,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'rhysd/accelerated-jk'
+"NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
@@ -48,10 +48,10 @@ set smartindent
 set autoindent
 set clipboard+=unnamed
 set smartcase
-set noswapfile
 set scrolloff=100
 set helpheight=100
-set backupdir=~/.vim/tmp
+set backupdir=~/.vim/backups
+set directory=~/.vim/swaps
 set cursorline
 set number
 set ambiwidth=double "Also need iTerm configuration(But tmux sucks...)
@@ -101,9 +101,6 @@ map b  <Plug>(smartword-b)
 map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
-nmap j <Plug>(accelerated_jk_gj)
-nmap k <Plug>(accelerated_jk_gk)
-
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>f :NERDTreeFind<CR>
 
@@ -111,6 +108,8 @@ nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a> :Tabularize /=><CR>
 vmap <Leader>a> :Tabularize /=><CR>
+nmap <Leader>a\| :Tabularize /\|<CR>
+vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
@@ -134,6 +133,16 @@ call submode#map('winsize', 'n', '', 'L', '<C-w>>')
 call submode#map('winsize', 'n', '', 'H', '<C-w><')
 call submode#map('winsize', 'n', '', 'K', '<C-w>-')
 call submode#map('winsize', 'n', '', 'J', '<C-w>+')
+
+function ToggleWrap()
+  if (&wrap == 1)
+    set nowrap
+  else
+    set wrap
+  endif
+endfunction
+
+map <Leader>w :call ToggleWrap()<CR>
 
 inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()

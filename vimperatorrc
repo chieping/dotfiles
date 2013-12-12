@@ -17,7 +17,8 @@ set titlestring=Firefox
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
 " Open dictionary with command-line-buffer (depends on lookupDictionary.js)
-nnoremap <Leader>a Y :eijiro <M-v><CR>
+nnoremap <Leader>a Y:eijiro <M-v><CR>
+vnoremap <Leader>a Y:eijiro <M-v><CR>
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
@@ -53,7 +54,7 @@ highlight StatusLine color: black; background: transparent; font-weight: normal;
 " Make Vimperator's "Y"ank behave like Edit-Copy
 " http://phaseportrait.blogspot.jp/2008/12/make-vimperators-yank-behave-like-edit.html
 js <<EOF
-mappings.addUserMap([modes.NORMAL], ["Y"],
+mappings.addUserMap([modes.NORMAL, modes.VISUAL], ["Y"],
     "Yank the currently selected text",
     function () {
         buffer.getCurrentWord();

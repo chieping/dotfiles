@@ -25,6 +25,7 @@ alias vup='vagrant up --no-provision'
 alias vst='vagrant status'
 alias vp='vagrant provision'
 alias vd='vagrant destroy'
+alias vssh='vagrant ssh'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
