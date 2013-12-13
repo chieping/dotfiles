@@ -134,7 +134,7 @@ call submode#map('winsize', 'n', '', 'H', '<C-w><')
 call submode#map('winsize', 'n', '', 'K', '<C-w>-')
 call submode#map('winsize', 'n', '', 'J', '<C-w>+')
 
-function ToggleWrap()
+function! ToggleWrap()
   if (&wrap == 1)
     set nowrap
   else

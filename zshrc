@@ -4,8 +4,11 @@ setopt no_flow_control
 export TERM=screen-256color
 export EDITOR=vim
 
-[ -f /opt/boxen/env.sh ] && source /opt/boxen/env.sh # TODO: use boxen::profile instead??
-[ -f /opt/boxen/nvm/nvm.sh ] && source /opt/boxen/nvm/nvm.sh
+# oh-my-zsh tmux plugin confs
+export ZSH_TMUX_ITERM2=false
+export ZSH_TMUX_AUTOSTART=true
+
+source /opt/boxen/env.sh
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -67,7 +70,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
+export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -f ~/.dircolors ]; then
@@ -94,20 +97,6 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
-if [ -z "$TMUX" -a -z "$STY" ]; then
-  if type tmuxx >/dev/null 2>&1; then
-    tmuxx
-  elif type tmux >/dev/null 2>&1; then
-    if tmux has-session && tmux list-sessions | /usr/bin/grep -qE '.*]$'; then
-      tmux attach && echo "tmux attached session "
-    else
-      tmux new-session && echo "tmux created new session"
-    fi
-  elif type screen >/dev/null 2>&1; then
-    screen -rx || screen -D -RR
-  fi
-fi
 
 man() {
   env LESS_TERMCAP_mb=$'\E[01;31m' \
