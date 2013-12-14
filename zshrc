@@ -5,8 +5,8 @@ export TERM=screen-256color
 export EDITOR=vim
 
 # oh-my-zsh tmux plugin confs
-export ZSH_TMUX_ITERM2=false
-export ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_ITERM2=false
+ZSH_TMUX_AUTOSTART=true
 
 source /opt/boxen/env.sh
 
@@ -70,6 +70,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# TODO: Take this path settings to Boxen
 export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 

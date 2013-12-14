@@ -193,7 +193,7 @@ function! MyModified()
 endfunction
 
 function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? 'RO' : ''
+  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '[RO]' : ''
 endfunction
 
 function! MyFilename()
