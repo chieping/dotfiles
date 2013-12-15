@@ -1,8 +1,16 @@
 setopt print_eight_bit
 export LANG=ja_JP.UTF-8
 setopt no_flow_control
+setopt nobeep
 export TERM=screen-256color
 export EDITOR=vim
+
+fpath=($HOMEBREW_ROOT/share/zsh-completions $fpath)
+fpath=($HOMEBREW_ROOT/share/zsh/functions $fpath)
+fpath=($HOMEBREW_ROOT/share/zsh/site-functions $fpath)
+
+# need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
+autoload -U compinit && compinit
 
 # oh-my-zsh tmux plugin confs
 ZSH_TMUX_ITERM2=false
@@ -34,7 +42,7 @@ alias vssh='vagrant ssh'
 # CASE_SENSITIVE="true"
 
 # Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how often before auto-updates occur? (in days)
 # export UPDATE_ZSH_DAYS=13
@@ -64,14 +72,14 @@ alias vssh='vagrant ssh'
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitfast git-flow vagrant common-aliases gnu-utils ruby osx bundler brew tmux)
+plugins=(gitfast vagrant common-aliases gnu-utils bundler brew tmux colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-# TODO: Take this path settings to Boxen
-export PATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnubin:$PATH"
+
+
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -f ~/.dircolors ]; then
@@ -99,13 +107,3 @@ fi
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-man() {
-  env LESS_TERMCAP_mb=$'\E[01;31m' \
-  LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-  LESS_TERMCAP_me=$'\E[0m' \
-  LESS_TERMCAP_se=$'\E[0m' \
-  LESS_TERMCAP_so=$'\E[38;5;246m' \
-  LESS_TERMCAP_ue=$'\E[0m' \
-  LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-  man "$@"
-}
