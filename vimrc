@@ -113,6 +113,7 @@ vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
+" TODO: 香り屋同梱版のctagsをCLI, MacVim両方で使えるようにする
 nmap <Leader>t  :TlistToggle<CR>
 
 let g:submode_timeout=0
@@ -133,6 +134,11 @@ call submode#map('winsize', 'n', '', 'L', '<C-w>>')
 call submode#map('winsize', 'n', '', 'H', '<C-w><')
 call submode#map('winsize', 'n', '', 'K', '<C-w>-')
 call submode#map('winsize', 'n', '', 'J', '<C-w>+')
+
+" Clear WhitespaceEOL
+nmap <Leader>c :%s/\s\+$//g<CR>
+
+nmap <Leader>o :!open<Space>
 
 function! ToggleWrap()
   if (&wrap == 1)

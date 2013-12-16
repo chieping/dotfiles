@@ -32,6 +32,7 @@ ZSH_THEME="gallois"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias diff="colordiff"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
 alias vup='vagrant up --no-provision'
 alias vst='vagrant status'
 alias vp='vagrant provision'
