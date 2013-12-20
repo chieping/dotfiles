@@ -39,7 +39,7 @@ alias vst='vagrant status'
 alias vp='vagrant provision'
 alias vd='vagrant destroy'
 alias vssh='vagrant ssh'
-alias ag='ag -i'
+alias ag='ag -i --ignore-dir=.git --ignore-dir=.bundle'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -80,7 +80,6 @@ plugins=(gitfast vagrant common-aliases gnu-utils bundler brew tmux colored-man)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
-
 
 
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
