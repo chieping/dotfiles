@@ -24,6 +24,8 @@ NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'kana/vim-smartword'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'wesleyche/SrcExpl'
+NeoBundle 'wesleyche/Trinity'
 
 filetype plugin on
 
@@ -115,6 +117,7 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 
 " TODO: 香り屋同梱版のctagsをCLI, MacVim両方で使えるようにする
 nmap <Leader>t  :TlistToggle<CR>
+nmap <Leader>i  :TrinityToggleAll<CR>
 
 let g:submode_timeout=0
 
@@ -175,6 +178,9 @@ endif
 
 " If no files were specified, open with NERDTree.
 autocmd vimenter * if !argc() | NERDTree | endif
+
+" For immediate reaction of 'C' key
+let g:NERDTreeMapCWD = 'cD'
 
 let g:lightline = {
         \ 'colorscheme': 'solarized',
