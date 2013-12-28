@@ -99,6 +99,8 @@ inoremap <C-^> <Esc>^i
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 
+inoremap <C-d> <Delete>
+
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
