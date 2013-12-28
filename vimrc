@@ -23,9 +23,15 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'kana/vim-smartword'
 NeoBundle 'kana/vim-submode'
+NeoBundle 'kana/vim-textobj-user'
+NeoBundle 'kana/vim-textobj-line'
+NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'tpope/vim-surround'
 NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'wesleyche/Trinity'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'terryma/vim-expand-region'
+NeoBundle 'mhinz/vim-signify'
 
 filetype plugin on
 
@@ -118,6 +124,11 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 " TODO: 香り屋同梱版のctagsをCLI, MacVim両方で使えるようにする
 nmap <Leader>t  :TlistToggle<CR>
 nmap <Leader>i  :TrinityToggleAll<CR>
+
+nmap <Leader>gj <Plug>(signify-next-hunk)zz
+nmap <Leader>gk <Plug>(signify-prev-hunk)zz
+nmap <Leader>gh <Plug>(signify-toggle-highlight)
+nmap <Leader>gt <Plug>(signify-toggle)
 
 let g:submode_timeout=0
 
