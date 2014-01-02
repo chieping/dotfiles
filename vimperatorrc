@@ -20,6 +20,12 @@ nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 nnoremap <Leader>a Y:eijiro <M-v><CR>
 vnoremap <Leader>a Y:eijiro <M-v><CR>
 
+nnoremap <Leader>ta :set gui=invaddons<CR>:echomsg "Toggle addons"<CR>
+nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
+nnoremap <Leader>tn :set gui=invnavigation<CR>:echomsg "Toggle navigation"<CR>
+nnoremap <Leader>tb :set gui=invbookmarks<CR>:echomsg "Toggle bookmarks"<CR>
+nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
+
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
 inoremap <M-f> <ESC>/
