@@ -66,6 +66,7 @@ set number
 set ambiwidth=double "Also need iTerm configuration(But tmux sucks...)
 set backspace=2      "Make backspace work like most other apps
 set whichwrap=h,l    "Keys which can stride over
+set helplang=en
 
 let mapleader=","
 
@@ -83,6 +84,14 @@ nnoremap <S-CR> o
 
 " Yank like Tmux copy mode
 vnoremap <CR> y
+
+" Very magic is good
+noremap / /\v
+noremap ? ?\v
+cnoremap s/ s/\v
+
+" 'd' using black hole register
+nnoremap D "_d
 
 inoremap {} {}<Left>
 inoremap <> <><Left>
