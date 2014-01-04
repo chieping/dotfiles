@@ -2,9 +2,9 @@
 " using plugin list {{{
 " bookmarktoolvar-hint.js
 " migemo_find.js
-" migemo_hint.js
 " forcefocuscontent.js
 " lookupDictionary.js
+" caret-hint.js
 " }}}
 
 let mapleader=","
@@ -13,6 +13,7 @@ set focuscontent
 set showstatuslinks=2
 set defsearch=google
 set titlestring=Firefox
+set hintchars=fjklasdhguionmerv
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
@@ -41,11 +42,18 @@ nnoremap l gt
 nnoremap H h
 nnoremap L l
 
+cnoremap <C-h> <Left>
+cnoremap <C-l> <Right>
+
 " Swap opening links behavior by hint
 nnoremap f F
 nnoremap F f
 
 nnoremap ^ +
+
+" for preventing unintended completion, specify google search
+noremap o og<Space>
+noremap t tg<Space>
 
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 nnoremap ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
