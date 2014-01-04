@@ -70,6 +70,11 @@ set helplang=en
 
 let mapleader=","
 
+let g:submode_timeout=0
+
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
@@ -137,20 +142,21 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 nmap <Leader>t  :TlistToggle<CR>
 nmap <Leader>i  :TrinityToggleAll<CR>
 
-nmap <Leader>gj <Plug>(signify-next-hunk)zz
-nmap <Leader>gk <Plug>(signify-prev-hunk)zz
-nmap <Leader>gh <Plug>(signify-toggle-highlight)
-nmap <Leader>gt <Plug>(signify-toggle)
+" <Leader>gs go into signify submode
+call submode#enter_with('signify-move', 'n', '', '<Leader>gs')
+call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
+call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
+call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
+call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
 
-let g:submode_timeout=0
+nmap <Leader>gj <Plug>(signify-next-hunk)
+nmap <Leader>gk <Plug>(signify-prev-hunk)
+
 
 map <C-w>L <C-w>>
 map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
-
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
 
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')

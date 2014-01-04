@@ -12,7 +12,7 @@ let mapleader=","
 set focuscontent
 set showstatuslinks=2
 set defsearch=google
-set titlestring=Firefox
+set titlestring=""
 set hintchars=fjklasdhguionmerv
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
@@ -39,8 +39,8 @@ nnoremap k 3k
 nnoremap h gT
 nnoremap l gt
 
-nnoremap H h
-nnoremap L l
+nnoremap H 3h
+nnoremap L 3l
 
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
