@@ -6,20 +6,23 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-"NeoBundle 'rhysd/accelerated-jk'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite-outline'
+" NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'vim-scripts/taglist.vim'
+" NeoBundle 'vim-scripts/taglist.vim'
+NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'altercation/vim-colors-solarized'
-"NeoBundle 'tpope/vim-dispatch'
+" NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'rodjek/vim-puppet'
-"NeoBundle 'thoughtbot/vim-rspec'
+" NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'kana/vim-smartword'
 NeoBundle 'kana/vim-submode'
@@ -28,8 +31,8 @@ NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'thinca/vim-textobj-between'
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'wesleyche/Trinity'
+" NeoBundle 'wesleyche/SrcExpl'
+" NeoBundle 'wesleyche/Trinity'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
@@ -74,6 +77,8 @@ let g:submode_timeout=0
 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+
+let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
 
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
@@ -143,9 +148,7 @@ vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-" TODO: 香り屋同梱版のctagsをCLI, MacVim両方で使えるようにする
-nmap <Leader>t  :TlistToggle<CR>
-nmap <Leader>i  :TrinityToggleAll<CR>
+nmap <Leader>t  :TagbarToggle<CR>
 
 " <Leader>gs go into signify submode
 call submode#enter_with('signify-move', 'n', '', '<Leader>gs')

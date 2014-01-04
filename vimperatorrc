@@ -46,10 +46,6 @@ nnoremap L 3l
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
-" Swap opening links behavior by hint
-nnoremap f F
-nnoremap F f
-
 nnoremap ^ +
 
 " for preventing unintended completion, specify google search
