@@ -5,6 +5,7 @@
 " forcefocuscontent.js
 " lookupDictionary.js
 " caret-hint.js
+" walk-input.js
 " }}}
 
 let mapleader=","

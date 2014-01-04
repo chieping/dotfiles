@@ -105,6 +105,11 @@ inoremap () ()<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
 
+imap hhhhh <Esc>
+imap jjjjj <Esc>
+imap kkkkk <Esc>
+imap lllll <Esc>
+
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -151,7 +156,6 @@ call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
 
 nmap <Leader>gj <Plug>(signify-next-hunk)
 nmap <Leader>gk <Plug>(signify-prev-hunk)
-
 
 map <C-w>L <C-w>>
 map <C-w>H <C-w><
