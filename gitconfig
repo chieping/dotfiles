@@ -1,29 +1,41 @@
 [user]
 	email = takashi.honda.01@gmail.com
-  name = chieping
+	name = chieping
 [core]
-    excludesfile = /opt/boxen/config/git/gitignore
-    pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+	excludesfile = /opt/boxen/config/git/gitignore
+	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
 [color]
 	ui = auto
 [alias]
-  br = branch
-  ci = commit
+	br = branch
+	ci = commit
 	st = status
-  co = checkout
+	co = checkout
 	tree = log --graph --all --format=\"%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s\"
-  tre = !git tree
-  d = diff
-  dc = diff --cached
-  di = diff
-  dic = diff --cached
+	tre = !git tree
+	d = diff
+	dc = diff --cached
+	di = diff
+	dic = diff --cached
 [push]
 	default = simple
 
 [credential]
-helper = /opt/boxen/bin/boxen-git-credential
+	helper = /opt/boxen/bin/boxen-git-credential
 
 [hub]
-protocol = https
+	protocol = https
 
-# vim: set ft=gitconfig :
+[diff]
+	tool = p4merge
+[difftool]
+	prompt = false
+[difftool "p4merge"]
+	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+[merge]
+	tool = p4merge
+[mergetool "p4merge"]
+	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
+	trustExitCode = false
+
+# vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
