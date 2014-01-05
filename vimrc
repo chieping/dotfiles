@@ -78,7 +78,12 @@ let g:submode_timeout=0
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
-let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
+let g:agprg="`brew --prefix`/bin/ag --smart-case"
+
+" TODO: consider beside mac
+if has('kaoriya')
+  let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
+endif
 
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p

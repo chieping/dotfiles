@@ -39,7 +39,7 @@ alias vst='vagrant status'
 alias vp='vagrant provision'
 alias vd='vagrant destroy'
 alias vssh='vagrant ssh'
-alias ag='ag -i --ignore-dir=.git --ignore-dir=.bundle'
+alias ag='ag --smartcase'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
