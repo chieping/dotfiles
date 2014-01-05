@@ -154,6 +154,8 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
 nmap <Leader>t  :TagbarToggle<CR>
+nmap <Leader>uo :Unite -vertical -winwidth=30 -direction=botright -no-focus -toggle -no-quit outline<CR>
+nmap <Leader>uf :Unite file file_mru directory directory_mru<CR>
 
 " <Leader>gs go into signify submode
 call submode#enter_with('signify-move', 'n', '', '<Leader>gs')
@@ -218,7 +220,7 @@ else
 endif
 
 " If no files were specified, open with NERDTree.
-autocmd vimenter * if !argc() | NERDTree | endif
+" autocmd vimenter * if !argc() | NERDTree | endif
 
 " For immediate reaction of 'C' key
 let g:NERDTreeMapCWD = 'cD'
