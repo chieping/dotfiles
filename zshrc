@@ -3,7 +3,7 @@ export LANG=ja_JP.UTF-8
 setopt no_flow_control
 setopt nobeep
 export TERM=screen-256color
-export EDITOR=vim
+export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 
 fpath=($HOMEBREW_ROOT/share/zsh-completions $fpath)
 fpath=($HOMEBREW_ROOT/share/zsh/functions $fpath)
@@ -41,6 +41,9 @@ alias vd='vagrant destroy'
 alias vssh='vagrant ssh'
 alias ag='ag --smart-case'
 
+function google() {
+  open http://google.co.jp/\#q\=`echo $1 | nkf -wMQ | tr = %`
+}
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
