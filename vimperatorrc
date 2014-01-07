@@ -12,7 +12,6 @@ let mapleader=","
 
 set focuscontent
 set showstatuslinks=2
-set defsearch=google
 set titlestring=""
 set hintchars=fjklasdhguionmerv
 

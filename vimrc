@@ -78,6 +78,10 @@ let g:submode_timeout=0
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+let g:unite_enable_start_insert = 1
+let g:unite_source_file_mru_long_limit = 3000
+let g:unite_source_directory_mru_long_limit = 3000
+
 let g:agprg="`brew --prefix`/bin/ag --smart-case"
 
 " TODO: consider beside mac
@@ -156,8 +160,9 @@ nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
 nmap <Leader>t  :TagbarToggle<CR>
-nmap <Leader>uo :Unite -vertical -winwidth=30 -direction=botright -no-focus -toggle -no-quit outline<CR>
-nmap <Leader>uf :Unite file file_mru directory directory_mru<CR>
+
+nmap <Leader>o :Unite -vertical -winwidth=30 -direction=botright -no-focus -toggle -no-quit outline<CR>
+nmap <Leader>u :Unite file_mru directory_mru<CR>
 
 " <Leader>gs go into signify submode
 call submode#enter_with('signify-move', 'n', '', '<Leader>gs')
@@ -185,8 +190,6 @@ call submode#map('winsize', 'n', '', 'J', '<C-w>+')
 
 " Clear WhitespaceEOL
 nmap <Leader>c :%s/\s\+$//g<CR>
-
-nmap <Leader>o :!open<Space>
 
 function! ToggleWrap()
   if (&wrap == 1)
