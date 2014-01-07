@@ -42,7 +42,7 @@ alias vssh='vagrant ssh'
 alias ag='ag --smart-case'
 
 function google() {
-  open http://google.co.jp/\#q\=`echo $1 | nkf -wMQ | tr = %`
+  open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
 }
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
