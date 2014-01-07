@@ -82,7 +82,7 @@ let g:unite_enable_start_insert = 1
 let g:unite_source_file_mru_long_limit = 3000
 let g:unite_source_directory_mru_long_limit = 3000
 
-let g:agprg="`brew --prefix`/bin/ag --smart-case"
+let g:agprg="`brew --prefix`/bin/ag --column --smart-case"
 
 " TODO: consider beside mac
 if has('kaoriya')
@@ -178,6 +178,10 @@ map <C-w>L <C-w>>
 map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
+
+cabbrev a    Ag!
+cabbrev h    tab help
+cabbrev t    tabnew
 
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')

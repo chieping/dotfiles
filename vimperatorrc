@@ -26,6 +26,7 @@ nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
 nnoremap <Leader>tn :set gui=invnavigation<CR>:echomsg "Toggle navigation"<CR>
 nnoremap <Leader>tb :set gui=invbookmarks<CR>:echomsg "Toggle bookmarks"<CR>
 nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
+nnoremap <Leader>tn :set gui=none<CR>
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
