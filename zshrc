@@ -79,7 +79,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast vagrant common-aliases gnu-utils bundler brew tmux colored-man)
+plugins=(gitfast common-aliases gnu-utils bundler tmux colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
