@@ -21,9 +21,14 @@ NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'tpope/vim-dispatch'
 NeoBundle 'Lokaltog/vim-easymotion'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'rodjek/vim-puppet'
+NeoBundleLazy 'rodjek/vim-puppet', {
+        \ 'autoload' : {
+        \ 'filetypes' : [ 'puppet' ],
+        \ }}
 " NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'vim-ruby/vim-ruby'
+" NeoBundle 'tsaleh/vim-matchit'
+" NeoBundle 'ecomba/vim-ruby-refactoring'
 NeoBundle 'kana/vim-smartword'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'kana/vim-textobj-user'
@@ -36,6 +41,10 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
+NeoBundleLazy 'closetag.vim', {
+        \ 'autoload' : {
+        \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
+        \ }}
 
 filetype plugin on
 
@@ -147,9 +156,6 @@ let g:NERDTreeMapCWD = 'cD'
 " Make '<C-j>' and '<C-k>' default behavior
 let g:NERDTreeMapJumpNextSibling = ''
 let g:NERDTreeMapJumpPrevSibling = ''
-
-" If no files were specified, open with NERDTree.
-" autocmd vimenter * if !argc() | NERDTree | endif
 
 nmap <Leader>d :NERDTreeToggle<CR>
 " Open current buffer's dir by NerdTree
