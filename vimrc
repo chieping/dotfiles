@@ -108,9 +108,10 @@ noremap ? ?\v
 cnoremap s/ s/\v
 
 " use black hole register
-nnoremap D "_d
-nnoremap C "_c
+nnoremap c "_c
+nnoremap C "_C
 nnoremap s "_s
+nnoremap S "_S
 
 inoremap {} {}<Left>
 inoremap <> <><Left>
