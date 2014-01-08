@@ -34,14 +34,17 @@ inoremap <M-f> <ESC>/
 
 nnoremap d :tabclose -select lastactive<CR>
 
-nnoremap j 3j
-nnoremap k 3k
+nnoremap j 6j
+nnoremap k 6k
 
 nnoremap h gT
 nnoremap l gt
 
 nnoremap H 3h
 nnoremap L 3l
+
+inoremap <Home> <C-a>
+inoremap <End>  <C-e>
 
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>

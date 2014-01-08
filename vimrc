@@ -117,11 +117,6 @@ inoremap () ()<Left>
 inoremap "" ""<Left>
 inoremap '' ''<Left>
 
-imap hhhhh <Esc>
-imap jjjjj <Esc>
-imap kkkkk <Esc>
-imap lllll <Esc>
-
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
@@ -208,6 +203,7 @@ function! s:unite_my_settings()"{{{
 
   nmap <buffer> <ESC>      <Plug>(unite_exit)
   imap <buffer> jj      <Plug>(unite_insert_leave)
+  imap <buffer> kk      <Plug>(unite_insert_leave)
   "imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
 
   imap <buffer><expr> j unite#smart_map('j', '')
