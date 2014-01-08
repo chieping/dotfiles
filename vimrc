@@ -75,9 +75,11 @@ let mapleader=","
 
 let g:submode_timeout=0
 
+" ######################### Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 
+" ######################### Ag.vim
 let g:agprg="`brew --prefix`/bin/ag --column --smart-case"
 
 " TODO: consider beside mac
@@ -138,6 +140,7 @@ map b  <Plug>(smartword-b)
 map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
+" ######################### NERDTree
 " For immediate reaction of 'C' key
 let g:NERDTreeMapCWD = 'cD'
 " Make '<C-j>' and '<C-k>' default behavior
@@ -148,13 +151,13 @@ let g:NERDTreeMapJumpPrevSibling = ''
 " autocmd vimenter * if !argc() | NERDTree | endif
 
 nmap <Leader>d :NERDTreeToggle<CR>
-nmap <Leader>f :NERDTreeFind<CR>
 " Open current buffer's dir by NerdTree
 " 'CdCurrent' is enable only kaoriya Vim
 if has('kaoriya')
   nnoremap <Leader>s :CdCurrent<CR>:NERDTreeCWD<CR>
 endif
 
+" ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
 nmap <Leader>a> :Tabularize /=><CR>
@@ -164,10 +167,22 @@ vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
+" ######################### Tagbar
 nmap <Leader>t  :TagbarToggle<CR>
 
-" #################### Unite.vim ####################
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
 
+" ######################### Unite.vim
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    f [unite]
@@ -282,8 +297,7 @@ nnoremap <Leader>o :<C-u>Unite -vertical -winwidth=50 -direction=botright -no-fo
 nnoremap <Leader>u :<C-u>Unite file_mru directory_mru<CR>
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 
-" #################### Unite.vim ####################
-
+" ######################### Signify
 " <Leader>gs go into signify submode
 call submode#enter_with('signify-move', 'n', '', '<Leader>gs')
 call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
@@ -302,6 +316,8 @@ map <C-w>J <C-w>+
 cabbrev a    Ag!
 cabbrev h    tab help
 cabbrev t    tabnew
+cabbrev bu   NeoBundleUpdate
+cabbrev bul  NeoBundleUpdatesLog
 
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')
@@ -325,18 +341,6 @@ endfunction
 
 map <Leader>w :call ToggleWrap()<CR>
 
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-
 " Cursor settings. This makes terminal vim sooo much nicer!
 " Tmux will only forward escape sequences to the terminal if surrounded by a DCS
 " sequence
@@ -348,6 +352,7 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+" ######################### Lightline.vim
 let g:lightline = {
         \ 'colorscheme': 'solarized',
         \ 'mode_map': {'c': 'NORMAL'},
