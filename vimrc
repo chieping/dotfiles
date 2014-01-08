@@ -138,8 +138,22 @@ map b  <Plug>(smartword-b)
 map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
+" For immediate reaction of 'C' key
+let g:NERDTreeMapCWD = 'cD'
+" Make '<C-j>' and '<C-k>' default behavior
+let g:NERDTreeMapJumpNextSibling = ''
+let g:NERDTreeMapJumpPrevSibling = ''
+
+" If no files were specified, open with NERDTree.
+" autocmd vimenter * if !argc() | NERDTree | endif
+
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>f :NERDTreeFind<CR>
+" Open current buffer's dir by NerdTree
+" 'CdCurrent' is enable only kaoriya Vim
+if has('kaoriya')
+  nnoremap <Leader>s :CdCurrent<CR>:NERDTreeCWD<CR>
+endif
 
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -333,12 +347,6 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
-
-" If no files were specified, open with NERDTree.
-" autocmd vimenter * if !argc() | NERDTree | endif
-
-" For immediate reaction of 'C' key
-let g:NERDTreeMapCWD = 'cD'
 
 let g:lightline = {
         \ 'colorscheme': 'solarized',
