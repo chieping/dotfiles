@@ -26,7 +26,7 @@ nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
 nnoremap <Leader>tn :set gui=invnavigation<CR>:echomsg "Toggle navigation"<CR>
 nnoremap <Leader>tb :set gui=invbookmarks<CR>:echomsg "Toggle bookmarks"<CR>
 nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
-nnoremap <Leader>tn :set gui=none<CR>
+nnoremap <Leader>tc :set gui=none<CR>
 
 noremap <M-f> /
 cnoremap <M-f> <C-u>\
@@ -55,15 +55,33 @@ nnoremap ^ +
 noremap o og<Space>
 noremap t tg<Space>
 
+cabbrev a    eijiro
+cabbrev e    wiktionaryen
+
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 nnoremap ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
 nnoremap yt :js util.copyToClipboard(buffer.title)<CR>
 nnoremap yu :js util.copyToClipboard(buffer.URL)<CR>
 nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 
-:style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
+
+" ignore statuspanel
+style chrome://* .statuspanel-label {display: none;}
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
+
+js <<EOM
+  liberator.globalVariables.lookupDictionary_site_definition = [
+    {
+      names: ['wiktionaryen'],
+      url: 'http://en.wiktionary.org/wiki/%s',
+      shortHelp: 'Wiktionary en',
+      multi: false,
+      xpath: 'TODO',
+    }
+  ];
+EOM
 
 " Make Vimperator's "Y"ank behave like Edit-Copy
 " http://phaseportrait.blogspot.jp/2008/12/make-vimperators-yank-behave-like-edit.html
