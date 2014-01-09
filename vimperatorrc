@@ -11,7 +11,7 @@
 let mapleader=","
 
 set focuscontent
-set showstatuslinks=2
+set showstatuslinks=1
 set titlestring=""
 set hintchars=fjklasdhguionmerv
 
@@ -33,6 +33,11 @@ cnoremap <M-f> <C-u>\
 inoremap <M-f> <ESC>/
 
 nnoremap d :tabclose -select lastactive<CR>
+
+" clone tab
+nnoremap c :tabduplicate<CR>
+
+nnoremap C c
 
 nnoremap j 6j
 nnoremap k 6k
@@ -76,6 +81,7 @@ style chrome://* .statuspanel-label {display: none;}
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
 
+" TODO: 未完成、というか他の英英辞書を探す？
 js <<EOM
   liberator.globalVariables.lookupDictionary_site_definition = [
     {
