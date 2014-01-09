@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+source `brew --prefix`/etc/profile.d/z.sh
 
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
