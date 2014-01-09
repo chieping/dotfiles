@@ -58,11 +58,16 @@ noremap t tg<Space>
 cabbrev a    eijiro
 cabbrev e    wiktionaryen
 
+" Anchor
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
+" Markdown
 nnoremap ym :js util.copyToClipboard('['+ buffer.title +']('+ buffer.URL +')')<CR>
+" Backlog
+nnoremap yb :js util.copyToClipboard('[['+buffer.title.replace(':','')+'>'+buffer.URL+']]')<CR>
+" Simple
+nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 nnoremap yt :js util.copyToClipboard(buffer.title)<CR>
 nnoremap yu :js util.copyToClipboard(buffer.URL)<CR>
-nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
