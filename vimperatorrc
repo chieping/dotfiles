@@ -12,14 +12,16 @@ let mapleader=","
 
 set focuscontent
 set showstatuslinks=1
+set status=location
 set titlestring=""
 set hintchars=fjklasdhguionmerv
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
 " Open dictionary with command-line-buffer (depends on lookupDictionary.js)
-nnoremap <Leader>a Y:eijiro <M-v><CR>
-vnoremap <Leader>a Y:eijiro <M-v><CR>
+" Note that bracket-surrounded means allowing conjugated form
+nnoremap <Leader>a Y:eijiro [<M-v>]<CR>
+vnoremap <Leader>a Y:eijiro [<M-v>]<CR>
 
 nnoremap <Leader>ta :set gui=invaddons<CR>:echomsg "Toggle addons"<CR>
 nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
