@@ -431,6 +431,5 @@ let g:solarized_termtrans=1
 set background=dark
 let g:solarized_termcolors=256
 colorscheme solarized
-
-highlight WhitespaceEOL ctermbg=red guibg=red
+highlight WhitespaceEOL ctermbg=124 guibg=#880000
 match WhitespaceEOL /\s\+$/
