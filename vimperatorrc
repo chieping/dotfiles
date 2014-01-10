@@ -15,6 +15,7 @@ set showstatuslinks=1
 set status=location
 set titlestring=""
 set hintchars=fjklasdhguionmerv
+set smartcase
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
