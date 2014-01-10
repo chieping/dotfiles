@@ -7,6 +7,7 @@ call neobundle#rc(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
 " NeoBundle 'rhysd/accelerated-jk'
 NeoBundle 'rking/ag.vim'
@@ -296,11 +297,10 @@ if executable('jvgrep')
   let g:unite_source_grep_recursive_opt = '-R'
 endif
 
-" For ack.
-if executable('ack-grep')
-  " let g:unite_source_grep_command = 'ack-grep'
-  " let g:unite_source_grep_default_opts = '--no-heading --no-color -a -H'
-  " let g:unite_source_grep_recursive_opt = ''
+if executable('ag')
+  let g:unite_source_grep_command = 'ag'
+  let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
+  let g:unite_source_grep_recursive_opt = ''
 endif
 
 let g:unite_source_history_yank_enable = 1
@@ -309,6 +309,7 @@ let g:unite_source_history_yank_limit = 100
 nnoremap <Leader>o :<C-u>Unite -vertical -winwidth=50 -direction=botright -no-focus -toggle -no-quit outline<CR>
 nnoremap <Leader>u :<C-u>Unite file_mru directory_mru<CR>
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
+nnoremap <leader>k :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " ######################### Signify
 " <Leader>gs go into signify submode
