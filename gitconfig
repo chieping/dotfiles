@@ -38,4 +38,7 @@
 	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
 	trustExitCode = false
 
+[color "diff"]
+	meta = black green
+
 # vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
