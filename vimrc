@@ -327,7 +327,6 @@ map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
 
-cabbrev a    Ag!
 cabbrev h    tab help
 cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate

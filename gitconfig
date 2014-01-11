@@ -39,6 +39,6 @@
 	trustExitCode = false
 
 [color "diff"]
-	meta = black green
+	meta = black cyan
 
 # vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
