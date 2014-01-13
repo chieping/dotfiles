@@ -83,6 +83,7 @@ style -name commandline-ime chrome://* #liberator-commandline-command input {ime
 style chrome://* .statuspanel-label {display: none;}
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
+highlight! Hint font-family: "Bitstream Vera Sans Mono",monaco,monospace; font-size: 12px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px; line-height: 1em;
 
 " TODO: 未完成、というか他の英英辞書を探す？
 js <<EOM

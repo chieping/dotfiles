@@ -83,6 +83,8 @@ set ambiwidth=double "Also need iTerm configuration(But tmux sucks...)
 set backspace=2      "Make backspace work like most other apps
 set whichwrap=h,l    "Keys which can stride over
 set helplang=en
+set list
+set listchars=tab:›\ 
 
 let mapleader=","
 
