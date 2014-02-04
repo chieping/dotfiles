@@ -10,7 +10,6 @@
 
 let mapleader=","
 
-set focuscontent
 set showstatuslinks=1
 set status=location
 set titlestring=""
