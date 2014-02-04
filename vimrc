@@ -97,15 +97,10 @@ let g:syntastic_warning_symbol='⚠'
 " ######################### Ag.vim
 let g:agprg="`brew --prefix`/bin/ag --column --smart-case"
 
-" TODO: consider beside mac
-if has('kaoriya')
-  let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
-endif
-
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
-nnoremap U :redo<cr>
+nnoremap U :redo<CR>
 
 nmap <Leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>r :<C-u>source $MYVIMRC<CR>
@@ -183,10 +178,6 @@ vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
 
-" ######################### Tagbar
-nmap <Leader>t  :TagbarToggle<CR>
-
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 function! s:align()
   let p = '^\s*|\s.*\s|\s*$'
   if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
@@ -197,6 +188,15 @@ function! s:align()
     call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
   endif
 endfunction
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+" ######################### Tagbar
+nmap <Leader>t  :TagbarToggle<CR>
+
+" TODO: consider beside mac
+if has('kaoriya')
+  let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
+endif
 
 " ######################### Unite.vim
 " The prefix key.
