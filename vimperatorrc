@@ -56,10 +56,20 @@ nnoremap L 3l
 inoremap <Home> <C-a>
 inoremap <End>  <C-e>
 
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
+
 cnoremap <C-h> <Left>
 cnoremap <C-l> <Right>
 
 nnoremap ^ +
+
+vnoremap P <Esc><Esc>P
+vnoremap p <Esc><Esc>p
+vnoremap <CR> y<Esc><Esc>P
+
+" depend on caret-hint.js
+nnoremap <C-t> ;c
 
 " for preventing unintended completion, specify google search
 noremap o og<Space>
