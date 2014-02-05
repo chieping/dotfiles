@@ -399,15 +399,11 @@ endif
 let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 
 " ######################### Signify
-" <Leader>gs go into signify submode
-call submode#enter_with('signify-move', 'n', '', '<Leader>gs')
+call submode#enter_with('signify-move', 'n', '', '<Leader>g')
 call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
 call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
 call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
 call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
-
-nmap <Leader>gj <Plug>(signify-next-hunk)
-nmap <Leader>gk <Plug>(signify-prev-hunk)
 
 map <C-w>L <C-w>>
 map <C-w>H <C-w><

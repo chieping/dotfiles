@@ -1,6 +1,6 @@
 " vim: set filetype=vim :
 " using plugin list {{{
-" bookmarktoolvar-hint.js
+" bookmarktoolbar-hint.js
 " migemo_find.js
 " forcefocuscontent.js
 " lookupDictionary.js
@@ -15,6 +15,9 @@ set status=location
 set titlestring=""
 set hintchars=fjklasdhguionmerv
 set smartcase
+
+" Show hint with no any label or value on input elements
+set hintinputs=""
 
 nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
@@ -80,9 +83,6 @@ style -name commandline-ime chrome://* #liberator-commandline-command input {ime
 
 " ignore statuspanel
 style chrome://* .statuspanel-label {display: none;}
-
-" Show hint with no any label or value on input elements
-set hintinputs=
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
 highlight! Hint font-family: "Bitstream Vera Sans Mono",monaco,monospace; font-size: 12px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px; line-height: 1em;
