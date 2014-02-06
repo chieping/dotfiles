@@ -68,6 +68,10 @@ vnoremap P <Esc><Esc>P
 vnoremap p <Esc><Esc>p
 vnoremap <CR> y<Esc><Esc>P
 
+" yank and back to normal mode
+vnoremap y y<Esc><Esc>:echomsg "Yanked <M-v>"<CR>
+vnoremap <CR> y<Esc><Esc>:echomsg "Yanked <M-v>"<CR>
+
 " depend on caret-hint.js
 nnoremap <C-t> ;c
 
