@@ -214,8 +214,13 @@ nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
         \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]r  :<C-u>Unite
         \ -buffer-name=register register<CR>
+" outline
 nnoremap <silent> [unite]o  :<C-u>Unite
         \ -vertical -winwidth=50 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
+" grep
+nnoremap <silent> [unite]g  :<C-u>Unite
+        \ grep:. -buffer-name=search-buffer<CR>
+" mru
 nnoremap <silent> [unite]u  :<C-u>Unite
         \ file_mru directory_mru<CR>
 nnoremap <silent> [unite]f
@@ -315,9 +320,6 @@ endif
 
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
-
-nnoremap <leader>y :<C-u>Unite history/yank<CR>
-nnoremap <leader>k :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
 " ######################### neocomplete.vim
 " Disable AutoComplPop.
