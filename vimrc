@@ -212,6 +212,8 @@ nnoremap <silent> [unite]r  :<C-u>Unite
         \ -buffer-name=register register<CR>
 nnoremap <silent> [unite]o  :<C-u>Unite
         \ -vertical -winwidth=50 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
+nnoremap <silent> [unite]u  :<C-u>Unite
+        \ file_mru directory_mru<CR>
 nnoremap <silent> [unite]f
         \ :<C-u>Unite -buffer-name=resume resume<CR>
 nnoremap <silent> [unite]d
@@ -310,7 +312,6 @@ endif
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
 
-nnoremap <Leader>u :<C-u>Unite file_mru directory_mru<CR>
 nnoremap <leader>y :<C-u>Unite history/yank<CR>
 nnoremap <leader>k :<C-u>Unite grep:. -buffer-name=search-buffer<CR>
 
