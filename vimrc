@@ -11,7 +11,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
 " NeoBundle 'rhysd/accelerated-jk'
-NeoBundle 'rking/ag.vim'
+" NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
@@ -94,9 +94,6 @@ let g:submode_timeout=0
 " ######################### Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
-
-" ######################### Ag.vim
-let g:agprg="`brew --prefix`/bin/ag --column --smart-case"
 
 " ######################### vim-easymotion
 let g:EasyMotion_smartcase = 1
