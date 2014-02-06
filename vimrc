@@ -98,6 +98,13 @@ let g:syntastic_warning_symbol='⚠'
 " ######################### Ag.vim
 let g:agprg="`brew --prefix`/bin/ag --column --smart-case"
 
+" ######################### vim-easymotion
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_use_migemo = 1
+
+nmap f <Plug>(easymotion-s)
+xmap f <Plug>(easymotion-s)
+
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
@@ -202,7 +209,7 @@ endif
 " ######################### Unite.vim
 " The prefix key.
 nnoremap    [unite]   <Nop>
-nmap    f [unite]
+nmap    m [unite]
 
 nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
         \ -buffer-name=files buffer file_mru bookmark file<CR>
