@@ -1,3 +1,14 @@
+# This is config file for bitbucket-cli
+# https://bitbucket.org/zhemao/bitbucket-cli
+#
+# Be careful with password.
+#
+# To avoid worktree changes:
+# `git update-index --skip-worktree bitbucket`
+#
+# To restore above setting:
+# `git update-index --no-skip-worktree bitbucket`
+
 [auth]
 username = thonda
 password = **secret**
