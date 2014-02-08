@@ -1,0 +1,9 @@
+[auth]
+username = thonda
+password = **secret**
+
+[options]
+scm = git
+protocol = ssh
+
+# vim: ft=gitconfig :
