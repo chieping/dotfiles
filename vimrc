@@ -160,18 +160,19 @@ map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
 " ######################### NERDTree
-" For immediate reaction of 'C' key
-let g:NERDTreeMapCWD = 'cD'
-" Make '<C-j>' and '<C-k>' default behavior
-let g:NERDTreeMapJumpNextSibling = ''
-let g:NERDTreeMapJumpPrevSibling = ''
-
 nmap <Leader>d :NERDTreeToggle<CR>
+
 " Open current buffer's dir by NerdTree
 " 'CdCurrent' is enable only kaoriya Vim
 if has('kaoriya')
   nnoremap <Leader>s :CdCurrent<CR>:NERDTreeCWD<CR>
 endif
+
+" Make these mapping default
+let g:NERDTreeMapJumpNextSibling = ''   " C-j
+let g:NERDTreeMapJumpPrevSibling = ''   " C-k
+let g:NERDTreeMapToggleFilters = ''     " f
+let g:NERDTreeMapCWD = ''               " CD
 
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
