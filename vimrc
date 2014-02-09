@@ -307,13 +307,6 @@ let g:unite_abbr_highlight = 'TabLine'
 " For optimize.
 let g:unite_source_file_mru_filename_format = ''
 
-if executable('jvgrep')
-  " For jvgrep.
-  let g:unite_source_grep_command = 'jvgrep'
-  let g:unite_source_grep_default_opts = '--exclude ''\.(git|svn|hg|bzr)'''
-  let g:unite_source_grep_recursive_opt = '-R'
-endif
-
 if executable('ag')
   let g:unite_source_grep_command = 'ag'
   let g:unite_source_grep_default_opts = '--smart-case --nogroup --nocolor --column'
@@ -419,11 +412,6 @@ map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
 
-cabbrev h    tab help
-cabbrev t    tabnew
-cabbrev bu   NeoBundleUpdate
-cabbrev bul  NeoBundleUpdatesLog
-
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w><')
 call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>-')
@@ -432,6 +420,11 @@ call submode#map('winsize', 'n', '', 'L', '<C-w>>')
 call submode#map('winsize', 'n', '', 'H', '<C-w><')
 call submode#map('winsize', 'n', '', 'K', '<C-w>-')
 call submode#map('winsize', 'n', '', 'J', '<C-w>+')
+
+cabbrev h    tab help
+cabbrev t    tabnew
+cabbrev bu   NeoBundleUpdate
+cabbrev bul  NeoBundleUpdatesLog
 
 " Clear WhitespaceEOL
 nmap <Leader>c :%s/\s\+$//g<CR>
