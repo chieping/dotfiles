@@ -291,11 +291,12 @@ function! s:unite_my_settings()"{{{
   endif
 
   nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+  nnoremap <silent><buffer><expr> o      unite#do_action('persist_open')
   nnoremap <buffer><expr> S      unite#mappings#set_current_filters(
           \ empty(unite#mappings#get_current_filters()) ?
           \ ['sorter_reverse'] : [])
 
-  " Runs "split" action by <C-s>.
+  " Runs 'split' action by <C-s>.
   imap <silent><buffer><expr> <C-s>     unite#do_action('split')
 endfunction"}}}
 
