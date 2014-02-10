@@ -18,7 +18,7 @@
 	dc = diff --cached
 	di = diff
 	dic = diff --cached
-	df = diff FETCH_HEAD
+	df = diff HEAD..FETCH_HEAD
 	mf = merge FETCH_HEAD
 [push]
 	default = simple
