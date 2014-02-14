@@ -18,6 +18,8 @@ ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOSTART=true
 
 source /opt/boxen/env.sh
+export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
@@ -80,15 +82,13 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast common-aliases gnu-utils bundler tmux colored-man)
+plugins=(gitfast common-aliases bundler tmux colored-man)
 
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
 [ -f `brew --prefix`/etc/profile.d/z.sh ] && source `brew --prefix`/etc/profile.d/z.sh
-
-export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -f ~/.dircolors ]; then
   if type dircolors > /dev/null 2>&1; then
