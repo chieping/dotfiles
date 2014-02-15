@@ -79,9 +79,6 @@ nnoremap <C-t> ;c
 noremap o og<Space>
 noremap t tg<Space>
 
-cabbrev a    eijiro
-cabbrev e    wiktionaryen
-
 " Anchor
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 " Markdown
