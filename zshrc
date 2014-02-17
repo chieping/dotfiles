@@ -44,6 +44,7 @@ alias vp='vagrant provision'
 alias vd='vagrant destroy'
 alias vssh='vagrant ssh'
 alias ag='ag --smart-case'
+alias brews='brew list -1'
 
 function google() {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
