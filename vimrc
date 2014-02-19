@@ -8,6 +8,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
 " NeoBundle 'rhysd/accelerated-jk'
@@ -245,8 +246,8 @@ let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
 
 " To track long mru history.
-let g:unite_source_file_mru_long_limit = 3000
-let g:unite_source_directory_mru_long_limit = 3000
+let g:neomru#file_mru_limit = 3000
+let g:neomru#directory_mru_limit = 3000
 
 " Like ctrlp.vim settings.
 let g:unite_enable_start_insert = 1
