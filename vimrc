@@ -48,6 +48,7 @@ NeoBundleLazy 'closetag.vim', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
         \ }}
+NeoBundle 'szw/vim-tags'
 
 filetype plugin on
 
