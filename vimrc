@@ -101,8 +101,11 @@ let g:syntastic_warning_symbol='⚠'
 let g:EasyMotion_smartcase = 1
 let g:EasyMotion_use_migemo = 1
 
+" 'f' searches a character, 'F' searches two characters
 nmap f <Plug>(easymotion-s)
 xmap f <Plug>(easymotion-s)
+nmap F <Plug>(easymotion-s2)
+xmap F <Plug>(easymotion-s2)
 
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
@@ -174,6 +177,7 @@ endif
 let g:NERDTreeMapJumpNextSibling = ''   " C-j
 let g:NERDTreeMapJumpPrevSibling = ''   " C-k
 let g:NERDTreeMapToggleFilters = ''     " f
+let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
 " ######################### Tabular
