@@ -82,9 +82,9 @@ set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set cursorline
 set number
-set ambiwidth=double "Also need iTerm configuration(But tmux sucks...)
-set backspace=2      "Make backspace work like most other apps
-set whichwrap=h,l    "Keys which can stride over
+set ambiwidth=double        "Also need iTerm configuration(But tmux sucks...)
+set backspace=2             "Make backspace work like most other apps
+set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
 set listchars=tab:›\ 
