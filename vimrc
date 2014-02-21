@@ -39,6 +39,7 @@ NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'thinca/vim-textobj-between'
+NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
 NeoBundle 'tpope/vim-surround'
 " NeoBundle 'wesleyche/SrcExpl'
 " NeoBundle 'wesleyche/Trinity'
