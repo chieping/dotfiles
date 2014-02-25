@@ -75,10 +75,6 @@ vnoremap <CR> y<Esc><Esc>:echomsg "Yanked <M-v>"<CR>
 " depend on caret-hint.js
 nnoremap <C-t> ;c
 
-" for preventing unintended completion, specify google search
-noremap o og<Space>
-noremap t tg<Space>
-
 " Anchor
 nnoremap ya :js util.copyToClipboard('<a href="'+buffer.URL + '">'+ buffer.title + '</a>')<CR>
 " Markdown
