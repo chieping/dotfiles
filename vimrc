@@ -434,6 +434,13 @@ call submode#map('winsize', 'n', '', 'H', '<C-w>3<')
 call submode#map('winsize', 'n', '', 'K', '<C-w>3-')
 call submode#map('winsize', 'n', '', 'J', '<C-w>3+')
 
+call submode#enter_with('next-win', 'n', '', '<C-w>w',     '<C-w>w')
+call submode#enter_with('next-win', 'n', '', '<C-w><C-w>', '<C-w>w')
+call submode#enter_with('next-win', 'n', '', '<C-w>W',     '<C-w>W')
+call submode#map('next-win', 'n', '', 'w',     '<C-w>w')
+call submode#map('next-win', 'n', '', '<C-w>', '<C-w>w')
+call submode#map('next-win', 'n', '', 'W',     '<C-w>W')
+
 cabbrev h    tab help
 cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate
