@@ -22,7 +22,10 @@ NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'Lokaltog/vim-easymotion'
+NeoBundleLazy 'Lokaltog/vim-easymotion', {
+        \ 'autoload' : {
+        \ 'mappings' : [ '<Plug>(easymotion-' ]
+        \ }}
 NeoBundle 'tpope/vim-endwise'
 NeoBundleLazy 'rodjek/vim-puppet', {
         \ 'autoload' : {
@@ -33,7 +36,10 @@ NeoBundle 'vim-ruby/vim-ruby'
 " NeoBundle 'tsaleh/vim-matchit'
 " NeoBundle 'ecomba/vim-ruby-refactoring'
 " NeoBundle 'taku-o/vim-toggle'
-NeoBundle 'kana/vim-smartword'
+NeoBundleLazy 'kana/vim-smartword', {
+        \ 'autoload' : {
+        \ 'mappings' : [ '<Plug>(smartword-' ]
+        \ }}
 NeoBundle 'kana/vim-submode'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-line'
@@ -51,7 +57,10 @@ NeoBundleLazy 'closetag.vim', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
         \ }}
-NeoBundle 'szw/vim-tags'
+NeoBundleLazy 'szw/vim-tags', {
+        \ 'autoload' : {
+        \ 'commands' : [ 'TagsGenerate', 'TagsGenerate!' ],
+        \ }}
 NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'markdown' ],
@@ -180,7 +189,7 @@ if has('kaoriya')
   nnoremap <Leader>s :CdCurrent<CR>:NERDTreeCWD<CR>
 endif
 
-" Make these mapping default
+" Disable NERDTree's mappings
 let g:NERDTreeMapJumpNextSibling = ''   " C-j
 let g:NERDTreeMapJumpPrevSibling = ''   " C-k
 let g:NERDTreeMapToggleFilters = ''     " f
