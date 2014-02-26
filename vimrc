@@ -123,6 +123,11 @@ xmap f <Plug>(easymotion-s)
 nmap F <Plug>(easymotion-s2)
 xmap F <Plug>(easymotion-s2)
 
+" ######################### open-browser.vim
+let g:netrw_nogx = 1 " disable netrw's gx mapping.
+nmap gx <Plug>(openbrowser-smart-search)
+vmap gx <Plug>(openbrowser-smart-search)
+
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
