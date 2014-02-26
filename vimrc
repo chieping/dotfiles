@@ -41,6 +41,7 @@ NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'thinca/vim-textobj-between'
 NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
 " NeoBundle 'wesleyche/SrcExpl'
 " NeoBundle 'wesleyche/Trinity'
 NeoBundle 'tpope/vim-fugitive'
