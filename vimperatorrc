@@ -86,6 +86,12 @@ nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>
 nnoremap yt :js util.copyToClipboard(buffer.title)<CR>
 nnoremap yu :js util.copyToClipboard(buffer.URL)<CR>
 
+" sites where disable vimperator
+ignorekeys clear
+ignorekeys add docs\\.google\\.com
+" ignorekeys add mail\\.google\\.com
+" ignorekeys add www\\.google\\.com/calendar
+
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
 " ignore statuspanel
