@@ -41,7 +41,7 @@ NeoBundle 'kana/vim-textobj-entire'
 NeoBundle 'thinca/vim-textobj-between'
 NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
 NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat' " TODO: easymotion is still never repeatable. why not?
+NeoBundle 'tpope/vim-repeat'
 " NeoBundle 'wesleyche/SrcExpl'
 " NeoBundle 'wesleyche/Trinity'
 NeoBundle 'tpope/vim-fugitive'
@@ -424,6 +424,10 @@ map <C-w>L <C-w>>
 map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
+
+call submode#enter_with('easymotion', 'n', 'r', '<Leader>;', '<Plug>(easymotion-next)')
+call submode#map('easymotion', 'n', 'r', ';', '<Plug>(easymotion-next)')
+call submode#map('easymotion', 'n', 'r', ',', '<Plug>(easymotion-prev)')
 
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>3>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w>3<')
