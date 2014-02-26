@@ -51,6 +51,11 @@ NeoBundleLazy 'closetag.vim', {
         \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
         \ }}
 NeoBundle 'szw/vim-tags'
+NeoBundleLazy 'kannokanno/previm', {
+        \ 'autoload' : {
+        \ 'filetypes' : [ 'markdown' ],
+        \ }}
+NeoBundle 'tyru/open-browser.vim'
 
 filetype plugin on
 
