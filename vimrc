@@ -44,6 +44,8 @@ NeoBundle 'kana/vim-submode'
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-entire'
+NeoBundle 'kana/vim-operator-user'
+NeoBundle 'kana/vim-operator-replace'
 NeoBundle 'thinca/vim-textobj-between'
 NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
 NeoBundle 'tpope/vim-surround'
@@ -112,6 +114,9 @@ let g:submode_timeout=0
 " ######################### Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+
+" ######################### vim-operator-replace
+map r <Plug>(operator-replace)
 
 " ######################### vim-easymotion
 let g:EasyMotion_smartcase = 1
