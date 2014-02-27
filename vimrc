@@ -330,6 +330,8 @@ function! s:unite_my_settings()"{{{
 
   " Runs 'split' action by <C-s>.
   imap <silent><buffer><expr> <C-s>     unite#do_action('split')
+
+  nmap <buffer> <C-h> <C-w>h " TODO: 他の移動も追加する
 endfunction"}}}
 
 let g:unite_source_file_mru_limit = 200
