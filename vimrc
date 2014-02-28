@@ -289,8 +289,7 @@ let g:unite_winheight = 10
 let g:unite_split_rule = 'botright'
 
 " Prompt choices.
-let g:unite_prompt = '❫ '
-let g:unite_prompt = '» '
+let g:unite_prompt = '>>> '
 
 autocmd FileType unite call s:unite_my_settings()
 function! s:unite_my_settings()"{{{
