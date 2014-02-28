@@ -9,6 +9,10 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
+NeoBundleLazy 'Shougo/vimshell', {
+        \ 'autoload' : {
+        \ 'commands' : [ 'VimShell', 'VimShellPop', 'VimShellInteractive' ]
+        \ }}
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
 " NeoBundle 'rhysd/accelerated-jk'
