@@ -196,12 +196,7 @@ map ge <Plug>(smartword-ge)
 
 " ######################### NERDTree
 nmap <Leader>d :NERDTreeToggle<CR>
-
-" Open current buffer's dir by NerdTree
-" 'CdCurrent' is enable only kaoriya Vim
-if has('kaoriya')
-  nnoremap <Leader>s :CdCurrent<CR>:NERDTreeCWD<CR>
-endif
+nmap <Leader>s :NERDTreeFind<CR>
 
 " Disable NERDTree's mappings
 let g:NERDTreeMapJumpNextSibling = ''   " C-j
@@ -253,7 +248,7 @@ nnoremap <silent> [unite]r  :<C-u>Unite
         \ -buffer-name=register register<CR>
 " outline
 nnoremap <silent> [unite]o  :<C-u>Unite
-        \ -vertical -winwidth=50 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
+        \ -vertical -winwidth=62 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
 " grep
 nnoremap <silent> [unite]g  :<C-u>Unite
         \ grep:. -buffer-name=search-buffer<CR>
@@ -312,7 +307,7 @@ function! s:unite_my_settings()"{{{
   imap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
   imap <buffer> <C-y>     <Plug>(unite_narrowing_path)
   nmap <buffer> <C-y>     <Plug>(unite_narrowing_path)
-  nmap <buffer> <C-j>     <Plug>(unite_toggle_auto_preview)
+  nmap <buffer> <C-p>     <Plug>(unite_toggle_auto_preview)
   nmap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
   imap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
   nnoremap <silent><buffer><expr> l
@@ -334,7 +329,10 @@ function! s:unite_my_settings()"{{{
   " Runs 'split' action by <C-s>.
   imap <silent><buffer><expr> <C-s>     unite#do_action('split')
 
-  nmap <buffer> <C-h> <C-w>h " TODO: 他の移動も追加する
+  nmap <buffer> <C-h> <C-w>h
+  nmap <buffer> <C-l> <C-w>l
+  nmap <buffer> <C-k> <C-w>k
+  nmap <buffer> <C-j> <C-w>j
 endfunction"}}}
 
 let g:unite_source_file_mru_limit = 200
