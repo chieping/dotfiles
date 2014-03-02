@@ -23,7 +23,10 @@ NeoBundle 'scrooloose/syntastic'
 NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
 NeoBundle 'majutsushi/tagbar'
-NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tomtom/tcomment_vim', {
+        \ 'autoload' : {
+        \ 'mappings' : [ '<Plug>TComment-' ]
+        \ }}
 NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'tpope/vim-dispatch'
 NeoBundleLazy 'Lokaltog/vim-easymotion', {
@@ -367,7 +370,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-        \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
