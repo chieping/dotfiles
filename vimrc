@@ -201,6 +201,8 @@ map ge <Plug>(smartword-ge)
 nmap <Leader>d :NERDTreeToggle<CR>
 nmap <Leader>s :NERDTreeFind<CR>
 
+let NERDTreeMinimalUI=1
+
 " Disable NERDTree's mappings
 let g:NERDTreeMapJumpNextSibling = ''   " C-j
 let g:NERDTreeMapJumpPrevSibling = ''   " C-k
