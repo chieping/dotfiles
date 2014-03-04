@@ -173,13 +173,6 @@ noremap C "_C
 noremap s "_s
 noremap S "_S
 
-inoremap {} {}<Left>
-inoremap <> <><Left>
-inoremap [] []<Left>
-inoremap () ()<Left>
-inoremap "" ""<Left>
-inoremap '' ''<Left>
-
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
