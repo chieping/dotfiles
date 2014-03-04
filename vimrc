@@ -242,13 +242,14 @@ nnoremap <silent> [unite]o  :<C-u>Unite
 " grep
 nnoremap <silent> [unite]g  :<C-u>Unite
         \ grep:. -buffer-name=search-buffer<CR>
-" mru
+" file_mru
 nnoremap <silent> [unite]u  :<C-u>Unite
-        \ file_mru directory_mru<CR>
+        \ file_mru<CR>
+" directory_mru
+nnoremap <silent> [unite]d  :<C-u>Unite
+        \ -default-action=nerdtree directory_mru<CR>
 nnoremap <silent> [unite]f
         \ :<C-u>Unite -buffer-name=resume resume<CR>
-nnoremap <silent> [unite]d
-        \ :<C-u>Unite -buffer-name=files -default-action=lcd directory_mru<CR>
 nnoremap <silent> [unite]ma
         \ :<C-u>Unite mapping<CR>
 nnoremap <silent> [unite]me
@@ -358,6 +359,14 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
     \ }
+
+" Open by NerdTree
+let nerdtree = { 'is_selectable' : 1 }
+function! nerdtree.func(candidate)
+  execute "lcd" a:candidate[0].word
+  execute "NERDTree" a:candidate[0].word
+endfunction
+call unite#custom#action('directory', 'nerdtree', nerdtree)
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')
