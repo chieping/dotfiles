@@ -113,6 +113,9 @@ set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
 set listchars=tab:›\ 
+if exists('+colorcolumn')
+  set colorcolumn=80
+endif
 
 let mapleader=","
 
