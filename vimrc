@@ -48,6 +48,9 @@ NeoBundleLazy 'kana/vim-smartword', {
         \ 'mappings' : [ '<Plug>(smartword-' ]
         \ }}
 NeoBundle 'kana/vim-submode'
+
+" vim-textobj-user list
+" https://github.com/kana/vim-textobj-user/wiki
 NeoBundle 'kana/vim-textobj-user'
 NeoBundle 'kana/vim-textobj-line'
 NeoBundle 'kana/vim-textobj-entire'
