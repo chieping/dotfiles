@@ -37,6 +37,7 @@ alias diff="colordiff"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
 alias v='vim'
+alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
 alias vup='vagrant up --no-provision'
 alias vh='vagrant halt'
 alias vst='vagrant status'
@@ -45,6 +46,7 @@ alias vd='vagrant destroy'
 alias vssh='vagrant ssh'
 alias ag='ag --smart-case'
 alias brews='brew list -1'
+alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 
 function google() {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
