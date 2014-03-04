@@ -75,6 +75,7 @@ NeoBundleLazy 'kannokanno/previm', {
         \ 'filetypes' : [ 'markdown' ],
         \ }}
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'dhruvasagar/vim-table-mode'
 
 filetype plugin on
 
@@ -222,18 +223,6 @@ nmap <Leader>a\| :Tabularize /\|<CR>
 vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-
-function! s:align()
-  let p = '^\s*|\s.*\s|\s*$'
-  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
-    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
-    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
-    Tabularize/|/l1
-    normal! 0
-    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
-  endif
-endfunction
-inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
 
 " ######################### Tagbar
 nmap <Leader>t  :TagbarToggle<CR>
