@@ -6,3 +6,4 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 autocmd FileType java set tabstop=4 shiftwidth=4 softtabstop=4 noet
 
+autocmd FileType markdown set tabstop=4 shiftwidth=4 softtabstop=4
