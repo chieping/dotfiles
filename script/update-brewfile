@@ -1,0 +1,3 @@
+#!/bin/bash -e
+
+( cat Brewfile.base; brew leaves | sed 's/^/install /'; ) > Brewfile

@@ -1,0 +1,4 @@
+tap phinze/homebrew-cask
+
+cask install amethyst
+
