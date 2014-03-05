@@ -210,6 +210,9 @@ let g:NERDTreeMapToggleFilters = ''     " f
 let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
+" ######################### fugitive
+command -nargs=* Gc :Gcommit -v <args>
+
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
