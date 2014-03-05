@@ -93,8 +93,6 @@ endif
 " ✠ mapped back to <S-CR> in Vim.
 imap ✠ <S-CR>
 map  ✠ <S-CR>
-imap ✡ <S-Space>
-map  ✡ <S-Space>
 
 syntax enable
 
@@ -158,9 +156,6 @@ nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 " <S-CR> needs special setting on CLI Vim
 inoremap <S-CR> <Esc>o
 nnoremap <S-CR> o
-
-" Insert space forward
-inoremap <S-Space> <Left>
 
 " Yank like Tmux copy mode
 vnoremap <CR> y
