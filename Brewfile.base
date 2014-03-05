@@ -1,3 +1,6 @@
+# Editing Brewfile directly is unintended.
+# Run `script/update-brewfile` to update Brewfile.
+
 tap phinze/homebrew-cask
 
 cask install amethyst
