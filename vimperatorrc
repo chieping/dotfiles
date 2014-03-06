@@ -92,6 +92,8 @@ ignorekeys add docs\\.google\\.com
 " ignorekeys add mail\\.google\\.com
 " ignorekeys add www\\.google\\.com/calendar
 ignorekeys add vim-adventures\\.com
+ignorekeys add www\\.slideshare\\.net
+ignorekeys add speakerdeck\\.com
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
