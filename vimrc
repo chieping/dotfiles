@@ -206,7 +206,7 @@ let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
 " ######################### fugitive
-command -nargs=* Gc :Gcommit -v <args>
+command! -nargs=* Gc :Gcommit -v <args>
 
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
@@ -239,7 +239,7 @@ nnoremap <silent> [unite]r  :<C-u>Unite
         \ -buffer-name=register register<CR>
 " outline
 nnoremap <silent> [unite]o  :<C-u>Unite
-        \ -vertical -winwidth=62 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
+        \ -vertical -winwidth=61 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
 " grep
 nnoremap <silent> [unite]g  :<C-u>Unite
         \ grep:. -buffer-name=search-buffer<CR>
