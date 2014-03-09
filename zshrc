@@ -20,8 +20,10 @@ ZSH_TMUX_AUTOSTART=true
 source /opt/boxen/env.sh
 
 export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
+export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
+export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
