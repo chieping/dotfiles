@@ -18,6 +18,8 @@ ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOSTART=true
 
 source /opt/boxen/env.sh
+
+export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
 export MANPATH="/opt/boxen/homebrew/opt/coreutils/libexec/gnuman:$MANPATH"
 
