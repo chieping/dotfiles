@@ -186,7 +186,8 @@
 
     "MISC": "----------------------",
     "floating": [
-      "com.apple.finder"
+      "com.apple.finder",
+      "com.apple.systempreferences"
     ],
     "float-small-windows": true,
     "mouse-follows-focus": false
