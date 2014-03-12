@@ -22,7 +22,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
-NeoBundle 'majutsushi/tagbar'
+" NeoBundle 'majutsushi/tagbar'
 NeoBundle 'tomtom/tcomment_vim', {
         \ 'autoload' : {
         \ 'mappings' : [ '<Plug>TComment-' ]
@@ -217,14 +217,6 @@ nmap <Leader>a\| :Tabularize /\|<CR>
 vmap <Leader>a\| :Tabularize /\|<CR>
 nmap <Leader>a: :Tabularize /:\zs<CR>
 vmap <Leader>a: :Tabularize /:\zs<CR>
-
-" ######################### Tagbar
-nmap <Leader>t  :TagbarToggle<CR>
-
-" TODO: consider beside mac
-if has('kaoriya')
-  let g:tagbar_ctags_bin = '/Applications/MacVim.app/Contents/MacOS/ctags'
-endif
 
 " ######################### Unite.vim
 " The prefix key.
