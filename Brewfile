@@ -3,8 +3,7 @@
 
 tap phinze/homebrew-cask
 install brew-cask
-
-cask install amethyst
+install findutils --default-names
 
 install ack
 install binutils
@@ -54,3 +53,5 @@ install wget
 install z
 install zsh
 install zsh-completions
+cask install amethyst
+cask install google-japanese-ime

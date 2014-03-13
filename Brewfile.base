@@ -4,6 +4,3 @@
 tap phinze/homebrew-cask
 install brew-cask
 install findutils --default-names
-
-cask install amethyst
-

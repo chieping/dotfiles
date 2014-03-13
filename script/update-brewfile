@@ -1,3 +1,6 @@
 #!/bin/bash -e
 
-( cat Brewfile.base; brew leaves | sed 's/^/install /'; ) > Brewfile
+cat Brewfile.base > Brewfile
+brew leaves | sed 's/^/install /' >> Brewfile
+# カレントディレクトリにamethystファイルがあるためにエラーとなってしまうためのworkaround
+( pushd $HOMEBREW_ROOT > /dev/null; brew cask list | sed 's/^/cask install /'; popd > /dev/null) >> Brewfile
