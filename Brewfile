@@ -55,3 +55,4 @@ install zsh
 install zsh-completions
 cask install amethyst
 cask install google-japanese-ime
+cask install vagrant
