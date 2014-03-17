@@ -41,6 +41,8 @@ install postgresql
 install pstree
 install rainbarf
 install rbenv
+install rbenv-bundler
+install rbenv-ctags
 install reattach-to-user-namespace
 install ssh-copy-id
 install the_silver_searcher
