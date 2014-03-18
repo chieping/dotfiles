@@ -4,7 +4,6 @@
 tap phinze/homebrew-cask
 install brew-cask
 install findutils --default-names
-
 install ack
 install binutils
 install brew-cask
@@ -24,6 +23,7 @@ install gnu-sed
 install gnu-tar
 install gnu-which
 install gnutls
+install go
 install grep
 install gzip
 install htop-osx
@@ -40,7 +40,6 @@ install pidof
 install postgresql
 install pstree
 install rainbarf
-install rbenv
 install rbenv-bundler
 install rbenv-ctags
 install reattach-to-user-namespace

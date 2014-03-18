@@ -19,6 +19,10 @@ ZSH_TMUX_AUTOSTART=true
 
 source /opt/boxen/env.sh
 
+# golang settings
+export GOPATH=$HOME/gocode
+export PATH="$HOME/gocode/bin:$PATH"
+
 export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
@@ -91,7 +95,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast common-aliases bundler tmux colored-man)
+plugins=(gitfast common-aliases bundler tmux colored-man golang)
 
 source $ZSH/oh-my-zsh.sh
 
