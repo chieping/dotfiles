@@ -20,5 +20,7 @@ function homebrew {
 }
 
 vim_plugins
+echo
 oh_my_zsh
+echo
 homebrew
