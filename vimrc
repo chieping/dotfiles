@@ -29,10 +29,11 @@ NeoBundle 'tomtom/tcomment_vim', {
         \ }}
 NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'tpope/vim-dispatch'
-NeoBundleLazy 'Lokaltog/vim-easymotion', {
-        \ 'autoload' : {
-        \ 'mappings' : [ '<Plug>(easymotion-' ]
-        \ }}
+" NeoBundleLazy 'Lokaltog/vim-easymotion', {
+"         \ 'autoload' : {
+"         \ 'mappings' : [ '<Plug>(easymotion-' ]
+"         \ }}
+NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'tpope/vim-endwise'
 NeoBundleLazy 'rodjek/vim-puppet', {
         \ 'autoload' : {
@@ -130,16 +131,6 @@ let g:syntastic_warning_symbol='⚠'
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
 
-" ######################### vim-easymotion
-let g:EasyMotion_smartcase = 1
-let g:EasyMotion_use_migemo = 1
-
-" 'f' searches a character, 'F' searches two characters
-nmap f <Plug>(easymotion-s)
-xmap f <Plug>(easymotion-s)
-nmap F <Plug>(easymotion-s2)
-xmap F <Plug>(easymotion-s2)
-
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
@@ -168,8 +159,6 @@ cnoremap s/ s/\v
 " use black hole register
 noremap c "_c
 noremap C "_C
-noremap s "_s
-noremap S "_S
 
 inoremap <C-h> <Left>
 inoremap <C-j> <Down>
