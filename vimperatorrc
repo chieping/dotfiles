@@ -53,12 +53,6 @@ nnoremap l gt
 nnoremap H 3h
 nnoremap L 3l
 
-inoremap <Home> <C-a>
-inoremap <End>  <C-e>
-
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
-
 nnoremap ^ +
 
 vnoremap P <Esc><Esc>P
