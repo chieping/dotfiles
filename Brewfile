@@ -56,4 +56,6 @@ install zsh
 install zsh-completions
 cask install amethyst
 cask install google-japanese-ime
+cask install simplecap
+cask install the-unarchiver
 cask install vagrant
