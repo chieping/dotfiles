@@ -57,6 +57,7 @@ alias ag='ag --smart-case'
 alias brews='brew list -1'
 alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 alias bi='bundle install --path=.bundle --binstubs=.bundle/bin'
+alias ssh='TERM=xterm ssh'
 
 function google() {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
