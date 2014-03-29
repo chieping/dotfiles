@@ -2,8 +2,11 @@
 # Run `script/update-brewfile` to update Brewfile.
 
 tap phinze/homebrew-cask
+tap laurent22/massren
+
 install brew-cask
 install findutils --default-names
+
 install ack
 install binutils
 install brew-cask
@@ -32,6 +35,7 @@ install maven
 install md5sha1sum
 install mongodb
 install mysql
+install massren
 install nginx
 install nkf
 install nmap
