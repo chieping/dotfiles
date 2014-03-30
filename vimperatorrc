@@ -23,8 +23,8 @@ nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
 " Open dictionary with command-line-buffer (depends on lookupDictionary.js)
 " Note that bracket-surrounded means allowing conjugated form
-nnoremap a Y:eijiro [<M-v>]<CR>
-vnoremap a y:eijiro [<M-v>]<CR>
+nnoremap a <M-c>:eijiro [<M-v>]<CR>
+vnoremap a <M-c>:eijiro [<M-v>]<CR>
 
 nnoremap <Leader>ta :set gui=invaddons<CR>:echomsg "Toggle addons"<CR>
 nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
@@ -93,36 +93,3 @@ style chrome://* .statuspanel-label {display: none;}
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
 highlight! Hint font-family: "Bitstream Vera Sans Mono",monaco,monospace; font-size: 12px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px; line-height: 1em;
-
-" TODO: 未完成、というか他の英英辞書を探す？
-js <<EOM
-  liberator.globalVariables.lookupDictionary_site_definition = [
-    {
-      names: ['wiktionaryen'],
-      url: 'http://en.wiktionary.org/wiki/%s',
-      shortHelp: 'Wiktionary en',
-      multi: false,
-      xpath: 'TODO',
-    }
-  ];
-EOM
-
-" Make Vimperator's "Y"ank behave like Edit-Copy
-" http://phaseportrait.blogspot.jp/2008/12/make-vimperators-yank-behave-like-edit.html
-js <<EOF
-mappings.addUserMap([modes.NORMAL, modes.VISUAL], ["Y"],
-    "Yank the currently selected text",
-    function () {
-        buffer.getCurrentWord();
-        events.feedkeys("<C-v>" +
-          (/^Mac/.test(navigator.platform) ?
-            "<M-c>"
-            : "<C-c>"), true);
-        setTimeout( function () {
-          liberator.echo("Yanked "
-                         + util.readFromClipboard(),
-                         commandline.FORCE_SINGLELINE);
-        }, 20 );
-    });
-EOF
-
