@@ -59,7 +59,9 @@ install z
 install zsh
 install zsh-completions
 cask install amethyst
+cask install firefox
 cask install google-japanese-ime
+cask install onepassword
 cask install simplecap
 cask install the-unarchiver
 cask install vagrant
