@@ -42,6 +42,10 @@ nnoremap d :tabclose -select lastactive<CR>
 " clone tab
 nnoremap c :tabduplicate<CR>
 
+inoremap jj <Esc>j
+
+noremap <Esc><Esc> :noh<CR>
+
 nnoremap C c
 
 nnoremap j 6j
