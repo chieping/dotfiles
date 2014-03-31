@@ -6,4 +6,5 @@ tap laurent22/massren
 
 install brew-cask
 install findutils --default-names
+install go --cross-compile-common
 

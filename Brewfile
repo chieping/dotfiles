@@ -6,6 +6,7 @@ tap laurent22/massren
 
 install brew-cask
 install findutils --default-names
+install go --cross-compile-common
 
 install ack
 install binutils
@@ -26,16 +27,15 @@ install gnu-sed
 install gnu-tar
 install gnu-which
 install gnutls
-install go
 install grep
 install gzip
 install htop-osx
 install hub
+install massren
 install maven
 install md5sha1sum
 install mongodb
 install mysql
-install massren
 install nginx
 install nkf
 install nmap
