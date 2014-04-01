@@ -10,7 +10,10 @@ install go --cross-compile-common
 
 install ack
 install binutils
+install apple-gcc42
+install boot2docker
 install brew-cask
+install cmake
 install colordiff
 install coreutils
 install diffutils
@@ -63,5 +66,7 @@ cask install firefox
 cask install google-japanese-ime
 cask install onepassword
 cask install simplecap
+cask install stackroom
 cask install the-unarchiver
 cask install vagrant
+cask install virtualbox
