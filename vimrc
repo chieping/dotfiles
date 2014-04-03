@@ -35,10 +35,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "         \ }}
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'tpope/vim-endwise'
-NeoBundleLazy 'rodjek/vim-puppet', {
-        \ 'autoload' : {
-        \ 'filetypes' : [ 'puppet' ],
-        \ }}
+NeoBundle 'rodjek/vim-puppet'
 " NeoBundle 'thoughtbot/vim-rspec'
 NeoBundle 'vim-ruby/vim-ruby'
 " NeoBundle 'tsaleh/vim-matchit'
