@@ -63,6 +63,7 @@ install zsh
 install zsh-completions
 cask install amethyst
 cask install firefox
+cask install flux
 cask install google-japanese-ime
 cask install onepassword
 cask install simplecap
