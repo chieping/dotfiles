@@ -44,6 +44,9 @@ nnoremap c :tabduplicate<CR>
 
 noremap <Esc><Esc> :noh<CR>
 
+" use vimp's view-source
+noremap <M-u> :<C-u>viewsource<CR>
+
 nnoremap C c
 
 nnoremap j 6j
