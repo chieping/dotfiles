@@ -22,6 +22,7 @@ install ed
 install findutils
 install gawk
 install gcc48
+install gibo
 install gist
 install git
 install git-flow
