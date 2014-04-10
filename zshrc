@@ -116,6 +116,8 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 bindkey '^p' history-search-backward
+bindkey '^[' backward-word
+bindkey '^]' forward-word
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
