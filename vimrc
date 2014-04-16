@@ -92,8 +92,6 @@ endif
 imap ✠ <S-CR>
 map  ✠ <S-CR>
 
-syntax enable
-
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -473,8 +471,10 @@ function! MyMode()
 endfunction
 
 let g:solarized_termtrans=1
-set background=dark
 let g:solarized_termcolors=256
+syntax enable
+set background=dark
 colorscheme solarized
+
 highlight WhitespaceEOL ctermbg=124 guibg=#880000
 match WhitespaceEOL /\s\+$/
