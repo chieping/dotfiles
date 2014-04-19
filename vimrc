@@ -124,6 +124,7 @@ let g:submode_timeout=0
 " ######################### Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
