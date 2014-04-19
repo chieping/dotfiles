@@ -19,8 +19,17 @@ function homebrew {
   brew outdated
 }
 
+function ruby_build {
+  echo "####    ruby-build    ####"
+  local REPO_DIR=$RBENV_ROOT/plugins/ruby-build
+  cd $REPO_DIR && git pull --stat
+  echo
+}
+
 vim_plugins
 echo
 oh_my_zsh
+echo
+ruby_build
 echo
 homebrew
