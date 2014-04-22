@@ -345,6 +345,21 @@ call unite#custom#action('directory', 'nerdtree', nerdtree)
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
 
+" ######################### vim-expand-region
+let g:expand_region_text_objects_ruby = {
+      \ 'iw'  :0,
+      \ 'iW'  :0,
+      \ 'i"'  :0,
+      \ 'i''' :0,
+      \ 'i]'  :1,
+      \ 'ib'  :1,
+      \ 'iB'  :1,
+      \ 'il'  :0,
+      \ 'im'  :0,
+      \ 'am'  :0,
+      \ 'ie'  :0,
+      \ }
+
 " ######################### Signify
 call submode#enter_with('signify-move', 'n', '', '<Leader>g')
 call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
