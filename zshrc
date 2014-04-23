@@ -116,6 +116,7 @@ if [ -n "$LS_COLORS" ]; then
 fi
 
 bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
 bindkey '^[' backward-word
 bindkey '^]' forward-word
 
