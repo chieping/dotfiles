@@ -15,6 +15,7 @@ NeoBundleLazy 'Shougo/vimshell', {
         \ }}
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
+NeoBundle 'tsukkee/unite-help'
 " NeoBundle 'rhysd/accelerated-jk'
 " NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
@@ -243,6 +244,9 @@ nnoremap <silent> [unite]u  :<C-u>Unite
 " directory_mru
 nnoremap <silent> [unite]d  :<C-u>Unite
         \ -default-action=nerdtree directory_mru<CR>
+" unite-help
+nnoremap <silent> [unite]h  :<C-u>Unite
+        \ help<CR>
 nnoremap <silent> [unite]f
         \ :<C-u>Unite -buffer-name=resume resume<CR>
 nnoremap <silent> [unite]ma
