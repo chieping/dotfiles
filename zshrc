@@ -57,7 +57,7 @@ alias ag='ag --smart-case'
 alias brews='brew list -1'
 alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 alias ssh='TERM=xterm ssh'
-alias atom='/Applications/Atom.app/Contents/Resources/app/atom.sh'
+alias atom='~/Applications/Atom.app/Contents/Resources/app/atom.sh'
 
 function google() {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`

@@ -46,6 +46,7 @@ install nmap
 install ossp-uuid
 install pidof
 install postgresql
+install pandoc
 install pstree
 install rainbarf
 install rbenv-bundler
@@ -63,6 +64,7 @@ install z
 install zsh
 install zsh-completions
 cask install amethyst
+cask install atom
 cask install firefox
 cask install flux
 cask install google-japanese-ime
