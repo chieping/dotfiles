@@ -1,17 +1,20 @@
 #!/bin/bash
 
-function vim_plugins {
+vim_plugins()
+{
   echo "####    vim plugins    ####"
   vim -n -e -s -S ~/.vimrc +'verbose NeoBundleUpdate' +'! echo; echo; echo NeoBundleupdatesLog' +'verbose NeoBundleUpdatesLog' +'! echo' +quit
 }
 
-function oh_my_zsh {
+oh_my_zsh()
+{
   echo "####    oh-my-zsh    ####"
   ZSH=~/.oh-my-zsh
   /usr/bin/env ZSH=$ZSH /bin/sh $ZSH/tools/upgrade.sh
 }
 
-function homebrew {
+homebrew()
+{
   echo "####    homebrew    ####"
   brew update
   echo
@@ -19,7 +22,8 @@ function homebrew {
   brew outdated
 }
 
-function ruby_build {
+ruby_build()
+{
   echo "####    ruby-build    ####"
   local REPO_DIR=$RBENV_ROOT/plugins/ruby-build
   cd $REPO_DIR && git pull --stat
