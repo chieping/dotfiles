@@ -6,6 +6,8 @@ autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 
 autocmd FileType java set tabstop=4 shiftwidth=4 softtabstop=4 noet
 
+autocmd FileType javascript set tabstop=4 shiftwidth=2 softtabstop=2
+
 autocmd FileType markdown set tabstop=4 shiftwidth=4 softtabstop=4
 
 autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setf tmux
