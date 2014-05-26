@@ -15,6 +15,7 @@ set status=location
 set titlestring=""
 set hintchars=fjklasdhguionmerv
 set smartcase
+set gui=none,tabs,bookmarks
 
 " Show hint with no any label or value on input elements
 set hintinputs=""
