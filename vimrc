@@ -429,6 +429,23 @@ else
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
 
+inoremap <expr><CR> <SID>ExCr()
+function! s:ExCr()
+  if col('.') != col('$')
+    return "\<CR>"
+  endif
+  let l = getline('.')
+  if l =~ '{$'
+    return "\<CR>}\<Up>\<End>\<CR>"
+  elseif l =~ '($'
+    return "\<CR>)\<Up>\<End>\<CR>"
+  elseif l =~ '[$'
+    return "\<CR>]\<Up>\<End>\<CR>"
+  else
+    return "\<CR>"
+  endif
+endfunction
+
 " ######################### Lightline.vim
 let g:lightline = {
         \ 'colorscheme': 'solarized',
