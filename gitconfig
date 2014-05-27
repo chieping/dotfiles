@@ -1,6 +1,8 @@
 [user]
-	email = takashi.honda.01@gmail.com
-	name = chieping
+	name = SET_ME_LOCALLY
+	email = SET_ME_LOCALLY
+[init]
+	templatedir = ~/.git_templates
 [core]
 	excludesfile = /opt/boxen/config/git/gitignore
 	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
@@ -20,6 +22,9 @@
 	dic = diff --cached
 	df = diff HEAD..FETCH_HEAD
 	mf = merge --ff-only FETCH_HEAD
+	setc = !git config user.name chieping && git config user.email takashi.honda.01@gmail.com && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
+	setm = !git config user.name thonda && git config user.email takashi_honda@monex.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
+	seta = !git config user.name 'Takashi Honda' && git config user.email takashi.honda@axisware.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 [push]
 	default = simple
 
