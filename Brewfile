@@ -68,6 +68,7 @@ cask install atom
 cask install firefox
 cask install flux
 cask install google-japanese-ime
+cask install libreoffice
 cask install onepassword
 cask install simplecap
 cask install stackroom
