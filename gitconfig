@@ -20,8 +20,8 @@
 	dc = diff --cached
 	di = diff
 	dic = diff --cached
-	df = diff HEAD..FETCH_HEAD
-	mf = merge --ff-only FETCH_HEAD
+	do = diff HEAD..origin
+	mo = merge --ff-only origin
 	setc = !git config user.name chieping && git config user.email takashi.honda.01@gmail.com && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	setm = !git config user.name 'Takashi Honda' && git config user.email takashi_honda@monex.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	seta = !git config user.name 'Takashi Honda' && git config user.email takashi.honda@axisware.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
