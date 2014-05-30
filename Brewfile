@@ -76,4 +76,5 @@ cask install the-unarchiver
 cask install vagrant
 cask install virtualbox
 cask install wireshark
+cask install xquartz
 cask install xtrafinder
