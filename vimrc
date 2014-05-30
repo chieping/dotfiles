@@ -36,6 +36,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "         \ }}
 NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'tpope/vim-endwise'
+NeoBundle 'jiangmiao/auto-pairs'
 " NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'mv/mv-vim-puppet'
 " NeoBundle 'thoughtbot/vim-rspec'
