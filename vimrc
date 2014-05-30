@@ -177,16 +177,22 @@ cnoremap s/ s/\v
 noremap c "_c
 noremap C "_C
 
-inoremap <C-h> <Left>
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-l> <Right>
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
 inoremap <C-^> <Esc>^i
 
 inoremap <C-e> <End>
+nnoremap <C-e> <End>
 inoremap <C-a> <Home>
+nnoremap <C-a> <Home>
 
 inoremap <C-d> <Delete>
+inoremap <C-h> <BS>
+
+inoremap <C-k> <Esc>ld$a
+inoremap <C-u> <Esc>ld0i
 
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
