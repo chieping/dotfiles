@@ -64,6 +64,7 @@ NeoBundle 'tpope/vim-repeat'
 " NeoBundle 'wesleyche/SrcExpl'
 " NeoBundle 'wesleyche/Trinity'
 NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
 NeoBundleLazy 'closetag.vim', {
