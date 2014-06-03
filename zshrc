@@ -61,9 +61,13 @@ alias atom='~/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias apm='~/Applications/Atom.app/Contents/Resources/app/apm/node_modules/atom-package-manager/bin/apm'
 alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
 
-function google() {
+google() {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
 }
+bitbucket() {
+  open https://bitbucket.org/monexlab/$@
+}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
