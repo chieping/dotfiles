@@ -61,11 +61,24 @@ alias atom='~/Applications/Atom.app/Contents/Resources/app/atom.sh'
 alias apm='~/Applications/Atom.app/Contents/Resources/app/apm/node_modules/atom-package-manager/bin/apm'
 alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
 
-google() {
+google()
+{
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
 }
-bitbucket() {
-  open https://bitbucket.org/monexlab/$@
+bb()
+{
+  repo=$1
+  if [ "$repo" = "" ]; then
+    repo=$(git rev-parse --show-toplevel | perl -pe 's;.+/;;')
+  fi
+  open "https://bitbucket.org/monexlab/$repo"
+}
+bbclone()
+{
+  echo -n "git@bitbucket.org:monexlab/$1 ok?(y/n) [y]: "; read ans
+  if [ "$ans" != n ]; then
+    git clone git@bitbucket.org:monexlab/$1
+  fi
 }
 
 # Set to this to use case-sensitive completion
