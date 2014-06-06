@@ -188,9 +188,7 @@ inoremap <C-f> <Right>
 inoremap <C-^> <Esc>^i
 
 inoremap <C-e> <End>
-nnoremap <C-e> <End>
 inoremap <C-a> <Home>
-nnoremap <C-a> <Home>
 
 inoremap <C-d> <Delete>
 inoremap <C-h> <BS>
