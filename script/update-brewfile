@@ -1,6 +1,6 @@
 #!/bin/bash -e
-
+cwd=`pwd`
 cat Brewfile.base > Brewfile
 brew leaves | sed 's/^/install /' >> Brewfile
-# カレントディレクトリにamethystファイルがあるためにエラーとなってしまうためのworkaround
-( pushd $HOMEBREW_ROOT > /dev/null; brew cask list | sed 's/^/cask install /'; popd > /dev/null) >> Brewfile
+cd / # カレントディレクトリにamethystファイルがあるためにエラーとなってしまうためのworkaround
+brew cask list | sed 's/^/cask install /' >> $cwd/Brewfile
