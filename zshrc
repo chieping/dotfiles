@@ -78,7 +78,7 @@ bbclone()
 {
   echo -n "git@bitbucket.org:monexlab/$1 ok?(y/n) [y]: "; read ans
   if [ "$ans" != n ]; then
-    git clone git@bitbucket.org:monexlab/$1
+    ghq get git@bitbucket.org:monexlab/$1
   fi
 }
 
