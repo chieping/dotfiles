@@ -16,6 +16,7 @@ NeoBundleLazy 'Shougo/vimshell', {
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
+NeoBundle 'sorah/unite-ghq'
 " NeoBundle 'rhysd/accelerated-jk'
 " NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
@@ -255,6 +256,9 @@ nnoremap <silent> [unite]u  :<C-u>Unite
 " directory_mru
 nnoremap <silent> [unite]d  :<C-u>Unite
         \ -default-action=nerdtree directory_mru<CR>
+" ghq
+nnoremap <silent> [unite]q  :<C-u>Unite
+        \ -default-action=ghq_nerdtree ghq<CR>
 " unite-help
 nnoremap <silent> [unite]h  :<C-u>Unite
         \ help<CR>
@@ -356,6 +360,16 @@ function! nerdtree.func(candidate)
   execute "NERDTree" a:candidate[0].word
 endfunction
 call unite#custom#action('directory', 'nerdtree', nerdtree)
+
+" for unite-ghq
+let s:ghq_root = "~/src"
+let ghq_nerdtree = { 'is_selectable' : 1 }
+function! ghq_nerdtree.func(candidate)
+  execute "lcd" s:ghq_root . "/" . a:candidate[0].word
+  execute "NERDTree" s:ghq_root . "/" . a:candidate[0].word
+endfunction
+call unite#custom#action('directory', 'ghq_nerdtree', ghq_nerdtree)
+
 
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
