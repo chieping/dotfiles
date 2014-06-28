@@ -93,6 +93,7 @@ ignorekeys add www\\.slideshare\\.net
 ignorekeys add speakerdeck\\.com
 ignorekeys add www\\.lingq\\.com
 ignorekeys add localhost
+ignorekeys add twitter\\.com
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
