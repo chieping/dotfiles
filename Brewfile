@@ -40,6 +40,7 @@ install maven
 install md5sha1sum
 install mongodb
 install mysql
+install mercurial
 install nginx
 install nkf
 install nmap

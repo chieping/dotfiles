@@ -1,3 +1,4 @@
-# For now, this is just a memo
+#!/bin/bash
 
-textql
+go get github.com/motemen/ghq
+go get -u github.com/dinedal/textql

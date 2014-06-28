@@ -34,6 +34,8 @@
 
 [hub]
 	protocol = https
+[ghq]
+	root = ~/src
 
 [diff]
 	tool = p4merge
