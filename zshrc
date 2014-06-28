@@ -20,8 +20,8 @@ ZSH_TMUX_AUTOSTART=true
 source /opt/boxen/env.sh
 
 # golang settings
-export GOPATH=$HOME/gocode
-export PATH="$HOME/gocode/bin:$PATH"
+export GOPATH=$HOME
+export PATH="$HOME/bin:$PATH"
 
 export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
