@@ -22,6 +22,7 @@ NeoBundle 'sorah/unite-ghq'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
+NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
 " NeoBundle 'majutsushi/tagbar'
@@ -136,6 +137,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
+
+" ######################### switch.vim
+" nnoremap - :Switch<CR>
 
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
