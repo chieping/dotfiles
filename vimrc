@@ -405,10 +405,6 @@ map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
 
-call submode#enter_with('easymotion', 'n', 'r', '<Leader>;', '<Plug>(easymotion-next)')
-call submode#map('easymotion', 'n', 'r', ';', '<Plug>(easymotion-next)')
-call submode#map('easymotion', 'n', 'r', ',', '<Plug>(easymotion-prev)')
-
 call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>3>')
 call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w>3<')
 call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>3-')
