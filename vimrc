@@ -139,7 +139,7 @@ let g:syntastic_ruby_checkers = ['rubocop']
 map r <Plug>(operator-replace)
 
 " ######################### switch.vim
-" nnoremap - :Switch<CR>
+nnoremap - :Switch<CR>
 
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.

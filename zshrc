@@ -76,10 +76,11 @@ bb()
 }
 bbclone()
 {
-  echo -n "git@bitbucket.org:monexlab/$1 ok?(y/n) [y]: "; read ans
-  if [ "$ans" != n ]; then
-    ghq get git@bitbucket.org:monexlab/$1
+  if [ "$1" = "" ]; then
+    echo "USAGE: bbclone <repositry name>"
+    return 0
   fi
+  ghq get git@bitbucket.org:monexlab/$1
 }
 
 # Set to this to use case-sensitive completion
