@@ -74,7 +74,7 @@ bb()
   fi
   open "https://bitbucket.org/monexlab/$repo"
 }
-bbclone()
+bbc()
 {
   if [ "$1" = "" ]; then
     echo "USAGE: bbclone <repositry name>"
