@@ -187,6 +187,8 @@ cnoremap s/ s/\v
 " use black hole register
 noremap c "_c
 noremap C "_C
+noremap s "_s
+noremap S "_S
 
 inoremap <C-b> <Left>
 inoremap <C-n> <Down>
