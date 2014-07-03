@@ -283,6 +283,11 @@ nnoremap <silent> [unite]s
         \ jump_point file_point buffer_tab
         \ file_rec:! file file/new file_mru<CR>
 
+" See FAQ - Unite does not respect 'splitright' option
+call unite#custom#profile('default', 'context', {
+  \   'prompt_direction': 'top'
+  \ })
+
 " Start insert.
 let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
