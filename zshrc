@@ -38,30 +38,6 @@ ZSH=$HOME/.oh-my-zsh
 # time that oh-my-zsh is loaded.
 ZSH_THEME="gallois"
 
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-alias diff="colordiff"
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
-alias v='vim'
-alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
-alias vup='vagrant up --no-provision'
-alias vh='vagrant halt'
-alias vst='vagrant status'
-alias vp='vagrant provision'
-alias vd='vagrant destroy'
-alias vssh='vagrant ssh'
-alias vs='vagrant sandbox'
-alias ag='ag --smart-case'
-alias brews='brew list -1'
-alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
-alias ssh='TERM=xterm ssh'
-alias atom='~/Applications/Atom.app/Contents/Resources/app/atom.sh'
-alias apm='~/Applications/Atom.app/Contents/Resources/app/apm/node_modules/atom-package-manager/bin/apm'
-alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
-alias routing-table='netstat -rn'
-
 google()
 {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
@@ -155,3 +131,31 @@ bindkey '^]' forward-word
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias diff="colordiff"
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
+alias v='vim'
+alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
+alias vup='vagrant up --no-provision'
+alias vh='vagrant halt'
+alias vst='vagrant status'
+alias vp='vagrant provision'
+alias vd='vagrant destroy'
+alias vssh='vagrant ssh'
+alias vs='vagrant sandbox'
+alias ag='ag --smart-case'
+alias brews='brew list -1'
+alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
+alias ssh='TERM=xterm ssh'
+alias atom='~/Applications/Atom.app/Contents/Resources/app/atom.sh'
+alias apm='~/Applications/Atom.app/Contents/Resources/app/apm/node_modules/atom-package-manager/bin/apm'
+alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
+alias routing-table='netstat -rn'
