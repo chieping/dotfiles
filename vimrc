@@ -229,7 +229,9 @@ let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
 " ######################### fugitive
-command! -nargs=* Gc :Gcommit -v <args>
+vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
+vnoremap gb :<C-u>'<,'>Gblame<CR>
+cabbrev  gl Glog \| cwindow
 
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
@@ -245,6 +247,14 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 " The prefix key.
 nnoremap    [unite]   <Nop>
 nmap    m [unite]
+
+let g:unite_source_alias_aliases = {
+\   'messages' : {
+\       'source': 'output',
+\       'args': 'message',
+\   },
+\}
+call unite#custom#source('messages', 'sorters', 'sorter_reverse')
 
 nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
         \ -buffer-name=files buffer file_mru bookmark file<CR>
@@ -269,14 +279,11 @@ nnoremap <silent> [unite]q  :<C-u>Unite
         \ -default-action=ghq_nerdtree ghq<CR>
 " unite-help
 nnoremap <silent> [unite]h  :<C-u>Unite
-        \ help<CR>
-nnoremap <silent> [unite]f
-        \ :<C-u>Unite -buffer-name=resume resume<CR>
+        \ help -default-action=tabopen<CR>
 nnoremap <silent> [unite]ma
         \ :<C-u>Unite mapping<CR>
 nnoremap <silent> [unite]me
-        \ :<C-u>Unite output:message<CR>
-nnoremap  [unite]f  :<C-u>Unite source<CR>
+        \ :<C-u>Unite messages<CR>
 
 nnoremap <silent> [unite]s
         \ :<C-u>Unite -buffer-name=files -no-split
@@ -285,8 +292,8 @@ nnoremap <silent> [unite]s
 
 " See FAQ - Unite does not respect 'splitright' option
 call unite#custom#profile('default', 'context', {
-  \   'prompt_direction': 'top'
-  \ })
+        \   'prompt_direction': 'top'
+        \ })
 
 " Start insert.
 let g:unite_enable_start_insert = 1
