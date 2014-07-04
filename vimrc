@@ -148,6 +148,7 @@ vmap gx <Plug>(openbrowser-smart-search)
 
 " ######################### vim-sneak
 let g:sneak#use_ic_scs = 1
+let g:sneak#s_next = 1
 
 "replace 'f' with inclusive 2-char Sneak
 nmap f <Plug>Sneak_s
