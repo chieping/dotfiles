@@ -3,6 +3,7 @@
 
 tap phinze/homebrew-cask
 tap laurent22/massren
+tap peco/peco
 
 install brew-cask
 install findutils --default-names

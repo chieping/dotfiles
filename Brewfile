@@ -3,6 +3,7 @@
 
 tap phinze/homebrew-cask
 tap laurent22/massren
+tap peco/peco
 
 install brew-cask
 install findutils --default-names
@@ -34,17 +35,19 @@ install gnutls
 install grep
 install gzip
 install htop-osx
+install httpie
 install hub
 install massren
 install maven
 install md5sha1sum
+install mercurial
 install mongodb
 install mysql
-install mercurial
 install nginx
 install nkf
 install nmap
 install ossp-uuid
+install peco
 install pidof
 install postgresql
 install pandoc
