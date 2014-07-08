@@ -11,15 +11,12 @@ install go --cross-compile-common
 
 install ack
 install binutils
-install apple-gcc42
 install boot2docker
 install brew-cask
 install cmake
 install colordiff
 install coreutils
-install diffutils
 install dnsmasq
-install ed
 install findutils
 install gawk
 install gcc48
@@ -32,8 +29,6 @@ install gnu-sed
 install gnu-tar
 install gnu-which
 install gnutls
-install grep
-install gzip
 install htop-osx
 install httpie
 install hub
