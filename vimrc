@@ -134,6 +134,7 @@ let g:submode_timeout=0
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
 
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
