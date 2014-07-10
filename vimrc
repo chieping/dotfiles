@@ -237,6 +237,10 @@ let g:NERDTreeMapToggleFilters = ''     " f
 let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
+" this makes possible to use unite grep in nerdtree window
+autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
+        \ grep:. -buffer-name=search-buffer<CR>
+
 " ######################### fugitive
 vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
 vnoremap gb :<C-u>'<,'>Gblame<CR>
