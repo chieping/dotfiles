@@ -27,6 +27,8 @@
 	setm = !git config user.name 'Takashi Honda' && git config user.email takashi_honda@monex.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	seta = !git config user.name 'Takashi Honda' && git config user.email takashi.honda@axisware.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	oops = commit --amend --reset-author
+	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 [push]
 	default = simple
 
