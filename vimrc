@@ -142,6 +142,13 @@ map r <Plug>(operator-replace)
 " ######################### switch.vim
 nnoremap - :Switch<CR>
 
+let g:switch_custom_definitions = [
+        \   {
+        \     '''\([^'']\+\)''': '"\1"',
+        \     '"\([^"]\+\)"': '''\1'''
+        \   },
+        \ ]
+
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
