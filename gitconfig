@@ -1,3 +1,4 @@
+# vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
 [user]
 	name = SET_ME_LOCALLY
 	email = SET_ME_LOCALLY
@@ -51,5 +52,5 @@
 
 [color "diff"]
 	meta = black cyan
-
-# vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
+[rebase]
+	autosquash = true
