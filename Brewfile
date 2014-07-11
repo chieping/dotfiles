@@ -64,6 +64,7 @@ install zsh
 install zsh-completions
 cask install amethyst
 cask install atom
+cask install dash
 cask install firefox
 cask install flux
 cask install google-japanese-ime

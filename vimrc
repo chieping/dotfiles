@@ -85,6 +85,7 @@ NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'markdown' ],
         \ }}
+NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 
@@ -231,7 +232,7 @@ map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
 " ######################### NERDTree
-nmap <Leader>d :NERDTreeToggle<CR>
+nmap <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>s :NERDTreeFind<CR>
 
 let NERDTreeMinimalUI=1
@@ -248,6 +249,9 @@ autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unit
         \ grep:. -buffer-name=search-buffer<CR>
 autocmd FileType nerdtree nnoremap <buffer> <silent> mq  :<C-u>Unite
         \ -default-action=ghq_nerdtree ghq<CR>
+
+" ######################### dash.vim
+nmap <silent> <leader>d <Plug>DashSearch
 
 " ######################### fugitive
 vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
