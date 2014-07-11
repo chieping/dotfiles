@@ -273,12 +273,21 @@ vmap <Leader>a: :Tabularize /:\zs<CR>
 nnoremap    [unite]   <Nop>
 nmap    m [unite]
 
+let g:unite_source_menu_menus = {}
+let g:unite_source_menu_menus.my = {
+        \   'description': 'my menu',
+        \ }
+let g:unite_source_menu_menus.my.command_candidates = {
+        \   'remove extra whitespaces': '%s/\s\+$//g',
+        \   'force write': 'w !sudo tee %',
+        \ }
+
 let g:unite_source_alias_aliases = {
-\   'messages' : {
-\       'source': 'output',
-\       'args': 'message',
-\   },
-\}
+        \   'messages' : {
+        \     'source': 'output',
+        \     'args': 'message',
+        \   },
+        \ }
 call unite#custom#source('messages', 'sorters', 'sorter_reverse')
 
 nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
@@ -314,6 +323,8 @@ nnoremap <silent> [unite]s
         \ :<C-u>Unite -buffer-name=files -no-split
         \ jump_point file_point buffer_tab
         \ file_rec:! file file/new file_mru<CR>
+
+nnoremap <silent> [unite]my :<C-u>Unite menu:my<CR>
 
 " See FAQ - Unite does not respect 'splitright' option
 call unite#custom#profile('default', 'context', {
@@ -467,9 +478,6 @@ cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate
 cabbrev bul  NeoBundleUpdatesLog
 
-" Clear WhitespaceEOL
-nmap <Leader>c :%s/\s\+$//g<CR>
-
 function! ToggleWrap()
   if (&wrap == 1)
     set nowrap
@@ -479,9 +487,6 @@ function! ToggleWrap()
 endfunction
 
 map <Leader>w :call ToggleWrap()<CR>
-
-" force write
-map <Leader>fw :w !sudo tee %<CR>
 
 " Cursor settings. This makes terminal vim sooo much nicer!
 " Tmux will only forward escape sequences to the terminal if surrounded by a DCS
