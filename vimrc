@@ -198,6 +198,8 @@ noremap c "_c
 noremap C "_C
 noremap s "_s
 noremap S "_S
+noremap x "_x
+noremap X "_X
 
 inoremap <C-b> <Left>
 inoremap <C-n> <Down>
