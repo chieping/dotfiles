@@ -204,9 +204,13 @@ inoremap <C-n> <Down>
 inoremap <C-p> <Up>
 inoremap <C-f> <Right>
 inoremap <C-^> <Esc>^i
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
 
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-a> <Home>
 
 inoremap <C-d> <Delete>
 inoremap <C-h> <BS>
