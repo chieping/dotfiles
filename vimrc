@@ -88,6 +88,7 @@ NeoBundleLazy 'kannokanno/previm', {
 NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
+NeoBundle 'glidenote/memolist.vim'
 
 filetype plugin on
 
@@ -139,6 +140,9 @@ let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
 
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
+
+" ######################### memolist.vim
+let g:memolist_memo_suffix = "md"
 
 " ######################### switch.vim
 nnoremap - :Switch<CR>
