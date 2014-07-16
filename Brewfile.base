@@ -2,6 +2,7 @@
 # Run `script/update-brewfile` to update Brewfile.
 
 tap phinze/homebrew-cask
+tap homebrew/dupes
 tap laurent22/massren
 tap peco/peco
 
