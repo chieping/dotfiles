@@ -1,3 +1,31 @@
+set nosmoothscroll
+
+let hintcharacters="fjklasdhguionmerv"
+let barposition = "bottom"
+let highlight = "#ffff00"
+
+let searchengine alc = "http://eow.alc.co.jp/search?ref=sa&q=%s"
+let searchalias a = "alc"
+
+let searchengine weblio = "http://ejje.weblio.jp/content_find?query=%s&searchType=exact"
+let searchalias lio = "weblio"
+
+let searchengine dictionary_com = "http://dictionary.reference.com/browse/%s"
+let searchalias d = "dictionary_com"
+
+map ; :
+
+map <C-o> goBack
+map <C-i> goForward
+
+map <C-b> scrollFullPageUp
+map <C-f> scrollFullPageDown
+map <Space> scrollFullPageDown
+
 map h previousTab
 map l nextTab
 
+map d closeTab
+map u lastClosedTab
+
+map i goToInput
