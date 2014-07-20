@@ -21,6 +21,10 @@ map <C-i> goForward
 map <C-b> scrollFullPageUp
 map <C-f> scrollFullPageDown
 map <Space> scrollFullPageDown
+map <S-Space> scrollFullPageUp
+
+map <Down> scrollDown
+map <Up> scrollUp
 
 map h previousTab
 map l nextTab
@@ -29,3 +33,5 @@ map d closeTab
 map u lastClosedTab
 
 map i goToInput
+
+map <M-b> :chrome://bookmarks<CR>
