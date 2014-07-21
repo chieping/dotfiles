@@ -23,6 +23,9 @@ source /opt/boxen/env.sh
 export GOPATH=$HOME
 export PATH="$HOME/bin:$PATH"
 
+# java settings
+export JAVA_HOME=$(/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v 1.8)
+
 export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
