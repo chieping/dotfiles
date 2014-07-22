@@ -22,6 +22,7 @@ source /opt/boxen/env.sh
 # golang settings
 export GOPATH=$HOME
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/src/dotfiles/bin:$PATH"
 
 # java settings
 export JAVA_HOME=$(/System/Library/Frameworks/JavaVM.framework/Versions/A/Commands/java_home -v 1.8)
@@ -167,3 +168,4 @@ alias gg='ghq get'
 alias gl='ghq look'
 alias vimrc='vim ~/.vimrc'
 alias e='cd $(ghq list -p | peco)'
+alias bundlep='cd $(bundler_gems | peco)'
