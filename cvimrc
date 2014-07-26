@@ -35,3 +35,5 @@ map u lastClosedTab
 map i goToInput
 
 map <M-b> :chrome://bookmarks<CR>
+
+map <M-f> openSearchBar
