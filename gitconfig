@@ -57,3 +57,5 @@
 	meta = black cyan
 [rebase]
 	autosquash = true
+[svn]
+	rmdir = true
