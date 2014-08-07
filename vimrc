@@ -147,6 +147,10 @@ let g:memolist_unite = 1
 
 map <silent> <Leader>mn  :MemoNew<CR>
 map <silent> <Leader>ml  :MemoList<CR>
+
+" ######################### vim-table-mode
+let g:table_mode_corner = '|'
+
 " ######################### switch.vim
 nnoremap - :Switch<CR>
 
