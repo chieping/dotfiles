@@ -38,4 +38,4 @@ map <M-b> :chrome://bookmarks<CR>
 
 map <M-f> openSearchBar
 
-let blacklists = ["*://*/vsphere-client/*"]
+let blacklists = ["*://*/vsphere-client/*", "*://www.youtube.com/*"]
