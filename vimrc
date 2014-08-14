@@ -271,7 +271,8 @@ nmap <silent> <leader>d <Plug>DashSearch
 " ######################### fugitive
 vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
 vnoremap gb :<C-u>'<,'>Gblame<CR>
-cabbrev  gl Glog \| cwindow
+nnoremap gs :<C-u>Gstatus<CR>
+nnoremap gl :<C-u>Glog \| cwindow<CR>
 
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
