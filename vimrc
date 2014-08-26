@@ -208,11 +208,6 @@ nnoremap <S-CR> o
 " Yank like Tmux copy mode
 vnoremap <CR> y
 
-" Very magic is good
-noremap / /\v
-noremap ? ?\v
-cnoremap s/ s/\v
-
 " use black hole register
 noremap c "_c
 noremap C "_C
