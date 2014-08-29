@@ -228,6 +228,7 @@ inoremap <C-e> <End>
 inoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-a> <Home>
+cnoremap <C-d> <Delete>
 
 inoremap <C-d> <Delete>
 inoremap <C-h> <BS>
