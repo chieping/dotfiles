@@ -7,4 +7,8 @@ LineLength:
 
 # Separate every 3 digits in the integer portion of a number with underscores(_).
 NumericLiterals:
-  Enables: false
+  Enabled: false
+
+# Use the new Ruby 1.9 hash syntax.
+HashSyntax:
+  Enabled: false
