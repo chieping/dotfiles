@@ -1,7 +1,6 @@
 " vim: set filetype=vim :
 " using plugin list {{{
 " bookmarktoolbar-hint.js
-" migemo_find.js
 " lookupDictionary.js
 " caret-hint.js
 " walk-input.js
@@ -34,7 +33,6 @@ nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
 nnoremap <Leader>tc :set gui=none<CR>
 
 noremap <M-f> /
-cnoremap <M-f> <C-u>\
 inoremap <M-f> <ESC>/
 
 nnoremap d :tabclose -select lastactive<CR>
