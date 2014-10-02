@@ -117,6 +117,7 @@ set scrolloff=100
 set helpheight=100
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+set undodir=~/.vim/undo
 set cursorline
 set number
 set noeb vb t_vb=           "Disable beep and flash
