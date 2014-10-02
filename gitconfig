@@ -32,6 +32,7 @@
 	oops = commit --amend --reset-author
 	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+	delete-merged-branches = !git branch --merged | egrep -v '\\*|master|develop' | xargs git branch -d
 [push]
 	default = simple
 
