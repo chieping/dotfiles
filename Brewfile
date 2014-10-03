@@ -66,7 +66,6 @@ install wget
 install z
 install zsh
 install zsh-completions
-cask install amethyst
 cask install atom
 cask install butter
 cask install dash
