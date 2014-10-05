@@ -13,6 +13,9 @@ let searchalias lio = "weblio"
 let searchengine dictionary_com = "http://dictionary.reference.com/browse/%s"
 let searchalias d = "dictionary_com"
 
+let searchengine googleja = "https://www.google.com/search?as_q=%s&lr=lang_ja"
+let searchalias gj = "googleja"
+
 map ; :
 
 map <C-o> goBack
