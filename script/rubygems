@@ -1,4 +1,5 @@
 pry
+awesome_print
 rubocop
 puppet
 puppet-lint
