@@ -2,7 +2,7 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
+call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -90,6 +90,8 @@ NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 NeoBundle 'glidenote/memolist.vim'
+
+call neobundle#end()
 
 filetype plugin on
 
