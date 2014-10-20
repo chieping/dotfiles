@@ -7,7 +7,6 @@ tap laurent22/massren
 tap peco/peco
 
 install brew-cask
-install findutils --default-names
 install go --cross-compile-common
 
 install ack
@@ -29,7 +28,6 @@ install git-flow
 install gnu-indent
 install gnu-sed
 install gnu-tar
-install gnu-typist
 install gnu-which
 install gnutls
 install htop-osx
@@ -38,7 +36,6 @@ install hub
 install massren
 install maven
 install md5sha1sum
-install mercurial
 install mongodb
 install mysql
 install nginx
@@ -76,7 +73,6 @@ cask install hipchat
 cask install libreoffice
 cask install onepassword
 cask install simplecap
-cask install spectacle
 cask install stackroom
 cask install the-unarchiver
 cask install vagrant
