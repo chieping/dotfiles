@@ -63,7 +63,7 @@ NeoBundle 'lucapette/vim-textobj-underscore'
 NeoBundle 'kana/vim-operator-user'
 NeoBundle 'kana/vim-operator-replace'
 NeoBundle 'thinca/vim-textobj-between'
-NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
+" NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
 " http://vimcasts.org/episodes/supercharged-substitution-with-subvert/
 NeoBundle 'tpope/vim-abolish'
 NeoBundle 'tpope/vim-surround'
