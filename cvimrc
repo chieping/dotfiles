@@ -26,9 +26,6 @@ map <C-f> scrollFullPageDown
 map <Space> scrollFullPageDown
 map <S-Space> scrollFullPageUp
 
-map <Down> scrollDown
-map <Up> scrollUp
-
 map h previousTab
 map l nextTab
 
