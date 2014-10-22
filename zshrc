@@ -147,6 +147,7 @@ bindkey '^]' forward-word
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias rm='rm -I'
 alias diff="colordiff"
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
