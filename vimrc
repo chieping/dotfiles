@@ -127,6 +127,7 @@ set backspace=2             "Make backspace work like most other apps
 set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
+set shell=bash              "Workaround for zsh's awkward $PATH"
 set listchars=tab:›\ 
 if exists('+colorcolumn')
   set colorcolumn=80
