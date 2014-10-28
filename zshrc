@@ -121,6 +121,14 @@ if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
+function cdup() {
+  echo
+  cd ..
+  zle reset-prompt
+}
+zle -N cdup
+
+bindkey '^o' cdup
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 bindkey '^[' backward-word
