@@ -5,6 +5,7 @@ setopt nobeep
 export TERM=screen-256color
 export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export GIT_EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
+export CC=gcc
 
 fpath=($HOMEBREW_ROOT/share/zsh-completions $fpath)
 fpath=($HOMEBREW_ROOT/share/zsh/functions $fpath)
