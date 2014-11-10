@@ -86,10 +86,8 @@ ignorekeys clear
 ignorekeys add docs\\.google\\.com
 " ignorekeys add mail\\.google\\.com
 " ignorekeys add www\\.google\\.com/calendar
-ignorekeys add vim-adventures\\.com
 ignorekeys add www\\.slideshare\\.net
 ignorekeys add speakerdeck\\.com
-ignorekeys add www\\.lingq\\.com
 ignorekeys add localhost
 ignorekeys add twitter\\.com
 
@@ -100,3 +98,5 @@ style chrome://* .statuspanel-label {display: none;}
 
 highlight StatusLine color: black; background: transparent; font-weight: normal;
 highlight! Hint font-family: "Bitstream Vera Sans Mono",monaco,monospace; font-size: 12px; font-weight: bold; color: white; background-color: green; border-color: ButtonShadow; border-width: 0px; border-style: solid; padding: 2px; line-height: 1em;
+
+source! ~/.vimperatorrc.local
