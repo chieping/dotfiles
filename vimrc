@@ -38,6 +38,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "         \ 'mappings' : [ '<Plug>(easymotion-' ]
 "         \ }}
 NeoBundle 'justinmk/vim-sneak'
+NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'matchit.zip'
 NeoBundle 'jiangmiao/auto-pairs'
@@ -198,6 +199,11 @@ xmap t <Plug>Sneak_t
 xmap T <Plug>Sneak_T
 omap t <Plug>Sneak_t
 omap T <Plug>Sneak_T
+
+" ######################### incsearch.vim
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
 
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
