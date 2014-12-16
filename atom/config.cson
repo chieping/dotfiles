@@ -1,0 +1,17 @@
+'global':
+  'editor':
+    'fontSize': 12
+    'invisibles': {}
+  'exception-reporting':
+    'userId': 'e886837c-eb25-794c-e7ad-a876e43f9f8e'
+  'release-notes':
+    'viewedVersion': '0.94.0'
+  'welcome':
+    'showOnStartup': false
+  'metrics':
+    'userId': '5016e8ea4f294621ff80fd481868ea3b5add227f'
+  'core':
+    'themes': [
+      'solarized-dark-ui'
+      'solarized-dark-syntax'
+    ]
