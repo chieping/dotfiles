@@ -1,7 +1,4 @@
 'global':
-  'editor':
-    'fontSize': 12
-    'invisibles': {}
   'exception-reporting':
     'userId': 'e886837c-eb25-794c-e7ad-a876e43f9f8e'
   'release-notes':
@@ -15,3 +12,10 @@
       'solarized-dark-ui'
       'solarized-dark-syntax'
     ]
+    'disabledPackages': [
+      'symbols-view'
+    ]
+  'editor':
+    'invisibles': {}
+    'showInvisibles': true
+    'fontSize': 12
