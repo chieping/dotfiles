@@ -79,10 +79,11 @@ NeoBundleLazy 'closetag.vim', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
         \ }}
-NeoBundleLazy 'szw/vim-tags', {
-        \ 'autoload' : {
-        \ 'commands' : [ 'TagsGenerate', 'TagsGenerate!' ],
-        \ }}
+" NeoBundleLazy 'szw/vim-tags', {
+"         \ 'autoload' : {
+"         \ 'commands' : [ 'TagsGenerate', 'TagsGenerate!' ],
+"         \ }}
+NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundleLazy 'kannokanno/previm', {
         \ 'autoload' : {
         \ 'filetypes' : [ 'markdown' ],
@@ -526,6 +527,15 @@ else
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 endif
+
+
+" ######################### auto-ctags.vim
+" Use homebrew's ctags instead of kaoriya bundled one
+let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
+
+" Ctags Puppet Integration
+" http://www.gdb.me/puppet/using-vim-to-edit-puppet.html
+autocmd FileType puppet setlocal iskeyword+=:
 
 " ######################### Lightline.vim
 let g:lightline = {
