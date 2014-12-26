@@ -16,3 +16,7 @@
 #   'ctrl-P': 'core:move-up'
 #   'ctrl-p': 'core:move-down'
 #
+
+'.editor.vim-mode:not(.insert-mode)':
+  'y'  : 'my-command:yank'
+

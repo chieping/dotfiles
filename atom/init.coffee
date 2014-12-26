@@ -12,3 +12,9 @@
 #   editor = editorView.getEditor()
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrap(true)
+
+atom.workspaceView.eachEditorView (editorView) ->
+  editorView.command 'my-command:yank', ->
+    editorView.trigger('core:copy')
+    editorView.trigger('vim-mode:yank')
+
