@@ -13,4 +13,6 @@
     'fontSize': 12
     'showIndentGuide': true
     'showInvisibles': true
+    'invisibles':
+      'space': ' '
   'linter': {}
