@@ -1,21 +1,16 @@
 'global':
-  'exception-reporting':
-    'userId': 'e886837c-eb25-794c-e7ad-a876e43f9f8e'
-  'release-notes':
-    'viewedVersion': '0.94.0'
-  'welcome':
-    'showOnStartup': false
-  'metrics':
-    'userId': '5016e8ea4f294621ff80fd481868ea3b5add227f'
+  'recent-files':
+    'updated': false
   'core':
-    'themes': [
-      'solarized-dark-ui'
-      'solarized-dark-syntax'
-    ]
     'disabledPackages': [
       'symbols-view'
     ]
+  'exception-reporting':
+    'userId': '37bee979-1563-d09c-5512-73fcee34ce0a'
+  'welcome':
+    'showOnStartup': false
   'editor':
-    'invisibles': {}
-    'showInvisibles': true
     'fontSize': 12
+    'showIndentGuide': true
+    'showInvisibles': true
+  'linter': {}
