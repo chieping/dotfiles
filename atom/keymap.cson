@@ -20,3 +20,5 @@
 '.editor.vim-mode:not(.insert-mode)':
   'y'  : 'my-command:yank'
 
+'.tree-view':
+  'o': 'tree-view:open-selected-entry'
