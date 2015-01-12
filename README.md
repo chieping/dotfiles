@@ -5,7 +5,7 @@ dotfiles
 TODO
 
 ## Atom
-install stared packages
+install starred packages
 ```
 $ apm stars --install
 ```
