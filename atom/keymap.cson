@@ -21,4 +21,5 @@
   'y'  : 'my-command:yank'
 
 '.tree-view':
-  'o': 'tree-view:open-selected-entry'
+  'L': 'tree-view:recursive-expand-directory'
+  'H': 'tree-view:recursive-collapse-directory'
