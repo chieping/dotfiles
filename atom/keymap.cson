@@ -23,3 +23,8 @@
 '.tree-view':
   'L': 'tree-view:recursive-expand-directory'
   'H': 'tree-view:recursive-collapse-directory'
+  'ctrl-t l': 'tree-view:toggle-focus'
+
+'.editor':
+  'ctrl-t h': 'tree-view:toggle-focus'
+
