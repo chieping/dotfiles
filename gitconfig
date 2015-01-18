@@ -27,6 +27,7 @@
 	dp = diff HEAD@{1}..HEAD
 	do = !git diff HEAD..origin/`git rev-parse --abbrev-ref HEAD`
 	mo = !git merge --ff-only origin/`git rev-parse --abbrev-ref HEAD`
+	publish = !git push -u origin \"$(git rev-parse --abbrev-ref HEAD)\"
 	setc = !git config user.name chieping && git config user.email takashi.honda.01@gmail.com && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	setm = !git config user.name 'Takashi Honda' && git config user.email takashi_honda@monex.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
 	seta = !git config user.name 'Takashi Honda' && git config user.email takashi.honda@axisware.co.jp && echo "user.name: `git config user.name`" && echo "user.email: `git config user.email`"
