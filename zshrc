@@ -18,6 +18,8 @@ autoload -U compinit && compinit
 ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOSTART=true
 
+UNBUNDLED_COMMANDS=(pry)
+
 source /opt/boxen/env.sh
 
 # golang settings
