@@ -12,3 +12,8 @@ NumericLiterals:
 # Use the new Ruby 1.9 hash syntax.
 HashSyntax:
   Enabled: false
+
+# Set threshold value 50 instead of default value (10)
+MethodLength:
+  CountComments: false
+  Max: 50
