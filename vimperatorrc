@@ -88,8 +88,6 @@ ignorekeys add docs\\.google\\.com
 " ignorekeys add www\\.google\\.com/calendar
 ignorekeys add www\\.slideshare\\.net
 ignorekeys add speakerdeck\\.com
-ignorekeys add localhost
-ignorekeys add twitter\\.com
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
