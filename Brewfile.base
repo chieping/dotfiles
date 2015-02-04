@@ -5,8 +5,9 @@ tap phinze/homebrew-cask
 tap homebrew/dupes
 tap laurent22/massren
 tap peco/peco
+tap sanemat/font
 
 install brew-cask
-install findutils --default-names
+install findutils --with-default-names
 install go --cross-compile-common
 

@@ -5,8 +5,10 @@ tap phinze/homebrew-cask
 tap homebrew/dupes
 tap laurent22/massren
 tap peco/peco
+tap sanemat/font
 
 install brew-cask
+install findutils --with-default-names
 install go --cross-compile-common
 
 install ack
@@ -14,11 +16,13 @@ install apple-gcc42
 install binutils
 install boot2docker
 install brew-cask
+install cabal-install
 install colordiff
 install coreutils
 install dnsmasq
 install findutils
 install gawk
+install gcc
 install gcc48
 install gh
 install gibo
@@ -29,7 +33,9 @@ install gnu-indent
 install gnu-sed
 install gnu-tar
 install gnu-which
+install gnupg2
 install gnutls
+install gradle
 install htop-osx
 install httpie
 install hub
@@ -41,7 +47,7 @@ install mysql
 install nginx
 install nkf
 install nmap
-install pandoc
+install ossp-uuid
 install peco
 install pidof
 install postgresql
@@ -51,11 +57,14 @@ install rainbarf
 install rbenv-bundler
 install rbenv-ctags
 install reattach-to-user-namespace
+install ricty
 install ruby-build
 install ssh-copy-id
+install subversion
 install the_silver_searcher
 install tig
 install tmux
+install tomcat7
 install tree
 install watch
 install wdiff
@@ -69,9 +78,14 @@ cask install dash
 cask install firefox
 cask install flux
 cask install google-japanese-ime
+cask install heroku-toolbelt
 cask install hipchat
+cask install hosts
+cask install jitouch
 cask install libreoffice
-cask install onepassword
+cask install onepassword (!)
+cask install p4merge
+cask install shiftit
 cask install simplecap
 cask install stackroom
 cask install the-unarchiver
