@@ -1,5 +1,7 @@
 " vim: set filetype=vim :
 " using plugin list {{{
+" _libly.js
+" feedSomeKeys_3.js
 " bookmarktoolbar-hint.js
 " lookupDictionary.js
 " caret-hint.js
@@ -86,8 +88,12 @@ ignorekeys clear
 ignorekeys add docs\\.google\\.com
 " ignorekeys add mail\\.google\\.com
 " ignorekeys add www\\.google\\.com/calendar
-ignorekeys add www\\.slideshare\\.net
-ignorekeys add speakerdeck\\.com
+
+" feedSomeKeys_3
+command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
+lazy fmaps -urls='twitter\.com' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup .
+lazy fmaps -urls='www\.slideshare\.net' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
+lazy fmaps -urls='speakerdeck\.com' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
