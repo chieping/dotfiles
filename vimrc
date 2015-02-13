@@ -259,6 +259,9 @@ map b  <Plug>(smartword-b)
 map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
 
+" display candidates by default
+nnoremap <C-]> g<C-]>
+
 " ######################### NERDTree
 nmap <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>s :NERDTreeFind<CR>
