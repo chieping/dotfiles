@@ -95,7 +95,7 @@ NeoBundle 'glidenote/memolist.vim'
 
 call neobundle#end()
 
-filetype plugin on
+filetype plugin indent on
 
 NeoBundleCheck
 
@@ -107,7 +107,6 @@ endif
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set smartindent
 set autoindent
 set clipboard+=unnamed
 set smartcase
