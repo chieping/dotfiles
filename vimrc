@@ -432,7 +432,6 @@ if executable('ag')
   let g:unite_source_grep_default_opts = '--smart-case --nogroup --nocolor --column'
   let g:unite_source_grep_recursive_opt = ''
   let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-  call unite#filters#matcher_default#use(['matcher_fuzzy'])
 endif
 
 " Open by NerdTree
