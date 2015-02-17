@@ -251,6 +251,7 @@ map ge <Plug>(smartword-ge)
 
 " display candidates by default
 nnoremap <C-]> g<C-]>
+vnoremap <C-]> g<C-]>
 
 " ######################### NERDTree
 nmap <Leader>f :NERDTreeToggle<CR>
@@ -276,6 +277,9 @@ vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
 vnoremap gb :<C-u>'<,'>Gblame<CR>
 nnoremap gs :<C-u>Gstatus<CR>
 nnoremap gl :<C-u>Glog \| cwindow<CR>
+
+nnoremap gdd :<C-u>Gdiff develop..@<CR>
+nnoremap gdm :<C-u>Gdiff master..@<CR>
 
 " ######################### Tabular
 nmap <Leader>a= :Tabularize /=<CR>
