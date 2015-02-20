@@ -37,3 +37,5 @@
     navigateCompletions: "ctrl-p,ctrl-n"
   "linter-puppet-lint":
     puppetLintArguments: "--no-80chars-check"
+  "vim-mode":
+    useClipboardAsDefaultRegister: true

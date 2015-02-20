@@ -13,11 +13,6 @@
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrap(true)
 
-atom.workspaceView.eachEditorView (editorView) ->
-  editorView.command 'my-command:yank', ->
-    editorView.trigger('core:copy')
-    editorView.trigger('vim-mode:yank')
-
 # This is workaround for the issue that Atom is neglecting .bashrc.
 # To confirm PATH environment variable, run `process.env['PATH']` in console.
 # https://github.com/atom/atom/issues/3018
