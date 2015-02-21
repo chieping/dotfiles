@@ -141,10 +141,6 @@ augroup FastEscape
   autocmd InsertLeave * set timeoutlen=1000
 augroup END
 
-" Specify perl library location since system library was moved on Mavericks
-" usage: :perldo s/xxx/yyy/
-let $PERL_DLL='/System/Library/Perl/5.16/darwin-thread-multi-2level/CORE/libperl.dylib'
-
 let g:mapleader=","
 
 let g:submode_timeout=0
