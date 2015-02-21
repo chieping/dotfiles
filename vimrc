@@ -133,6 +133,14 @@ if v:version >= 704
   set formatoptions+=j      "Get rid of comment leaders when joining lines"
 endif
 
+" Remove small delay between pressing Esc and entering Normal mode.
+set timeout ttimeout ttimeoutlen=-1
+augroup FastEscape
+  autocmd!
+  autocmd InsertEnter * set timeoutlen=0
+  autocmd InsertLeave * set timeoutlen=1000
+augroup END
+
 " Specify perl library location since system library was moved on Mavericks
 " usage: :perldo s/xxx/yyy/
 let $PERL_DLL='/System/Library/Perl/5.16/darwin-thread-multi-2level/CORE/libperl.dylib'
