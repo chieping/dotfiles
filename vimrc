@@ -129,6 +129,9 @@ set listchars=tab:›\
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
+if v:version >= 704
+  set formatoptions+=j      "Get rid of comment leaders when joining lines"
+endif
 
 " Specify perl library location since system library was moved on Mavericks
 " usage: :perldo s/xxx/yyy/
