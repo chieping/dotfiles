@@ -132,14 +132,9 @@ endif
 if v:version >= 704
   set formatoptions+=j      "Get rid of comment leaders when joining lines"
 endif
-
-" Remove small delay between pressing Esc and entering Normal mode.
-set timeout ttimeout ttimeoutlen=-1
-augroup FastEscape
-  autocmd!
-  autocmd InsertEnter * set timeoutlen=0
-  autocmd InsertLeave * set timeoutlen=1000
-augroup END
+" ttimeoutlen is used for key code delays. This makes esc key to respond
+" immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
+set ttimeoutlen=0
 
 let g:mapleader=","
 
