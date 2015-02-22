@@ -28,6 +28,7 @@ NeoBundle 'AndrewRadev/splitjoin.vim'
 NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
 " NeoBundle 'majutsushi/tagbar'
+NeoBundle 'terryma/vim-multiple-cursors'
 NeoBundle 'tomtom/tcomment_vim', {
         \ 'autoload' : {
         \ 'mappings' : [ '<Plug>TComment-' ]
