@@ -104,7 +104,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Custom plugins: zsh-syntax-highlighting
-plugins=(gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask zsh-syntax-highlighting rbenv)
+plugins=(gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask zsh-syntax-highlighting rbenv bgnotify)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -164,7 +164,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/mvim --remote-tab-silent'
 alias v='vim'
 alias vimdiff='/Applications/MacVim.app/Contents/MacOS/vimdiff'
-alias tig='tig --all'
+# alias tig='tig --all'
 alias tigd='tig develop...@'
 alias tigm='tig master...@'
 alias vup='vagrant up --no-provision'
