@@ -56,11 +56,12 @@ install python
 install rainbarf
 install rbenv-bundler
 install rbenv-ctags
+install rbenv-default-gems
 install reattach-to-user-namespace
 install ricty
-install ruby-build
 install ssh-copy-id
 install subversion
+install terminal-notifier
 install the_silver_searcher
 install tig
 install tmux
@@ -78,6 +79,7 @@ cask install dash
 cask install firefox
 cask install flux
 cask install google-japanese-ime
+cask install graphviz
 cask install heroku-toolbelt
 cask install hipchat
 cask install hosts
@@ -85,6 +87,7 @@ cask install jitouch
 cask install libreoffice
 cask install onepassword (!)
 cask install p4merge
+cask install pandoc
 cask install shiftit
 cask install simplecap
 cask install stackroom
