@@ -176,6 +176,9 @@ let g:switch_custom_definitions = [
         \   },
         \ ]
 
+" ######################### vim-multiple-cursors
+let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
+
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
