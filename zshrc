@@ -103,8 +103,9 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-# Custom plugins: zsh-syntax-highlighting
-plugins=(gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask zsh-syntax-highlighting rbenv bgnotify)
+plugins=(gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask rbenv bgnotify)
+# Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
+plugins+=(zsh-syntax-highlighting k)
 
 source $ZSH/oh-my-zsh.sh
 
