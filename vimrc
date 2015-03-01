@@ -235,6 +235,8 @@ inoremap <C-^> <Esc>^i
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 
+nnoremap <C-e> <End>
+nnoremap <C-a> <Home> " TODO: How should I increment numbers?
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 cnoremap <C-e> <End>
