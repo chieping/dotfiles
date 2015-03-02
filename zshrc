@@ -69,6 +69,12 @@ bbc()
   ghq get git@bitbucket.org:monexlab/$1
 }
 
+# This function is inspired by oh-my-zsh's "take" function.
+gt()
+{
+  ghq get "$1" && ghq look "$1"
+}
+
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
