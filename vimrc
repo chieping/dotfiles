@@ -136,6 +136,7 @@ endif
 " ttimeoutlen is used for key code delays. This makes esc key to respond
 " immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set ttimeoutlen=0
+set splitbelow splitright
 
 let g:mapleader=","
 
