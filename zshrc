@@ -117,6 +117,9 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
+# setup direnv
+eval "$(direnv hook zsh)"
+
 [ -f `brew --prefix`/etc/profile.d/z.sh ] && source `brew --prefix`/etc/profile.d/z.sh
 
 if [ -f ~/.dircolors ]; then
