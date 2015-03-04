@@ -4,7 +4,6 @@
 tap phinze/homebrew-cask
 tap homebrew/dupes
 tap laurent22/massren
-tap peco/peco
 tap sanemat/font
 
 install brew-cask
@@ -19,6 +18,7 @@ install brew-cask
 install cabal-install
 install colordiff
 install coreutils
+install direnv
 install dnsmasq
 install findutils
 install gawk
