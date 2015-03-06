@@ -540,10 +540,6 @@ endif
 " Use homebrew's ctags instead of kaoriya bundled one
 let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
 
-" Ctags Puppet Integration
-" http://www.gdb.me/puppet/using-vim-to-edit-puppet.html
-autocmd FileType puppet setlocal iskeyword+=:
-
 " ######################### Lightline.vim
 let g:lightline = {
         \ 'colorscheme': 'solarized',

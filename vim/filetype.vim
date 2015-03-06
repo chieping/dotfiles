@@ -10,9 +10,12 @@ autocmd FileType javascript set tabstop=4 shiftwidth=2 softtabstop=2
 
 autocmd FileType markdown set tabstop=4 shiftwidth=4 softtabstop=4
 
+autocmd FileType puppet setlocal iskeyword+=:
+
+autocmd FileType ruby setlocal iskeyword+=@-@,!,?,$
+
 autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
 
 autocmd BufNewFile,BufRead *.gradle setfiletype groovy
 
 autocmd BufNewFile,BufRead *.mjs setfiletype javascript
-
