@@ -513,6 +513,7 @@ cabbrev h    tab help
 cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate
 cabbrev bul  NeoBundleUpdatesLog
+cabbrev fd   filetype detect
 
 function! ToggleWrap()
   if (&wrap == 1)
