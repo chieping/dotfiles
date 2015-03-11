@@ -1,5 +1,6 @@
 set horizontal-scroll = 33%
 set line-graphics = yes
+set ignore-space = some
 
 # Colors {{{
 color cursor white black
