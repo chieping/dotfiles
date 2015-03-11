@@ -147,6 +147,11 @@ bindkey '^n' history-search-forward
 bindkey '^[' backward-word
 bindkey '^]' forward-word
 
+# Editing command by EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
+
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
