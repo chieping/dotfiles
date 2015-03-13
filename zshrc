@@ -33,11 +33,11 @@ export JAVA_HOME=$(/System/Library/Frameworks/JavaVM.framework/Versions/A/Comman
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export PATH="$(brew --prefix gnu-tar)/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix gnu-sed)/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
-export MANPATH="$(brew --prefix gnu-sed)/libexec/gnuman:$MANPATH"
-export MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+export PATH="$HOMEBREW_ROOT/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_ROOT/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_ROOT/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="$HOMEBREW_ROOT/opt/gnu-sed/libexec/gnuman:$MANPATH"
+export MANPATH="$HOMEBREW_ROOT/opt/coreutils/libexec/gnuman:$MANPATH"
 
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
