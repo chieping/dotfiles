@@ -10,6 +10,7 @@ export CC=gcc
 fpath=($HOMEBREW_ROOT/share/zsh-completions $fpath)
 fpath=($HOMEBREW_ROOT/share/zsh/functions $fpath)
 fpath=($HOMEBREW_ROOT/share/zsh/site-functions $fpath)
+fpath=($HOME/src/github.com/motemen/ghq/zsh $fpath)
 
 # need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
 autoload -U compinit && compinit
