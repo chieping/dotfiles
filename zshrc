@@ -71,9 +71,10 @@ bbc()
 }
 
 # This function is inspired by oh-my-zsh's "take" function.
+# This requires GNU sed.
 gt()
 {
-  ghq get "$1" && ghq look "$1"
+  ghq get "$1" && ghq look $(echo "$1" | sed -r 's|.*[:/](.+)/(.+)$|\1/\2|')
 }
 
 # Set to this to use case-sensitive completion
