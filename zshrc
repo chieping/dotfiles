@@ -122,7 +122,7 @@ source $ZSH/oh-my-zsh.sh
 # setup direnv
 eval "$(direnv hook zsh)"
 
-[ -f `brew --prefix`/etc/profile.d/z.sh ] && source `brew --prefix`/etc/profile.d/z.sh
+[ -f $HOMEBREW_ROOT/etc/profile.d/z.sh ] && source $HOMEBREW_ROOT/etc/profile.d/z.sh
 
 if [ -f ~/.dircolors ]; then
   if type dircolors > /dev/null 2>&1; then
