@@ -5,6 +5,7 @@ tap phinze/homebrew-cask
 tap homebrew/dupes
 tap laurent22/massren
 tap sanemat/font
+tap motemen/ghq
 
 install brew-cask
 install findutils --with-default-names
@@ -25,6 +26,7 @@ install gawk
 install gcc
 install gcc48
 install gh
+install ghq
 install gibo
 install gist
 install git
@@ -39,6 +41,7 @@ install gradle
 install htop-osx
 install httpie
 install hub
+install jq
 install massren
 install maven
 install md5sha1sum

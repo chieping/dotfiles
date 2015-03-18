@@ -5,6 +5,7 @@ tap phinze/homebrew-cask
 tap homebrew/dupes
 tap laurent22/massren
 tap sanemat/font
+tap motemen/ghq
 
 install brew-cask
 install findutils --with-default-names
