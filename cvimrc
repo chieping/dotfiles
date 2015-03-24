@@ -26,6 +26,8 @@ map <C-f> scrollFullPageDown
 map <Space> scrollFullPageDown
 map <S-Space> scrollFullPageUp
 
+iunmap <C-k>   " prefer Cocoa app's default behaviour
+
 map h previousTab
 map l nextTab
 
