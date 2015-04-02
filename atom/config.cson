@@ -10,8 +10,8 @@
       "autocomplete-plus"
     ]
     themes: [
-      "atom-dark-ui"
-      "solarized-dark-syntax"
+      "one-dark-ui"
+      "one-dark-syntax"
     ]
   "exception-reporting":
     userId: "37bee979-1563-d09c-5512-73fcee34ce0a"
@@ -31,6 +31,7 @@
     hideVcsIgnoredFiles: false
     hideIgnoredNames: false
     showOnRightSide: false
+    sortFoldersBeforeFiles: true
   "vim-surround": {}
   "linter-write-good": {}
   "autocomplete-plus":
