@@ -191,3 +191,5 @@ alias bundlep='cd $(bundler_gems | peco)'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias -g P='| peco'
 alias -g C='| pbcopy'
+
+source ~/.zshrc.local
