@@ -52,22 +52,6 @@ google()
 {
   open http://google.co.jp/\#q\=`echo "$@" | nkf -wMQ | tr = %`
 }
-bb()
-{
-  repo=$1
-  if [ "$repo" = "" ]; then
-    repo=$(git rev-parse --show-toplevel | perl -pe 's;.+/;;')
-  fi
-  open "https://bitbucket.org/monexlab/$repo"
-}
-bbc()
-{
-  if [ "$1" = "" ]; then
-    echo "USAGE: bbclone <repositry name>"
-    return 0
-  fi
-  ghq get git@bitbucket.org:monexlab/$1
-}
 
 # This function is inspired by oh-my-zsh's "take" function.
 # This requires GNU sed.
