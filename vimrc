@@ -13,7 +13,11 @@ NeoBundleLazy 'Shougo/vimshell', {
         \ 'autoload' : {
         \ 'commands' : [ 'VimShell', 'VimShellPop', 'VimShellInteractive' ]
         \ }}
-NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'Shougo/vimproc.vim', {
+        \ 'build' : {
+        \ 'mac' : 'make -f make_mac.mak',
+        \ 'linux' : 'make'
+        \ }}
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'sorah/unite-ghq'
