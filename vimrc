@@ -120,6 +120,7 @@ if has('kaoriya')
   let plugin_dicwin_disable = 1
 endif
 
+set laststatus=2            " This helps lightline.vim visible
 set expandtab
 set shiftwidth=2
 set softtabstop=2
