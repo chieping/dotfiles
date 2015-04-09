@@ -6,8 +6,8 @@ set -e
 # Symlinks
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
-ln -sff ~/.dotfiles/git_templates ~/.git_templates
-ln -sff ~/.dotfiles/gitconfig ~/.gitconfig
+ln -sf ~/.dotfiles/git_templates ~/.git_templates
+ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
 ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
 ln -sf ~/.dotfiles/irbrc ~/.irbrc
@@ -35,7 +35,11 @@ ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
 
 mkdir -p ~/.vim/{backups,swaps,undo}
 
+# Vim
+#   neobundle install
+#   ctags install
 
+# go
 # tig
 # tmux
 # tmux package manager
@@ -62,3 +66,11 @@ mkdir -p ~/.vim/{backups,swaps,undo}
 # IME (Mozc)
 
 # Terminal solor scheme (http://d.hatena.ne.jp/tatanaideyo/20130122/1358872017)
+
+# zeal( dash for Linux and Windows )
+
+# firefox plugins ( vimperator )
+# vimperator plugins
+
+# aws cli
+# aws_completer
