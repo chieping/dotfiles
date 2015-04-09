@@ -333,6 +333,7 @@ let g:unite_source_alias_aliases = {
 call unite#custom#source('messages', 'sorters', 'sorter_reverse')
 
 nnoremap <silent> [unite]p  :<C-u>Unite file_rec/async<CR>
+nnoremap <silent> [unite]P  :<C-u>new<CR>:<C-u>Unite file_rec/async<CR>
 nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
         \ -buffer-name=files buffer file_mru bookmark file<CR>
 nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
