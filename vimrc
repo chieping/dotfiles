@@ -157,6 +157,9 @@ let g:mapleader=","
 
 let g:submode_timeout=0
 
+" ######################### vim-gista
+let g:gista#github_user = 'chieping'
+
 " ######################### Syntastic
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
