@@ -18,6 +18,8 @@ ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -sf ~/.dotfiles/vimperatorrc ~/.vimperatorrc
 ln -sf ~/.dotfiles/vimrc ~/.vimrc
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
+ln -sf ~/.dotfiles/zshrc.darwin ~/.zshrc.darwin
+ln -sf ~/.dotfiles/zshrc.linux ~/.zshrc.linux
 
 mkdir -p ~/.atom
 ln -sf ~/.dotfiles/atom/config.cson ~/.atom/config.cson
