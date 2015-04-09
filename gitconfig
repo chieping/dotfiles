@@ -7,6 +7,10 @@
 	pager = diff-highlight | less
 	quotepath = false
 	precomposeunicode = true
+[pager]
+    log  = diff-highlight | less
+    show = diff-highlight | less
+    diff = diff-highlight | less
 [color]
 	ui = auto
 [alias]
