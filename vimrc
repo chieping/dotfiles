@@ -546,8 +546,10 @@ endif
 
 
 " ######################### auto-ctags.vim
-" Use homebrew's ctags instead of kaoriya bundled one
-let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
+if has('mac')
+  " Use homebrew's ctags instead of kaoriya bundled one
+  let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
+endif
 
 " ######################### Lightline.vim
 let g:lightline = {
