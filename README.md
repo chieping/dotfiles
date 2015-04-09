@@ -1,8 +1,12 @@
-dotfiles
-========
+# chieping's dotfiles
+
+## Which environment can this work?
+- Mac OS X yosemite (full)
+- Ubuntu, CentOS (almost)
+    - working
 
 # Setup
-TODO
+TODO one-liner install script
 
 ## Atom
 install starred packages
