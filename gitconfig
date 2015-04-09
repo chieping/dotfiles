@@ -4,7 +4,7 @@
 	templatedir = ~/.git_templates
 [core]
 	excludesfile = ~/.gitignore
-	pager = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+	pager = diff-highlight | less
 	quotepath = false
 	precomposeunicode = true
 [color]
