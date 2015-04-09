@@ -91,7 +91,7 @@ ignorekeys add docs\\.google\\.com
 
 " feedSomeKeys_3
 command! -nargs=+ lazy autocmd VimperatorEnter .* <args>
-lazy fmaps -urls='twitter\.com'         -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup .
+lazy fmaps -urls='twitter\.com'         -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup . <Left> <Right>
 lazy fmaps -urls='www\.slideshare\.net' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='speakerdeck\.com'     -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='slides\.com'          -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
