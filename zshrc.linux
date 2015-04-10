@@ -4,10 +4,6 @@ export GIT_EDITOR=vim
 # need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
 autoload -U compinit && compinit
 
-# oh-my-zsh tmux plugin confs
-ZSH_TMUX_ITERM2=false
-ZSH_TMUX_AUTOSTART=true
-
 UNBUNDLED_COMMANDS=(pry)
 
 # golang settings
@@ -76,7 +72,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask rbenv bgnotify z)
+plugins=(aws gitfast git-flow common-aliases bundler colored-man golang brew-cask rbenv bgnotify z)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
 plugins+=(zsh-syntax-highlighting k)
 

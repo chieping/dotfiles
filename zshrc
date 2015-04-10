@@ -2,7 +2,7 @@ setopt print_eight_bit
 export LANG=ja_JP.UTF-8
 setopt no_flow_control
 setopt nobeep
-export TERM=screen-256color
+export TERM=xterm-256color
 export CC=gcc
 
 case ${OSTYPE} in
