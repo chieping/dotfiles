@@ -3,8 +3,6 @@ export LANG=ja_JP.UTF-8
 setopt no_flow_control
 setopt nobeep
 export TERM=screen-256color
-export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
-export GIT_EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
 export CC=gcc
 
 case ${OSTYPE} in
@@ -15,6 +13,41 @@ case ${OSTYPE} in
     source ~/.zshrc.linux
     ;;
 esac
+
+# User configuration
+
+# setup direnv
+eval "$(direnv hook zsh)"
+
+if [ -e ~/.dircolors ]; then
+  if type dircolors > /dev/null 2>&1; then
+  ¦ eval $(dircolors ~/.dircolors/dircolors.256dark)
+  elif type gdircolors > /dev/null 2>&1; then
+  ¦ eval $(dircolors ~/.dircolors/dircolors.256dark)
+  fi
+fi
+
+if [ -n "$LS_COLORS" ]; then
+  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+fi
+
+function cdup() {
+  echo
+  cd ..
+  zle reset-prompt
+}
+zle -N cdup
+
+bindkey '^o' cdup
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+bindkey '^[' backward-word
+bindkey '^]' forward-word
+
+# Editing command by EDITOR
+autoload -Uz edit-command-line
+zle -N edit-command-line
+bindkey '^xe' edit-command-line
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh

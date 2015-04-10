@@ -1,3 +1,6 @@
+export EDITOR=vim
+export GIT_EDITOR=vim
+
 # need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
 autoload -U compinit && compinit
 
@@ -73,58 +76,9 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask rbenv bgnotify z)
+plugins=(aws gitfast git-flow common-aliases bundler tmux colored-man golang brew-cask rbenv bgnotify z)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
 plugins+=(zsh-syntax-highlighting k)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# setup direnv
-eval "$(direnv hook zsh)"
-
-# [ -f $HOMEBREW_ROOT/etc/profile.d/z.sh ] && source $HOMEBREW_ROOT/etc/profile.d/z.sh
-
-if [ -f ~/.dircolors ]; then
-  if type dircolors > /dev/null 2>&1; then
-    eval $(dircolors ~/.dircolors)
-  elif type gdircolors > /dev/null 2>&1; then
-    eval $(gdircolors ~/.dircolors)
-  fi
-fi
-
-if [ -n "$LS_COLORS" ]; then
-  zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-fi
-
-function cdup() {
-  echo
-  cd ..
-  zle reset-prompt
-}
-zle -N cdup
-
-bindkey '^o' cdup
-bindkey '^p' history-search-backward
-bindkey '^n' history-search-forward
-bindkey '^[' backward-word
-bindkey '^]' forward-word
-
-# Editing command by EDITOR
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^xe' edit-command-line
-
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
