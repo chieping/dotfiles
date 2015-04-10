@@ -21,9 +21,9 @@ eval "$(direnv hook zsh)"
 
 if [ -e ~/.dircolors ]; then
   if type dircolors > /dev/null 2>&1; then
-  ¦ eval $(dircolors ~/.dircolors/dircolors.256dark)
+    eval $(dircolors ~/.dircolors/dircolors.256dark)
   elif type gdircolors > /dev/null 2>&1; then
-  ¦ eval $(dircolors ~/.dircolors/dircolors.256dark)
+    eval $(dircolors ~/.dircolors/dircolors.256dark)
   fi
 fi
 
