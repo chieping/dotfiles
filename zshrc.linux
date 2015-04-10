@@ -82,3 +82,6 @@ plugins+=(zsh-syntax-highlighting k)
 
 source $ZSH/oh-my-zsh.sh
 
+# override gallois prompt
+# adding hostname
+PROMPT='%{$fg[cyan]%}[%m:%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
