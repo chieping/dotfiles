@@ -1,5 +1,13 @@
 #!/bin/bash
 set -e
+cd
+
+if [ -e ~/.dotfiles ]; then
+  cd .dotfiles
+  git fetch && git merge --ff-only
+else
+  git clone https://github.com/chieping/dotfiles ~/.dotfiles
+fi
 
 # This script is WIP
 
