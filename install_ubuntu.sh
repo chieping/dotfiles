@@ -2,7 +2,7 @@
 set -e
 cd
 
-if [ -e ~/.dotfiles ]; then
+if [ -e .dotfiles ]; then
   cd .dotfiles
   git fetch && git merge --ff-only
 else
@@ -46,30 +46,55 @@ ln -sf ~/.dotfiles/git_templates/hooks/pre-commit ~/.git_templates/hooks/pre-com
 
 mkdir -p ~/.vim/{backups,swaps,undo}
 
+mkdir -p ~/bin
+
+
 # Vim
 #   neobundle install
-#   ctags install
+##   ctags install
 
 # go
 # tig
 # tmux
 # tmux package manager
 # tmux color scheme ( tmux-colors-solarized )
+# ag
 # xclip or xsel (tmux-yank)
+
 
 # oh-my-zsh
 # oh-my-zsh custom plugins ( zsh-syntax-highlighting k )
 
-# dircolors
+# dircolors {{{
+ghq get seebi/dircolors-solarized
+ln -s ~/src/github.com/seebi/dircolors-solarized ~/.dircolors
+# }}}
 
 # rainbarf
-# direnv
-# ghq
-# jq
-# massren
-# peco
 
-# rbenv
+# direnv {{{
+go get -u github.com/zimbatm/direnv
+# }}}
+
+# ghq {{{
+go get -u github.com/motemen/ghq
+# }}}
+
+# jq
+
+# massren {{{
+go get -u github.com/laurent22/massren
+# }}}
+
+# peco {{{
+go get -u github.com/peco/peco/cmd/peco
+# }}}
+
+# rbenv {{{
+ghq get sstephenson/rbenv
+ln -s ~/src/github.com/sstephenson/rbenv ~/.rbenv
+# }}}
+
 # rbenv plugins ( ruby-build default-gems )
 
 # Fonts ( Ricty )
@@ -81,7 +106,17 @@ mkdir -p ~/.vim/{backups,swaps,undo}
 # zeal( dash for Linux and Windows )
 
 # firefox plugins ( vimperator )
-# vimperator plugins
+
+# vimperator plugins {{{
+mkdir -p ~/.vimperator/plugin
+ghq get vimpr/vimperator-plugins
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/_libly.js ~/.vimperator/plugin/_libly.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/feedSomeKeys_3.js ~/.vimperator/plugin/feedSomeKeys_3.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/bookmarktoolbar-hint.js ~/.vimperator/plugin/bookmarktoolbar-hint.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/lookupDictionary.js ~/.vimperator/plugin/lookupDictionary.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/caret-hint.js ~/.vimperator/plugin/caret-hint.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/walk-input.js ~/.vimperator/plugin/walk-input.js
+# }}}
 
 # aws cli
 # aws_completer
