@@ -6,7 +6,6 @@ set -e
 # Symlinks
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
-ln -sf ~/.dotfiles/git_templates ~/.git_templates
 ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
 ln -sf ~/.dotfiles/gitignore ~/.gitignore
 ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
@@ -34,6 +33,8 @@ ln -sf ~/.dotfiles/rbenv/default-gems ~/.rbenv/default-gems
 mkdir -p ~/.vim
 ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
 
+mkdir -p ~/.git_templates/hooks
+ln -sf ~/.dotfiles/git_templates/hooks/pre-commit ~/.git_templates/hooks/pre-commit
 
 mkdir -p ~/.vim/{backups,swaps,undo}
 
