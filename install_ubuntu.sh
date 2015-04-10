@@ -67,7 +67,7 @@ mkdir -p ~/bin
 
 # dircolors {{{
 ghq get seebi/dircolors-solarized
-ln -s ~/src/github.com/seebi/dircolors-solarized ~/.dircolors
+ln -s ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
 # }}}
 
 # rainbarf
