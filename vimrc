@@ -125,7 +125,6 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set autoindent
-set clipboard+=unnamed
 set smartcase
 set scrolloff=100
 set helpheight=100
@@ -147,6 +146,11 @@ if exists('+colorcolumn')
 endif
 if v:version >= 704
   set formatoptions+=j      "Get rid of comment leaders when joining lines"
+endif
+if has('mac')
+  set clipboard+=unnamed
+elseif has('unix')
+  set clipboard=unnamedplus
 endif
 " ttimeoutlen is used for key code delays. This makes esc key to respond
 " immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
