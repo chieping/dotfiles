@@ -65,10 +65,6 @@ mkdir -p ~/bin
 # oh-my-zsh
 # oh-my-zsh custom plugins ( zsh-syntax-highlighting k )
 
-# dircolors {{{
-ghq get seebi/dircolors-solarized
-ln -s ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
-# }}}
 
 # rainbarf
 
@@ -80,6 +76,10 @@ go get -u github.com/zimbatm/direnv
 go get -u github.com/motemen/ghq
 # }}}
 
+# dircolors {{{
+ghq get seebi/dircolors-solarized
+ln -s ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
+# }}}
 # jq
 
 # massren {{{
