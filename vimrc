@@ -133,6 +133,7 @@ set directory=~/.vim/swaps
 set undodir=~/.vim/undo
 set cursorline
 set number
+set modeline
 set noeb vb t_vb=           "Disable beep and flash
 set ambiwidth=double        "Also need iTerm configuration(But tmux sucks...)
 set backspace=2             "Make backspace work like most other apps
