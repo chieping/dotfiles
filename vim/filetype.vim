@@ -10,6 +10,8 @@ autocmd FileType javascript set tabstop=4 shiftwidth=2 softtabstop=2
 
 autocmd FileType markdown set tabstop=4 shiftwidth=4 softtabstop=4
 
+autocmd FileType sh set tabstop=2 shiftwidth=2 softtabstop=2
+
 autocmd FileType puppet setlocal iskeyword+=:
 
 autocmd FileType ruby setlocal iskeyword+=@-@,!,?,$

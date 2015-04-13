@@ -620,6 +620,7 @@ function! MyMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
 
+let g:solarized_contrast="high"
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 syntax enable
