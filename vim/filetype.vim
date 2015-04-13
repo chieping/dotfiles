@@ -14,7 +14,7 @@ autocmd FileType sh set tabstop=2 shiftwidth=2 softtabstop=2
 
 autocmd FileType puppet setlocal iskeyword+=:
 
-autocmd FileType ruby setlocal iskeyword+=@-@,!,?,$
+autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 iskeyword+=@-@,!,?,$
 
 autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
 
