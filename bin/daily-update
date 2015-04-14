@@ -36,4 +36,4 @@ oh_my_zsh
 echo
 ruby_build
 echo
-homebrew
+type brew >/dev/null 2>&1 && homebrew
