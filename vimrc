@@ -126,6 +126,7 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set smartcase
+set showcmd
 set scrolloff=100
 set helpheight=100
 set backupdir=~/.vim/backups
