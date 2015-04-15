@@ -61,6 +61,12 @@ nnoremap L 3l
 
 nnoremap ^ +
 
+" Emacs like key bind on Command mode
+cnoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+
 vnoremap P <Esc><Esc>P
 vnoremap p <Esc><Esc>p
 vnoremap <CR> y<Esc><Esc>P
