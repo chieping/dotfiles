@@ -56,7 +56,11 @@ nnoremap L 3l
 
 nnoremap ^ +
 
+nnoremap ; :
+
 " Emacs like key bind on Command mode
+cnoremap <C-p> <S-Tab>
+cnoremap <C-n> <Tab>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
