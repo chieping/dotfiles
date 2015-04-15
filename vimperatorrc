@@ -1,13 +1,4 @@
 " vim:set filetype=vim:
-" using plugin list {{{
-" _libly.js
-" feedSomeKeys_3.js
-" bookmarktoolbar-hint.js
-" lookupDictionary.js
-" caret-hint.js
-" walk-input.js
-" }}}
-
 let mapleader=","
 
 set showstatuslinks=1
@@ -16,6 +7,10 @@ set titlestring=""
 set hintchars=fjklasdhguionmerv
 set smartcase
 set gui=none,tabs,bookmarks
+
+" plugin_loader
+let g:plugin_loader_roots = "~/src/github.com/vimpr/vimperator-plugins"
+let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,bookmarktoolbar-hint,lookupDictionary,caret-hint,walk-input"
 
 " Show hint with no any label or value on input elements
 set hintinputs=""
