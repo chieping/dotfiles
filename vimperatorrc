@@ -67,6 +67,14 @@ cnoremap <C-e> <End>
 cnoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 
+" Emacs like key bind on Insert mode
+inoremap <C-p> <Up>
+inoremap <C-n> <Down>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+
 vnoremap P <Esc><Esc>P
 vnoremap p <Esc><Esc>p
 vnoremap <CR> y<Esc><Esc>P
