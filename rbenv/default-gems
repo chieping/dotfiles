@@ -6,3 +6,5 @@ awesome_print
 rubocop
 puppet
 puppet-lint
+markdown2confluence
+foodcritic
