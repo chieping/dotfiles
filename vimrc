@@ -238,6 +238,7 @@ nmap <Leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 
 nnoremap ; :
+vnoremap ; :
 
 " Yank like Tmux copy mode
 vnoremap <CR> y
