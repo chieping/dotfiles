@@ -125,6 +125,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set autoindent
+set ignorecase
 set smartcase
 set showcmd
 set wildmenu
