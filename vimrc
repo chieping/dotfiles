@@ -151,7 +151,7 @@ endif
 if v:version >= 704
   set formatoptions+=j      "Get rid of comment leaders when joining lines"
 endif
-if has('mac')
+if has('mac') || has('win32') || has('win64')
   set clipboard+=unnamed
 elseif has('unix')
   set clipboard=unnamedplus
