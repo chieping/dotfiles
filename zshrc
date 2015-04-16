@@ -77,7 +77,9 @@ alias gg='ghq get'
 alias gl='ghq look'
 alias vimrc='vim ~/.vimrc'
 alias sshconf='vim ~/.ssh/config'
-alias e='cd $(ghq list -p | peco)'
+# excludes ec2 because very long directory name annoy me.
+# mount the directory to short named one.
+alias e='cd $(ghq list -p | grep -v amazonaws.com | peco)'
 alias bundlep='cd $(bundler_gems | peco)'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias -g P='| peco'
