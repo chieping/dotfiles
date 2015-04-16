@@ -110,12 +110,7 @@ ln -s ~/src/github.com/sstephenson/rbenv ~/.rbenv
 # vimperator plugins {{{
 mkdir -p ~/.vimperator/plugin
 ghq get vimpr/vimperator-plugins
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/_libly.js ~/.vimperator/plugin/_libly.js
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/feedSomeKeys_3.js ~/.vimperator/plugin/feedSomeKeys_3.js
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/bookmarktoolbar-hint.js ~/.vimperator/plugin/bookmarktoolbar-hint.js
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/lookupDictionary.js ~/.vimperator/plugin/lookupDictionary.js
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/caret-hint.js ~/.vimperator/plugin/caret-hint.js
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/walk-input.js ~/.vimperator/plugin/walk-input.js
+ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
 # }}}
 
 # aws cli
