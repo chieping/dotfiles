@@ -20,8 +20,15 @@
 '.tree-view':
   'L': 'tree-view:recursive-expand-directory'
   'H': 'tree-view:recursive-collapse-directory'
-  'ctrl-t l': 'tree-view:toggle-focus'
 
 '.editor':
-  'ctrl-t h': 'tree-view:toggle-focus'
+  'ctrl-a': 'editor:move-to-first-character-of-line'
+  'ctrl-e': 'editor:move-to-end-of-line'
+  'ctrl-backspace': 'editor:backspace-to-beginning-of-word'
+  'ctrl-n': 'core:move-down'
+  'ctrl-p': 'core:move-up'
+  'ctrl-b': 'core:move-left'
+  'ctrl-f': 'core:move-right'
 
+'.platform-win32 .editor':
+  'alt-f': 'find-and-replace:show'
