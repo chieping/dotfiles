@@ -48,6 +48,7 @@ NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'matchit.zip'
+NeoBundle 'vimtaku/hl_matchit.vim'
 NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'vim-ruby/vim-ruby'
 " NeoBundle 'rodjek/vim-puppet'
@@ -182,6 +183,12 @@ map r <Plug>(operator-replace)
 
 " ######################### vim-table-mode
 let g:table_mode_corner = '|'
+
+" ######################### hl_matchit.vim
+let g:hl_matchit_enable_on_vim_startup = 1
+let g:hl_matchit_speed_level = 1
+let g:hl_matchit_allow_ft = 'sh,vim,ruby'
+let g:hl_matchit_hl_groupname = 'Search'
 
 " ######################### switch.vim
 nnoremap - :Switch<CR>
