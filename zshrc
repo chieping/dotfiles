@@ -79,6 +79,9 @@ alias vimrc='vim ~/.vimrc'
 alias sshconf='vim ~/.ssh/config'
 # excludes ec2 because very long directory name annoy me.
 # mount the directory to short named one.
+# a way to mount over reboot:
+# /etc/fstab
+# /path/to/source/dir /path/to/mount/point none bind 0 0
 alias e='cd $(ghq list -p | grep -v amazonaws.com | peco)'
 alias bundlep='cd $(bundler_gems | peco)'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
