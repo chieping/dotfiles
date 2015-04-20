@@ -7,4 +7,5 @@ rubocop
 puppet
 puppet-lint
 markdown2confluence
+knife-solo
 foodcritic
