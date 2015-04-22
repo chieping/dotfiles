@@ -19,8 +19,15 @@ nnoremap <Leader>r :source ~/.vimperatorrc<CR>:echomsg "Reload vimperatorrc"<CR>
 
 " Open dictionary with command-line-buffer (depends on lookupDictionary.js)
 " Note that bracket-surrounded means allowing conjugated form
-nnoremap a <M-c>:eijiro [<M-v>]<CR>
-vnoremap a <M-c>:eijiro [<M-v>]<CR>
+js<<EOB
+  if(liberator.has("MacUnix")) {
+    liberator.execute('nnoremap a <M-c>:eijiro [<M-v>]<CR>')
+    liberator.execute('vnoremap a <M-c>:eijiro [<M-v>]<CR>')
+  } else {
+    liberator.execute('nnoremap a <C-c>:eijiro [<C-v>]<CR>')
+    liberator.execute('vnoremap a <C-c>:eijiro [<C-v>]<CR>')
+  }
+EOB
 
 nnoremap <Leader>ta :set gui=invaddons<CR>:echomsg "Toggle addons"<CR>
 nnoremap <Leader>tt :set gui=invtabs<CR>:echomsg "Toggle tabs"<CR>
