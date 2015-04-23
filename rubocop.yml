@@ -2,6 +2,10 @@
 AsciiComments:
   Enabled: false
 
+# Missing top-level class documentation comment
+Style/Documentation:
+  Enabled: false
+
 LineLength:
   Enabled: false
 
