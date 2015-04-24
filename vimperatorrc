@@ -76,8 +76,13 @@ cnoremap <C-f> <Right>
 " Emacs like key bind on Insert mode
 inoremap <C-p> <Up>
 inoremap <C-n> <Down>
-inoremap <C-a> <Home>
-inoremap <C-e> <End>
+js<<EOB
+  // This Home/End mapping break the behavior in Mac Environment
+  if(!liberator.has("MacUnix")) {
+    liberator.execute('inoremap <C-a> <Home>')
+    liberator.execute('inoremap <C-e> <End>')
+  }
+EOB
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
