@@ -149,7 +149,7 @@ set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
 set shell=bash              "Workaround for zsh's awkward $PATH"
-set listchars=tab:›\ 
+set listchars=tab:›\        "dummy comment to suppress trailing white space
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
@@ -169,6 +169,9 @@ set splitbelow splitright
 let g:mapleader=","
 
 let g:submode_timeout=0
+
+" ######################### indentLine
+let g:indentLine_faster=1
 
 " ######################### vim-gista
 let g:gista#github_user = 'chieping'
