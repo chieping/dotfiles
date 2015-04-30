@@ -23,6 +23,10 @@ js<<EOB
   if(liberator.has("MacUnix")) {
     liberator.execute('nnoremap a <M-c>:eijiro [<M-v>]<CR>')
     liberator.execute('vnoremap a <M-c>:eijiro [<M-v>]<CR>')
+  } else if(liberator.has("Windows")) {
+    // TODO なぜか貼り付けできない
+    liberator.execute('nnoremap a <C-Ins>:eijiro []<Left>')
+    liberator.execute('vnoremap a <C-Ins>:eijiro []<Left>')
   } else {
     liberator.execute('nnoremap a <C-c>:eijiro [<C-v>]<CR>')
     liberator.execute('vnoremap a <C-c>:eijiro [<C-v>]<CR>')
