@@ -556,6 +556,7 @@ cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate
 cabbrev bul  NeoBundleUpdatesLog
 cabbrev fd   filetype detect
+cabbrev sf   set filetype=
 
 function! ToggleWrap()
   if (&wrap == 1)
