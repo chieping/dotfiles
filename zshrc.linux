@@ -81,3 +81,5 @@ source $ZSH/oh-my-zsh.sh
 # override gallois prompt
 # adding hostname
 PROMPT='%{$fg[cyan]%}[%m:%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
+
+alias -g C='| xclip -selection clipboard'
