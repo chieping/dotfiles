@@ -32,7 +32,15 @@
     hideIgnoredNames: false
     showOnRightSide: false
     sortFoldersBeforeFiles: true
-  "vim-surround": {}
+  "vim-surround":
+    pairs: [
+      "()"
+      "[]"
+      "{}"
+      "\"\""
+      "''"
+      "``"
+    ]
   "linter-write-good": {}
   "autocomplete-plus":
     navigateCompletions: "ctrl-p,ctrl-n"
