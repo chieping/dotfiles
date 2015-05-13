@@ -82,8 +82,8 @@ alias sshconf='vim ~/.ssh/config'
 # a way to mount over reboot:
 # /etc/fstab
 # /path/to/source/dir /path/to/mount/point none bind 0 0
-alias e='cd $(ghq list -p | grep -v amazonaws.com | peco)'
-alias bundlep='cd $(bundler_gems | peco)'
+alias e='cd $(ghq list -p | grep -v amazonaws.com | {peco || pwd;})'
+alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias -g P='| peco'
 
