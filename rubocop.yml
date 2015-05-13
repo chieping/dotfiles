@@ -6,6 +6,11 @@ AsciiComments:
 Style/Documentation:
   Enabled: false
 
+# Checks that exactly one space is used between a method name
+# and the first argument for method calls without parentheses.
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
 LineLength:
   Enabled: false
 
