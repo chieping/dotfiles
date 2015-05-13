@@ -35,7 +35,7 @@ google()
 # This requires GNU sed.
 gt()
 {
-  ghq get "$1" && ghq look $(echo "$1" | sed -r 's;(git@|\w+://)(.+)[:/](.+)/(.+)$;\2/\3\4;' | sed -r 's|\.git$||')
+  ghq get "$1" && ghq look $(echo "$1" | sed -r 's;(git@|\w+://)(.+)[:/](.+)/(.+)$;\2/\3/\4;' | sed -r 's|\.git$||')
 }
 
 # Set to this to use case-sensitive completion
