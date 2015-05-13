@@ -32,3 +32,4 @@
 
 '.platform-win32 .editor':
   'alt-f': 'find-and-replace:show'
+  'ctrl-e': 'editor:move-to-end-of-line'
