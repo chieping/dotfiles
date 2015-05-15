@@ -31,7 +31,7 @@ NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'AndrewRadev/switch.vim'
 NeoBundle 'AndrewRadev/splitjoin.vim'
-NeoBundle 'Yggdroot/indentLine'
+" NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
 " NeoBundle 'majutsushi/tagbar'
@@ -169,9 +169,6 @@ set splitbelow splitright
 let g:mapleader=","
 
 let g:submode_timeout=0
-
-" ######################### indentLine
-let g:indentLine_faster=1
 
 " ######################### vim-gista
 let g:gista#github_user = 'chieping'
