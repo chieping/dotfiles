@@ -45,7 +45,7 @@ go get -u github.com/laurent22/massren
 go get -u github.com/peco/peco/cmd/peco
 # }}}
 
-# Fonts ( Ricty )
+# Fonts ( Ricty, Takao )
 
 # IME (Mozc)
 
