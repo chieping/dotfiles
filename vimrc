@@ -113,6 +113,8 @@ NeoBundleLazy 'lambdalisue/vim-gista', {
     \    'mappings': '<Plug>(gista-',
     \    'unite_sources': 'gista',
     \}}
+NeoBundle 'embear/vim-localvimrc'
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -169,6 +171,10 @@ set splitbelow splitright
 let g:mapleader=","
 
 let g:submode_timeout=0
+
+" ######################### vim-localvimrc
+let g:localvimrc_ask=0
+let g:localvimrc_sandbox=0
 
 " ######################### vim-gista
 let g:gista#github_user = 'chieping'

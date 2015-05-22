@@ -80,3 +80,6 @@ $RECYCLE.BIN/
 
 # personal
 honda-*
+
+# embear/vim-localvimrc
+.lvimrc
