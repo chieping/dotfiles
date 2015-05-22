@@ -24,9 +24,8 @@ js<<EOB
     liberator.execute('nnoremap a <M-c>:eijiro [<M-v>]<CR>')
     liberator.execute('vnoremap a <M-c>:eijiro [<M-v>]<CR>')
   } else if(liberator.has("Windows")) {
-    // TODO なぜか貼り付けできない
-    liberator.execute('nnoremap a <C-Ins>:eijiro []<Left>')
-    liberator.execute('vnoremap a <C-Ins>:eijiro []<Left>')
+    liberator.execute('nnoremap a <C-Ins>:javascript liberator.execute("eijiro ["+util.readFromClipboard()+"]")');
+    liberator.execute('vnoremap a <C-Ins>:javascript liberator.execute("eijiro ["+util.readFromClipboard()+"]")');
   } else {
     liberator.execute('nnoremap a <C-c>:eijiro [<C-v>]<CR>')
     liberator.execute('vnoremap a <C-c>:eijiro [<C-v>]<CR>')
