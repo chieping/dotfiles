@@ -139,6 +139,7 @@ set showcmd
 set wildmenu
 set scrolloff=100
 set helpheight=100
+set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
 set undodir=~/.vim/undo
