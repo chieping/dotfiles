@@ -21,15 +21,15 @@
   'L': 'tree-view:recursive-expand-directory'
   'H': 'tree-view:recursive-collapse-directory'
 
-'.editor':
-  'ctrl-a': 'editor:move-to-first-character-of-line'
-  'ctrl-e': 'editor:move-to-end-of-line'
-  'ctrl-backspace': 'editor:backspace-to-beginning-of-word'
+'.atom-text-editor':
+  'ctrl-a': 'atom-text-editor:move-to-first-character-of-line'
+  'ctrl-e': 'atom-text-editor:move-to-end-of-line'
+  'ctrl-backspace': 'atom-text-editor:backspace-to-beginning-of-word'
   'ctrl-n': 'core:move-down'
   'ctrl-p': 'core:move-up'
   'ctrl-b': 'core:move-left'
   'ctrl-f': 'core:move-right'
 
-'.platform-win32 .editor':
+'.platform-win32 .atom-text-editor':
   'alt-f': 'find-and-replace:show'
-  'ctrl-e': 'editor:move-to-end-of-line'
+  'ctrl-e': 'atom-text-editor:move-to-end-of-line'
