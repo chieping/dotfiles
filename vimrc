@@ -178,6 +178,15 @@ let g:submode_timeout=0
 let g:localvimrc_ask=0
 let g:localvimrc_sandbox=0
 
+" ######################### vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+
+if ! has('gui_running')
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=0
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
+endif
+
 " ######################### vim-gista
 let g:gista#github_user = 'chieping'
 
