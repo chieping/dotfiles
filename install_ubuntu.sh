@@ -20,30 +20,9 @@ fi
 # ag
 # xclip or xsel (tmux-yank)
 
-
 # rainbarf
 
-# direnv {{{
-go get -u github.com/zimbatm/direnv
-# }}}
-
-# ghq {{{
-go get -u github.com/motemen/ghq
-# }}}
-
-# dircolors {{{
-ghq get seebi/dircolors-solarized
-ln -s ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
-# }}}
 # jq
-
-# massren {{{
-go get -u github.com/laurent22/massren
-# }}}
-
-# peco {{{
-go get -u github.com/peco/peco/cmd/peco
-# }}}
 
 # Fonts ( Ricty, Takao )
 

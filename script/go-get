@@ -1,4 +1,7 @@
 #!/bin/bash
 
-go get github.com/motemen/ghq
+go get -u github.com/motemen/ghq
 go get -u github.com/dinedal/textql
+go get -u github.com/zimbatm/direnv
+go get -u github.com/laurent22/massren
+go get -u github.com/peco/peco/cmd/peco
