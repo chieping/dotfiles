@@ -30,13 +30,13 @@
   return
 ; left alt+uiopでPageDown/PageUp/Home/End
 <!u::
-  Send,{PgDn}
+  Send,{Home}
   return
 <!i::
   Send,{PgUp}
   return
 <!o::
-  Send,{Home}
+  Send,{PgDn}
   return
 <!p::
   Send,{End}
