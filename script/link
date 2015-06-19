@@ -41,3 +41,5 @@ ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/
 mkdir -p ~/.vim/{backups,swaps,undo,bundle}
 
 mkdir -p ~/bin
+
+touch ~/.zshrc.local
