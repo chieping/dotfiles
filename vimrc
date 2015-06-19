@@ -142,6 +142,7 @@ set helpheight=100
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
+set undofile
 set undodir=~/.vim/undo
 set cursorline
 set number
