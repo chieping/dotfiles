@@ -26,3 +26,5 @@ install github.com/sstephenson/rbenv-default-gems    ~/.rbenv/plugins/rbenv-defa
 
 install github.com/vimpr/vimperator-plugins
 
+install github.com/seebi/dircolors-solarized
+
