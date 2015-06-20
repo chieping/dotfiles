@@ -126,6 +126,7 @@ lazy fmaps -urls='twitter\.com'         -events=keydown,keypress,keyup,vkeydown,
 lazy fmaps -urls='www\.slideshare\.net' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='speakerdeck\.com'     -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='slides\.com'          -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
+lazy fmaps -urls='www\.youtube\.com'    -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right> <Up> <Down> f <Space>
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
