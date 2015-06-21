@@ -1,5 +1,5 @@
 setopt print_eight_bit
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 setopt no_flow_control
 setopt nobeep
 export TERM=xterm-256color
@@ -31,18 +31,8 @@ if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
 
-function cdup() {
-  echo
-  cd ..
-  zle reset-prompt
-}
-zle -N cdup
-
-bindkey '^o' cdup
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
-bindkey '^[' backward-word
-bindkey '^]' forward-word
 
 # Editing command by EDITOR
 autoload -Uz edit-command-line
