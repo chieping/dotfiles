@@ -82,4 +82,8 @@ source $ZSH/oh-my-zsh.sh
 # adding hostname
 PROMPT='%{$fg[cyan]%}[%m:%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
-alias -g C='| xclip -selection clipboard'
+if type xclip >/dev/null 2>&1 ; then
+  alias -g C='| xclip -selection clipboard'
+elif type xsel >/dev/null 2>&1 ; then
+  alias -g C='| xsel --clipboard'
+fi
