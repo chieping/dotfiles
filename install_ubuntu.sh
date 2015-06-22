@@ -1,12 +1,20 @@
 #!/bin/bash
 set -e
-cd
 
-if [ -e .dotfiles ]; then
-  cd .dotfiles
-  git fetch && git merge --ff-only
-else
+if [ ! -e ~/.dotfiles ]; then
   git clone https://github.com/chieping/dotfiles ~/.dotfiles
+fi
+
+cd ~/.dotfiles
+
+script/clone-repos
+script/link
+
+if go version >/dev/null 2>&1 ; then
+  script/go-get
+else
+  echo 'Note: go-get has skipped.'
+  echo '  Do script/go-get after golang setting.'
 fi
 
 # This script is WIP
