@@ -54,6 +54,7 @@
 
 [diff]
 	tool = p4merge
+	algorithm = histogram
 [difftool]
 	prompt = false
 [difftool "p4merge"]
