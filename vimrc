@@ -266,6 +266,10 @@ nmap <Leader>r :<C-u>source $MYVIMRC<CR>
 nnoremap ; :
 vnoremap ; :
 
+" If doing a diff. Upon writing changes to file, automatically update the
+" differences
+autocmd BufWritePost * if &diff == 1 | diffupdate | endif
+
 " Yank like Tmux copy mode
 vnoremap <CR> y
 
