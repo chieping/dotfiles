@@ -15,7 +15,7 @@
 <!k::
   Send,{Up}
   return
-; shift対応
+; shift support
 <!+h::
   Send,+{Left}
   return
@@ -28,15 +28,8 @@
 <!+k::
   Send,+{Up}
   return
-; left alt+uiopでPageDown/PageUp/Home/End
 <!u::
   Send,{Home}
-  return
-<!i::
-  Send,{PgUp}
-  return
-<!o::
-  Send,{PgDn}
   return
 <!p::
   Send,{End}

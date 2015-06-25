@@ -566,6 +566,8 @@ cabbrev bu   NeoBundleUpdate
 cabbrev bul  NeoBundleUpdatesLog
 cabbrev fd   filetype detect
 cabbrev sf   set filetype=
+cabbrev ds   diffsplit
+cabbrev vd   vertical diffsplit
 
 function! ToggleWrap()
   if (&wrap == 1)
