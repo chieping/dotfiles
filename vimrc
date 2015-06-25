@@ -654,5 +654,11 @@ syntax enable
 set background=dark
 colorscheme solarized
 
+" These highlight settings make so much easier to detect them!
+highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
+highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
+highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
+highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
+
 highlight WhitespaceEOL ctermbg=124 guibg=#880000
 match WhitespaceEOL /\s\+$/
