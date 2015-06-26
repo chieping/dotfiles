@@ -42,3 +42,8 @@ sudo apt-get install compizconfig-settings-manager
 
 Import `google-ime-mosc-keymap/keymap.txt`
 
+### Clipboard Manager
+
+```
+sudo apt-get install clipit
+```
