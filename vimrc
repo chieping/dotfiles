@@ -170,6 +170,9 @@ endif
 " immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set ttimeoutlen=0
 set splitbelow splitright
+" 'lazyredraw' will buffer screen updates instead of updating all the time.
+" This mitigates delay of cursor movement well.
+set lazyredraw
 
 let g:mapleader=","
 
