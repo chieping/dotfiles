@@ -399,9 +399,9 @@ nnoremap <silent> [unite]g  :<C-u>Unite
 " file_mru
 nnoremap <silent> [unite]u  :<C-u>Unite
         \ file_mru<CR>
-" directory_mru
+" diff
 nnoremap <silent> [unite]d  :<C-u>Unite
-        \ -default-action=nerdtree directory_mru<CR>
+        \ file_rec/async -default-action=diff<CR>
 " ghq
 nnoremap <silent> [unite]q  :<C-u>Unite
         \ -default-action=ghq_nerdtree ghq<CR>
