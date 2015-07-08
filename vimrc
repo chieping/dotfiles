@@ -372,6 +372,7 @@ let g:unite_source_menu_menus.my = {
 let g:unite_source_menu_menus.my.command_candidates = {
         \   'remove extra whitespaces': '%s/\s\+$//g',
         \   'force write': 'w !sudo tee %',
+        \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
         \ }
 
 let g:unite_source_alias_aliases = {
@@ -581,6 +582,14 @@ function! ToggleWrap()
     set nowrap
   else
     set wrap
+  endif
+endfunction
+
+function! ToggleIwhite()
+  if (&diffopt =~ 'iwhite')
+    set diffopt-=iwhite
+  elseif (&diffopt !~ 'iwhite')
+    set diffopt+=iwhite
   endif
 endfunction
 
