@@ -1,5 +1,6 @@
 setopt print_eight_bit
 export LANG=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
 setopt no_flow_control
 setopt nobeep
 export TERM=xterm-256color
