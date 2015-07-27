@@ -525,6 +525,10 @@ call unite#custom#action('directory', 'ghq_nerdtree', ghq_nerdtree)
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
 
+" Emphasize cursorline on unite buffer
+autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
+autocmd BufLeave \[unite\]* highlight! link CursorLine CursorLine
+
 " ######################### vim-expand-region
 let g:expand_region_text_objects_ruby = {
       \ 'iw'  :0,
@@ -675,10 +679,6 @@ highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
 highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
 highlight DiffChange cterm=bold ctermfg=10 ctermbg=17
 highlight DiffText   cterm=bold ctermfg=10 ctermbg=21
-
-" If possible, I want to enable below only in unite buffer...
-" https://github.com/Shougo/unite.vim/issues/905
-highlight! link CursorLine PmenuSel
 
 highlight WhitespaceEOL ctermbg=124 guibg=#880000
 match WhitespaceEOL /\s\+$/
