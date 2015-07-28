@@ -1,4 +1,4 @@
-# chieping's dotfiles
+# Chieping's Dotfiles
 
 ## Supported OS
 - Mac OS X
@@ -25,11 +25,11 @@ and then, hit `prefix + I` (I as in Install) to fetch the plugin
 
 ## Ubuntu
 
-### Keyrepeat Interval And Delay
+### Keyrepeat Interval and Delay
 
 ```
 sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
-sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 160
+sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 180
 ```
 
 ### Customize Window Management Key Binds
@@ -38,7 +38,7 @@ sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 160
 sudo apt-get install compizconfig-settings-manager
 ```
 
-### IME Disable By Esc Key
+### IME Disable by Esc Key
 
 Import `google-ime-mosc-keymap/keymap.txt`
 
