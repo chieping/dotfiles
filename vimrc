@@ -529,6 +529,12 @@ let g:unite_source_history_yank_limit = 100
 autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
 autocmd BufLeave \[unite\]* highlight! link CursorLine CursorLine
 
+" ######################### vim-surround
+
+" elb
+" 61: '='
+autocmd FileType eruby let g:surround_61 = "<%= \r %>"
+
 " ######################### vim-expand-region
 let g:expand_region_text_objects_ruby = {
       \ 'iw'  :0,
