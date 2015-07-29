@@ -20,6 +20,8 @@ NeoBundle 'Shougo/vimproc.vim'  ", {
 "         \ 'mac' : 'make -f make_mac.mak',
 "         \ 'linux' : 'make'
 "         \ }}
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
 NeoBundle 'sorah/unite-ghq'
@@ -177,6 +179,12 @@ set lazyredraw
 let g:mapleader=","
 
 let g:submode_timeout=0
+
+" ######################### ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-r>"
+let g:UltiSnipsJumpBackwardTrigger="<c-s>"
+let g:UltiSnipsEditSplit="vertical"
 
 " ######################### vim-localvimrc
 let g:localvimrc_ask=0
