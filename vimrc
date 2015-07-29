@@ -527,7 +527,7 @@ let g:unite_source_history_yank_limit = 100
 
 " Emphasize cursorline on unite buffer
 autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
-autocmd BufLeave \[unite\]* highlight! link CursorLine CursorLine
+autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
 
 " ######################### vim-surround
 
