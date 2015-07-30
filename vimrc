@@ -413,10 +413,27 @@ nnoremap <silent> [unite]d  :<C-u>Unite
 " unite-help
 nnoremap <silent> [unite]h  :<C-u>Unite
         \ help -default-action=tabopen<CR>
-nnoremap <silent> [unite]ma
-        \ :<C-u>Unite mapping<CR>
-nnoremap <silent> [unite]me
-        \ :<C-u>Unite messages<CR>
+" variables:all
+nnoremap <silent> [unite]va  :<C-u>Unite
+        \ output:let<CR>
+nnoremap <silent> [unite]vg  :<C-u>Unite
+        \ output:let\ g\:<CR>
+nnoremap <silent> [unite]vb  :<C-u>Unite
+        \ output:let\ b\:<CR>
+nnoremap <silent> [unite]vw  :<C-u>Unite
+        \ output:let\ w\:<CR>
+nnoremap <silent> [unite]vt  :<C-u>Unite
+        \ output:let\ t\:<CR>
+nnoremap <silent> [unite]vs  :<C-u>Unite
+        \ output:let\ s\:<CR>
+nnoremap <silent> [unite]vl  :<C-u>Unite
+        \ output:let\ l\:<CR>
+nnoremap <silent> [unite]vv  :<C-u>Unite
+        \ output:let\ v\:<CR>
+nnoremap <silent> [unite]ma :<C-u>Unite
+        \ mapping<CR>
+nnoremap <silent> [unite]me :<C-u>Unite
+        \ messages<CR>
 
 nnoremap <silent> [unite]s
         \ :<C-u>Unite -buffer-name=files -no-split
