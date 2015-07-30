@@ -24,7 +24,7 @@ NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
-NeoBundle 'sorah/unite-ghq'
+" NeoBundle 'sorah/unite-ghq'
 " NeoBundle 'rhysd/accelerated-jk'
 " NeoBundle 'rking/ag.vim'
 NeoBundle 'itchyny/lightline.vim'
@@ -345,8 +345,6 @@ let g:NERDTreeMapCWD = ''               " CD
 " this makes possible to use unite in nerdtree window
 autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
         \ grep:. -buffer-name=search-buffer<CR>
-autocmd FileType nerdtree nnoremap <buffer> <silent> mq  :<C-u>Unite
-        \ -default-action=ghq_nerdtree ghq<CR>
 
 " ######################### fugitive
 vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
@@ -412,9 +410,6 @@ nnoremap <silent> [unite]u  :<C-u>Unite
 " diff
 nnoremap <silent> [unite]d  :<C-u>Unite
         \ file_rec/async -default-action=diff<CR>
-" ghq
-nnoremap <silent> [unite]q  :<C-u>Unite
-        \ -default-action=ghq_nerdtree ghq<CR>
 " unite-help
 nnoremap <silent> [unite]h  :<C-u>Unite
         \ help -default-action=tabopen<CR>
@@ -521,15 +516,6 @@ function! nerdtree.func(candidate)
   execute "NERDTree" a:candidate[0].word
 endfunction
 call unite#custom#action('directory', 'nerdtree', nerdtree)
-
-" for unite-ghq
-let s:ghq_root = "~/src"
-let ghq_nerdtree = { 'is_selectable' : 1 }
-function! ghq_nerdtree.func(candidate)
-  execute "lcd" s:ghq_root . "/" . a:candidate[0].word
-  execute "NERDTree" s:ghq_root . "/" . a:candidate[0].word
-endfunction
-call unite#custom#action('directory', 'ghq_nerdtree', ghq_nerdtree)
 
 let g:unite_source_history_yank_enable = 1
 let g:unite_source_history_yank_limit = 100
