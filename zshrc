@@ -92,4 +92,7 @@ alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias -g P='| peco'
 
+# git local ignore
+alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
+
 source ~/.zshrc.local
