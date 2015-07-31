@@ -182,10 +182,13 @@ let g:mapleader=","
 let g:submode_timeout=0
 
 " ######################### ultisnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-r>"
-let g:UltiSnipsJumpBackwardTrigger="<c-s>"
 let g:UltiSnipsEditSplit="vertical"
+
+let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
+
+let g:snips_github="https://github.com/chieping"
+let g:snips_author="chieping"
+let g:snips_email="takashi.honda.01@gmail.com"
 
 " ######################### vim-localvimrc
 let g:localvimrc_ask=0
@@ -434,11 +437,9 @@ nnoremap <silent> [unite]ma :<C-u>Unite
         \ mapping<CR>
 nnoremap <silent> [unite]me :<C-u>Unite
         \ messages<CR>
-
-nnoremap <silent> [unite]s
-        \ :<C-u>Unite -buffer-name=files -no-split
-        \ jump_point file_point buffer_tab
-        \ file_rec:! file file/new file_mru<CR>
+" snippets
+nnoremap <silent> [unite]s :<C-u>Unite
+        \ ultisnips<CR>
 
 nnoremap <silent> [unite]my :<C-u>Unite menu:my<CR>
 
