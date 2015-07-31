@@ -30,6 +30,7 @@ ln -sf ~/.dotfiles/rbenv/default-gems ~/.rbenv/default-gems
 
 mkdir -p ~/.vim
 ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
+ln -sf ~/.dotfiles/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
 
 mkdir -p ~/.git_templates/hooks
 ln -sf ~/.dotfiles/git_templates/hooks/pre-commit ~/.git_templates/hooks/pre-commit
