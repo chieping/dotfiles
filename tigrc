@@ -2,6 +2,8 @@ set horizontal-scroll = 33%
 set line-graphics = yes
 set ignore-space = some
 
+set main-view = date author id commit-title:graph=yes,refs=yes
+
 # Colors {{{
 color cursor white black
 color status white default
