@@ -20,7 +20,7 @@ NeoBundle 'Shougo/vimproc.vim'  ", {
 "         \ 'mac' : 'make -f make_mac.mak',
 "         \ 'linux' : 'make'
 "         \ }}
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips', { 'disabled' : !has('python') }
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
