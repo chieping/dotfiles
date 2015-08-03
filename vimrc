@@ -176,6 +176,7 @@ set splitbelow splitright
 " 'lazyredraw' will buffer screen updates instead of updating all the time.
 " This mitigates delay of cursor movement well.
 set lazyredraw
+set nrformats-=octal
 
 let g:mapleader=","
 
@@ -305,7 +306,7 @@ cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 
 nnoremap <C-e> <End>
-nnoremap <C-a> <Home> " TODO: How should I increment numbers?
+nnoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -590,6 +591,13 @@ call submode#enter_with('next-win', 'n', '', '<C-w>W',     '<C-w>W')
 call submode#map('next-win', 'n', '', 'w',     '<C-w>w')
 call submode#map('next-win', 'n', '', '<C-w>', '<C-w>w')
 call submode#map('next-win', 'n', '', 'W',     '<C-w>W')
+
+" increment/decrement number
+call submode#enter_with('inc_dec', 'n', '', '<C-x>')
+call submode#map('inc_dec', 'n', '', 'a', '<C-a>')
+call submode#map('inc_dec', 'n', '', 'x', '<C-x>')
+call submode#map('inc_dec', 'n', '', '<C-a>', '<C-a>')
+call submode#map('inc_dec', 'n', '', '<C-x>', '<C-x>')
 
 cabbrev h    tab help
 cabbrev t    tabnew
