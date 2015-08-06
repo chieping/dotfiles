@@ -545,7 +545,7 @@ autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
 
 " ######################### vim-surround
 
-" elb
+" erb
 " 61: '='
 autocmd FileType eruby let g:surround_61 = "<%= \r %>"
 
