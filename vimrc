@@ -161,9 +161,9 @@ set listchars=tab:›\        "dummy comment to suppress trailing white space
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
-if v:version >= 704
-  set formatoptions+=j      "Get rid of comment leaders when joining lines"
-endif
+" Get rid of comment leaders when joining lines
+" Tips: to do opposite, *gq* handles very well!
+set formatoptions+=j
 if has('mac') || has('win32') || has('win64')
   set clipboard+=unnamed
 elseif has('unix')
