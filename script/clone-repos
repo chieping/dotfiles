@@ -11,18 +11,19 @@ install() {
   fi
 }
 
-install github.com/robbyrussell/oh-my-zsh            ~/.oh-my-zsh
-install github.com/zsh-users/zsh-syntax-highlighting ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
-install github.com/supercrabtree/k                   ~/.oh-my-zsh/custom/plugins/k
+install github.com/robbyrussell/oh-my-zsh                 ~/.oh-my-zsh
+install github.com/zsh-users/zsh-syntax-highlighting      ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+install github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
+install github.com/supercrabtree/k                        ~/.oh-my-zsh/custom/plugins/k
 
-install github.com/Shougo/neobundle.vim              ~/.vim/bundle/neobundle.vim
+install github.com/Shougo/neobundle.vim                   ~/.vim/bundle/neobundle.vim
 
-install github.com/tmux-plugins/tpm                  ~/.tmux/plugins/tpm
+install github.com/tmux-plugins/tpm                       ~/.tmux/plugins/tpm
 install github.com/seebi/tmux-colors-solarized
 
-install github.com/sstephenson/rbenv                 ~/.rbenv
-install github.com/sstephenson/ruby-build            ~/.rbenv/plugins/ruby-build
-install github.com/sstephenson/rbenv-default-gems    ~/.rbenv/plugins/rbenv-default-gems
+install github.com/sstephenson/rbenv                      ~/.rbenv
+install github.com/sstephenson/ruby-build                 ~/.rbenv/plugins/ruby-build
+install github.com/sstephenson/rbenv-default-gems         ~/.rbenv/plugins/rbenv-default-gems
 
 install github.com/vimpr/vimperator-plugins
 

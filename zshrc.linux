@@ -74,7 +74,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(aws gitfast git-flow common-aliases bundler colored-man golang brew-cask rbenv bgnotify z)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
-plugins+=(zsh-syntax-highlighting k)
+plugins+=(zsh-syntax-highlighting zsh-history-substring-search k)
 
 source $ZSH/oh-my-zsh.sh
 
