@@ -94,6 +94,9 @@ plugins+=(zsh-syntax-highlighting zsh-history-substring-search k)
 
 source $ZSH/oh-my-zsh.sh
 
+# oh-my-zsh default: 10000
+SAVEHIST=100000
+
 [ -f $HOMEBREW_ROOT/etc/profile.d/z.sh  ] && source $HOMEBREW_ROOT/etc/profile.d/z.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,

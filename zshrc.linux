@@ -78,6 +78,9 @@ plugins+=(zsh-syntax-highlighting zsh-history-substring-search k)
 
 source $ZSH/oh-my-zsh.sh
 
+# oh-my-zsh default: 10000
+SAVEHIST=100000
+
 # override gallois prompt
 # adding hostname
 PROMPT='%{$fg[cyan]%}[%m:%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
