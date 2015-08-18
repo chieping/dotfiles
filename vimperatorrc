@@ -24,8 +24,10 @@ js<<EOB
     liberator.execute('nnoremap a <M-c>:eijiro [<M-v>]<CR>')
     liberator.execute('vnoremap a <M-c>:eijiro [<M-v>]<CR>')
   } else if(liberator.has("Windows")) {
-    liberator.execute('nnoremap a <C-Ins>:javascript liberator.execute("eijiro ["+util.readFromClipboard()+"]")');
-    liberator.execute('vnoremap a <C-Ins>:javascript liberator.execute("eijiro ["+util.readFromClipboard()+"]")');
+    liberator.execute('nnoremap m :eijiro [<C-v>]')
+    liberator.execute('nmap a <C-Ins>m<CR>')
+    liberator.execute('vnoremap m :eijiro [<C-v>]')
+    liberator.execute('vmap a <C-Ins>m<CR>')
   } else {
     liberator.execute('nnoremap a <C-c>:eijiro [<C-v>]<CR>')
     liberator.execute('vnoremap a <C-c>:eijiro [<C-v>]<CR>')
