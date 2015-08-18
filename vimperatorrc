@@ -10,7 +10,7 @@ set gui=none,tabs,bookmarks
 
 " plugin_loader
 let g:plugin_loader_roots = "~/src/github.com/vimpr/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,bookmarktoolbar-hint,lookupDictionary,caret-hint,walk-input"
+let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,bookmarktoolbar-hint,lookupDictionary,caret-hint"
 
 " Show hint with no any label or value on input elements
 set hintinputs=""
@@ -52,6 +52,14 @@ noremap <Esc><Esc> :noh<CR>
 
 " use vimp's view-source
 noremap <M-u> :<C-u>viewsource<CR>
+
+js<<EOB
+  if(liberator.has("MacUnix")) {
+    liberator.execute('nnoremap <M-i> gi')
+  } else {
+    liberator.execute('nnoremap <A-i> gi')
+  }
+EOB
 
 nnoremap C c
 
