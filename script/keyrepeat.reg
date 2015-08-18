@@ -1,0 +1,8 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Control Panel\Accessibility\Keyboard Response]
+"AutoRepeatDelay"="180"
+"AutoRepeatRate"="12"
+"BounceTime"="0"
+"DelayBeforeAcceptance"="0"
+"Flags"="59"
