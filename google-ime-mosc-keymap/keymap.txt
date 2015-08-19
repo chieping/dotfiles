@@ -71,9 +71,10 @@ Conversion	Ctrl Space	IMEOff
 Conversion	Ctrl Space	InsertHalfSpace
 Conversion	Ctrl Up	ConvertPrev
 Conversion	Ctrl a	SegmentFocusFirst
-Conversion	Ctrl d	SegmentFocusRight
+Conversion	Ctrl b	SegmentFocusLeft
 Conversion	Ctrl e	ConvertPrev
-Conversion	Ctrl f	SegmentFocusLast
+Conversion	Ctrl e	SegmentFocusLast
+Conversion	Ctrl f	SegmentFocusRight
 Conversion	Ctrl g	Cancel
 Conversion	Ctrl h	Cancel
 Conversion	Ctrl i	ConvertToFullKatakana
