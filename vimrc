@@ -50,7 +50,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 "         \ 'autoload' : {
 "         \ 'mappings' : [ '<Plug>(easymotion-' ]
 "         \ }}
-NeoBundle 'justinmk/vim-sneak'
+" NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'matchit.zip'
@@ -247,25 +247,6 @@ let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
-
-" ######################### vim-sneak
-let g:sneak#use_ic_scs = 1
-let g:sneak#s_next = 1
-
-"replace 'f' with inclusive 2-char Sneak
-nmap f <Plug>Sneak_s
-nmap F <Plug>Sneak_S
-xmap f <Plug>Sneak_s
-xmap F <Plug>Sneak_S
-omap f <Plug>Sneak_s
-omap F <Plug>Sneak_S
-"replace 't' with exclusive 1-char Sneak
-nmap t <Plug>Sneak_t
-nmap T <Plug>Sneak_T
-xmap t <Plug>Sneak_t
-xmap T <Plug>Sneak_T
-omap t <Plug>Sneak_t
-omap T <Plug>Sneak_T
 
 " ######################### incsearch.vim
 map /  <Plug>(incsearch-forward)
