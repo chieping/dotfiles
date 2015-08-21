@@ -28,8 +28,8 @@ and then, hit `prefix + I` (I as in Install) to fetch the plugin
 ### Keyrepeat Interval and Delay
 
 ```
-sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
-sudo gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 180
+gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 12
+gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 180
 ```
 
 ### Customize Window Management Key Binds
