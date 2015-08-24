@@ -17,6 +17,8 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export DIFF_HIGHLIGHT='perl /usr/share/doc/git/contrib/diff-highlight/diff-highlight'
+
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
