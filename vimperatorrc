@@ -63,6 +63,20 @@ js<<EOB
   }
 EOB
 
+" Enable pasting alike in terminal or OSX
+js<<EOB
+  if(!liberator.has("MacUnix")) {
+    liberator.execute('inoremap <A-v> <C-v>')
+    liberator.execute('cnoremap <A-v> <C-v>')
+    liberator.execute('inoremap <A-c> <C-c>')
+    liberator.execute('nnoremap <A-c> <C-c>')
+    liberator.execute('vnoremap <A-c> <C-c>')
+    liberator.execute('cnoremap <A-c> <C-c>')
+    liberator.execute('inoremap <A-x> <C-x>')
+    liberator.execute('cnoremap <A-x> <C-x>')
+  }
+EOB
+
 nnoremap C c
 
 nnoremap j 6j
