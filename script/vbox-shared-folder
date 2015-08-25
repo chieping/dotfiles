@@ -3,7 +3,7 @@
 set -eu
 
 shared_folder=share
-mkdir -p /$shared_folder
-mount -t vboxsf -o uid=1000,gid=1000,dmode=0755,fmode=0755 $shared_folder /$shared_folder
+sudo mkdir -p /$shared_folder
+sudo mount -t vboxsf -o uid=1000,gid=1000,dmode=0755,fmode=0755 $shared_folder /$shared_folder
 
 echo 'To enable auto mounting, insert mount command to /etc/rc.local'
