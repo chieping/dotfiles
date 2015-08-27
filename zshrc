@@ -120,6 +120,7 @@ alias e='cd $(ghq list -p | grep -v amazonaws.com | {peco || pwd;})'
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias -g P='| peco'
+alias -g X='| xargs -I %'
 
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'

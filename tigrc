@@ -1,6 +1,7 @@
 set horizontal-scroll = 33%
 set line-graphics = yes
 set ignore-space = some
+set wrap-lines = yes
 
 set main-view = date author id commit-title:graph=yes,refs=yes
 
