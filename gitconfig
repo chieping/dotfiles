@@ -4,13 +4,13 @@
 	templatedir = ~/.git_templates
 [core]
 	excludesfile = ~/.gitignore
-	pager = $DIFF_HIGHLIGHT | less
+	pager = ${DIFF_HIGHLIGHT:-cat} | less
 	quotepath = false
 	precomposeunicode = true
 [pager]
-	log  = $DIFF_HIGHLIGHT | less
-	show = $DIFF_HIGHLIGHT | less
-	diff = $DIFF_HIGHLIGHT | less
+	log  = ${DIFF_HIGHLIGHT:-cat} | less
+	show = ${DIFF_HIGHLIGHT:-cat} | less
+	diff = ${DIFF_HIGHLIGHT:-cat} | less
 [color]
 	ui = auto
 [alias]
