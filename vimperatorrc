@@ -63,7 +63,6 @@ js<<EOB
   }
 EOB
 
-" Enable pasting alike in terminal or OSX
 js<<EOB
   if(!liberator.has("MacUnix")) {
     liberator.execute('inoremap <A-v> <C-v>')
