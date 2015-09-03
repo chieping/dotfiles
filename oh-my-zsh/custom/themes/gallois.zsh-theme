@@ -4,7 +4,7 @@ ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg[green]%}"
 
 theme_aws_profile() {
   local agp=$(agp)
-  if [ -n $agp ]; then
+  if [ -n "$agp" ]; then
     echo "%{$reset_color%}%{$fg[blue]%}[$agp]%{$reset_color%}"
   fi
 }
