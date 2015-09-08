@@ -5,6 +5,8 @@ export GIT_EDITOR=vim
 autoload -U compinit && compinit
 
 UNBUNDLED_COMMANDS=(pry knife)
+ZSH_TMUX_ITERM2=false
+ZSH_TMUX_AUTOSTART=true
 
 # golang settings
 export GOPATH=$HOME
@@ -74,7 +76,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws gitfast git-flow git-prompt common-aliases bundler colored-man golang rbenv bgnotify z thefuck)
+plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang rbenv bgnotify z thefuck)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
 plugins+=(zsh-syntax-highlighting zsh-history-substring-search k)
 
