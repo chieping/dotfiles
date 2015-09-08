@@ -194,6 +194,9 @@ let g:snips_email="takashi.honda.01@gmail.com"
 let g:localvimrc_ask=0
 let g:localvimrc_sandbox=0
 
+" ######################### vim-json
+let g:vim_json_syntax_conceal = 0
+
 " ######################### vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 
