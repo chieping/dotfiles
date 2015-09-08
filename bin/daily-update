@@ -3,7 +3,12 @@
 vim_plugins()
 {
   echo "####    vim plugins    ####"
-  vim -n -e -s -S ~/.vimrc '+verbose NeoBundleUpdate' '+! echo; echo; echo NeoBundleupdatesLog' '+verbose NeoBundleUpdatesLog' '+! echo' +quit
+  vim -n -e -s -S ~/.vimrc '+set runtimepath+=~/.vim/bundle/vimproc.vim/' \
+                           '+verbose NeoBundleUpdate' \
+                           '+! echo; echo; echo NeoBundleupdatesLog' \
+                           '+verbose NeoBundleUpdatesLog' \
+                           '+! echo' \
+                           '+quit'
 }
 
 oh_my_zsh()

@@ -13,13 +13,11 @@ NeoBundleLazy 'Shougo/vimshell', {
         \ 'autoload' : {
         \ 'commands' : [ 'VimShell', 'VimShellPop', 'VimShellInteractive' ]
         \ }}
-" Unfortunately, specifying build option caused runtimepath issue when it is
-" silent mode.
-NeoBundle 'Shougo/vimproc.vim'  ", {
-"         \ 'build' : {
-"         \ 'mac' : 'make -f make_mac.mak',
-"         \ 'linux' : 'make'
-"         \ }}
+NeoBundle 'Shougo/vimproc.vim'  , {
+        \ 'build' : {
+        \ 'mac' : 'make -f make_mac.mak',
+        \ 'linux' : 'make'
+        \ }}
 NeoBundle 'SirVer/ultisnips', { 'disabled' : !has('python') }
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
