@@ -41,6 +41,12 @@ nnoremap <Leader>tb :set gui=invbookmarks<CR>:echomsg "Toggle bookmarks"<CR>
 nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
 nnoremap <Leader>tc :set gui=none<CR>
 
+js<<EOB
+  if(!liberator.has("MacUnix")) {
+      liberator.execute('noremap <A-b> :emenu 表示.サイドバー.ブックマーク<CR>')
+  }
+EOB
+
 noremap <M-f> /
 cnoremap <M-f> <NOP>
 inoremap <M-f> <ESC>/
