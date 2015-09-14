@@ -89,6 +89,8 @@ SAVEHIST=100000
 # adding hostname
 PROMPT='%{$fg[cyan]%}[%m:%~% ]%(?.%{$fg[green]%}.%{$fg[red]%})%B$%b '
 
+# Xsel sometimes fails when very long text is passed using Tmux integration.
+# So Xclip is recommended.
 if type xclip >/dev/null 2>&1 ; then
   alias -g C='| xclip -selection clipboard'
 elif type xsel >/dev/null 2>&1 ; then
