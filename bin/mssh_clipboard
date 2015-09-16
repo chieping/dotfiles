@@ -1,0 +1,10 @@
+#!/bin/bash
+set -eu
+
+# TODO: Consider multi platform
+cmd_paste="xclip -selection clipboard -out"
+
+$cmd_paste | while read host; do
+  tmux split-window "exec ssh $host"
+  tmux select-layout even-vertical
+done
