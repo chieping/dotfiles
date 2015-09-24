@@ -216,6 +216,9 @@ let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let g:syntastic_check_on_wq = 0
+let g:syntastic_mode_map = {
+    \ 'mode': 'active',
+    \ 'passive_filetypes': ['chef'] }
 
 " ######################### vim-operator-replace
 map r <Plug>(operator-replace)
