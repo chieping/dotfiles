@@ -21,6 +21,12 @@ install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 and then, hit `prefix + I` (I as in Install) to fetch the plugin
 
+## ruby-build
+
+Build dependency packages
+
+https://github.com/sstephenson/ruby-build/wiki
+
 # Further Settings
 
 ## Ubuntu
@@ -47,3 +53,11 @@ Import `google-ime-mosc-keymap/keymap.txt`
 ```
 sudo apt-get install clipit
 ```
+
+### Use 1password (via Wine)
+
+[Ubuntuで1Passwordを使ってみる - Ry0 Note](http://ry0.github.io/blog/2015/04/12/ubuntu-1password/)
+
+### Solarized Colorscheme for Gnome Terminal
+
+https://github.com/Anthony25/gnome-terminal-colors-solarized
