@@ -1,8 +1,17 @@
 #!/bin/bash
 set -eu
 
-# TODO: Consider multi platform
-cmd_paste="xclip -selection clipboard -out"
+if type pbpaste >/dev/null 2>&1 ; then
+  cmd_paste='pbpaste'
+elif type xclip >/dev/null 2>&1 ; then
+  cmd_paste="xclip -selection clipboard -out"
+elif type xsel >/dev/null 2>&1 ; then
+  cmd_paste="xsel --clipboard"
+else
+  echo pasting command not installed
+  exit 1
+fi
+
 first_host=
 
 while read host; do
