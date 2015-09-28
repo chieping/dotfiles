@@ -3,8 +3,15 @@ set -eu
 
 # TODO: Consider multi platform
 cmd_paste="xclip -selection clipboard -out"
+first_host=
 
-$cmd_paste | while read host; do
+while read host; do
+  if [ -z "$first_host" ]; then
+    first_host=$host
+    continue
+  fi
   tmux split-window "exec ssh $host"
   tmux select-layout even-vertical
-done
+done < <($cmd_paste)
+
+ssh $first_host
