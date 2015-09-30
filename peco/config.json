@@ -1,0 +1,7 @@
+{
+    "Prompt": ">>>",
+    "Style": {
+      "Selected": ["underline", "on_cyan", "black"],
+      "Matched": ["white"]
+    }
+}

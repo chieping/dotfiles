@@ -41,6 +41,8 @@ ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/
 
 ln -sf ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
 
+ln -sf ~/.dotfiles/peco ~/.peco
+
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom/themes/gallois.zsh-theme
 
