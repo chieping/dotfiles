@@ -197,6 +197,9 @@ let g:localvimrc_sandbox=0
 " ######################### vim-json
 let g:vim_json_syntax_conceal = 0
 
+" default brace color(red) is not very good
+highlight link jsonBraces Function
+
 " ######################### vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 
