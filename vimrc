@@ -194,11 +194,15 @@ let g:snips_email="takashi.honda.01@gmail.com"
 let g:localvimrc_ask=0
 let g:localvimrc_sandbox=0
 
-" ######################### vim-json
-let g:vim_json_syntax_conceal = 0
+" elzr/vim-json
+if neobundle#tap('vim-json')
+  let g:vim_json_syntax_conceal = 0
 
-" default brace color(red) is not very good
-highlight link jsonBraces Function
+  " default brace color(red) is not very good
+  highlight link jsonBraces Function
+
+  call neobundle#untap()
+endif
 
 " ######################### vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
