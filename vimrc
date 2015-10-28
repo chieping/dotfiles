@@ -18,7 +18,7 @@ NeoBundle 'Shougo/vimproc.vim'  , {
         \ 'mac' : 'make -f make_mac.mak',
         \ 'linux' : 'make'
         \ }}
-NeoBundle 'SirVer/ultisnips', { 'disabled' : !has('python') }
+NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
@@ -181,14 +181,22 @@ let g:mapleader=","
 
 let g:submode_timeout=0
 
-" ######################### ultisnips
-let g:UltiSnipsEditSplit="vertical"
+" SirVer/ultisnips
+if neobundle#tap('ultisnips')
+  call neobundle#config({
+    \  'disabled' : !has('python')
+    \ })
 
-let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
+  let g:UltiSnipsEditSplit="vertical"
 
-let g:snips_github="https://github.com/chieping"
-let g:snips_author="chieping"
-let g:snips_email="takashi.honda.01@gmail.com"
+  let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
+
+  let g:snips_github="https://github.com/chieping"
+  let g:snips_author="chieping"
+  let g:snips_email="takashi.honda.01@gmail.com"
+
+  call neobundle#untap()
+endif
 
 " ######################### vim-localvimrc
 let g:localvimrc_ask=0
@@ -558,12 +566,16 @@ let g:expand_region_text_objects_ruby = {
       \ 'ie'  :0,
       \ }
 
-" ######################### Signify
-call submode#enter_with('signify-move', 'n', '', '<Leader>g')
-call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
-call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
-call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
-call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
+" mhinz/vim-signify
+if neobundle#tap('vim-signify')
+  call submode#enter_with('signify-move', 'n', '', '<Leader>g')
+  call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
+  call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
+  call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
+  call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
+
+  call neobundle#untap()
+endif
 
 map <C-w>L <C-w>>
 map <C-w>H <C-w><
