@@ -181,6 +181,41 @@ let g:mapleader=","
 
 let g:submode_timeout=0
 
+
+" plugin config sample
+"
+" {author}/{plugin}
+" if neobundle#tap('{plugin}')
+"   call neobundle#config({
+"     \  'lazy' : 1,
+"     \  'autoload' : {
+"     \    'insert' : 1,
+"     \  }})
+"
+"   function! neobundle#hooks.on_source(bundle)
+"     " Settings, Init, ...
+"     " Timing of adding rtp
+"     " Like vimrc time
+"     let g:foo#bar = 1
+"     let g:foo#path = a:bundle.path
+"     call foo#baz()
+"   endfunction
+"
+"   function! neobundle#hooks.on_post_source(bundle)
+"     " Settings, Init, ...
+"     " Timing of after source plugin files
+"     " Like VimEnter time
+"     let g:foo#bar = 3
+"     call foo#bazbaz()
+"   endfunction
+"
+"   " Define plugin mappings, commands, ...
+"   map f <Plug>(foo)
+"   command! FOO call foo#foo()
+"
+"   call neobundle#untap()
+" endif
+
 " SirVer/ultisnips
 if neobundle#tap('ultisnips')
   call neobundle#config({
