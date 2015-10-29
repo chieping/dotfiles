@@ -13,11 +13,7 @@ NeoBundle 'Shougo/neomru.vim'
 "         \ 'autoload' : {
 "         \ 'commands' : [ 'VimShell', 'VimShellPop', 'VimShellInteractive' ]
 "         \ }}
-NeoBundle 'Shougo/vimproc.vim'  , {
-        \ 'build' : {
-        \ 'mac' : 'make -f make_mac.mak',
-        \ 'linux' : 'make'
-        \ }}
+NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
@@ -181,10 +177,8 @@ let g:mapleader=","
 
 let g:submode_timeout=0
 
-
 " plugin config sample
 "
-" {author}/{plugin}
 " if neobundle#tap('{plugin}')
 "   call neobundle#config({
 "     \  'lazy' : 1,
@@ -216,7 +210,16 @@ let g:submode_timeout=0
 "   call neobundle#untap()
 " endif
 
-" SirVer/ultisnips
+if neobundle#tap('vimproc.vim')
+  call neobundle#config({
+    \ 'build' : {
+    \   'mac' : 'make -f make_mac.mak',
+    \   'linux' : 'make'
+    \ }})
+
+  call neobundle#untap()
+endif
+
 if neobundle#tap('ultisnips')
   call neobundle#config({
     \  'disabled' : !has('python')
@@ -233,11 +236,13 @@ if neobundle#tap('ultisnips')
   call neobundle#untap()
 endif
 
-" ######################### vim-localvimrc
-let g:localvimrc_ask=0
-let g:localvimrc_sandbox=0
+if neobundle#tap('vim-localvimrc')
+  let g:localvimrc_ask=0
+  let g:localvimrc_sandbox=0
 
-" elzr/vim-json
+  call neobundle#untap()
+endif
+
 if neobundle#tap('vim-json')
   let g:vim_json_syntax_conceal = 0
 
@@ -247,56 +252,77 @@ if neobundle#tap('vim-json')
   call neobundle#untap()
 endif
 
-" ######################### vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
+if neobundle#tap('vim-indent-guides')
+  let g:indent_guides_enable_on_vim_startup = 1
 
-if ! has('gui_running')
-  let g:indent_guides_auto_colors = 0
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=0
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
+  if ! has('gui_running')
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
+  endif
+
+  call neobundle#untap()
 endif
 
-" ######################### vim-gista
-let g:gista#github_user = 'chieping'
+if neobundle#tap('vim-gista')
+  let g:gista#github_user = 'chieping'
 
-" ######################### Syntastic
-let g:syntastic_error_symbol='✗'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_ruby_checkers = ['rubocop']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {
-    \ 'mode': 'active',
-    \ 'passive_filetypes': ['chef'] }
+  call neobundle#untap()
+endif
 
-" ######################### vim-operator-replace
-map r <Plug>(operator-replace)
+if neobundle#tap('Syntastic')
+  let g:syntastic_error_symbol='✗'
+  let g:syntastic_warning_symbol='⚠'
+  let g:syntastic_ruby_checkers = ['rubocop']
+  let g:syntastic_javascript_checkers = ['eslint']
+  let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
+  let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+  let g:syntastic_check_on_wq = 0
+  let g:syntastic_mode_map = {
+      \ 'mode': 'active',
+      \ 'passive_filetypes': ['chef'] }
 
-" ######################### vim-table-mode
-let g:table_mode_corner = '|'
+  call neobundle#untap()
+endif
 
-" ######################### switch.vim
-nnoremap - :Switch<CR>
+if neobundle#tap('vim-operator-replace')
+  map r <Plug>(operator-replace)
 
-let g:switch_custom_definitions = [
-        \   {
-        \     '''\([^'']\+\)''': '"\1"',
-        \     '"\([^"]\+\)"': '''\1'''
-        \   },
-        \   {
-        \     '\[ \]': '\[x\]',
-        \     '\[x\]': '\[ \]'
-        \   },
-        \   {
-        \     '`\([^`]\+\)`': '\$(\1)',
-        \     '\$(\([^)]\+\))': '`\1`'
-        \   },
-        \ ]
+  call neobundle#untap()
+endif
 
-" ######################### vim-multiple-cursors
-let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
+if neobundle#tap('vim-table-mode')
+  let g:table_mode_corner = '|'
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('switch.vim')
+  nnoremap - :Switch<CR>
+
+  let g:switch_custom_definitions = [
+    \   {
+    \     '''\([^'']\+\)''': '"\1"',
+    \     '"\([^"]\+\)"': '''\1'''
+    \   },
+    \   {
+    \     '\[ \]': '\[x\]',
+    \     '\[x\]': '\[ \]'
+    \   },
+    \   {
+    \     '`\([^`]\+\)`': '\$(\1)',
+    \     '\$(\([^)]\+\))': '`\1`'
+    \   },
+    \ ]
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('vim-multiple-cursors')
+  let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
+
+  call neobundle#untap()
+endif
 
 " ######################### open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
