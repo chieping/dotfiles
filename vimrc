@@ -73,7 +73,7 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
-NeoBundle 'closetag.vim'
+" NeoBundle 'closetag.vim'
 " NeoBundle 'szw/vim-tags'
 NeoBundle 'soramugi/auto-ctags.vim'
 NeoBundle 'kannokanno/previm'
@@ -145,6 +145,87 @@ set nrformats-=octal
 
 let g:mapleader=","
 
+nnoremap <Leader>p :set invpaste<CR>
+set pastetoggle=<Leader>p
+
+nnoremap U :redo<CR>
+
+nmap <Leader>v :tabedit $MYVIMRC<CR>
+nmap <Leader>r :<C-u>source $MYVIMRC<CR>
+
+nnoremap ; :
+vnoremap ; :
+
+" If doing a diff. Upon writing changes to file, automatically update the
+" differences
+autocmd BufWritePost * if &diff == 1 | diffupdate | endif
+
+" Yank like Tmux copy mode
+vnoremap <CR> y
+
+" use black hole register
+noremap c "_c
+noremap C "_C
+noremap s "_s
+noremap S "_S
+noremap x "_x
+noremap X "_X
+
+inoremap <C-b> <Left>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+inoremap <C-f> <Right>
+inoremap <C-^> <Esc>^i
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+
+nnoremap <C-e> <End>
+nnoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-a> <Home>
+cnoremap <C-e> <End>
+cnoremap <C-a> <Home>
+cnoremap <C-d> <Delete>
+
+inoremap <C-d> <Delete>
+inoremap <C-h> <BS>
+
+inoremap <C-k> <Esc>ld$a
+inoremap <C-u> <Esc>ld0i
+
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap <C-h> <C-w>h
+
+" display candidates by default
+nnoremap <C-]> g<C-]>
+vnoremap <C-]> g<C-]>
+
+map <C-w>L <C-w>>
+map <C-w>H <C-w><
+map <C-w>K <C-w>-
+map <C-w>J <C-w>+
+
+cabbrev h    tab help
+cabbrev t    tabnew
+cabbrev bu   NeoBundleUpdate
+cabbrev bul  NeoBundleUpdatesLog
+cabbrev fd   filetype detect
+cabbrev sf   set filetype=
+cabbrev ds   diffsplit
+cabbrev vd   vertical diffsplit
+
+function! ToggleWrap()
+  if (&wrap == 1)
+    set nowrap
+  else
+    set wrap
+  endif
+endfunction
+
+map <Leader>w :call ToggleWrap()<CR>
+
 " plugin config sample
 "
 " if neobundle#tap('{plugin}')
@@ -193,36 +274,6 @@ if neobundle#tap('vim-smartword')
   map b  <Plug>(smartword-b)
   map e  <Plug>(smartword-e)
   map ge <Plug>(smartword-ge)
-
-  call neobundle#untap()
-endif
-
-if neobundle#tap('closetag.vim')
-  call neobundle#config({
-    \ 'lazy' : 1,
-    \ 'autoload' : {
-    \   'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
-    \ }})
-
-  call neobundle#untap()
-endif
-
-if neobundle#tap('tcomment_vim')
-  call neobundle#config({
-    \ 'lazy' : 1,
-    \ 'autoload' : {
-    \   'mappings' : [ '<Plug>TComment-' ]
-    \ }})
-
-  call neobundle#untap()
-endif
-
-if neobundle#tap('previm')
-  call neobundle#config({
-    \ 'lazy' : 1,
-    \ 'autoload' : {
-    \   'filetypes' : [ 'markdown' ],
-    \ }})
 
   call neobundle#untap()
 endif
@@ -341,63 +392,6 @@ if neobundle#tap('incsearch.vim')
   call neobundle#untap()
 endif
 
-nnoremap <Leader>p :set invpaste<CR>
-set pastetoggle=<Leader>p
-
-nnoremap U :redo<CR>
-
-nmap <Leader>v :tabedit $MYVIMRC<CR>
-nmap <Leader>r :<C-u>source $MYVIMRC<CR>
-
-nnoremap ; :
-vnoremap ; :
-
-" If doing a diff. Upon writing changes to file, automatically update the
-" differences
-autocmd BufWritePost * if &diff == 1 | diffupdate | endif
-
-" Yank like Tmux copy mode
-vnoremap <CR> y
-
-" use black hole register
-noremap c "_c
-noremap C "_C
-noremap s "_s
-noremap S "_S
-noremap x "_x
-noremap X "_X
-
-inoremap <C-b> <Left>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
-inoremap <C-f> <Right>
-inoremap <C-^> <Esc>^i
-cnoremap <C-f> <Right>
-cnoremap <C-b> <Left>
-
-nnoremap <C-e> <End>
-nnoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-a> <Home>
-cnoremap <C-d> <Delete>
-
-inoremap <C-d> <Delete>
-inoremap <C-h> <BS>
-
-inoremap <C-k> <Esc>ld$a
-inoremap <C-u> <Esc>ld0i
-
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-l> <C-w>l
-nmap <C-h> <C-w>h
-
-" display candidates by default
-nnoremap <C-]> g<C-]>
-vnoremap <C-]> g<C-]>
-
 if neobundle#tap('nerdtree')
   nmap <Leader>f :NERDTreeToggle<CR>
   nmap <Leader>s :NERDTreeFind<CR>
@@ -454,6 +448,15 @@ if neobundle#tap('unite.vim')
   let g:unite_source_menu_menus.my = {
           \   'description': 'my menu',
           \ }
+
+  function! ToggleIwhite()
+    if (&diffopt =~ 'iwhite')
+      set diffopt-=iwhite
+    elseif (&diffopt !~ 'iwhite')
+      set diffopt+=iwhite
+    endif
+  endfunction
+
   let g:unite_source_menu_menus.my.command_candidates = {
           \   'remove extra whitespaces': '%s/\s\+$//g',
           \   'force write': 'w !sudo tee %',
@@ -684,38 +687,6 @@ if neobundle#tap('vim-submode')
 
   call neobundle#untap()
 endif
-
-map <C-w>L <C-w>>
-map <C-w>H <C-w><
-map <C-w>K <C-w>-
-map <C-w>J <C-w>+
-
-cabbrev h    tab help
-cabbrev t    tabnew
-cabbrev bu   NeoBundleUpdate
-cabbrev bul  NeoBundleUpdatesLog
-cabbrev fd   filetype detect
-cabbrev sf   set filetype=
-cabbrev ds   diffsplit
-cabbrev vd   vertical diffsplit
-
-function! ToggleWrap()
-  if (&wrap == 1)
-    set nowrap
-  else
-    set wrap
-  endif
-endfunction
-
-function! ToggleIwhite()
-  if (&diffopt =~ 'iwhite')
-    set diffopt-=iwhite
-  elseif (&diffopt !~ 'iwhite')
-    set diffopt+=iwhite
-  endif
-endfunction
-
-map <Leader>w :call ToggleWrap()<CR>
 
 if neobundle#tap('auto-ctags.vim')
   if has('mac')
