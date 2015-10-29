@@ -76,7 +76,7 @@ NeoBundle 'mhinz/vim-signify'
 NeoBundle 'closetag.vim'
 " NeoBundle 'szw/vim-tags'
 NeoBundle 'soramugi/auto-ctags.vim'
-NeoBundleLazy 'kannokanno/previm'
+NeoBundle 'kannokanno/previm'
 " NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
@@ -145,8 +145,6 @@ set nrformats-=octal
 
 let g:mapleader=","
 
-let g:submode_timeout=0
-
 " plugin config sample
 "
 " if neobundle#tap('{plugin}')
@@ -191,11 +189,10 @@ if neobundle#tap('vimproc.vim')
 endif
 
 if neobundle#tap('vim-smartword')
-  call neobundle#config({
-    \ 'lazy' : 1,
-    \ 'autoload' : {
-    \   'mappings' : [ '<Plug>(smartword-' ]
-    \ }})
+  map w  <Plug>(smartword-w)
+  map b  <Plug>(smartword-b)
+  map e  <Plug>(smartword-e)
+  map ge <Plug>(smartword-ge)
 
   call neobundle#untap()
 endif
@@ -328,15 +325,21 @@ if neobundle#tap('vim-multiple-cursors')
   call neobundle#untap()
 endif
 
-" ######################### open-browser.vim
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
+if neobundle#tap('open-browser.vim')
+  let g:netrw_nogx = 1 " disable netrw's gx mapping.
+  nmap gx <Plug>(openbrowser-smart-search)
+  vmap gx <Plug>(openbrowser-smart-search)
 
-" ######################### incsearch.vim
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
+  call neobundle#untap()
+endif
+
+if neobundle#tap('incsearch.vim')
+  map /  <Plug>(incsearch-forward)
+  map ?  <Plug>(incsearch-backward)
+  map g/ <Plug>(incsearch-stay)
+
+  call neobundle#untap()
+endif
 
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
@@ -391,247 +394,258 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
-map w  <Plug>(smartword-w)
-map b  <Plug>(smartword-b)
-map e  <Plug>(smartword-e)
-map ge <Plug>(smartword-ge)
-
 " display candidates by default
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
 
-" ######################### NERDTree
-nmap <Leader>f :NERDTreeToggle<CR>
-nmap <Leader>s :NERDTreeFind<CR>
+if neobundle#tap('nerdtree')
+  nmap <Leader>f :NERDTreeToggle<CR>
+  nmap <Leader>s :NERDTreeFind<CR>
 
-let NERDTreeMinimalUI=1
+  let NERDTreeMinimalUI=1
 
-" Disable NERDTree's mappings
-let g:NERDTreeMapJumpNextSibling = ''   " C-j
-let g:NERDTreeMapJumpPrevSibling = ''   " C-k
-let g:NERDTreeMapToggleFilters = ''     " f
-let g:NERDTreeMapToggleFiles = ''       " F
-let g:NERDTreeMapCWD = ''               " CD
+  " Disable NERDTree's mappings
+  let g:NERDTreeMapJumpNextSibling = ''   " C-j
+  let g:NERDTreeMapJumpPrevSibling = ''   " C-k
+  let g:NERDTreeMapToggleFilters = ''     " f
+  let g:NERDTreeMapToggleFiles = ''       " F
+  let g:NERDTreeMapCWD = ''               " CD
 
-" this makes possible to use unite in nerdtree window
-autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
-        \ grep:. -buffer-name=search-buffer<CR>
+  " this makes possible to use unite in nerdtree window
+  autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
+          \ grep:. -buffer-name=search-buffer<CR>
 
-" ######################### fugitive
-vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
-vnoremap gb :<C-u>'<,'>Gblame<CR>
-nnoremap gs :<C-u>Gstatus<CR>
-nnoremap gl :<C-u>Glog \| cwindow<CR>
-
-nnoremap gdd :<C-u>Gdiff develop..@<CR>
-nnoremap gdm :<C-u>Gdiff master..@<CR>
-
-" ######################### Tabular
-nmap <Leader>a= :Tabularize /=<CR>
-vmap <Leader>a= :Tabularize /=<CR>
-nmap <Leader>a> :Tabularize /=><CR>
-vmap <Leader>a> :Tabularize /=><CR>
-nmap <Leader>a\| :Tabularize /\|<CR>
-vmap <Leader>a\| :Tabularize /\|<CR>
-nmap <Leader>a: :Tabularize /^[^:]*\w:\zs/l0l1<CR>
-vmap <Leader>a: :Tabularize /^[^:]*\w:\zs/l0l1<CR>
-nmap <Leader>as :Tabularize /:\w\+,\?<CR>
-vmap <Leader>as :Tabularize /:\w\+,\?<CR>
-
-" ######################### Unite.vim
-" The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    m [unite]
-
-let g:unite_source_menu_menus = {}
-let g:unite_source_menu_menus.my = {
-        \   'description': 'my menu',
-        \ }
-let g:unite_source_menu_menus.my.command_candidates = {
-        \   'remove extra whitespaces': '%s/\s\+$//g',
-        \   'force write': 'w !sudo tee %',
-        \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
-        \ }
-
-let g:unite_source_alias_aliases = {
-        \   'messages' : {
-        \     'source': 'output',
-        \     'args': 'message',
-        \   },
-        \ }
-call unite#custom#source('messages', 'sorters', 'sorter_reverse')
-
-nnoremap <silent> [unite]p  :<C-u>Unite file_rec/async<CR>
-nnoremap <silent> [unite]P  :<C-u>new<CR>:<C-u>Unite file_rec/async<CR>
-nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
-        \ -buffer-name=files buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
-        \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]r  :<C-u>Unite
-        \ -buffer-name=register register<CR>
-" outline
-nnoremap <silent> [unite]o  :<C-u>Unite
-        \ -vertical -winwidth=61 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
-" grep
-nnoremap <silent> [unite]g  :<C-u>Unite
-        \ grep:. -buffer-name=search-buffer<CR>
-" file_mru
-nnoremap <silent> [unite]u  :<C-u>Unite
-        \ file_mru<CR>
-" diff
-nnoremap <silent> [unite]d  :<C-u>Unite
-        \ file_rec/async -default-action=diff<CR>
-" unite-help
-nnoremap <silent> [unite]h  :<C-u>Unite
-        \ help -default-action=tabopen<CR>
-" variables:all
-nnoremap <silent> [unite]va  :<C-u>Unite
-        \ output:let<CR>
-nnoremap <silent> [unite]vg  :<C-u>Unite
-        \ output:let\ g\:<CR>
-nnoremap <silent> [unite]vb  :<C-u>Unite
-        \ output:let\ b\:<CR>
-nnoremap <silent> [unite]vw  :<C-u>Unite
-        \ output:let\ w\:<CR>
-nnoremap <silent> [unite]vt  :<C-u>Unite
-        \ output:let\ t\:<CR>
-nnoremap <silent> [unite]vs  :<C-u>Unite
-        \ output:let\ s\:<CR>
-nnoremap <silent> [unite]vl  :<C-u>Unite
-        \ output:let\ l\:<CR>
-nnoremap <silent> [unite]vv  :<C-u>Unite
-        \ output:let\ v\:<CR>
-nnoremap <silent> [unite]ma :<C-u>Unite
-        \ mapping<CR>
-nnoremap <silent> [unite]me :<C-u>Unite
-        \ messages<CR>
-" snippets
-nnoremap <silent> [unite]s :<C-u>Unite
-        \ ultisnips<CR>
-
-nnoremap <silent> [unite]my :<C-u>Unite menu:my<CR>
-
-" See FAQ - Unite does not respect 'splitright' option
-call unite#custom#profile('default', 'context', {
-        \   'prompt_direction': 'top'
-        \ })
-
-" Start insert.
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-
-" To track long mru history.
-let g:neomru#file_mru_limit = 3000
-let g:neomru#directory_mru_limit = 3000
-
-" Like ctrlp.vim settings.
-let g:unite_enable_start_insert = 1
-let g:unite_winheight = 10
-let g:unite_split_rule = 'botright'
-
-" Prompt choices.
-let g:unite_prompt = '>>> '
-
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
-  " Overwrite settings.
-
-  nmap <buffer> <ESC>      <Plug>(unite_exit)
-  imap <buffer> jj      <Plug>(unite_insert_leave)
-  imap <buffer> kk      <Plug>(unite_insert_leave)
-  "imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
-
-  imap <buffer><expr> j unite#smart_map('j', '')
-  imap <buffer> <TAB>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
-  imap <buffer> '     <Plug>(unite_quick_match_default_action)
-  nmap <buffer> '     <Plug>(unite_quick_match_default_action)
-  imap <buffer><expr> x
-          \ unite#smart_map('x', "\<Plug>(unite_quick_match_choose_action)")
-  nmap <buffer> x     <Plug>(unite_quick_match_choose_action)
-  nmap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
-  imap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
-  imap <buffer> <C-y>     <Plug>(unite_narrowing_path)
-  nmap <buffer> <C-y>     <Plug>(unite_narrowing_path)
-  nmap <buffer> <C-p>     <Plug>(unite_toggle_auto_preview)
-  nmap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
-  imap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
-  nnoremap <silent><buffer><expr> l
-          \ unite#smart_map('l', unite#do_action('default'))
-
-  let unite = unite#get_current_unite()
-  if unite.profile_name ==# 'search'
-    nnoremap <silent><buffer><expr> r     unite#do_action('replace')
-  else
-    nnoremap <silent><buffer><expr> r     unite#do_action('rename')
-  endif
-
-  nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
-  nnoremap <silent><buffer><expr> o      unite#do_action('persist_open')
-  nnoremap <buffer><expr> S      unite#mappings#set_current_filters(
-          \ empty(unite#mappings#get_current_filters()) ?
-          \ ['sorter_reverse'] : [])
-
-  " Runs 'split' action by <C-s>.
-  imap <silent><buffer><expr> <C-s>     unite#do_action('split')
-
-  nmap <buffer> <C-h> <C-w>h
-  nmap <buffer> <C-l> <C-w>l
-  nmap <buffer> <C-k> <C-w>k
-  nmap <buffer> <C-j> <C-w>j
-endfunction"}}}
-
-let g:unite_source_file_mru_limit = 200
-let g:unite_cursor_line_highlight = 'TabLineSel'
-let g:unite_abbr_highlight = 'TabLine'
-
-" For optimize.
-let g:unite_source_file_mru_filename_format = ''
-
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--vimgrep --smart-case --nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  call neobundle#untap()
 endif
 
-" Open by NerdTree
-let nerdtree = { 'is_selectable' : 1 }
-function! nerdtree.func(candidate)
-  execute "lcd" a:candidate[0].word
-  execute "NERDTree" a:candidate[0].word
-endfunction
-call unite#custom#action('directory', 'nerdtree', nerdtree)
+if neobundle#tap('vim-fugitive')
+  vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
+  vnoremap gb :<C-u>'<,'>Gblame<CR>
+  nnoremap gs :<C-u>Gstatus<CR>
+  nnoremap gl :<C-u>Glog \| cwindow<CR>
 
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_history_yank_limit = 100
+  nnoremap gdd :<C-u>Gdiff develop..@<CR>
+  nnoremap gdm :<C-u>Gdiff master..@<CR>
 
-" Emphasize cursorline on unite buffer
-autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
-autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
+  call neobundle#untap()
+endif
 
-" ######################### vim-surround
+if neobundle#tap('tabular')
+  nmap <Leader>a= :Tabularize /=<CR>
+  vmap <Leader>a= :Tabularize /=<CR>
+  nmap <Leader>a> :Tabularize /=><CR>
+  vmap <Leader>a> :Tabularize /=><CR>
+  nmap <Leader>a\| :Tabularize /\|<CR>
+  vmap <Leader>a\| :Tabularize /\|<CR>
+  nmap <Leader>a: :Tabularize /^[^:]*\w:\zs/l0l1<CR>
+  vmap <Leader>a: :Tabularize /^[^:]*\w:\zs/l0l1<CR>
+  nmap <Leader>as :Tabularize /:\w\+,\?<CR>
+  vmap <Leader>as :Tabularize /:\w\+,\?<CR>
 
-" erb
-" 61: '='
-autocmd FileType eruby let g:surround_61 = "<%= \r %>"
+  call neobundle#untap()
+endif
 
-" ######################### vim-expand-region
-let g:expand_region_text_objects_ruby = {
-      \ 'iw'  :0,
-      \ 'iW'  :0,
-      \ 'i"'  :0,
-      \ 'i''' :0,
-      \ 'i]'  :1,
-      \ 'ib'  :1,
-      \ 'iB'  :1,
-      \ 'il'  :0,
-      \ 'im'  :0,
-      \ 'am'  :0,
-      \ 'ie'  :0,
-      \ }
+if neobundle#tap('unite.vim')
+  " The prefix key.
+  nnoremap    [unite]   <Nop>
+  nmap    m [unite]
 
-" mhinz/vim-signify
+  let g:unite_source_menu_menus = {}
+  let g:unite_source_menu_menus.my = {
+          \   'description': 'my menu',
+          \ }
+  let g:unite_source_menu_menus.my.command_candidates = {
+          \   'remove extra whitespaces': '%s/\s\+$//g',
+          \   'force write': 'w !sudo tee %',
+          \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
+          \ }
+
+  let g:unite_source_alias_aliases = {
+          \   'messages' : {
+          \     'source': 'output',
+          \     'args': 'message',
+          \   },
+          \ }
+  call unite#custom#source('messages', 'sorters', 'sorter_reverse')
+
+  nnoremap <silent> [unite]p  :<C-u>Unite file_rec/async<CR>
+  nnoremap <silent> [unite]P  :<C-u>new<CR>:<C-u>Unite file_rec/async<CR>
+  nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
+          \ -buffer-name=files buffer file_mru bookmark file<CR>
+  nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
+          \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
+  nnoremap <silent> [unite]r  :<C-u>Unite
+          \ -buffer-name=register register<CR>
+  " outline
+  nnoremap <silent> [unite]o  :<C-u>Unite
+          \ -vertical -winwidth=61 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
+  " grep
+  nnoremap <silent> [unite]g  :<C-u>Unite
+          \ grep:. -buffer-name=search-buffer<CR>
+  " file_mru
+  nnoremap <silent> [unite]u  :<C-u>Unite
+          \ file_mru<CR>
+  " diff
+  nnoremap <silent> [unite]d  :<C-u>Unite
+          \ file_rec/async -default-action=diff<CR>
+  " unite-help
+  nnoremap <silent> [unite]h  :<C-u>Unite
+          \ help -default-action=tabopen<CR>
+  " variables:all
+  nnoremap <silent> [unite]va  :<C-u>Unite
+          \ output:let<CR>
+  nnoremap <silent> [unite]vg  :<C-u>Unite
+          \ output:let\ g\:<CR>
+  nnoremap <silent> [unite]vb  :<C-u>Unite
+          \ output:let\ b\:<CR>
+  nnoremap <silent> [unite]vw  :<C-u>Unite
+          \ output:let\ w\:<CR>
+  nnoremap <silent> [unite]vt  :<C-u>Unite
+          \ output:let\ t\:<CR>
+  nnoremap <silent> [unite]vs  :<C-u>Unite
+          \ output:let\ s\:<CR>
+  nnoremap <silent> [unite]vl  :<C-u>Unite
+          \ output:let\ l\:<CR>
+  nnoremap <silent> [unite]vv  :<C-u>Unite
+          \ output:let\ v\:<CR>
+  nnoremap <silent> [unite]ma :<C-u>Unite
+          \ mapping<CR>
+  nnoremap <silent> [unite]me :<C-u>Unite
+          \ messages<CR>
+  " snippets
+  nnoremap <silent> [unite]s :<C-u>Unite
+          \ ultisnips<CR>
+
+  nnoremap <silent> [unite]my :<C-u>Unite menu:my<CR>
+
+  " See FAQ - Unite does not respect 'splitright' option
+  call unite#custom#profile('default', 'context', {
+          \   'prompt_direction': 'top'
+          \ })
+
+  " Start insert.
+  let g:unite_enable_start_insert = 1
+  let g:unite_enable_short_source_names = 1
+
+  " To track long mru history.
+  let g:neomru#file_mru_limit = 3000
+  let g:neomru#directory_mru_limit = 3000
+
+  " Like ctrlp.vim settings.
+  let g:unite_enable_start_insert = 1
+  let g:unite_winheight = 10
+  let g:unite_split_rule = 'botright'
+
+  " Prompt choices.
+  let g:unite_prompt = '>>> '
+
+  autocmd FileType unite call s:unite_my_settings()
+  function! s:unite_my_settings()"{{{
+    " Overwrite settings.
+
+    nmap <buffer> <ESC>      <Plug>(unite_exit)
+    imap <buffer> jj      <Plug>(unite_insert_leave)
+    imap <buffer> kk      <Plug>(unite_insert_leave)
+    "imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
+
+    imap <buffer><expr> j unite#smart_map('j', '')
+    imap <buffer> <TAB>   <Plug>(unite_select_next_line)
+    imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
+    imap <buffer> '     <Plug>(unite_quick_match_default_action)
+    nmap <buffer> '     <Plug>(unite_quick_match_default_action)
+    imap <buffer><expr> x
+            \ unite#smart_map('x', "\<Plug>(unite_quick_match_choose_action)")
+    nmap <buffer> x     <Plug>(unite_quick_match_choose_action)
+    nmap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
+    imap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
+    imap <buffer> <C-y>     <Plug>(unite_narrowing_path)
+    nmap <buffer> <C-y>     <Plug>(unite_narrowing_path)
+    nmap <buffer> <C-p>     <Plug>(unite_toggle_auto_preview)
+    nmap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
+    imap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
+    nnoremap <silent><buffer><expr> l
+            \ unite#smart_map('l', unite#do_action('default'))
+
+    let unite = unite#get_current_unite()
+    if unite.profile_name ==# 'search'
+      nnoremap <silent><buffer><expr> r     unite#do_action('replace')
+    else
+      nnoremap <silent><buffer><expr> r     unite#do_action('rename')
+    endif
+
+    nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
+    nnoremap <silent><buffer><expr> o      unite#do_action('persist_open')
+    nnoremap <buffer><expr> S      unite#mappings#set_current_filters(
+            \ empty(unite#mappings#get_current_filters()) ?
+            \ ['sorter_reverse'] : [])
+
+    " Runs 'split' action by <C-s>.
+    imap <silent><buffer><expr> <C-s>     unite#do_action('split')
+
+    nmap <buffer> <C-h> <C-w>h
+    nmap <buffer> <C-l> <C-w>l
+    nmap <buffer> <C-k> <C-w>k
+    nmap <buffer> <C-j> <C-w>j
+  endfunction"}}}
+
+  let g:unite_source_file_mru_limit = 200
+  let g:unite_cursor_line_highlight = 'TabLineSel'
+  let g:unite_abbr_highlight = 'TabLine'
+
+  " For optimize.
+  let g:unite_source_file_mru_filename_format = ''
+
+  if executable('ag')
+    let g:unite_source_grep_command = 'ag'
+    let g:unite_source_grep_default_opts = '--vimgrep --smart-case --nogroup --nocolor --column'
+    let g:unite_source_grep_recursive_opt = ''
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+  endif
+
+  " Open by NerdTree
+  let nerdtree = { 'is_selectable' : 1 }
+  function! nerdtree.func(candidate)
+    execute "lcd" a:candidate[0].word
+    execute "NERDTree" a:candidate[0].word
+  endfunction
+  call unite#custom#action('directory', 'nerdtree', nerdtree)
+
+  let g:unite_source_history_yank_enable = 1
+  let g:unite_source_history_yank_limit = 100
+
+  " Emphasize cursorline on unite buffer
+  autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
+  autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('vim-surround')
+  " erb
+  " 61: '='
+  autocmd FileType eruby let g:surround_61 = "<%= \r %>"
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('vim-expand-region')
+  let g:expand_region_text_objects_ruby = {
+        \ 'iw'  :0,
+        \ 'iW'  :0,
+        \ 'i"'  :0,
+        \ 'i''' :0,
+        \ 'i]'  :1,
+        \ 'ib'  :1,
+        \ 'iB'  :1,
+        \ 'il'  :0,
+        \ 'im'  :0,
+        \ 'am'  :0,
+        \ 'ie'  :0,
+        \ }
+
+  call neobundle#untap()
+endif
+
 if neobundle#tap('vim-signify')
   call submode#enter_with('signify-move', 'n', '', '<Leader>g')
   call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
@@ -642,33 +656,39 @@ if neobundle#tap('vim-signify')
   call neobundle#untap()
 endif
 
+if neobundle#tap('vim-submode')
+  let g:submode_timeout=0
+
+  call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>3>')
+  call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w>3<')
+  call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>3-')
+  call submode#enter_with('winsize', 'n', '', '<C-w>J', '<C-w>3+')
+  call submode#map('winsize', 'n', '', 'L', '<C-w>3>')
+  call submode#map('winsize', 'n', '', 'H', '<C-w>3<')
+  call submode#map('winsize', 'n', '', 'K', '<C-w>3-')
+  call submode#map('winsize', 'n', '', 'J', '<C-w>3+')
+
+  call submode#enter_with('next-win', 'n', '', '<C-w>w',     '<C-w>w')
+  call submode#enter_with('next-win', 'n', '', '<C-w><C-w>', '<C-w>w')
+  call submode#enter_with('next-win', 'n', '', '<C-w>W',     '<C-w>W')
+  call submode#map('next-win', 'n', '', 'w',     '<C-w>w')
+  call submode#map('next-win', 'n', '', '<C-w>', '<C-w>w')
+  call submode#map('next-win', 'n', '', 'W',     '<C-w>W')
+
+  " increment/decrement number
+  call submode#enter_with('inc_dec', 'n', '', '<C-x>')
+  call submode#map('inc_dec', 'n', '', 'a', '<C-a>')
+  call submode#map('inc_dec', 'n', '', 'x', '<C-x>')
+  call submode#map('inc_dec', 'n', '', '<C-a>', '<C-a>')
+  call submode#map('inc_dec', 'n', '', '<C-x>', '<C-x>')
+
+  call neobundle#untap()
+endif
+
 map <C-w>L <C-w>>
 map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
-
-call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>3>')
-call submode#enter_with('winsize', 'n', '', '<C-w>H', '<C-w>3<')
-call submode#enter_with('winsize', 'n', '', '<C-w>K', '<C-w>3-')
-call submode#enter_with('winsize', 'n', '', '<C-w>J', '<C-w>3+')
-call submode#map('winsize', 'n', '', 'L', '<C-w>3>')
-call submode#map('winsize', 'n', '', 'H', '<C-w>3<')
-call submode#map('winsize', 'n', '', 'K', '<C-w>3-')
-call submode#map('winsize', 'n', '', 'J', '<C-w>3+')
-
-call submode#enter_with('next-win', 'n', '', '<C-w>w',     '<C-w>w')
-call submode#enter_with('next-win', 'n', '', '<C-w><C-w>', '<C-w>w')
-call submode#enter_with('next-win', 'n', '', '<C-w>W',     '<C-w>W')
-call submode#map('next-win', 'n', '', 'w',     '<C-w>w')
-call submode#map('next-win', 'n', '', '<C-w>', '<C-w>w')
-call submode#map('next-win', 'n', '', 'W',     '<C-w>W')
-
-" increment/decrement number
-call submode#enter_with('inc_dec', 'n', '', '<C-x>')
-call submode#map('inc_dec', 'n', '', 'a', '<C-a>')
-call submode#map('inc_dec', 'n', '', 'x', '<C-x>')
-call submode#map('inc_dec', 'n', '', '<C-a>', '<C-a>')
-call submode#map('inc_dec', 'n', '', '<C-x>', '<C-x>')
 
 cabbrev h    tab help
 cabbrev t    tabnew
@@ -697,73 +717,79 @@ endfunction
 
 map <Leader>w :call ToggleWrap()<CR>
 
-" ######################### auto-ctags.vim
-if has('mac')
-  " Use homebrew's ctags instead of kaoriya bundled one
-  let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
+if neobundle#tap('auto-ctags.vim')
+  if has('mac')
+    " Use homebrew's ctags instead of kaoriya bundled one
+    let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
+  endif
+
+  call neobundle#untap()
 endif
 
-" ######################### Lightline.vim
-let g:lightline = {
-        \ 'colorscheme': 'solarized',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'MyModified',
-        \   'readonly': 'MyReadonly',
-        \   'fugitive': 'MyFugitive',
-        \   'filename': 'MyFilename',
-        \   'fileformat': 'MyFileformat',
-        \   'filetype': 'MyFiletype',
-        \   'fileencoding': 'MyFileencoding',
-        \   'mode': 'MyMode'
-        \ }
-        \ }
+if neobundle#tap('lightline.vim')
+  let g:lightline = {
+          \ 'colorscheme': 'solarized',
+          \ 'mode_map': {'c': 'NORMAL'},
+          \ 'active': {
+          \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
+          \ },
+          \ 'component_function': {
+          \   'modified': 'MyModified',
+          \   'readonly': 'MyReadonly',
+          \   'fugitive': 'MyFugitive',
+          \   'filename': 'MyFilename',
+          \   'fileformat': 'MyFileformat',
+          \   'filetype': 'MyFiletype',
+          \   'fileencoding': 'MyFileencoding',
+          \   'mode': 'MyMode'
+          \ }
+          \ }
 
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
+  function! MyModified()
+    return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+  endfunction
 
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '[RO]' : ''
-endfunction
+  function! MyReadonly()
+    return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '[RO]' : ''
+  endfunction
 
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
+  function! MyFilename()
+    return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+          \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
+          \  &ft == 'unite' ? unite#get_status_string() :
+          \  &ft == 'vimshell' ? vimshell#get_status_string() :
+          \ '' != expand('%:t') ? expand('%:t') : '[No Name]') .
+          \ ('' != MyModified() ? ' ' . MyModified() : '')
+  endfunction
 
-function! MyFugitive()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return fugitive#head()
-    endif
-  catch
-  endtry
-  return ''
-endfunction
+  function! MyFugitive()
+    try
+      if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
+        return fugitive#head()
+      endif
+    catch
+    endtry
+    return ''
+  endfunction
 
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
+  function! MyFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+  endfunction
 
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
+  function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+  endfunction
 
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
+  function! MyFileencoding()
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+  endfunction
 
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+  function! MyMode()
+    return winwidth(0) > 60 ? lightline#mode() : ''
+  endfunction
+
+  call neobundle#untap()
+endif
 
 let g:solarized_contrast="high"
 let g:solarized_termtrans=1
