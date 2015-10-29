@@ -9,10 +9,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
-" NeoBundleLazy 'Shougo/vimshell', {
-"         \ 'autoload' : {
-"         \ 'commands' : [ 'VimShell', 'VimShellPop', 'VimShellInteractive' ]
-"         \ }}
+" NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc.vim'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
@@ -33,17 +30,11 @@ NeoBundle 'godlygeek/tabular'
 " NeoBundle 'vim-scripts/taglist.vim'
 " NeoBundle 'majutsushi/tagbar'
 NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tomtom/tcomment_vim', {
-        \ 'autoload' : {
-        \ 'mappings' : [ '<Plug>TComment-' ]
-        \ }}
+NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'jszakmeister/vim-togglecursor'
 NeoBundle 'altercation/vim-colors-solarized'
 " NeoBundle 'tpope/vim-dispatch'
-" NeoBundleLazy 'Lokaltog/vim-easymotion', {
-"         \ 'autoload' : {
-"         \ 'mappings' : [ '<Plug>(easymotion-' ]
-"         \ }}
+" NeoBundle 'Lokaltog/vim-easymotion'
 " NeoBundle 'justinmk/vim-sneak'
 NeoBundle 'haya14busa/incsearch.vim'
 NeoBundle 'tpope/vim-endwise'
@@ -59,10 +50,7 @@ NeoBundle 'dougireton/vim-chef' " notice: this line must be below of vim-ruby
 " NeoBundle 'tsaleh/vim-matchit'
 " NeoBundle 'ecomba/vim-ruby-refactoring'
 " NeoBundle 'taku-o/vim-toggle'
-NeoBundleLazy 'kana/vim-smartword', {
-        \ 'autoload' : {
-        \ 'mappings' : [ '<Plug>(smartword-' ]
-        \ }}
+NeoBundle 'kana/vim-smartword'
 NeoBundle 'kana/vim-submode'
 
 " vim-textobj-user list
@@ -85,33 +73,15 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
-NeoBundleLazy 'closetag.vim', {
-        \ 'autoload' : {
-        \ 'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
-        \ }}
-" NeoBundleLazy 'szw/vim-tags', {
-"         \ 'autoload' : {
-"         \ 'commands' : [ 'TagsGenerate', 'TagsGenerate!' ],
-"         \ }}
+NeoBundle 'closetag.vim'
+" NeoBundle 'szw/vim-tags'
 NeoBundle 'soramugi/auto-ctags.vim'
-NeoBundleLazy 'kannokanno/previm', {
-        \ 'autoload' : {
-        \ 'filetypes' : [ 'markdown' ],
-        \ }}
+NeoBundleLazy 'kannokanno/previm'
 " NeoBundle 'rizzatti/dash.vim'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'dhruvasagar/vim-table-mode'
 " NeoBundle 'glidenote/memolist.vim'
-NeoBundleLazy 'lambdalisue/vim-gista', {
-    \ 'depends': [
-    \    'Shougo/unite.vim',
-    \    'tyru/open-browser.vim',
-    \ ],
-    \ 'autoload': {
-    \    'commands': ['Gista'],
-    \    'mappings': '<Plug>(gista-',
-    \    'unite_sources': 'gista',
-    \}}
+" NeoBundle 'lambdalisue/vim-gista'
 NeoBundle 'embear/vim-localvimrc'
 
 call neobundle#end()
@@ -181,10 +151,10 @@ let g:submode_timeout=0
 "
 " if neobundle#tap('{plugin}')
 "   call neobundle#config({
-"     \  'lazy' : 1,
-"     \  'autoload' : {
-"     \    'insert' : 1,
-"     \  }})
+"     \ 'lazy' : 1,
+"     \ 'autoload' : {
+"     \   'insert' : 1,
+"     \ }})
 "
 "   function! neobundle#hooks.on_source(bundle)
 "     " Settings, Init, ...
@@ -220,9 +190,49 @@ if neobundle#tap('vimproc.vim')
   call neobundle#untap()
 endif
 
+if neobundle#tap('vim-smartword')
+  call neobundle#config({
+    \ 'lazy' : 1,
+    \ 'autoload' : {
+    \   'mappings' : [ '<Plug>(smartword-' ]
+    \ }})
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('closetag.vim')
+  call neobundle#config({
+    \ 'lazy' : 1,
+    \ 'autoload' : {
+    \   'filetypes' : [ 'html', 'xml', 'xsl', 'ant' ],
+    \ }})
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('tcomment_vim')
+  call neobundle#config({
+    \ 'lazy' : 1,
+    \ 'autoload' : {
+    \   'mappings' : [ '<Plug>TComment-' ]
+    \ }})
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('previm')
+  call neobundle#config({
+    \ 'lazy' : 1,
+    \ 'autoload' : {
+    \   'filetypes' : [ 'markdown' ],
+    \ }})
+
+  call neobundle#untap()
+endif
+
 if neobundle#tap('ultisnips')
   call neobundle#config({
-    \  'disabled' : !has('python')
+    \ 'disabled' : !has('python')
     \ })
 
   let g:UltiSnipsEditSplit="vertical"
@@ -260,12 +270,6 @@ if neobundle#tap('vim-indent-guides')
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=0
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
   endif
-
-  call neobundle#untap()
-endif
-
-if neobundle#tap('vim-gista')
-  let g:gista#github_user = 'chieping'
 
   call neobundle#untap()
 endif
