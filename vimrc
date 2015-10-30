@@ -11,7 +11,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'SirVer/ultisnips'
+NeoBundle 'SirVer/ultisnips', {
+    \ 'disabled' : !has('python')
+    \ }
 NeoBundle 'honza/vim-snippets'
 NeoBundle 'Shougo/unite-outline'
 NeoBundle 'tsukkee/unite-help'
@@ -87,8 +89,6 @@ NeoBundle 'embear/vim-localvimrc'
 call neobundle#end()
 
 filetype plugin indent on
-
-NeoBundleCheck
 
 if has('kaoriya')
   " Suppress to overwrite key mappings
@@ -279,14 +279,8 @@ if neobundle#tap('vim-smartword')
 endif
 
 if neobundle#tap('ultisnips')
-  call neobundle#config({
-    \ 'disabled' : !has('python')
-    \ })
-
   let g:UltiSnipsEditSplit="vertical"
-
   let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
-
   let g:snips_github="https://github.com/chieping"
   let g:snips_author="chieping"
   let g:snips_email="takashi.honda.01@gmail.com"
@@ -760,6 +754,13 @@ if neobundle#tap('lightline.vim')
   endfunction
 
   call neobundle#untap()
+endif
+
+NeoBundleCheck
+
+if !has('vim_starting')
+  " Call on_source hook when reloading .vimrc.
+  call neobundle#call_hook('on_source')
 endif
 
 let g:solarized_contrast="high"
