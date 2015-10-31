@@ -42,6 +42,17 @@ nnoremap <Leader>tm :set gui=invmenu<CR>:echomsg "Toggle menu"<CR>
 nnoremap <Leader>tc :set gui=none<CR>
 
 js<<EOB
+commands.addUserCommand(
+  ["gyo[taku]"],
+  "Open URL by Web Gyotaku",
+  function(args) {
+    liberator.open("http://gyo.tc/" + args.string);
+  },
+  {}
+);
+EOB
+
+js<<EOB
   if(!liberator.has("MacUnix")) {
       liberator.execute('noremap <A-b> :emenu 表示.サイドバー.ブックマーク<CR>')
   }
