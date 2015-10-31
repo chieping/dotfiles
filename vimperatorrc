@@ -46,7 +46,8 @@ commands.addUserCommand(
   ["gyo[taku]"],
   "Open URL by Web Gyotaku",
   function(args) {
-    liberator.open("http://gyo.tc/" + args.string);
+    var url = args.string || buffer.URL
+    liberator.open("http://gyo.tc/" + url);
   },
   {}
 );
