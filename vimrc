@@ -316,7 +316,7 @@ if neobundle#tap('vim-indent-guides')
   call neobundle#untap()
 endif
 
-if neobundle#tap('Syntastic')
+if neobundle#tap('syntastic')
   let g:syntastic_error_symbol='✗'
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_ruby_checkers = ['rubocop']
