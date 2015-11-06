@@ -361,6 +361,9 @@ if neobundle#tap('switch.vim')
     \   },
     \ ]
 
+  " TODO: in case filetype is diff, i want to switch lines between starting
+  " with '-' and starting with ' '.
+
   call neobundle#untap()
 endif
 
