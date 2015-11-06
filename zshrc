@@ -123,6 +123,8 @@ alias -g P='| peco'
 alias -g X='| xargs -I %'
 alias -g H='| head'
 alias -g T='| tail'
+# make today's tmp dir and go there
+alias taket="take ~/tmp/`date +%Y%m%d`"
 
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
