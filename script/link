@@ -31,8 +31,8 @@ ln -sf ~/.dotfiles/rbenv/default-gems ~/.rbenv/default-gems
 
 mkdir -p ~/.vim
 ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
-ln -sf ~/.dotfiles/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
-ln -sf ~/.dotfiles/vim/UltiSnips ~/.vim/UltiSnips
+ln -sfn ~/.dotfiles/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
+ln -sfn ~/.dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 
 mkdir -p ~/.git_templates/hooks
 ln -sf ~/.dotfiles/git_templates/hooks/pre-commit ~/.git_templates/hooks/pre-commit
@@ -43,7 +43,7 @@ ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/
 
 ln -sf ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
 
-ln -sf ~/.dotfiles/peco ~/.peco
+ln -sfn ~/.dotfiles/peco ~/.peco
 
 mkdir -p ~/.oh-my-zsh/custom/themes
 ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom/themes/gallois.zsh-theme
