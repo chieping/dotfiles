@@ -30,3 +30,6 @@ MethodLength:
 # Default value(15) is too low
 Metrics/AbcSize:
   Max: 30
+
+Style/StringLiterals:
+  Enabled: false
