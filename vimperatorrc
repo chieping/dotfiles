@@ -152,6 +152,9 @@ nnoremap yb :js util.copyToClipboard('[['+buffer.title.replace(':','')+'>'+buffe
 nnoremap yr :js util.copyToClipboard('"'+buffer.title.replace('"',"'")+'":'+buffer.URL)<CR>:echomsg "Yanked"<CR>
 " Simple
 nnoremap ys :js util.copyToClipboard(buffer.title +' - '+ buffer.URL)<CR>:echomsg "Yanked"<CR>
+" Tab
+nnoremap yh :js util.copyToClipboard(buffer.title +'\t'+ buffer.URL)<CR>:echomsg "Yanked"<CR>
+
 nnoremap yt :js util.copyToClipboard(buffer.title)<CR>:echomsg "Yanked"<CR>
 nnoremap yu :js util.copyToClipboard(buffer.URL)<CR>:echomsg "Yanked"<CR>
 
