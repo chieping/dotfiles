@@ -11,6 +11,7 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/vimproc.vim'
+NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'SirVer/ultisnips', {
     \ 'disabled' : !has('python')
     \ }
@@ -151,7 +152,7 @@ set pastetoggle=<Leader>p
 nnoremap U :redo<CR>
 
 nmap <Leader>v :tabedit $MYVIMRC<CR>
-nmap <Leader>r :<C-u>source $MYVIMRC<CR>
+nmap <Leader>R :<C-u>source $MYVIMRC<CR>
 
 nnoremap ; :
 vnoremap ; :
