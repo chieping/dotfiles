@@ -384,6 +384,12 @@ if neobundle#tap('open-browser.vim')
   call neobundle#untap()
 endif
 
+if neobundle#tap('previm')
+  let g:previm_show_header = 0
+
+  call neobundle#untap()
+endif
+
 if neobundle#tap('incsearch.vim')
   map /  <Plug>(incsearch-forward)
   map ?  <Plug>(incsearch-backward)
