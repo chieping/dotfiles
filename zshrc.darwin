@@ -117,3 +117,13 @@ alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
 alias routing-table='netstat -rn'
 alias -g C='| pbcopy'
+
+# Use ascii character instead of ambiguous width character
+# https://github.com/olivierverdier/zsh-git-prompt/pull/63
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{+%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{!%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{*%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{v%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{^%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{?%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{-%G%}"
