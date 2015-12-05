@@ -8,7 +8,10 @@ install() {
 
   if [ $is_git_dir = false ]; then
     git clone $url $dir
+  else
+    ( cd $dir; git up )
   fi
+
 }
 
 install github.com/robbyrussell/oh-my-zsh                 ~/.oh-my-zsh
