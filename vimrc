@@ -143,6 +143,7 @@ set splitbelow splitright
 " This mitigates delay of cursor movement well.
 set lazyredraw
 set nrformats-=octal
+set completeopt=menu,menuone,preview,noselect
 
 let g:mapleader=","
 
