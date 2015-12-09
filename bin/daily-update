@@ -35,10 +35,18 @@ ruby_build()
   echo
 }
 
+tmux_plugins()
+{
+  echo "####    tmux plugins    ####"
+  ~/.tmux/plugins/tpm/bin/update_plugins all
+}
+
 vim_plugins
 echo
 oh_my_zsh
 echo
 ruby_build
+echo
+tmux_plugins
 echo
 type brew >/dev/null 2>&1 && homebrew
