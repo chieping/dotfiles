@@ -149,6 +149,13 @@ endif
 
 let g:mapleader=","
 
+" Copy the filename including its full path
+if has('mac')
+  nnoremap yp :let @*=expand("%:p")<CR>
+elseif has('unix')
+  nnoremap yp :let @+=expand("%:p")<CR>
+endif
+
 nnoremap <Leader>p :set invpaste<CR>
 set pastetoggle=<Leader>p
 
