@@ -40,12 +40,12 @@
 	up = !git remote update -p && git merge --ff-only @{u}
 	# find-merge-commit prints merge commit hash from a specific commit or branch
 	find-merge-commit = !bash -c 'git rev-list $1..${2:-master} --ancestry-path | grep -f <(git rev-list $1..${2:-master} --first-parent) | tail -1' -
+	credential-my-os-compatible-keychain = !my-git-credential-helper
 [push]
 	default = simple
 
 [credential]
-# FIXME make compatible with mac and linux
-#	helper = /opt/boxen/bin/boxen-git-credential
+	helper = my-os-compatible-keychain
 
 [hub]
 	protocol = https
