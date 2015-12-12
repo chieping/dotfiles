@@ -709,7 +709,10 @@ if neobundle#tap('auto-ctags.vim')
     " Use homebrew's ctags instead of kaoriya bundled one
     let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
   endif
-  let g:auto_ctags = 1
+
+  if expand("%:p") =~ "/src/"
+    let g:auto_ctags = 1
+  endif
 
   call neobundle#untap()
 endif
