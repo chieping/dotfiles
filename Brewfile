@@ -62,6 +62,7 @@ install rbenv-ctags
 install rbenv-default-gems
 install reattach-to-user-namespace
 install ricty
+install shellcheck
 install ssh-copy-id
 install subversion
 install terminal-notifier
