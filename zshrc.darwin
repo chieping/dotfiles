@@ -14,8 +14,6 @@ ZSH_TMUX_AUTOSTART=true
 
 UNBUNDLED_COMMANDS=(pry)
 
-source /opt/boxen/env.sh
-
 # golang settings
 export GOPATH=$HOME
 export PATH="$HOME/bin:$PATH"
