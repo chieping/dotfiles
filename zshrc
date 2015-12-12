@@ -18,7 +18,7 @@ esac
 # User configuration
 
 # setup direnv
-eval "$(direnv hook zsh)"
+type direnv >/dev/null 2&>/dev/null && eval "$(direnv hook zsh)"
 
 if [ -e ~/.dircolors ]; then
   if type dircolors > /dev/null 2>&1; then
