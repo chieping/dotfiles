@@ -124,6 +124,7 @@ set helplang=en
 set list
 set shell=bash              "Workaround for zsh's awkward $PATH"
 set listchars=tab:›\        "dummy comment to suppress trailing white space
+set comments=:#
 if exists('+colorcolumn')
   set colorcolumn=80
 endif
