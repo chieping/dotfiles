@@ -490,8 +490,6 @@ if neobundle#tap('unite.vim')
 
   nnoremap <silent> [unite]p  :<C-u>Unite file_rec/async<CR>
   nnoremap <silent> [unite]P  :<C-u>new<CR>:<C-u>Unite file_rec/async<CR>
-  nnoremap <silent> [unite]c  :<C-u>UniteWithCurrentDir
-          \ -buffer-name=files buffer file_mru bookmark file<CR>
   nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
           \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
   nnoremap <silent> [unite]r  :<C-u>Unite
@@ -511,6 +509,9 @@ if neobundle#tap('unite.vim')
   " unite-help
   nnoremap <silent> [unite]h  :<C-u>Unite
           \ help -default-action=tabopen<CR>
+  " set
+  nnoremap <silent> [unite]c  :<C-u>Unite
+          \ output:set\ all<CR>
   " variables:all
   nnoremap <silent> [unite]va  :<C-u>Unite
           \ output:let<CR>
