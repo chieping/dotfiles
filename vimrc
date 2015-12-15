@@ -210,6 +210,8 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+
 " display candidates by default
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
