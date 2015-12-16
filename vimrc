@@ -211,6 +211,9 @@ nmap <C-l> <C-w>l
 nmap <C-h> <C-w>h
 
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+" TODO: below line (enter key to choose candidate) doesn't work.
+" https://github.com/tpope/vim-endwise/pull/16
+" inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
 " display candidates by default
 nnoremap <C-]> g<C-]>
