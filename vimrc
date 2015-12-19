@@ -215,6 +215,16 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 " https://github.com/tpope/vim-endwise/pull/16
 " inoremap <expr><CR> pumvisible() ? "\<C-y>" : "\<CR>"
 
+" * and # to search selected text in visual mode
+xnoremap * :<C-u>call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch()<CR>?<C-R>=@/<CR><CR>
+function! s:VSetSearch()
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
 " display candidates by default
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
