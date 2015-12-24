@@ -91,6 +91,33 @@ peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+peco-find-file() {
+  local source_files
+  local result
+  local selected_files
+  local file
+
+  if type ag >/dev/null 2>&1; then
+    source_files=$(ag -g '')
+  elif git rev-parse 2> /dev/null; then
+    source_files=$(git ls-files)
+  else
+    source_files=$(find . -type f)
+  fi
+  selected_files=$(echo $source_files | peco --prompt "[find file]")
+
+  result=''
+  for file in $selected_files; do
+    result="${result}$(echo $file | tr '\n' ' ')"
+  done
+
+  BUFFER="${BUFFER}${result}"
+  CURSOR=$#BUFFER
+  zle redisplay
+}
+zle -N peco-find-file
+bindkey '^q' peco-find-file
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -132,8 +159,7 @@ alias sshconf='vim ~/.ssh/config'
 # /path/to/source/dir /path/to/mount/point none bind 0 0
 alias e='cd $(ghq list -p | grep -v amazonaws.com | {peco || pwd;})'
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
-alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
-alias -g P='| peco'
+alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/origin/||"`'
 alias -g X='| xargs -I %'
 alias -g H='| head'
 alias -g T='| tail'
