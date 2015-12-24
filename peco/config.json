@@ -1,5 +1,8 @@
 {
     "Prompt": ">>>",
+    "Keymap": {
+      "C-v": "peco.ToggleRangeMode"
+    },
     "Style": {
       "Selected": ["underline", "on_cyan", "black"],
       "Matched": ["white"]
