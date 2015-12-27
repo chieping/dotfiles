@@ -10,7 +10,7 @@ set gui=none,tabs,bookmarks
 
 " plugin_loader
 let g:plugin_loader_roots = "~/src/github.com/vimpr/vimperator-plugins"
-let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,bookmarktoolbar-hint,lookupDictionary,caret-hint"
+let g:plugin_loader_plugins = "_libly,feedSomeKeys_3,bookmarktoolbar-hint,lookupDictionary,caret-hint,stella"
 
 " Show hint with no any label or value on input elements
 set hintinputs=""
@@ -158,6 +158,16 @@ nnoremap yh :js util.copyToClipboard(buffer.title +'\t'+ buffer.URL)<CR>:echomsg
 nnoremap yt :js util.copyToClipboard(buffer.title)<CR>:echomsg "Yanked"<CR>
 nnoremap yu :js util.copyToClipboard(buffer.URL)<CR>:echomsg "Yanked"<CR>
 
+nnoremap -urls='www\.youtube\.com|www\.nicovideo\.jp/watch' p       :stplay<CR>
+nnoremap -urls='www\.youtube\.com|www\.nicovideo\.jp/watch' f       :stfullscreen<CR>
+nnoremap -urls='www\.youtube\.com|www\.nicovideo\.jp/watch' r       :strepeat<CR>
+nnoremap -urls='www\.youtube\.com|www\.nicovideo\.jp/watch' m       :stmute<CR>
+nnoremap -urls='www\.nicovideo\.jp/watch'                   c       :stcomment<CR>
+nnoremap -urls='www\.nicovideo\.jp/watch'                   <Left>  :stseek! -20<CR>
+nnoremap -urls='www\.nicovideo\.jp/watch'                   <Right> :stseek! 20<CR>
+nnoremap -urls='www\.youtube\.com'                          <Left>  :stseek! -5<CR>
+nnoremap -urls='www\.youtube\.com'                          <Right> :stseek! 5<CR>
+
 " sites where disable vimperator
 ignorekeys clear
 ignorekeys add docs\\.google\\.com
@@ -170,7 +180,6 @@ lazy fmaps -urls='twitter\.com'         -events=keydown,keypress,keyup,vkeydown,
 lazy fmaps -urls='www\.slideshare\.net' -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='speakerdeck\.com'     -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
 lazy fmaps -urls='slides\.com'          -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right>
-lazy fmaps -urls='www\.youtube\.com'    -events=keydown,keypress,keyup,vkeydown,vkeypress,vkeyup <Left> <Right> <Up> <Down> f <Space>
 
 style -name commandline-ime chrome://* #liberator-commandline-command input {ime-mode: inactive;}
 
