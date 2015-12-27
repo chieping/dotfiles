@@ -234,6 +234,11 @@ map <C-w>H <C-w><
 map <C-w>K <C-w>-
 map <C-w>J <C-w>+
 
+nnoremap zL zR
+nnoremap zl zo
+nnoremap zh zc
+nnoremap zH zM
+
 cabbrev h    tab help
 cabbrev t    tabnew
 cabbrev bu   NeoBundleUpdate
