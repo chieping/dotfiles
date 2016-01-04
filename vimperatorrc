@@ -7,6 +7,8 @@ set titlestring=""
 set hintchars=fjklasdhguionmerv
 set smartcase
 set gui=none,tabs,bookmarks
+set nextpattern=\bnext\b,\bmore\b,next,^次(の)?ページ,\b次.*,→\b,^>$,^(>>|≫)$,^(>|≫),(>|≫)$
+set previouspattern=\bprev|previous\b,prev,^前(の)?ページ,\b前.*,\b←,^<$,^(<<|≪)$,^(<|≪),(<|≪)$
 
 " plugin_loader
 let g:plugin_loader_roots = "~/src/github.com/vimpr/vimperator-plugins"
