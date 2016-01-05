@@ -110,6 +110,7 @@ nnoremap L 3l
 nnoremap ^ +
 
 nnoremap ; :
+nnoremap : ;
 
 " Emacs like key bind on Command mode
 cnoremap <C-p> <S-Tab>
