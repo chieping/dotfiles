@@ -1,0 +1,13 @@
+#!/bin/bash
+
+git_root_dir="$(git rev-parse --show-toplevel)"
+abort_regex="^# Copyright ([0-9]{4}-)?(?!$(date '+%Y'))([0-9]{4}), Sony Corporation.*$"
+
+for FILE in $(git diff-index --name-status HEAD -- | cut -c3-); do
+  if grep -P "$abort_regex" "$git_root_dir/$FILE"; then
+    echo "Matched abort_regex. Please check the file."
+    echo "Regex: $abort_regex"
+    echo "File: $FILE"
+    exit 1
+  fi
+done

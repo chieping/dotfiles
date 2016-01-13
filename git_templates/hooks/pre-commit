@@ -1,10 +1,9 @@
-#!/bin/sh
-if [ -z "`git config --local user.name`" ]; then
-    echo "fatal: user.name is not set locally"
-    exit 1
-fi
-if [ -z "`git config --local user.email`" ]; then
-    echo "fatal: user.email is not set locally"
-    exit 1
-fi
+#!/bin/bash
+set -eu
 
+# TODO: replace with git config init.templatedir
+templates_dir="$HOME/.git_templates"
+
+for SCRIPT in $templates_dir/hooks/pre-commit-*; do
+  $SCRIPT
+done

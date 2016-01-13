@@ -34,9 +34,7 @@ ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
 ln -sfn ~/.dotfiles/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
 ln -sfn ~/.dotfiles/vim/UltiSnips ~/.vim/UltiSnips
 
-mkdir -p ~/.git_templates/hooks
-ln -sf ~/.dotfiles/git_templates/hooks/pre-commit ~/.git_templates/hooks/pre-commit
-ln -sf ~/.dotfiles/git_templates/hooks/pre-push ~/.git_templates/hooks/pre-push
+ln -sfn ~/.dotfiles/git_templates ~/.git_templates
 
 mkdir -p ~/.vimperator/plugin
 ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
