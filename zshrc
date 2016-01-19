@@ -116,7 +116,7 @@ peco-find-file() {
   zle redisplay
 }
 zle -N peco-find-file
-bindkey '^q' peco-find-file
+bindkey '^xf' peco-find-file
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
