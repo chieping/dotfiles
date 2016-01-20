@@ -3,6 +3,7 @@ export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 setopt no_flow_control
 setopt nobeep
+setopt hist_ignore_all_dups
 export TERM=xterm-256color
 export CC=gcc
 
