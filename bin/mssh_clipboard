@@ -14,7 +14,8 @@ fi
 
 first_host=
 
-while read host; do
+# http://stackoverflow.com/questions/4165135/how-to-use-while-read-bash-to-read-the-last-line-in-a-file-if-there-s-no-new/5010679
+while read -r host || [[ -n $host ]]; do
   if [ -z "$first_host" ]; then
     first_host=$host
     continue
@@ -23,4 +24,4 @@ while read host; do
   tmux select-layout even-vertical
 done < <($cmd_paste)
 
-ssh $first_host
+ssh "$first_host"
