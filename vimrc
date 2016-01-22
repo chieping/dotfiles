@@ -48,7 +48,7 @@ NeoBundle 'elzr/vim-json'
 NeoBundle 'vim-ruby/vim-ruby'
 " NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'mv/mv-vim-puppet'
-NeoBundle 'dougireton/vim-chef' " notice: this line must be below of vim-ruby
+" NeoBundle 'dougireton/vim-chef' " notice: this line must be below of vim-ruby
 " NeoBundle 'thoughtbot/vim-rspec'
 " NeoBundle 'tsaleh/vim-matchit'
 " NeoBundle 'ecomba/vim-ruby-refactoring'
@@ -356,9 +356,6 @@ if neobundle#tap('syntastic')
   let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
   let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
   let g:syntastic_check_on_wq = 0
-  let g:syntastic_mode_map = {
-      \ 'mode': 'active',
-      \ 'passive_filetypes': ['chef'] }
 
   call neobundle#untap()
 endif
