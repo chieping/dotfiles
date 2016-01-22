@@ -128,6 +128,8 @@ EOB
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 
+inoremap <C-o> <Esc><Esc><C-o>
+
 vnoremap P <Esc><Esc>P
 vnoremap p <Esc><Esc>p
 vnoremap <CR> y<Esc><Esc>P
