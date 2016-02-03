@@ -47,6 +47,7 @@ NeoBundle 'jiangmiao/auto-pairs'
 NeoBundle 'elixir-lang/vim-elixir'
 NeoBundle 'elzr/vim-json'
 NeoBundle 'vim-ruby/vim-ruby'
+NeoBundle 'jgdavey/vim-blockle'
 " NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'mv/mv-vim-puppet'
 " NeoBundle 'dougireton/vim-chef' " notice: this line must be below of vim-ruby
