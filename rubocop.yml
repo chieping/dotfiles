@@ -33,3 +33,7 @@ Metrics/AbcSize:
 
 Style/StringLiterals:
   Enabled: false
+
+# Allow short length words array not to use %w syntax.
+WordArray:
+  MinSize: 5
