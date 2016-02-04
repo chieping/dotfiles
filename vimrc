@@ -303,11 +303,30 @@ if neobundle#tap('vimproc.vim')
   call neobundle#untap()
 endif
 
+if neobundle#tap('vim-quickrun')
+  let g:quickrun_config = {}
+  let g:quickrun_config['ruby.rspec'] = {
+    \ 'command': 'rspec',
+    \ 'cmdopt': '--no-color'
+    \ }
+
+  call neobundle#untap()
+endif
+
 if neobundle#tap('vim-smartword')
   map w  <Plug>(smartword-w)
   map b  <Plug>(smartword-b)
   map e  <Plug>(smartword-e)
   map ge <Plug>(smartword-ge)
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('vim-ruby')
+  augroup RubyRspec
+    autocmd!
+    autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
+  augroup END
 
   call neobundle#untap()
 endif
