@@ -76,6 +76,7 @@ NeoBundle 'tpope/vim-repeat'
 " NeoBundle 'wesleyche/Trinity'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'chrisbra/vim-diff-enhanced'
 NeoBundle 'terryma/vim-expand-region'
 NeoBundle 'mhinz/vim-signify'
 " NeoBundle 'closetag.vim'
@@ -318,6 +319,14 @@ if neobundle#tap('vim-smartword')
   map b  <Plug>(smartword-b)
   map e  <Plug>(smartword-e)
   map ge <Plug>(smartword-ge)
+
+  call neobundle#untap()
+endif
+
+if neobundle#tap('vim-diff-enhanced')
+  " diff algorithm
+  " 'histogram' algorithm is fast version of patience algorithm
+  let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=histogram")'
 
   call neobundle#untap()
 endif
