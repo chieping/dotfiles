@@ -37,3 +37,7 @@ Style/StringLiterals:
 # Allow short length words array not to use %w syntax.
 WordArray:
   MinSize: 5
+
+# Allow Perl-style regexp match backreferences like $1, $2, etc.
+Style/PerlBackrefs:
+  Enabled: false
