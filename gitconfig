@@ -41,7 +41,7 @@
 	# find-merge-commit prints merge commit hash from a specific commit or branch
 	find-merge-commit = !bash -c 'git rev-list $1..${2:-master} --ancestry-path | grep -f <(git rev-list $1..${2:-master} --first-parent) | tail -1' -
 	credential-my-os-compatible-keychain = !my-git-credential-helper
-	dt = diff-tree -r --name-only
+	dt = !sh -c 'git diff-tree -r --name-only ${1:-HEAD} | sed 1d'
 [push]
 	default = simple
 
