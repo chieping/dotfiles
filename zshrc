@@ -7,6 +7,9 @@ setopt hist_ignore_all_dups
 export TERM=xterm-256color
 export CC=gcc
 
+# disable stop
+stty stop undef
+
 case ${OSTYPE} in
   darwin*)
     source ~/.zshrc.darwin
