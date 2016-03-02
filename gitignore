@@ -43,13 +43,6 @@ cscope.out
 cscope.in.out
 cscope.po.out
 
-
-
-### https://raw.github.com/github/gitignore/68e79f379d97200fde68d9085268d2617ad17e20/Global/Vagrant.gitignore
-
-.vagrant/
-
-
 ### https://raw.github.com/github/gitignore/68e79f379d97200fde68d9085268d2617ad17e20/Global/vim.gitignore
 
 [._]*.s[a-w][a-z]
@@ -58,7 +51,6 @@ cscope.po.out
 Session.vim
 .netrwhist
 *~
-
 
 ### https://raw.github.com/github/gitignore/68e79f379d97200fde68d9085268d2617ad17e20/Global/Windows.gitignore
 
