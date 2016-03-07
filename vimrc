@@ -385,6 +385,9 @@ if neobundle#tap('syntastic')
   let g:syntastic_javascript_checkers = ['eslint']
   let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
   let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
+  " http://stackoverflow.com/questions/29635150/how-do-i-fix-this-annoying-syntastic-rails-error
+  let g:syntastic_eruby_ruby_quiet_messages =
+      \ {'regex': 'possibly useless use of a variable in void context'}
   let g:syntastic_check_on_wq = 0
 
   call neobundle#untap()
