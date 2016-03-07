@@ -308,7 +308,8 @@ if neobundle#tap('vim-quickrun')
   let g:quickrun_config = {}
   let g:quickrun_config['ruby.rspec'] = {
     \ 'command': 'rspec',
-    \ 'cmdopt': '--no-color'
+    \ 'cmdopt': '--no-color',
+    \ 'exec': '%c %o %s:%{line(".")} %a'
     \ }
 
   call neobundle#untap()
