@@ -19,6 +19,9 @@ ln -sf ~/.dotfiles/zshrc.darwin ~/.zshrc.darwin
 ln -sf ~/.dotfiles/zshrc.linux ~/.zshrc.linux
 ln -sf ~/.dotfiles/gemrc ~/.gemrc
 
+ln -sfn ~/.vim ~/config/nvim
+ln -sf ~/.vimrc ~/.config/nvim/init.vim
+
 mkdir -p ~/.atom
 ln -sf ~/.dotfiles/atom/config.cson ~/.atom/config.cson
 ln -sf ~/.dotfiles/atom/init.coffee ~/.atom/init.coffee
