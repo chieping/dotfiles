@@ -1,96 +1,89 @@
-if has('vim_starting')
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
+set runtimepath+=~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call dein#begin(expand('~/.vim/bundle'))
+call dein#add('Shougo/dein.vim')
 
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" NeoBundle 'Shougo/neocomplete.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/neomru.vim'
-" NeoBundle 'Shougo/vimshell'
-NeoBundle 'Shougo/vimproc.vim'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'SirVer/ultisnips', {
-    \ 'disabled' : !has('python')
-    \ }
-NeoBundle 'honza/vim-snippets'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'tsukkee/unite-help'
-" NeoBundle 'sorah/unite-ghq'
-" NeoBundle 'rhysd/accelerated-jk'
-" NeoBundle 'rking/ag.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'AndrewRadev/switch.vim'
-NeoBundle 'AndrewRadev/splitjoin.vim'
-" NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'ntpeters/vim-better-whitespace'
-NeoBundle 'godlygeek/tabular'
-" NeoBundle 'vim-scripts/taglist.vim'
-" NeoBundle 'majutsushi/tagbar'
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'jszakmeister/vim-togglecursor'
-NeoBundle 'altercation/vim-colors-solarized'
-" NeoBundle 'tpope/vim-dispatch'
-" NeoBundle 'Lokaltog/vim-easymotion'
-" NeoBundle 'justinmk/vim-sneak'
-NeoBundle 'haya14busa/incsearch.vim'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'matchit.zip'
-NeoBundle 'jiangmiao/auto-pairs'
-NeoBundle 'elixir-lang/vim-elixir'
-NeoBundle 'elzr/vim-json'
-NeoBundle 'vim-ruby/vim-ruby'
-NeoBundle 'jgdavey/vim-blockle'
-" NeoBundle 'rodjek/vim-puppet'
-NeoBundle 'mv/mv-vim-puppet'
-" NeoBundle 'dougireton/vim-chef' " notice: this line must be below of vim-ruby
-" NeoBundle 'thoughtbot/vim-rspec'
-" NeoBundle 'tsaleh/vim-matchit'
-" NeoBundle 'ecomba/vim-ruby-refactoring'
-" NeoBundle 'taku-o/vim-toggle'
-NeoBundle 'kana/vim-smartword'
-NeoBundle 'kana/vim-submode'
+" call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/unite.vim')
+call dein#add('Shougo/neomru.vim')
+" call dein#add('Shougo/vimshell')
+call dein#add('Shougo/vimproc.vim')
+call dein#add('thinca/vim-quickrun')
+call dein#add('SirVer/ultisnips')
+call dein#add('honza/vim-snippets')
+call dein#add('Shougo/unite-outline')
+call dein#add('tsukkee/unite-help')
+" call dein#add('sorah/unite-ghq')
+" call dein#add('rhysd/accelerated-jk')
+" call dein#add('rking/ag.vim')
+call dein#add('itchyny/lightline.vim')
+call dein#add('scrooloose/nerdtree')
+call dein#add('Xuyuanp/nerdtree-git-plugin')
+call dein#add('scrooloose/syntastic')
+call dein#add('AndrewRadev/switch.vim')
+call dein#add('AndrewRadev/splitjoin.vim')
+" call dein#add('Yggdroot/indentLine')
+call dein#add('nathanaelkane/vim-indent-guides')
+call dein#add('ntpeters/vim-better-whitespace')
+call dein#add('godlygeek/tabular')
+" call dein#add('vim-scripts/taglist.vim')
+" call dein#add('majutsushi/tagbar')
+call dein#add('terryma/vim-multiple-cursors')
+call dein#add('tomtom/tcomment_vim')
+call dein#add('jszakmeister/vim-togglecursor')
+call dein#add('altercation/vim-colors-solarized')
+" call dein#add('tpope/vim-dispatch')
+" call dein#add('Lokaltog/vim-easymotion')
+" call dein#add('justinmk/vim-sneak')
+call dein#add('haya14busa/incsearch.vim')
+call dein#add('tpope/vim-endwise')
+call dein#add('matchit.zip')
+call dein#add('jiangmiao/auto-pairs')
+call dein#add('elixir-lang/vim-elixir')
+call dein#add('elzr/vim-json')
+call dein#add('vim-ruby/vim-ruby')
+call dein#add('jgdavey/vim-blockle')
+" call dein#add('rodjek/vim-puppet')
+call dein#add('mv/mv-vim-puppet')
+" call dein#add('dougireton/vim-chef') " notice: this line must be below of vim-ruby
+" call dein#add('thoughtbot/vim-rspec')
+" call dein#add('tsaleh/vim-matchit')
+" call dein#add('ecomba/vim-ruby-refactoring')
+" call dein#add('taku-o/vim-toggle')
+call dein#add('kana/vim-smartword')
+call dein#add('kana/vim-submode')
 
 " vim-textobj-user list
 " https://github.com/kana/vim-textobj-user/wiki
-NeoBundle 'kana/vim-textobj-user'
-NeoBundle 'kana/vim-textobj-line'
-NeoBundle 'kana/vim-textobj-entire'
-NeoBundle 'lucapette/vim-textobj-underscore'
-NeoBundle 'kana/vim-operator-user'
-NeoBundle 'kana/vim-operator-replace'
-NeoBundle 'thinca/vim-textobj-between'
-" NeoBundle 'rhysd/vim-textobj-word-column' " forked from coderifous
+call dein#add('kana/vim-textobj-user')
+call dein#add('kana/vim-textobj-line')
+call dein#add('kana/vim-textobj-entire')
+call dein#add('lucapette/vim-textobj-underscore')
+call dein#add('kana/vim-operator-user')
+call dein#add('kana/vim-operator-replace')
+call dein#add('thinca/vim-textobj-between')
+" call dein#add('rhysd/vim-textobj-word-column') " forked from coderifous
 " http://vimcasts.org/episodes/supercharged-substitution-with-subvert/
-NeoBundle 'tpope/vim-abolish'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-" NeoBundle 'wesleyche/SrcExpl'
-" NeoBundle 'wesleyche/Trinity'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'chrisbra/vim-diff-enhanced'
-NeoBundle 'terryma/vim-expand-region'
-NeoBundle 'mhinz/vim-signify'
-" NeoBundle 'closetag.vim'
-" NeoBundle 'szw/vim-tags'
-NeoBundle 'soramugi/auto-ctags.vim'
-NeoBundle 'kannokanno/previm'
-" NeoBundle 'rizzatti/dash.vim'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'dhruvasagar/vim-table-mode'
-" NeoBundle 'glidenote/memolist.vim'
-" NeoBundle 'lambdalisue/vim-gista'
-NeoBundle 'embear/vim-localvimrc'
-
-call neobundle#end()
+call dein#add('tpope/vim-abolish')
+call dein#add('tpope/vim-surround')
+call dein#add('tpope/vim-repeat')
+" call dein#add('wesleyche/SrcExpl')
+" call dein#add('wesleyche/Trinity')
+call dein#add('tpope/vim-fugitive')
+call dein#add('tpope/vim-unimpaired')
+call dein#add('chrisbra/vim-diff-enhanced')
+call dein#add('terryma/vim-expand-region')
+call dein#add('mhinz/vim-signify')
+" call dein#add('closetag.vim')
+" call dein#add('szw/vim-tags')
+call dein#add('soramugi/auto-ctags.vim')
+call dein#add('kannokanno/previm')
+" call dein#add('rizzatti/dash.vim')
+call dein#add('tyru/open-browser.vim')
+call dein#add('dhruvasagar/vim-table-mode')
+" call dein#add('glidenote/memolist.vim')
+" call dein#add('lambdalisue/vim-gista')
+call dein#add('embear/vim-localvimrc')
 
 filetype plugin indent on
 
@@ -244,8 +237,8 @@ nnoremap zH zM
 
 cabbrev h    tab help
 cabbrev t    tabnew
-cabbrev bu   NeoBundleUpdate
-cabbrev bul  NeoBundleUpdatesLog
+" cabbrev bu   NeoBundleUpdate
+" cabbrev bul  NeoBundleUpdatesLog
 cabbrev fd   filetype detect
 cabbrev sf   set filetype=
 cabbrev ds   diffsplit
@@ -261,50 +254,17 @@ endfunction
 
 map <Leader>w :call ToggleWrap()<CR>
 
-" plugin config sample
-"
-" if neobundle#tap('{plugin}')
-"   call neobundle#config({
-"     \ 'lazy' : 1,
-"     \ 'autoload' : {
-"     \   'insert' : 1,
-"     \ }})
-"
-"   function! neobundle#hooks.on_source(bundle)
-"     " Settings, Init, ...
-"     " Timing of adding rtp
-"     " Like vimrc time
-"     let g:foo#bar = 1
-"     let g:foo#path = a:bundle.path
-"     call foo#baz()
-"   endfunction
-"
-"   function! neobundle#hooks.on_post_source(bundle)
-"     " Settings, Init, ...
-"     " Timing of after source plugin files
-"     " Like VimEnter time
-"     let g:foo#bar = 3
-"     call foo#bazbaz()
-"   endfunction
-"
-"   " Define plugin mappings, commands, ...
-"   map f <Plug>(foo)
-"   command! FOO call foo#foo()
-"
-"   call neobundle#untap()
-" endif
+if dein#tap('vimproc.vim')
+  " call dein#config({
+  "   \ 'build' : {
+  "   \   'mac' : 'make -f make_mac.mak',
+  "   \   'linux' : 'make'
+  "   \ }})
 
-if neobundle#tap('vimproc.vim')
-  call neobundle#config({
-    \ 'build' : {
-    \   'mac' : 'make -f make_mac.mak',
-    \   'linux' : 'make'
-    \ }})
 
-  call neobundle#untap()
 endif
 
-if neobundle#tap('vim-quickrun')
+if dein#tap('vim-quickrun')
   let g:quickrun_config = {}
   let g:quickrun_config['ruby.rspec'] = {
     \ 'command': 'rspec',
@@ -312,62 +272,62 @@ if neobundle#tap('vim-quickrun')
     \ 'exec': '%c %o %s:%{line(".")} %a'
     \ }
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-smartword')
+if dein#tap('vim-smartword')
   map w  <Plug>(smartword-w)
   map b  <Plug>(smartword-b)
   map e  <Plug>(smartword-e)
   map ge <Plug>(smartword-ge)
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-diff-enhanced')
+if dein#tap('vim-diff-enhanced')
   " diff algorithm
   " 'histogram' algorithm is fast version of patience algorithm
   let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=histogram")'
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-ruby')
+if dein#tap('vim-ruby')
   augroup RubyRspec
     autocmd!
     autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
   augroup END
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('ultisnips')
+if dein#tap('ultisnips')
   let g:UltiSnipsEditSplit="vertical"
   let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
   let g:snips_github="https://github.com/chieping"
   let g:snips_author="chieping"
   let g:snips_email="takashi.honda.01@gmail.com"
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-localvimrc')
+if dein#tap('vim-localvimrc')
   let g:localvimrc_ask=0
   let g:localvimrc_sandbox=0
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-json')
+if dein#tap('vim-json')
   let g:vim_json_syntax_conceal = 0
 
   " default brace color(red) is not very good
   highlight link jsonBraces Function
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-indent-guides')
+if dein#tap('vim-indent-guides')
   let g:indent_guides_enable_on_vim_startup = 1
 
   if ! has('gui_running')
@@ -376,10 +336,10 @@ if neobundle#tap('vim-indent-guides')
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
   endif
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('syntastic')
+if dein#tap('syntastic')
   let g:syntastic_error_symbol='✗'
   let g:syntastic_warning_symbol='⚠'
   let g:syntastic_ruby_checkers = ['rubocop']
@@ -391,22 +351,22 @@ if neobundle#tap('syntastic')
       \ {'regex': 'possibly useless use of a variable in void context'}
   let g:syntastic_check_on_wq = 0
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-operator-replace')
+if dein#tap('vim-operator-replace')
   map r <Plug>(operator-replace)
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-table-mode')
+if dein#tap('vim-table-mode')
   let g:table_mode_corner = '|'
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('switch.vim')
+if dein#tap('switch.vim')
   nnoremap - :Switch<CR>
 
   let g:switch_custom_definitions = [
@@ -429,38 +389,38 @@ if neobundle#tap('switch.vim')
     \ '^-': ' '
     \ })
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-multiple-cursors')
+if dein#tap('vim-multiple-cursors')
   let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('open-browser.vim')
+if dein#tap('open-browser.vim')
   let g:netrw_nogx = 1 " disable netrw's gx mapping.
   nmap gx <Plug>(openbrowser-smart-search)
   vmap gx <Plug>(openbrowser-smart-search)
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('previm')
+if dein#tap('previm')
   let g:previm_show_header = 0
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('incsearch.vim')
+if dein#tap('incsearch.vim')
   map /  <Plug>(incsearch-forward)
   map ?  <Plug>(incsearch-backward)
   map g/ <Plug>(incsearch-stay)
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('nerdtree')
+if dein#tap('nerdtree')
   nmap <Leader>f :NERDTreeToggle<CR>
   nmap <Leader>s :NERDTreeFind<CR>
 
@@ -477,10 +437,10 @@ if neobundle#tap('nerdtree')
   autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
           \ grep:. -buffer-name=search-buffer<CR>
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-fugitive')
+if dein#tap('vim-fugitive')
   vnoremap gl :<C-u>'<,'>Glog -- % \| cwindow<CR>
   vnoremap gb :<C-u>'<,'>Gblame<CR>
   nnoremap gs :<C-u>Gstatus<CR>
@@ -489,10 +449,10 @@ if neobundle#tap('vim-fugitive')
   nnoremap gdd :<C-u>Gdiff develop..@<CR>
   nnoremap gdm :<C-u>Gdiff master..@<CR>
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('tabular')
+if dein#tap('tabular')
   nmap <Leader>a= :Tabularize /=<CR>
   vmap <Leader>a= :Tabularize /=<CR>
   nmap <Leader>a> :Tabularize /=><CR>
@@ -504,10 +464,10 @@ if neobundle#tap('tabular')
   nmap <Leader>as :Tabularize /:\w\+,\?<CR>
   vmap <Leader>as :Tabularize /:\w\+,\?<CR>
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('unite.vim')
+if dein#tap('unite.vim')
   " The prefix key.
   nnoremap    [unite]   <Nop>
   nmap    m [unite]
@@ -689,18 +649,18 @@ if neobundle#tap('unite.vim')
   autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
   autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-surround')
+if dein#tap('vim-surround')
   " erb
   " 61: '='
   autocmd FileType eruby let g:surround_61 = "<%= \r %>"
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-expand-region')
+if dein#tap('vim-expand-region')
   let g:expand_region_text_objects_ruby = {
         \ 'iw'  :0,
         \ 'iW'  :0,
@@ -715,20 +675,20 @@ if neobundle#tap('vim-expand-region')
         \ 'ie'  :0,
         \ }
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-signify')
+if dein#tap('vim-signify')
   call submode#enter_with('signify-move', 'n', '', '<Leader>g')
   call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
   call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
   call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
   call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('vim-submode')
+if dein#tap('vim-submode')
   let g:submode_timeout=0
 
   call submode#enter_with('winsize', 'n', '', '<C-w>L', '<C-w>3>')
@@ -754,10 +714,10 @@ if neobundle#tap('vim-submode')
   call submode#map('inc_dec', 'n', '', '<C-a>', '<C-a>')
   call submode#map('inc_dec', 'n', '', '<C-x>', '<C-x>')
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('auto-ctags.vim')
+if dein#tap('auto-ctags.vim')
   if has('mac')
     " Use homebrew's ctags instead of kaoriya bundled one
     let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
@@ -767,10 +727,10 @@ if neobundle#tap('auto-ctags.vim')
     let g:auto_ctags = 1
   endif
 
-  call neobundle#untap()
+
 endif
 
-if neobundle#tap('lightline.vim')
+if dein#tap('lightline.vim')
   let g:lightline = {
           \ 'colorscheme': 'solarized',
           \ 'mode_map': {'c': 'NORMAL'},
@@ -832,15 +792,15 @@ if neobundle#tap('lightline.vim')
     return winwidth(0) > 60 ? lightline#mode() : ''
   endfunction
 
-  call neobundle#untap()
-endif
 
-NeoBundleCheck
+endif
 
 if !has('vim_starting')
   " Call on_source hook when reloading .vimrc.
-  call neobundle#call_hook('on_source')
+  call dein#call_hook('on_source')
 endif
+
+call dein#end()
 
 let g:solarized_contrast="high"
 let g:solarized_termtrans=1
