@@ -237,6 +237,7 @@ nnoremap zH zM
 
 cabbrev h    tab help
 cabbrev t    tabnew
+" TODO: cleaning
 " cabbrev bu   NeoBundleUpdate
 " cabbrev bul  NeoBundleUpdatesLog
 cabbrev fd   filetype detect
@@ -795,10 +796,11 @@ if dein#tap('lightline.vim')
 
 endif
 
-if !has('vim_starting')
-  " Call on_source hook when reloading .vimrc.
-  call dein#call_hook('on_source')
-endif
+" TODO: follow dein's way
+" if !has('vim_starting')
+"   " Call on_source hook when reloading .vimrc.
+"   call dein#call_hook('on_source')
+" endif
 
 call dein#end()
 
