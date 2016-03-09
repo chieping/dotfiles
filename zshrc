@@ -133,6 +133,7 @@ bindkey '^xf' peco-find-file
 alias rm='rm -I'
 alias diff="colordiff"
 alias v='vim'
+alias n='nvim'
 alias tigd='tig develop...@'
 alias tigm='tig master...@'
 alias vup='vagrant up --no-provision'
