@@ -63,6 +63,9 @@ bindkey '^xd' delete-surround
 bindkey '^xcs' change-surround
 bindkey '^xys' add-surround
 
+bindkey '^[b' vi-backward-blank-word
+bindkey '^[f' vi-forward-blank-word
+
 # expand global aliases by space
 # http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
 globalias() {
