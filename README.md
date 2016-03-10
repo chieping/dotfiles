@@ -64,3 +64,11 @@ sudo apt-get install clipit
 ### Solarized Colorscheme for Gnome Terminal
 
 https://github.com/Anthony25/gnome-terminal-colors-solarized
+
+### Disable HUD Search Menu
+
+http://askubuntu.com/a/133777
+
+System Settings --> Keyboard --> Short-cuts
+
+Select "Key to show the HUD" and press Backspace to disable
