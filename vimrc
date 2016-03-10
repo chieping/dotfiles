@@ -7,7 +7,13 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neomru.vim')
 " call dein#add('Shougo/vimshell')
-call dein#add('Shougo/vimproc.vim')
+call dein#add('Shougo/vimproc.vim', {
+\ 'build': {
+\     'mac': 'make -f make_mac.mak',
+\     'linux': 'make',
+\     'unix': 'gmake',
+\    },
+\ })
 call dein#add('thinca/vim-quickrun')
 call dein#add('SirVer/ultisnips', { 'if': has('python') })
 call dein#add('honza/vim-snippets')
@@ -237,9 +243,9 @@ nnoremap zH zM
 
 cabbrev h    tab help
 cabbrev t    tabnew
-" TODO: cleaning
-" cabbrev bu   NeoBundleUpdate
-" cabbrev bul  NeoBundleUpdatesLog
+cabbrev du   call dein#update()
+" TODO: dein#get_updates_log() is not working?
+cabbrev dul  call dein#get_updates_log()
 cabbrev fd   filetype detect
 cabbrev sf   set filetype=
 cabbrev ds   diffsplit
@@ -256,6 +262,7 @@ endfunction
 map <Leader>w :call ToggleWrap()<CR>
 
 if dein#tap('vimproc.vim')
+  " TODO: follow dein's way
   " call dein#config({
   "   \ 'build' : {
   "   \   'mac' : 'make -f make_mac.mak',
