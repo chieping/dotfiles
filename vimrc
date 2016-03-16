@@ -456,6 +456,7 @@ if dein#tap('vim-fugitive')
 
   nnoremap gdd :<C-u>Gdiff develop..@<CR>
   nnoremap gdm :<C-u>Gdiff master..@<CR>
+  nnoremap gdp :<C-u>Gdiff HEAD@{1}<CR>
 
 
 endif
