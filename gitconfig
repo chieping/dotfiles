@@ -24,7 +24,7 @@
 	st = status
 	co = checkout
 	b = browse
-	tree = log --graph --all --pretty='format:%x09%C(cyan)%an%Creset%x09%C(yellow)%h%Creset %C(auto)%d%Creset %s'
+	tree = log --graph --all --pretty='format:%>|(5)%x09%C(cyan)%<|(32)%an %Creset%C(yellow)%h%Creset %C(auto)%d%Creset %s'
 	tre = !git tree
 	tr = !git tree
 	d = diff
