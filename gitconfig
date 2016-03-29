@@ -1,5 +1,8 @@
 # vim: set ft=gitconfig noet ci pi sts=0 sw=4 ts=4 :
 [user]
+	# available at git 2.8 or higher.
+	# this replace pre-commit hook script.
+	useconfigonly = true
 [init]
 	templatedir = ~/.git_templates
 [core]
