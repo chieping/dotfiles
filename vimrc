@@ -145,10 +145,7 @@ set ttimeoutlen=0
 set splitbelow splitright
 " 'lazyredraw' will buffer screen updates instead of updating all the time.
 " This mitigates delay of cursor movement well.
-" Note that if it's neovim sometimes it causes a problem splitting window by Tmux.
-if ! has('nvim')
-  set lazyredraw
-endif
+set lazyredraw
 set nrformats-=octal
 if has("patch-7.4.775")
   set completeopt=menu,menuone,preview,noselect
