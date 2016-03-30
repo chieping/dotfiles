@@ -104,6 +104,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set autoindent
+set autoread
 set ignorecase
 set smartcase
 set showcmd
