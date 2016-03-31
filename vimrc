@@ -397,8 +397,8 @@ if dein#tap('switch.vim')
     \ ]
 
   autocmd FileType diff call add(g:switch_custom_definitions, {
-    \ '^ ': '-',
-    \ '^-': ' '
+    \ '^ \(.*\)': '-\1',
+    \ '^-\(.*\)': ' \1'
     \ })
 
 
