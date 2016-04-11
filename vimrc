@@ -7,13 +7,7 @@ call dein#add('Shougo/dein.vim')
 call dein#add('Shougo/unite.vim')
 call dein#add('Shougo/neomru.vim')
 " call dein#add('Shougo/vimshell')
-call dein#add('Shougo/vimproc.vim', {
-\ 'build': {
-\     'mac': 'make -f make_mac.mak',
-\     'linux': 'make',
-\     'unix': 'gmake',
-\    },
-\ })
+call dein#add('Shougo/vimproc.vim', {'build': 'make'})
 call dein#add('thinca/vim-quickrun')
 call dein#add('SirVer/ultisnips', { 'if': has('python') })
 call dein#add('honza/vim-snippets')
