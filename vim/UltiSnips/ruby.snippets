@@ -1,3 +1,23 @@
 snippet tap "" i
 tap { |t| $0 }
 endsnippet
+
+snippet he "Header for Chef cookbooks" b
+#
+# Cookbook Name:: `!p m = re.search(r'cookbooks/([^/]+)/', os.path.abspath(path))
+if m:
+  snip.rv = m.group(1)
+`
+# `!p m = re.search(r'/(recipe|attribute|resource|provider|librarie)s?/', os.path.abspath(path))
+if m:
+  kind = m.group(1)
+  kind = 'library' if kind == 'librarie' else kind
+  snip.rv = kind.capitalize()
+`:: `!p snip.rv = snip.basename`
+#
+# Copyright `date +%Y`, Sony Interactive Entertainment Inc.
+#
+# All rights reserved - Do Not Redistribute
+#
+$0
+endsnippet
