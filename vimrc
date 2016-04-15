@@ -141,9 +141,7 @@ set splitbelow splitright
 " This mitigates delay of cursor movement well.
 set lazyredraw
 set nrformats-=octal
-if has("patch-7.4.775")
-  set completeopt=menu,menuone,preview,noselect
-endif
+set completeopt=menu,menuone,preview
 " https://github.com/tpope/vim-sensible/issues/51
 set complete-=i
 
@@ -240,6 +238,7 @@ nnoremap zH zM
 
 cabbrev h    tab help
 cabbrev t    tabnew
+cabbrev di   call dein#install()
 cabbrev du   call dein#update()
 " TODO: dein#get_updates_log() is not working?
 cabbrev dul  call dein#get_updates_log()
