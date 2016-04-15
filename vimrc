@@ -145,7 +145,7 @@ set completeopt=menu,menuone,preview
 " https://github.com/tpope/vim-sensible/issues/51
 set complete-=i
 
-let g:mapleader=","
+let g:mapleader="\<Space>"
 
 " Copy the filename including its full path
 if has('mac')
@@ -161,9 +161,6 @@ nnoremap U :redo<CR>
 
 nmap <Leader>v :tabedit $MYVIMRC<CR>
 nmap <Leader>R :<C-u>source $MYVIMRC<CR>
-
-nnoremap ; :
-vnoremap ; :
 
 " If doing a diff. Upon writing changes to file, automatically update the
 " differences
