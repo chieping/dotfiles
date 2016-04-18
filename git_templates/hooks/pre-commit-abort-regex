@@ -9,7 +9,7 @@ abort_regex=(
 
 for FILE in $(git diff-index --name-status HEAD -- | cut -c3-); do
   for ((i = 0; i < ${#abort_regex[@]}; i++)) {
-    if grep -P "${abort_regex[i]}" "$git_root_dir/$FILE"; then
+    if grep -P "${abort_regex[i]}" "$git_root_dir/$FILE" 2>/dev/null; then
       echo "Matched abort_regex. Please check the file."
       echo "Regex: ${abort_regex[i]}"
       echo "File: $FILE"
