@@ -87,9 +87,9 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang brew brew-cask rbenv bgnotify)
+plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang brew brew-cask rbenv bgnotify history-substring-search)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
-plugins+=(zsh-syntax-highlighting zsh-history-substring-search k)
+plugins+=(zsh-syntax-highlighting k)
 
 source $ZSH/oh-my-zsh.sh
 
