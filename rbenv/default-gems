@@ -1,9 +1,7 @@
 bundler
-pry
 pry-doc
 pry-byebug
 awesome_print
 rubocop
-puppet
-puppet-lint
-markdown2confluence
+aws-sdk
+chef
