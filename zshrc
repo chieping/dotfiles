@@ -170,8 +170,8 @@ alias ev='cd $(find ~/.vim/bundle/repos -maxdepth 4 -name .git -type d | sed "s:
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/origin/||"`'
 alias -g X='| xargs -I %'
-alias -g H='| head'
-alias -g T='| tail'
+alias -g GF='| grep -F'
+alias -g GP='| grep -P'
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
 
