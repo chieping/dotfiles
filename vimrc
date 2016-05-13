@@ -37,6 +37,7 @@ call dein#add('altercation/vim-colors-solarized')
 " call dein#add('justinmk/vim-sneak')
 call dein#add('haya14busa/incsearch.vim')
 call dein#add('tpope/vim-endwise')
+call dein#add('tpope/vim-rsi')
 call dein#add('matchit.zip')
 call dein#add('jiangmiao/auto-pairs')
 call dein#add('elixir-lang/vim-elixir')
@@ -176,28 +177,6 @@ noremap s "_s
 noremap S "_S
 noremap x "_x
 noremap X "_X
-
-inoremap <C-b> <Left>
-inoremap <C-n> <Down>
-inoremap <C-p> <Up>
-inoremap <C-f> <Right>
-inoremap <C-^> <Esc>^i
-cnoremap <C-f> <Right>
-cnoremap <C-b> <Left>
-
-nnoremap <C-e> <End>
-nnoremap <C-a> <Home>
-inoremap <C-e> <End>
-inoremap <C-a> <Home>
-cnoremap <C-e> <End>
-cnoremap <C-a> <Home>
-cnoremap <C-d> <Delete>
-
-inoremap <C-d> <Delete>
-inoremap <C-h> <BS>
-
-inoremap <C-k> <Esc>ld$a
-inoremap <C-u> <Esc>ld0i
 
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
