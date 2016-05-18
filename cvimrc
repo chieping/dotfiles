@@ -19,6 +19,9 @@ let searchalias gj = "googleja"
 let searchengine googleen = "https://www.google.com/search?as_q=%s&lr=lang_en"
 let searchalias ge = "googleen"
 
+let searchengine oxford_collocation_dictionary = "http://ozdic.com/collocation-dictionary/%s"
+let searchalias cd = "oxford_collocation_dictionary"
+
 map ; :
 
 map <C-o> goBack
