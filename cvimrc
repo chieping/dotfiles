@@ -16,6 +16,9 @@ let searchalias d = "dictionary_com"
 let searchengine googleja = "https://www.google.com/search?as_q=%s&lr=lang_ja"
 let searchalias gj = "googleja"
 
+let searchengine googleen = "https://www.google.com/search?as_q=%s&lr=lang_en"
+let searchalias ge = "googleen"
+
 map ; :
 
 map <C-o> goBack
