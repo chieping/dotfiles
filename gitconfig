@@ -51,6 +51,7 @@
 	credential-my-os-compatible-keychain = !my-git-credential-helper
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
+	pushf = push --force-with-lease
 [push]
 	default = simple
 
