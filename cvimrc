@@ -37,6 +37,9 @@ iunmap <C-k>   " prefer Cocoa app's default behaviour
 map h previousTab
 map l nextTab
 
+map <A-S-[> previousTab
+map <A-S-]> nextTab
+
 map d closeTab
 map u lastClosedTab
 
