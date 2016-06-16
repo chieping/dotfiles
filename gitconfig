@@ -21,6 +21,8 @@
 	remoteBranch = green
 	branch = magenta
 	tag = magenta reverse
+[commit]
+	verbose = true
 [alias]
 	br = branch
 	ci = commit
@@ -53,6 +55,8 @@
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
 	pushf = push --force-with-lease
+[interactive]
+	diffFilter = $DIFF_HIGHLIGHT
 [push]
 	default = simple
 
