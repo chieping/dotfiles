@@ -71,6 +71,7 @@
 [diff]
 	tool = p4merge
 	algorithm = histogram
+	compactionHeuristic = true
 [difftool]
 	prompt = false
 [difftool "p4merge"]
