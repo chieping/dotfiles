@@ -1,6 +1,7 @@
 bundler
 pry-doc
 pry-byebug
+pry-stack_explorer
 awesome_print
 rubocop
 aws-sdk
