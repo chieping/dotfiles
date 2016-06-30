@@ -234,6 +234,16 @@ endfunction
 
 map <Leader>w :call ToggleWrap()<CR>
 
+function! NumberToggle()
+  if (&relativenumber == 1)
+    set norelativenumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <Leader>n :call NumberToggle()<cr>
+
 if dein#tap('vimproc.vim')
   " TODO: follow dein's way
   " call dein#config({
