@@ -172,6 +172,8 @@ alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/
 alias -g X='| xargs -I %'
 alias -g FG='| grep -F'
 alias -g PG='| grep -P'
+alias -g P='"`!!`"'
+alias foodcritic="foodcritic -t '~FC001' -t '~FC002' -t '~FC019' -t '~FC048' -t '~FC064' -t '~FC065'"
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
 
