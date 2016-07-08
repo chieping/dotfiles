@@ -180,4 +180,6 @@ alias taket="take ~/tmp/`date +%Y%m%d`"
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
 
+alias zshrc='$EDITOR ~/.zshrc*'
+
 source ~/.zshrc.local
