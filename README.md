@@ -37,8 +37,8 @@ https://github.com/sstephenson/ruby-build/wiki
 ### Keyrepeat Interval and Delay
 
 ```
-gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 12
-gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 180
+gsettings set org.gnome.settings-daemon.peripherals.keyboard repeat-interval 10
+gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 150
 ```
 
 ### Customize Window Management Key Binds
