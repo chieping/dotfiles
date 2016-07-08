@@ -63,6 +63,7 @@ call dein#add('kana/vim-textobj-entire')
 call dein#add('lucapette/vim-textobj-underscore')
 call dein#add('kana/vim-operator-user')
 call dein#add('kana/vim-operator-replace')
+call dein#add('tommcdo/vim-exchange')
 call dein#add('thinca/vim-textobj-between')
 " call dein#add('rhysd/vim-textobj-word-column') " forked from coderifous
 " http://vimcasts.org/episodes/supercharged-substitution-with-subvert/
