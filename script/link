@@ -52,6 +52,12 @@ ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom
 
 mkdir -p ~/.vim/{backups,swaps,undo,bundle}
 
+if [ -e ~/.ssh ] && ! [ -L ~/.ssh ]; then
+  echo "Skip .ssh since ~/.ssh already exists and is actual directory."
+else
+  ln -sfn ~/.dotfiles/ssh ~/.ssh
+fi
+
 mkdir -p ~/bin
 
 touch ~/.zshrc.local
