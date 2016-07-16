@@ -4,7 +4,7 @@ vim_plugins()
 {
   echo "####    vim plugins    ####"
   # TODO: use stdoutput and show update log
-  vim -e '+call dein#update()' '+quit'
+  PATH="/Applications/MacVim.app/Contents/MacOS:$PATH" vim -e '+call dein#update()' '+quit'
 }
 
 oh_my_zsh()
