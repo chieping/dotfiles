@@ -32,6 +32,12 @@ map <C-f> scrollFullPageDown
 map <Space> scrollFullPageDown
 map <S-Space> scrollFullPageUp
 
+" https://github.com/1995eaton/chromium-vim/issues/204
+map ^n nextSearchResult
+map ^N previousSearchResult
+map n :execute ^nzz<CR>
+map N :execute ^Nzz<CR>
+
 iunmap <C-k>   " prefer Cocoa app's default behaviour
 
 map h previousTab
