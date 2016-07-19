@@ -41,3 +41,7 @@ WordArray:
 # Allow Perl-style regexp match backreferences like $1, $2, etc.
 Style/PerlBackrefs:
   Enabled: false
+
+# eg. for octal use `0o` instead of `0` or `0O`.
+Style/NumericLiteralPrefix:
+  Enabled: false
