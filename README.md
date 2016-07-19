@@ -72,3 +72,7 @@ http://askubuntu.com/a/133777
 System Settings --> Keyboard --> Short-cuts
 
 Select "Key to show the HUD" and press Backspace to disable
+
+### Install Golang up-to-date version
+
+https://github.com/golang/go/wiki/Ubuntu
