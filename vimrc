@@ -49,6 +49,7 @@ call dein#add('jgdavey/vim-blockle')
 call dein#add('mv/mv-vim-puppet')
 " call dein#add('dougireton/vim-chef') " notice: this line must be below of vim-ruby
 " call dein#add('thoughtbot/vim-rspec')
+call dein#add('GEverding/vim-hocon')
 " call dein#add('tsaleh/vim-matchit')
 " call dein#add('ecomba/vim-ruby-refactoring')
 " call dein#add('taku-o/vim-toggle')
