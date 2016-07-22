@@ -125,6 +125,9 @@ peco-find-file() {
 zle -N peco-find-file
 bindkey '^xf' peco-find-file
 
+# delete characters just left side of the cursor.
+bindkey '^U' backward-kill-line
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
