@@ -22,6 +22,8 @@ let searchalias ge = "googleen"
 let searchengine oxford_collocation_dictionary = "http://ozdic.com/collocation-dictionary/%s"
 let searchalias cd = "oxford_collocation_dictionary"
 
+let barposition = "top"
+
 map ; :
 
 map <C-o> goBack
