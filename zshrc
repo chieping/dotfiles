@@ -71,7 +71,7 @@ bindkey '^[f' vi-forward-blank-word
 globalias() {
   if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
     zle _expand_alias
-    zle expand-word
+    # zle expand-word
   fi
   zle self-insert
 }
