@@ -31,7 +31,7 @@ https://github.com/sstephenson/ruby-build/wiki
 
 ## Ubuntu
 
-## Building Vim
+### Building Vim
 [vim-jp » Linuxでのビルド方法](http://vim-jp.org/docs/build_linux.html)
 
 ### Keyrepeat Interval and Delay
