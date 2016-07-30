@@ -41,6 +41,7 @@ map n :execute ^nzz<CR>
 map N :execute ^Nzz<CR>
 
 iunmap <C-k>   " prefer Cocoa app's default behaviour
+iunmap <C-i>   " to use カナ変換
 
 map h previousTab
 map l nextTab
