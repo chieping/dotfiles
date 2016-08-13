@@ -1,14 +1,16 @@
 # Chieping's Dotfiles
 
 ## Supported OS
+
 - Mac OS X
 - Ubuntu
-- CentOS
 
 # Setup
+
 TODO one-liner install script
 
 ## Atom
+
 install starred packages
 ```
 $ apm stars --install
@@ -17,6 +19,7 @@ $ apm stars --install
 See: https://discuss.atom.io/t/installed-packages-list-into-single-file/12227/2
 
 ## Tmux
+
 install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
 
 and then, hit `prefix + I` (I as in Install) to fetch the plugin
@@ -29,9 +32,21 @@ https://github.com/sstephenson/ruby-build/wiki
 
 # Further Settings
 
+## Google Chrome
+
+### [cVim](https://github.com/1995eaton/chromium-vim) theme inspired by Yosemite Spotlight
+
+https://gist.github.com/franklinjavier/50fe3f6eae29f86d3a75
+
+### (Windows) Chrome52以降でMacTypeを有効にする
+
+- [【配布】MacTypeでDirectWriteの設定を変えるパッチ - しらいとブログ](http://silight.hatenablog.jp/entry/MacTypePatch)
+- [Chrome で MacType を効かせる MacTypePatch がすごい　のこと](http://uwagakisimasuka.blog.fc2.com/blog-entry-4781.html)
+
 ## Ubuntu
 
 ### Building Vim
+
 [vim-jp » Linuxでのビルド方法](http://vim-jp.org/docs/build_linux.html)
 
 ### Keyrepeat Interval and Delay
