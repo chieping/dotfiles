@@ -19,8 +19,6 @@ install github.com/zsh-users/zsh-syntax-highlighting      ~/.oh-my-zsh/custom/pl
 install github.com/zsh-users/zsh-history-substring-search ~/.oh-my-zsh/custom/plugins/zsh-history-substring-search
 install github.com/supercrabtree/k                        ~/.oh-my-zsh/custom/plugins/k
 
-# TODO: migrate from neobundle to dein
-# install github.com/Shougo/neobundle.vim                   ~/.vim/bundle/neobundle.vim
 install github.com/Shougo/dein.vim                        ~/.vim/bundle/repos/github.com/Shougo/dein.vim
 
 install github.com/tmux-plugins/tpm                       ~/.tmux/plugins/tpm
@@ -36,4 +34,3 @@ install github.com/nodenv/node-build                      ~/.nodenv/plugins/node
 install github.com/vimpr/vimperator-plugins
 
 install github.com/seebi/dircolors-solarized
-
