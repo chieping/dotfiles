@@ -728,7 +728,7 @@ endif
 
 if dein#tap('lightline.vim')
   let g:lightline = {
-          \ 'colorscheme': 'solarized',
+          \ 'colorscheme': 'seoul256',
           \ 'mode_map': {'c': 'NORMAL'},
           \ 'active': {
           \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
