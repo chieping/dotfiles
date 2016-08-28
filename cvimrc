@@ -67,3 +67,7 @@ let blacklists = [
     \ "https://mail.google.com/*",
     \ "*://cacoo.com/*"
     \ ]
+
+site 'https://twitter.com/*' {
+  unmap .
+}
