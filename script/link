@@ -1,6 +1,16 @@
 #!/bin/bash
 set -e
 
+continue_on_error() {
+  set +e
+  $@
+  if ! [ $? = 0 ]; then
+    echo "a command failed: $@"
+    echo "continue anyway..."
+  fi
+  set -e
+}
+
 ln -sf ~/.dotfiles/bashrc ~/.bashrc
 ln -sf ~/.dotfiles/ctags ~/.ctags
 ln -sf ~/.dotfiles/eslintrc ~/.eslintrc
@@ -52,11 +62,7 @@ ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom
 
 mkdir -p ~/.vim/{backups,swaps,undo,bundle}
 
-if [ -e ~/.ssh ] && ! [ -L ~/.ssh ]; then
-  echo "Skip .ssh since ~/.ssh already exists and is actual directory."
-else
-  ln -sfn ~/.dotfiles/ssh ~/.ssh
-fi
+continue_on_error ln -sn ~/.dotfiles/ssh ~/.ssh
 
 mkdir -p ~/bin
 
