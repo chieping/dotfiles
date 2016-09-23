@@ -421,6 +421,11 @@ if dein#tap('nerdtree')
 
   let NERDTreeMinimalUI=1
 
+  " https://github.com/scrooloose/nerdtree/pull/546
+  " i don't want to use ambiguous width characters.
+  let g:NERDTreeDirArrowExpandable = '▸'
+  let g:NERDTreeDirArrowCollapsible = '▾'
+
   " Disable NERDTree's mappings
   let g:NERDTreeMapJumpNextSibling = ''   " C-j
   let g:NERDTreeMapJumpPrevSibling = ''   " C-k
