@@ -21,6 +21,7 @@ install colordiff
 install coreutils
 install direnv
 install dnsmasq
+install fasd
 install findutils
 install gawk
 install gcc
@@ -74,7 +75,6 @@ install tree
 install watch
 install wdiff
 install wget
-install z
 install zsh
 install zsh-completions
 cask install atom

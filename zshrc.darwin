@@ -87,7 +87,7 @@ DISABLE_AUTO_UPDATE="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang brew brew-cask rbenv history-substring-search)
+plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang brew brew-cask rbenv history-substring-search fasd)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
 plugins+=(zsh-syntax-highlighting k)
 
@@ -95,8 +95,6 @@ source $ZSH/oh-my-zsh.sh
 
 # oh-my-zsh default: 10000
 SAVEHIST=100000
-
-[ -f $HOMEBREW_ROOT/etc/profile.d/z.sh  ] && source $HOMEBREW_ROOT/etc/profile.d/z.sh
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
