@@ -301,6 +301,8 @@ if dein#tap('ultisnips')
   let g:snips_github="https://github.com/chieping"
   let g:snips_author="chieping"
   let g:snips_email="takashi.honda.01@gmail.com"
+  let g:UltiSnipsJumpForwardTrigger="<Tab>"
+  let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
 
 
 endif
