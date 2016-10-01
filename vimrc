@@ -492,6 +492,7 @@ if dein#tap('unite.vim')
           \   'remove extra whitespaces': '%s/\s\+$//g',
           \   'force write': 'w !sudo tee %',
           \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
+          \   'make this file excutable': '!chmod +x %:p',
           \ }
 
   let g:unite_source_alias_aliases = {
