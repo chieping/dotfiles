@@ -4,7 +4,7 @@ export GIT_EDITOR=vim
 # need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
 autoload -U compinit && compinit
 
-UNBUNDLED_COMMANDS=(knife)
+UNBUNDLED_COMMANDS=(knife pry)
 ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOSTART=true
 

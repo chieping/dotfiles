@@ -9,6 +9,8 @@ fpath=($HOMEBREW_ROOT/share/zsh/site-functions $fpath)
 # need to rebuild ("rm -f ~/.zcompdump; compinit"), maybe
 autoload -U compinit && compinit
 
+UNBUNDLED_COMMANDS=(knife pry)
+
 # oh-my-zsh tmux plugin confs
 ZSH_TMUX_ITERM2=false
 ZSH_TMUX_AUTOSTART=true
