@@ -6,6 +6,7 @@ abort_regex=(
   "Sony Corporation" \
   "xTakashi.Honda@jp.sony.com" \
 )
+exit_code=0
 
 for FILE in $(git --no-pager diff --cached --name-status | cut -c3-); do
   for ((i = 0; i < ${#abort_regex[@]}; i++)) {
@@ -13,7 +14,10 @@ for FILE in $(git --no-pager diff --cached --name-status | cut -c3-); do
       echo "Matched abort_regex. Please check the file."
       echo "Regex: ${abort_regex[i]}"
       echo "File: $FILE"
-      exit 1
+      echo
+      exit_code=1
     fi
   }
 done
+
+exit $exit_code
