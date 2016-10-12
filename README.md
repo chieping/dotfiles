@@ -62,7 +62,7 @@ gsettings set org.gnome.settings-daemon.peripherals.keyboard delay 150
 sudo apt-get install compizconfig-settings-manager
 ```
 
-### IME Disable by Esc Key
+### Disable IME by Esc Key
 
 Import `google-ime-mosc-keymap/keymap.txt`
 
@@ -91,3 +91,13 @@ Select "Key to show the HUD" and press Backspace to disable
 ### Install Golang up-to-date version
 
 https://github.com/golang/go/wiki/Ubuntu
+
+### Installing fonts
+
+http://askubuntu.com/questions/3697/how-do-i-install-fonts
+
+### Changing gnome terminal font
+
+```
+gconftool-2 --set /apps/gnome-terminal/profiles/Default/font --type string "Ricty Bold 12"
+```

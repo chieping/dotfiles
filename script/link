@@ -62,7 +62,8 @@ ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom
 
 mkdir -p ~/.vim/{backups,swaps,undo,bundle}
 
-continue_on_error ln -sn ~/.dotfiles/ssh ~/.ssh
+# TODO: this is not working as intended
+continue_on_error ln -s ~/.dotfiles/ssh ~/.ssh
 
 mkdir -p ~/bin
 
