@@ -167,7 +167,7 @@ alias sshconf='vim ~/.ssh/config'
 # a way to mount over reboot:
 # /etc/fstab
 # /path/to/source/dir /path/to/mount/point none bind 0 0
-alias e='cd $(ghq list -p | grep -v amazonaws.com | {peco || pwd;})'
+alias e='cd $(ghq list -p | {peco || pwd;})'
 alias ev='cd $(find ~/.vim/bundle/repos -maxdepth 4 -name .git -type d | sed "s:/.git::" | {peco || pwd;})'
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/origin/||"`'
@@ -182,13 +182,12 @@ alias taket="take ~/tmp/`date +%Y%m%d`"
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
 
-# もうちょっと小慣れてからのほうがよさげ
-# # https://github.com/moul/advanced-ssh-config
-# if type assh > /dev/null 2>&1; then
-#   alias ssh="TERM=xterm assh wrapper ssh"
-# else
-#   alias ssh='TERM=xterm ssh'
-# fi
+# https://github.com/moul/advanced-ssh-config
+if type assh > /dev/null 2>&1; then
+  alias ssh="TERM=xterm assh wrapper ssh"
+else
+  alias ssh='TERM=xterm ssh'
+fi
 
 alias zshrc='$EDITOR ~/.zshrc*'
 
