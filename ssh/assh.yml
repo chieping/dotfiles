@@ -5,7 +5,7 @@ defaults:
   StrictHostKeyChecking: no
   UserKnownHostsFile: /dev/null
   ControlMaster: auto
-  ControlPath: ~/.ssh/%r@h:%p
+  ControlPath: ~/.ssh/%r@%h:%p
   ControlPersist: 12h
 includes:
   - ~/.ssh/assh.d/*.yml
