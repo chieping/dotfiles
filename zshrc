@@ -184,9 +184,7 @@ alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.g
 
 # https://github.com/moul/advanced-ssh-config
 if type assh > /dev/null 2>&1; then
-  alias ssh="TERM=xterm assh wrapper ssh"
-else
-  alias ssh='TERM=xterm ssh'
+  alias ssh="assh wrapper ssh"
 fi
 
 alias zshrc='$EDITOR ~/.zshrc*'
