@@ -4,7 +4,9 @@ call dein#begin(expand('~/.vim/bundle'))
 call dein#add('Shougo/dein.vim')
 
 " call dein#add('Shougo/neocomplete.vim')
-call dein#add('Shougo/unite.vim')
+
+" TODO: pinned 6.3 due to an error. should i migrate unite to denite?
+call dein#add('Shougo/unite.vim', {'rev': 'ver.6.3'})
 call dein#add('Shougo/neomru.vim')
 " call dein#add('Shougo/vimshell')
 call dein#add('Shougo/vimproc.vim', {'build': 'make'})
