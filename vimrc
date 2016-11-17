@@ -104,7 +104,7 @@ set laststatus=2            " This helps lightline.vim visible
 set expandtab
 set shiftwidth=2
 set softtabstop=2
-set synmaxcol=240
+set synmaxcol=480
 set autoindent
 set autoread
 set ignorecase
