@@ -45,3 +45,6 @@ Style/PerlBackrefs:
 # eg. for octal use `0o` instead of `0` or `0O`.
 Style/NumericLiteralPrefix:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
