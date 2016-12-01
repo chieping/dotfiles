@@ -7,7 +7,9 @@
 
 # Setup
 
-TODO one-liner install script
+TODO: one-liner install script
+
+TODO: Use stow or make or something instead of scripts using ln command
 
 ## Atom
 
