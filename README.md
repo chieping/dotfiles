@@ -45,6 +45,10 @@ https://gist.github.com/franklinjavier/50fe3f6eae29f86d3a75
 - [【配布】MacTypeでDirectWriteの設定を変えるパッチ - しらいとブログ](http://silight.hatenablog.jp/entry/MacTypePatch)
 - [Chrome で MacType を効かせる MacTypePatch がすごい　のこと](http://uwagakisimasuka.blog.fc2.com/blog-entry-4781.html)
 
+## MacのJIS配列キーボードをUS配列に
+
+[kenie 33 - JANSI: JANSI : Mac OS X 10.4 - 10.12](http://kenie33-jansi.blogspot.jp/p/mac-os-x-104-107-jisascii.html)
+
 ## Ubuntu
 
 ### Building Vim
