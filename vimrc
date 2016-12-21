@@ -21,7 +21,8 @@ call dein#add('tsukkee/unite-help')
 call dein#add('itchyny/lightline.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
-call dein#add('scrooloose/syntastic')
+" call dein#add('scrooloose/syntastic')
+call dein#add('neomake/neomake')
 call dein#add('AndrewRadev/switch.vim')
 call dein#add('AndrewRadev/splitjoin.vim')
 " call dein#add('Yggdroot/indentLine')
@@ -356,19 +357,12 @@ if dein#tap('vim-indent-guides')
 
 endif
 
-if dein#tap('syntastic')
-  let g:syntastic_error_symbol='✗'
-  let g:syntastic_warning_symbol='⚠'
-  let g:syntastic_ruby_checkers = ['rubocop']
-  let g:syntastic_javascript_checkers = ['eslint']
-  let g:syntastic_puppet_puppetlint_args = "--no-80chars-check"
-  let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
-  " http://stackoverflow.com/questions/29635150/how-do-i-fix-this-annoying-syntastic-rails-error
-  let g:syntastic_eruby_ruby_quiet_messages =
-      \ {'regex': 'possibly useless use of a variable in void context'}
-  let g:syntastic_check_on_wq = 0
+if dein#tap('neomake')
 
-
+  augroup Neomake
+    autocmd!
+    autocmd BufWritePost * Neomake
+  augroup END
 endif
 
 if dein#tap('vim-operator-replace')
