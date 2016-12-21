@@ -185,6 +185,7 @@ noremap S "_S
 noremap x "_x
 noremap X "_X
 
+" TODO: not to use "normal" http://vi.stackexchange.com/a/8336
 function! SmartBeginningOfLine()
   let l:chars_left_side_of_cursor = getline('.')[0:col('.') - 2]
   if empty(matchstr(l:chars_left_side_of_cursor, '^\s\+$'))
@@ -194,8 +195,13 @@ function! SmartBeginningOfLine()
   endif
 endfunction
 
-nnoremap <silent> 0 :call SmartBeginningOfLine()<CR>
-vnoremap <silent> 0 :call SmartBeginningOfLine()<CR>
+function! SmartBeginningOfLineVisual()
+  normal! gv
+  call SmartBeginningOfLine()
+endfunction
+
+nnoremap <silent> 0 :<C-u>call SmartBeginningOfLine()<CR>
+vnoremap <silent> 0 :<C-u>call SmartBeginningOfLineVisual()<CR>
 
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
