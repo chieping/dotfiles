@@ -185,10 +185,17 @@ noremap S "_S
 noremap x "_x
 noremap X "_X
 
-nnoremap 0 ^
-nnoremap 00 0
-vnoremap 0 ^
-vnoremap 00 0
+function! SmartBeginningOfLine()
+  let g:chars_left_side_of_cursor = getline('.')[0:col('.') - 2]
+  if empty(matchstr(g:chars_left_side_of_cursor, '^\s\+$'))
+    normal! ^
+  else
+    normal! 0
+  endif
+endfunction
+
+nnoremap <silent> 0 :call SmartBeginningOfLine()<CR>
+vnoremap <silent> 0 :call SmartBeginningOfLine()<CR>
 
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
