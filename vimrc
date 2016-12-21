@@ -186,8 +186,8 @@ noremap x "_x
 noremap X "_X
 
 function! SmartBeginningOfLine()
-  let g:chars_left_side_of_cursor = getline('.')[0:col('.') - 2]
-  if empty(matchstr(g:chars_left_side_of_cursor, '^\s\+$'))
+  let l:chars_left_side_of_cursor = getline('.')[0:col('.') - 2]
+  if empty(matchstr(l:chars_left_side_of_cursor, '^\s\+$'))
     normal! ^
   else
     normal! 0
