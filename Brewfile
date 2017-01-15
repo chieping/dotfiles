@@ -85,12 +85,10 @@ cask install flux
 cask install google-japanese-ime
 cask install graphviz
 cask install heroku-toolbelt
-cask install hipchat
 cask install hosts
 cask install jitouch
 cask install libreoffice
 cask install onepassword (!)
-cask install p4merge
 cask install pandoc
 cask install shiftit
 cask install simplecap
