@@ -49,6 +49,15 @@ https://gist.github.com/franklinjavier/50fe3f6eae29f86d3a75
 
 [kenie 33 - JANSI: JANSI : Mac OS X 10.4 - 10.12](http://kenie33-jansi.blogspot.jp/p/mac-os-x-104-107-jisascii.html)
 
+## Modify Key Repeat Settings
+
+```
+defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+```
+
+http://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
+
 ## Ubuntu
 
 ### Building Vim
