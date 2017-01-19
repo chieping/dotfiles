@@ -81,7 +81,8 @@ call dein#add('tpope/vim-fugitive')
 call dein#add('tpope/vim-unimpaired')
 call dein#add('chrisbra/vim-diff-enhanced')
 call dein#add('terryma/vim-expand-region')
-call dein#add('mhinz/vim-signify')
+" call dein#add('mhinz/vim-signify')
+call dein#add('airblade/vim-gitgutter')
 " call dein#add('closetag.vim')
 " call dein#add('szw/vim-tags')
 call dein#add('soramugi/auto-ctags.vim')
@@ -688,16 +689,6 @@ if dein#tap('vim-expand-region')
         \ 'am'  :0,
         \ 'ie'  :0,
         \ }
-
-
-endif
-
-if dein#tap('vim-signify')
-  call submode#enter_with('signify-move', 'n', '', '<Leader>g')
-  call submode#map('signify-move', 'n', 'r', 'j', '<Plug>(signify-next-hunk)')
-  call submode#map('signify-move', 'n', 'r', 'k', '<Plug>(signify-prev-hunk)')
-  call submode#map('signify-move', 'n', 'r', 'gg', 'gg<Plug>(signify-next-hunk)')
-  call submode#map('signify-move', 'n', 'r', 'G', 'G<Plug>(signify-prev-hunk)')
 
 
 endif
