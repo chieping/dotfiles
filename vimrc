@@ -738,6 +738,7 @@ if dein#tap('vim-gitgutter')
       let l:source_branch = a:1
     endif
     let l:diff_with = system('git merge-base ' . l:source_branch . ' HEAD')
+    echom 'Diff with: ' . l:diff_with
     let g:gitgutter_diff_base = l:diff_with
   endfunction
 
