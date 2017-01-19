@@ -722,6 +722,20 @@ if dein#tap('vim-submode')
 
 endif
 
+if dein#tap('vim-gitgutter')
+
+  call submode#enter_with('gitgutter', 'n', '', '<Leader>g')
+  call submode#map('gitgutter', 'n', 'r', 'j', ':<C-u>GitGutterNextHunk<CR>')
+  call submode#map('gitgutter', 'n', 'r', 'k', ':<C-u>GitGutterPrevHunk<CR>')
+  call submode#map('gitgutter', 'n', 'r', 'gg', 'gg:<C-u>GitGutterNextHunk<CR>')
+  call submode#map('gitgutter', 'n', 'r', 'G', 'G:<C-u>GitGutterPrevHunk<CR>')
+
+  command -nargs=1 GGDiff let g:gitgutter_diff_base = '<f-args>'
+  " TODO: Define function that detect source commit automatically
+
+
+endif
+
 if dein#tap('auto-ctags.vim')
   if has('mac')
     " Use homebrew's ctags instead of kaoriya bundled one
