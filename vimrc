@@ -730,10 +730,19 @@ if dein#tap('vim-gitgutter')
   call submode#map('gitgutter', 'n', 'r', 'gg', 'gg:<C-u>GitGutterNextHunk<CR>')
   call submode#map('gitgutter', 'n', 'r', 'G', 'G:<C-u>GitGutterPrevHunk<CR>')
 
-  command -nargs=1 GGDiff let g:gitgutter_diff_base = '<f-args>'
-  " TODO: Define function that detect source commit automatically
+  function! GGDiffAutoDetectSourceBranch(...)
+    let l:default_source_branch = 'master'
+    if a:1 == ''
+      let l:source_branch = l:default_source_branch
+    else
+      let l:source_branch = a:1
+    endif
+    let l:diff_with = system('git merge-base ' . l:source_branch . ' HEAD')
+    let g:gitgutter_diff_base = l:diff_with
+  endfunction
 
-
+  command! -nargs=1 GGDiff let g:gitgutter_diff_base = '<f-args>'
+  command! -nargs=? GGDiffAutoDetectSourceBranch call GGDiffAutoDetectSourceBranch('<f-args>')
 endif
 
 if dein#tap('auto-ctags.vim')
