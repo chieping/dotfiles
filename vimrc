@@ -737,13 +737,18 @@ if dein#tap('vim-gitgutter')
     else
       let l:source_branch = a:1
     endif
-    let l:diff_against = system('git merge-base ' . l:source_branch . ' HEAD')
+    let l:diff_against = substitute(system('git merge-base ' . l:source_branch . ' HEAD'), '\n', '', '')
     echom 'diff against: ' . l:diff_against
     let g:gitgutter_diff_base = l:diff_against
     GitGutter
   endfunction
 
-  command! -nargs=1 GGDiff let g:gitgutter_diff_base = '<f-args>'
+  function! GGDiff(diff_against)
+    let g:gitgutter_diff_base = a:diff_against
+    GitGutter
+  endfunction
+
+  command! -nargs=1 GGDiff call GGDiff('<f-args>')
   command! -nargs=? GGDiffAutoDetectSourceBranch call GGDiffAutoDetectSourceBranch('<f-args>')
 endif
 
