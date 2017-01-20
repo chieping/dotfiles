@@ -464,6 +464,20 @@ if dein#tap('vim-fugitive')
 
   vnoremap gb :<C-u>'<,'>Gblame<CR>
   vnoremap gl :<C-u>'<,'>Glog -- % \| cwindow<CR>
+
+  function! GdiffAutoDetectSourceBranch(...)
+    let l:default_source_branch = 'master'
+    if a:1 == ''
+      let l:source_branch = l:default_source_branch
+    else
+      let l:source_branch = a:1
+    endif
+    let l:diff_against = substitute(system('git merge-base ' . l:source_branch . ' HEAD'), '\n', '', '')
+    echom 'diff against: ' . l:diff_against
+    execute 'Gdiff' l:diff_against
+  endfunction
+
+  command! -nargs=? GdiffAutoDetectSourceBranch call GdiffAutoDetectSourceBranch('<f-args>')
 endif
 
 if dein#tap('tabular')
