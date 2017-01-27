@@ -100,6 +100,9 @@ elif type xsel >/dev/null 2>&1 ; then
   alias -g C='| xsel --clipboard'
 fi
 
+alias cclip='xclip -selection clipboard'
+alias pclip='xclip -o -selection clipboard'
+
 # Use ascii character instead of ambiguous width character
 # https://github.com/olivierverdier/zsh-git-prompt/pull/63
 ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{+%G%}"
