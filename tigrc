@@ -29,7 +29,7 @@ bind main g none
 bind generic g move-first-line
 bind main G none
 bind generic G move-last-line
-bind main C ?git checkout %(branch)
+bind main C !git checkout %(branch)
 
 # }}}
 
