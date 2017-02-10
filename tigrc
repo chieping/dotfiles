@@ -30,6 +30,7 @@ bind generic g move-first-line
 bind main G none
 bind generic G move-last-line
 bind main C !git checkout %(branch)
+bind generic H !@sh -c "f(){ if type xclip; then xclip -selection clipboard; elif type pbcopy; then pbcopy; fi }; echo -n %(commit) | f"
 
 # }}}
 
