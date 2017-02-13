@@ -289,7 +289,14 @@ if dein#tap('vim-quickrun')
     \ 'exec': '%c %o %s:%{line(".")} %a'
     \ }
 
+  function! QuickrunSetArgs(args)
+    if ! has_key(g:quickrun_config, &filetype)
+      let g:quickrun_config[&filetype] = {}
+    endif
+    let g:quickrun_config[&filetype]['args'] = a:args
+  endfunction
 
+  command! -nargs=1 QuickrunSetArgs call QuickrunSetArgs('<args>')
 endif
 
 if dein#tap('vim-smartword')
