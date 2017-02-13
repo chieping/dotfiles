@@ -28,6 +28,7 @@ ln -sf ~/.dotfiles/zshrc ~/.zshrc
 ln -sf ~/.dotfiles/zshrc.darwin ~/.zshrc.darwin
 ln -sf ~/.dotfiles/zshrc.linux ~/.zshrc.linux
 ln -sf ~/.dotfiles/gemrc ~/.gemrc
+ln -sf ~/.dotfiles/agignore ~/.agignore
 
 ln -sfn ~/.vim ~/.config/nvim
 ln -sf ~/.vimrc ~/.config/nvim/init.vim
