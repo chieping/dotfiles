@@ -164,6 +164,7 @@ alias gg='ghq get'
 alias gl='ghq look'
 alias vimrc='vim ~/.vimrc'
 alias sshconf='vim ~/.ssh/config'
+alias tig_reflog='git reflog --pretty=raw | tig --pretty=raw'
 # excludes ec2 because very long directory name annoy me.
 # mount the directory to short named one.
 # a way to mount over reboot:
