@@ -98,7 +98,7 @@ peco-select-history() {
   zle redisplay
 }
 zle -N peco-select-history
-bindkey '^r' peco-select-history
+bindkey '^q' peco-select-history
 
 peco-find-file() {
   local source_files
