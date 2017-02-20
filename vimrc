@@ -751,7 +751,7 @@ if dein#tap('vim-gitgutter')
   call submode#map('gitgutter', 'n', 'r', 'gg', 'gg:<C-u>GitGutterNextHunk<CR>')
   call submode#map('gitgutter', 'n', 'r', 'G', 'G:<C-u>GitGutterPrevHunk<CR>')
 
-  function! GGDiffAutoDetectSourceBranch(...)
+  function! GGdiffAutoDetectSourceBranch(...)
     let l:default_source_branch = 'master'
     if a:1 == ''
       let l:source_branch = l:default_source_branch
@@ -764,13 +764,14 @@ if dein#tap('vim-gitgutter')
     GitGutter
   endfunction
 
-  function! GGDiff(diff_against)
+  function! GGdiff(diff_against)
     let g:gitgutter_diff_base = a:diff_against
     GitGutter
   endfunction
 
-  command! -nargs=1 GGDiff call GGDiff('<f-args>')
-  command! -nargs=? GGDiffAutoDetectSourceBranch call GGDiffAutoDetectSourceBranch('<f-args>')
+  command! -nargs=1 GGdiff call GGdiff('<f-args>')
+  command! GGdiffHead call GGdiff('HEAD^')
+  command! -nargs=? GGdiffAutoDetectSourceBranch call GGdiffAutoDetectSourceBranch('<f-args>')
 endif
 
 if dein#tap('auto-ctags.vim')
