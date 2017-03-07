@@ -65,6 +65,7 @@ let blacklists = [
     \ "*://www.nicovideo.jp/*",
     \ "*://www.lingq.com/*",
     \ "https://mail.google.com/*",
+    \ "https://docs.google.com/*",
     \ "*://cacoo.com/*"
     \ ]
 
