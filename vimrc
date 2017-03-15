@@ -463,14 +463,14 @@ endif
 if dein#tap('vim-fugitive')
   nnoremap gst :<C-u>Gstatus<CR>
   nnoremap gb  :<C-u>Gblame<CR>
-  nnoremap gl  :<C-u>Glog -- % \| cwindow<CR>
+  nnoremap gl  :<C-u>Glog \| cwindow<CR>
   nnoremap gdi :<C-u>Gdiff<CR>
   nnoremap gdd :<C-u>Gdiff develop..@<CR>
   nnoremap gdm :<C-u>Gdiff master..@<CR>
   nnoremap gdp :<C-u>Gdiff HEAD@{1}<CR>
 
   vnoremap gb :<C-u>'<,'>Gblame<CR>
-  vnoremap gl :<C-u>'<,'>Glog -- % \| cwindow<CR>
+  vnoremap gl :<C-u>'<,'>Glog \| cwindow<CR>
 
   function! GdiffAutoDetectSourceBranch(...)
     let l:default_source_branch = 'master'
