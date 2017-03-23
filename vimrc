@@ -155,6 +155,9 @@ set completeopt=menu,menuone,preview
 " https://github.com/tpope/vim-sensible/issues/51
 set complete-=i
 
+" assume Bash, roughly
+let g:is_bash=1
+
 let g:mapleader="\<Space>"
 
 " Copy the filename including its full path
