@@ -370,6 +370,13 @@ endif
 
 if dein#tap('neomake')
 
+  let g:neomake_sh_bash_maker = {
+    \ 'args': ['-n'],
+    \ 'errorformat': '%f: line %l: %m,%f: %l: %m',
+    \ 'exe': '/bin/bash'
+    \ }
+  let g:neomake_sh_enabled_makers = ['shellcheck', 'bash']
+
   augroup Neomake
     autocmd!
     autocmd BufWritePost * Neomake
