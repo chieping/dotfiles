@@ -532,6 +532,7 @@ if dein#tap('unite.vim')
 
   let g:unite_source_menu_menus.my.command_candidates = {
           \   'remove extra whitespaces': '%s/\s\+$//g',
+          \   'remove empty lines': '%g/^\s*$/d',
           \   'force write': 'w !sudo tee %',
           \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
           \   'make this file excutable': '!chmod +x %:p',
