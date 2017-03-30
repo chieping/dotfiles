@@ -7,6 +7,8 @@ setopt hist_ignore_all_dups
 export TERM=xterm-256color
 export CC=gcc
 
+export PATH="$HOME/anaconda3/bin:$PATH"
+
 # disable stop
 stty stop undef
 
