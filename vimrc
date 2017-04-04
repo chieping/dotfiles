@@ -877,7 +877,12 @@ let g:solarized_contrast="high"
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 syntax enable
-set background=light
+if $SOLARIZED_MODE == 'light'
+  set background=light
+else
+  " default: dark
+  set background=dark
+endif
 colorscheme solarized
 
 " These highlight settings make so much easier to distinguish them!
