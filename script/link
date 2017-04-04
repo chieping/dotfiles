@@ -54,7 +54,8 @@ ls ~/.dotfiles/git_templates/hooks | xargs -I% ln -sf ~/.dotfiles/git_templates/
 mkdir -p ~/.vimperator/plugin
 ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
 
-ln -sf ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
+# ln -sf ~/src/github.com/seebi/dircolors-solarized/dircolors.256dark ~/.dircolors
+ln -sf ~/src/github.com/seebi/dircolors-solarized/dircolors.light ~/.dircolors
 
 ln -sfn ~/.dotfiles/peco ~/.peco
 

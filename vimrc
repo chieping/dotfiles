@@ -360,9 +360,15 @@ if dein#tap('vim-indent-guides')
   let g:indent_guides_enable_on_vim_startup = 1
 
   if ! has('gui_running')
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=0
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=8
+    if &background == 'dark'
+      let g:indent_guides_auto_colors = 0
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
+    elsif &background == 'light'
+      let g:indent_guides_auto_colors = 0
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
+    endif
   endif
 
 
@@ -875,7 +881,7 @@ let g:solarized_contrast="high"
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 syntax enable
-set background=dark
+set background=light
 colorscheme solarized
 
 " These highlight settings make so much easier to distinguish them!
