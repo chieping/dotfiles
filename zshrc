@@ -142,7 +142,6 @@ bindkey '^U' backward-kill-line
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias rm='rm -I'
 alias diff="colordiff"
-alias v='vim'
 alias n='nvim'
 alias tigd='tig develop...@'
 alias tigm='tig master...@'
