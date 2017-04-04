@@ -363,7 +363,7 @@ if dein#tap('vim-indent-guides')
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
-  elsif &background == 'light'
+  elseif &background == 'light'
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
