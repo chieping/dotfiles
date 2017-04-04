@@ -359,19 +359,15 @@ endif
 if dein#tap('vim-indent-guides')
   let g:indent_guides_enable_on_vim_startup = 1
 
-  if ! has('gui_running')
-    if &background == 'dark'
-      let g:indent_guides_auto_colors = 0
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
-    elsif &background == 'light'
-      let g:indent_guides_auto_colors = 0
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
-    endif
+  if &background == 'dark'
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
+  elsif &background == 'light'
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
   endif
-
-
 endif
 
 if dein#tap('neomake')
