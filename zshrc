@@ -171,6 +171,9 @@ alias tig_reflog='git reflog --pretty=raw | tig --pretty=raw'
 # a way to mount over reboot:
 # /etc/fstab
 # /path/to/source/dir /path/to/mount/point none bind 0 0
+if [ "$SOLARIZED_MODE" = light ]; then
+  alias peco="peco --rcfile ~/.peco/config_for_light.json"
+fi
 alias e='cd $(ghq list -p | {peco || pwd;})'
 alias ev='cd $(find ~/.vim/bundle/repos -maxdepth 4 -name .git -type d | sed "s:/.git::" | {peco || pwd;})'
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
