@@ -1,5 +1,9 @@
 # Chieping's Dotfiles
 
+## TODO
+
+Finish switching colorscheme to Tomorrow_Night using Base16
+
 ## Supported OS
 
 - Mac OS X

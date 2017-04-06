@@ -34,7 +34,8 @@ call dein#add('godlygeek/tabular')
 call dein#add('terryma/vim-multiple-cursors')
 call dein#add('tomtom/tcomment_vim')
 call dein#add('jszakmeister/vim-togglecursor')
-call dein#add('altercation/vim-colors-solarized')
+" call dein#add('altercation/vim-colors-solarized')
+call dein#add('chriskempson/base16-vim')
 " call dein#add('tpope/vim-dispatch')
 " call dein#add('Lokaltog/vim-easymotion')
 " call dein#add('justinmk/vim-sneak')
@@ -359,15 +360,10 @@ endif
 if dein#tap('vim-indent-guides')
   let g:indent_guides_enable_on_vim_startup = 1
 
-  if &background == 'dark'
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
-  elseif &background == 'light'
-    let g:indent_guides_auto_colors = 0
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
-  endif
+  " TODO: Tune for Tomorrow_Night
+  let g:indent_guides_auto_colors = 0
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
+  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
 endif
 
 if dein#tap('neomake')
@@ -802,7 +798,7 @@ endif
 
 if dein#tap('lightline.vim')
   let g:lightline = {
-          \ 'colorscheme': 'solarized',
+          \ 'colorscheme': 'Tomorrow_Night',
           \ 'mode_map': {'c': 'NORMAL'},
           \ 'active': {
           \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
@@ -873,17 +869,14 @@ endif
 
 call dein#end()
 
-let g:solarized_contrast="high"
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
 syntax enable
-if $SOLARIZED_MODE == 'light'
-  set background=light
-else
-  " default: dark
-  set background=dark
+
+" base16
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
 endif
-colorscheme solarized
+colorscheme base16-tomorrow-night
 
 " These highlight settings make so much easier to distinguish them!
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
