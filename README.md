@@ -1,9 +1,5 @@
 # Chieping's Dotfiles
 
-## TODO
-
-Finish switching colorscheme to Tomorrow_Night using Base16
-
 ## Supported OS
 
 - Mac OS X
@@ -14,6 +10,10 @@ Finish switching colorscheme to Tomorrow_Night using Base16
 TODO: one-liner install script
 
 TODO: Use stow or make or something instead of scripts using ln command
+
+## Base16
+
+https://github.com/chriskempson/base16
 
 ## Atom
 
