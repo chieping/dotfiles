@@ -878,6 +878,15 @@ if dein#tap('vim-indent-guides')
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1d1f21 ctermbg=0
     autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#282a2e ctermbg=18
+  elseif get(g:, 'colors_name', 'default') == 'solarized'
+    let g:indent_guides_auto_colors = 0
+    if &background == 'light'
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
+    else
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
+    endif
   endif
 endif
 
