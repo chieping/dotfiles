@@ -875,8 +875,8 @@ syntax enable
 if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
+  colorscheme base16-tomorrow-night
 endif
-colorscheme base16-tomorrow-night
 
 " These highlight settings make so much easier to distinguish them!
 highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
