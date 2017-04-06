@@ -31,14 +31,6 @@ export LESS="-i -M -R -W"
 # setup direnv
 type direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
 
-if [ -e ~/.dircolors ]; then
-  if type dircolors > /dev/null 2>&1; then
-    eval $(dircolors ~/.dircolors)
-  elif type gdircolors > /dev/null 2>&1; then
-    eval $(dircolors ~/.dircolors)
-  fi
-fi
-
 if [ -n "$LS_COLORS" ]; then
   zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 fi
