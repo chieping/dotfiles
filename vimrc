@@ -357,15 +357,6 @@ if dein#tap('vim-json')
 
 endif
 
-if dein#tap('vim-indent-guides')
-  let g:indent_guides_enable_on_vim_startup = 1
-
-  " TODO: Tune for Tomorrow_Night
-  let g:indent_guides_auto_colors = 0
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
-endif
-
 if dein#tap('neomake')
 
   let g:neomake_sh_bash_maker = {
@@ -876,6 +867,18 @@ if filereadable(expand("~/.vimrc_background"))
   let base16colorspace=256
   source ~/.vimrc_background
   colorscheme base16-tomorrow-night
+endif
+
+set background=dark
+
+if dein#tap('vim-indent-guides')
+  let g:indent_guides_enable_on_vim_startup = 1
+
+  if get(g:, 'colors_name', 'default') == 'base16-tomorrow-night'
+    let g:indent_guides_auto_colors = 0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1d1f21 ctermbg=0
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#282a2e ctermbg=18
+  endif
 endif
 
 " These highlight settings make so much easier to distinguish them!
