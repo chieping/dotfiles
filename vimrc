@@ -22,7 +22,8 @@ call dein#add('itchyny/lightline.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('Xuyuanp/nerdtree-git-plugin')
 " call dein#add('scrooloose/syntastic')
-call dein#add('neomake/neomake')
+" call dein#add('neomake/neomake')
+call dein#add('w0rp/ale')
 call dein#add('AndrewRadev/switch.vim')
 call dein#add('AndrewRadev/splitjoin.vim')
 " call dein#add('Yggdroot/indentLine')
@@ -355,21 +356,6 @@ if dein#tap('vim-json')
   highlight link jsonBraces Function
 
 
-endif
-
-if dein#tap('neomake')
-
-  let g:neomake_sh_bash_maker = {
-    \ 'args': ['-n'],
-    \ 'errorformat': '%f: line %l: %m,%f: %l: %m',
-    \ 'exe': '/bin/bash'
-    \ }
-  let g:neomake_sh_enabled_makers = ['shellcheck', 'bash']
-
-  augroup Neomake
-    autocmd!
-    autocmd BufWritePost * Neomake
-  augroup END
 endif
 
 if dein#tap('vim-operator-replace')
