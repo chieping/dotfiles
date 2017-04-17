@@ -760,6 +760,15 @@ if dein#tap('vim-gitgutter')
   command! -nargs=? GGdiffAutoDetectSourceBranch call GGdiffAutoDetectSourceBranch('<f-args>')
 endif
 
+if dein#tap('ale')
+  call submode#enter_with('ale', 'n', '', '<Leader>l')
+  call submode#map('ale', 'n', 'r', 'j', ':<C-u>ALENext<CR>')
+  call submode#map('ale', 'n', 'r', 'k', ':<C-u>ALEPrevious<CR>')
+  call submode#map('ale', 'n', 'r', 'gg', 'gg:<C-u>ALENext<CR>')
+  call submode#map('ale', 'n', 'r', 'G', 'G:<C-u>ALEPrevious<CR>')
+
+endif
+
 if dein#tap('auto-ctags.vim')
   if has('mac')
     " Use homebrew's ctags instead of kaoriya bundled one
