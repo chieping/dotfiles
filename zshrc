@@ -180,7 +180,9 @@ alias -g P='"`!!`"'
 alias foodcritic="foodcritic -t '~FC001' -t '~FC002' -t '~FC019' -t '~FC048' -t '~FC064' -t '~FC065'"
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
-alias tm='togglmine'
+tm() {
+  togglmine $1 | vim -
+}
 
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
