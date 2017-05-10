@@ -81,7 +81,7 @@ DISABLE_AUTO_UPDATE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(aws gitfast git-flow git-prompt common-aliases bundler tmux colored-man golang rbenv fasd history-substring-search)
 # Custom plugins (These need manually `git clone` into ~/.oh-my-zsh/custom/plugins)
-plugins+=(zsh-syntax-highlighting k)
+plugins+=(zsh-syntax-highlighting k tmux-xpanes)
 
 source $ZSH/oh-my-zsh.sh
 

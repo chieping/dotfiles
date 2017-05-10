@@ -186,6 +186,7 @@ tm() {
 
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
+alias xpanes='xpanes -l ev'
 
 # https://github.com/moul/advanced-ssh-config
 if type assh > /dev/null 2>&1; then
