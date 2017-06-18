@@ -15,12 +15,10 @@ brew "tig"
 brew "tmux"
 brew "zsh"
 brew "zsh-completions"
-brew "mas"
 cask "google-chrome"
 cask "google-japanese-ime"
 cask "iterm2"
 cask "jitouch"
 cask "dropbox"
 cask "shiftit"
-mas "1Password", id: 443987910
-
+cask "1password"
