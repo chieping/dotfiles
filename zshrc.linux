@@ -86,7 +86,7 @@ plugins+=(zsh-syntax-highlighting k tmux-xpanes)
 source $ZSH/oh-my-zsh.sh
 
 # oh-my-zsh default: 10000
-SAVEHIST=100000
+SAVEHIST=500000
 
 # override gallois prompt
 # adding hostname
