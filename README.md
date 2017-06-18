@@ -2,7 +2,7 @@
 
 ## Supported OS
 
-- Mac OS X
+- macOS
 - Ubuntu
 
 # Setup
