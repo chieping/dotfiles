@@ -1,0 +1,22 @@
+# Editing Brewfile directly is unintended.
+# Run `script/update-brewfile` to update Brewfile.
+
+tap caskroom/cask
+tap sanemat/font
+tap motemen/ghq
+
+install brew-cask
+install fasd
+install ghq
+install git
+install jq
+install ricty
+install the_silver_searcher
+install tig
+install tmux
+install zsh
+install zsh-completions
+cask install google-chrome
+cask install google-japanese-ime
+cask install jitouch
+cask install shiftit

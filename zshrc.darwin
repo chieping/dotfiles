@@ -1,5 +1,5 @@
-export EDITOR="mvim -v"
-export GIT_EDITOR="mvim -v"
+export EDITOR=vim
+export GIT_EDITOR=vim
 export HOMEBREW_ROOT=/usr/local
 
 fpath=($HOMEBREW_ROOT/share/zsh-completions $fpath)
@@ -110,8 +110,6 @@ SAVEHIST=100000
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias vim='mvim -v'
-alias vimdiff='mvimdiff -v'
 alias brews='brew list -1'
 alias p4merge='/Applications/p4merge.app/Contents/Resources/launchp4merge'
 alias netstat-tcp-listen='lsof -nP -iTCP -sTCP:LISTEN'
