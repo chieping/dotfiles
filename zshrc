@@ -155,7 +155,13 @@ alias kcu='knife cookbook upload'
 alias kcd='knife cookbook download'
 alias kcs='knife cookbook show'
 alias kds='knife data bag show'
-alias ag='ag --smart-case --path-to-ignore ~/.agignore'
+if [ $commands[ag] ]; then
+  if ruby -e 'Gem::Version.new("'"$(ag -V | awk '{print $3}')"'") < Gem::Version.new("0.33.0")'; then
+    alias ag='ag --smart-case --path-to-agignore ~/.agignore'
+  else
+    alias ag='ag --smart-case --path-to-ignore ~/.agignore'
+  fi
+fi
 alias gg='ghq get'
 alias gl='ghq look'
 alias vimrc='vim ~/.vimrc'
