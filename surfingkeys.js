@@ -51,3 +51,6 @@ mapkey('oge', '#8Open Search in google(en)', 'Front.openOmnibar({type: "SearchEn
 
 addSearchAliasX('a', 'alc', 'http://eow.alc.co.jp/search?ref=sa&q=');
 mapkey('oa', '#8Open Search in Alc', 'Front.openOmnibar({type: "SearchEngine", extra: "a"})');
+
+addSearchAliasX('gt', 'google translate(en-ja)', 'https://translate.google.com/#en/ja/');
+mapkey('ogt', '#8Open Translation in google translate(en-ja)', 'Front.openOmnibar({type: "SearchEngine", extra: "gt"})');
