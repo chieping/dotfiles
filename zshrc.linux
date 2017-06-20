@@ -6,7 +6,12 @@ autoload -U compinit && compinit
 
 UNBUNDLED_COMMANDS=(knife pry)
 ZSH_TMUX_ITERM2=false
-ZSH_TMUX_AUTOSTART=true
+
+if [ -z "$SSH_CLIENT" ] && [ -z "$SSH_TTY" ]; then
+  ZSH_TMUX_AUTOSTART=true
+else
+  ZSH_TMUX_AUTOSTART=false
+fi
 
 # golang settings
 export GOPATH=$HOME
