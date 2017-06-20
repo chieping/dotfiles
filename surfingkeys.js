@@ -47,7 +47,7 @@ addSearchAliasX('gj', 'google(ja)', 'https://www.google.com/search?lr=lang_ja&as
 mapkey('ogj', '#8Open Search in google(ja)', 'Front.openOmnibar({type: "SearchEngine", extra: "gj"})');
 
 addSearchAliasX('ge', 'google(en)', 'https://www.google.com/search?lr=lang_en&as_q=');
-mapkey('oge', '#8Open Search in google(en)', 'Front.openOmnibar({type: "SearchEngine", extra: "en"})');
+mapkey('oge', '#8Open Search in google(en)', 'Front.openOmnibar({type: "SearchEngine", extra: "ge"})');
 
 addSearchAliasX('a', 'alc', 'http://eow.alc.co.jp/search?ref=sa&q=');
 mapkey('oa', '#8Open Search in Alc', 'Front.openOmnibar({type: "SearchEngine", extra: "a"})');
