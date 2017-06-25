@@ -37,6 +37,11 @@ settings.theme = '\
 
 settings.smoothScroll = false;
 
+// Blacklist
+settings.blacklist = {
+    "ssh.cloud.google.com": 1
+}
+
 // Search
 
 // remove default google search
@@ -54,3 +59,5 @@ mapkey('oa', '#8Open Search in Alc', 'Front.openOmnibar({type: "SearchEngine", e
 
 addSearchAliasX('gt', 'google translate(en-ja)', 'https://translate.google.com/#en/ja/');
 mapkey('ogt', '#8Open Translation in google translate(en-ja)', 'Front.openOmnibar({type: "SearchEngine", extra: "gt"})');
+
+// vim:set ts=4 sw=4 sts=4:
