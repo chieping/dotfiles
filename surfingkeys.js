@@ -11,8 +11,16 @@ mapkey('<Ctrl-y>', 'Show me the money', function() {
 // an example to replace `u` with `?`, click `Default mappings` to see how `u` works.
 map('?', 'u');
 
-// an example to remove mapkey `Ctrl-i`
-unmap('<Ctrl-i>');
+// Go back in history
+map('<Ctrl-o>', 'S');
+// Go forward in history
+map('<Ctrl-i>', 'D');
+// Go one tab left
+map('h', 'E');
+// Go one tab right
+map('l', 'R');
+// Open a link in new tab
+map('F', 'af');
 
 settings.theme = '\
 .sk_theme { \
