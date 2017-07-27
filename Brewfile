@@ -8,6 +8,7 @@ brew "macvim", args: ["with-override-system-vim"]
 brew "fasd"
 brew "ghq"
 brew "git"
+brew "gnu-sed", args: ["with-default-names"]
 brew "jq"
 brew "ricty"
 brew "peco"
@@ -27,4 +28,5 @@ cask "shiftit"
 cask "quicksilver"
 cask "1password"
 cask "clipy"
+cask "istat-menus"
 mas "Xcode", id: 497799835
