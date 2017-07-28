@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# to disable this hook: git config hooks.pre-push.disabled true
+if git config hooks.pre-push.disabled >/dev/null; then
+  exit 0
+fi
+
 while read local_ref local_sha1 remote_ref remote_sha1
 do
   if [[ "${remote_ref##refs/heads/}" = "master" ]]; then
