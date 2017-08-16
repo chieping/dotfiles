@@ -47,8 +47,9 @@ settings.smoothScroll = false;
 
 // Blacklist
 settings.blacklist = {
-    "ssh.cloud.google.com": 1
-}
+    "ssh.cloud.google.com": 1,
+    "docs.google.com": 1
+};
 
 // Search
 
