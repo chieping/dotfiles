@@ -1,6 +1,23 @@
 #!/bin/bash
 set -e
 
+DOTFILES_DIR=${DOTFILES_DIR:-~/.dotfiles}
+
+vim() {
+  mkdir -p ~/.vim/{backups,swaps,undo,bundle}
+  ln -sf $DOTFILES_DIR/gvimrc ~/.gvimrc
+  ln -sf $DOTFILES_DIR/vimrc ~/.vimrc
+  ln -sfn ~/.vim ~/.config/nvim
+  ln -sf ~/.vimrc ~/.config/nvim/init.vim
+  ln -sf $DOTFILES_DIR/vim/filetype.vim ~/.vim/filetype.vim
+  ln -sfn $DOTFILES_DIR/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
+  ln -sfn $DOTFILES_DIR/vim/UltiSnips ~/.vim/UltiSnips
+}
+
+tmux() {
+  ln -sf $DOTFILES_DIR/tmux.conf ~/.tmux.conf
+}
+
 continue_on_error() {
   set +e
   $@
@@ -11,59 +28,80 @@ continue_on_error() {
   set -e
 }
 
-ln -sf ~/.dotfiles/bashrc ~/.bashrc
-ln -sf ~/.dotfiles/ctags ~/.ctags
-ln -sf ~/.dotfiles/eslintrc ~/.eslintrc
-ln -sf ~/.dotfiles/gitconfig ~/.gitconfig
-ln -sf ~/.dotfiles/gitignore ~/.gitignore
-ln -sf ~/.dotfiles/gvimrc ~/.gvimrc
-ln -sf ~/.dotfiles/irbrc ~/.irbrc
-ln -sf ~/.dotfiles/pryrc ~/.pryrc
-ln -sf ~/.dotfiles/rubocop.yml ~/.rubocop.yml
-ln -sf ~/.dotfiles/tigrc ~/.tigrc
-ln -sf ~/.dotfiles/tmux.conf ~/.tmux.conf
-ln -sf ~/.dotfiles/vimperatorrc ~/.vimperatorrc
-ln -sf ~/.dotfiles/vimrc ~/.vimrc
-ln -sf ~/.dotfiles/zshrc ~/.zshrc
-ln -sf ~/.dotfiles/zshrc.darwin ~/.zshrc.darwin
-ln -sf ~/.dotfiles/zshrc.linux ~/.zshrc.linux
-ln -sf ~/.dotfiles/gemrc ~/.gemrc
-ln -sf ~/.dotfiles/agignore ~/.agignore
+rest() {
+  ln -sf $DOTFILES_DIR/bashrc ~/.bashrc
+  ln -sf $DOTFILES_DIR/ctags ~/.ctags
+  ln -sf $DOTFILES_DIR/eslintrc ~/.eslintrc
+  ln -sf $DOTFILES_DIR/gitconfig ~/.gitconfig
+  ln -sf $DOTFILES_DIR/gitignore ~/.gitignore
+  ln -sf $DOTFILES_DIR/irbrc ~/.irbrc
+  ln -sf $DOTFILES_DIR/pryrc ~/.pryrc
+  ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml
+  ln -sf $DOTFILES_DIR/tigrc ~/.tigrc
+  ln -sf $DOTFILES_DIR/vimperatorrc ~/.vimperatorrc
+  ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
+  ln -sf $DOTFILES_DIR/zshrc.darwin ~/.zshrc.darwin
+  ln -sf $DOTFILES_DIR/zshrc.linux ~/.zshrc.linux
+  ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
+  ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
-ln -sfn ~/.vim ~/.config/nvim
-ln -sf ~/.vimrc ~/.config/nvim/init.vim
+  mkdir -p ~/.atom
+  ln -sf $DOTFILES_DIR/atom/config.cson ~/.atom/config.cson
+  ln -sf $DOTFILES_DIR/atom/init.coffee ~/.atom/init.coffee
+  ln -sf $DOTFILES_DIR/atom/keymap.cson ~/.atom/keymap.cson
+  ln -sf $DOTFILES_DIR/atom/snippets.cson ~/.atom/snippets.cson
+  ln -sf $DOTFILES_DIR/atom/styles.less ~/.atom/styles.less
 
-mkdir -p ~/.atom
-ln -sf ~/.dotfiles/atom/config.cson ~/.atom/config.cson
-ln -sf ~/.dotfiles/atom/init.coffee ~/.atom/init.coffee
-ln -sf ~/.dotfiles/atom/keymap.cson ~/.atom/keymap.cson
-ln -sf ~/.dotfiles/atom/snippets.cson ~/.atom/snippets.cson
-ln -sf ~/.dotfiles/atom/styles.less ~/.atom/styles.less
+  mkdir -p ~/.rbenv
+  ln -sf $DOTFILES_DIR/rbenv/default-gems ~/.rbenv/default-gems
 
-mkdir -p ~/.rbenv
-ln -sf ~/.dotfiles/rbenv/default-gems ~/.rbenv/default-gems
+  mkdir -p ~/.git_templates/hooks
+  ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
 
-mkdir -p ~/.vim
-ln -sf ~/.dotfiles/vim/filetype.vim ~/.vim/filetype.vim
-ln -sfn ~/.dotfiles/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
-ln -sfn ~/.dotfiles/vim/UltiSnips ~/.vim/UltiSnips
+  mkdir -p ~/.vimperator/plugin
+  ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
 
-mkdir -p ~/.git_templates/hooks
-ls ~/.dotfiles/git_templates/hooks | xargs -I% ln -sf ~/.dotfiles/git_templates/hooks/% ~/.git_templates/hooks/%
+  ln -sfn $DOTFILES_DIR/peco ~/.peco
 
-mkdir -p ~/.vimperator/plugin
-ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
+  mkdir -p ~/.oh-my-zsh/custom/themes
+  ln -sf $DOTFILES_DIR/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom/themes/gallois.zsh-theme
 
-ln -sfn ~/.dotfiles/peco ~/.peco
+  # TODO: this is not working as intended
+  continue_on_error ln -s $DOTFILES_DIR/ssh ~/.ssh
 
-mkdir -p ~/.oh-my-zsh/custom/themes
-ln -sf ~/.dotfiles/oh-my-zsh/custom/themes/gallois.zsh-theme ~/.oh-my-zsh/custom/themes/gallois.zsh-theme
+  mkdir -p ~/bin
 
-mkdir -p ~/.vim/{backups,swaps,undo,bundle}
+  touch ~/.zshrc.local
+}
 
-# TODO: this is not working as intended
-continue_on_error ln -s ~/.dotfiles/ssh ~/.ssh
+is_valid_param() {
+  [[ $1 =~ ^(all|vim_only|tmux_only)$ ]]
+}
 
-mkdir -p ~/bin
+main() {
+  if [ $# = 0 ] || ! is_valid_param $1; then
+    echo "Usage: ./link [all|vim_only|tmux_only]"
+    exit
+  fi
 
-touch ~/.zshrc.local
+  echo "DOTFILES_DIR: $DOTFILES_DIR"
+  echo "you will setup [$1]"
+  echo -n "proceed?(y/n): "
+  read answer
+  if [[ ! $answer =~ ^y ]]; then
+    echo quit
+    exit
+  fi
+
+  if [ $1 = all ]; then
+    vim
+    tmux
+    rest
+  elif [ $1 = vim_only ]; then
+    vim
+  elif [ $1 = tmux_only ]; then
+    tmux
+  fi
+}
+
+main $*
