@@ -176,7 +176,7 @@ if [ "$SOLARIZED_MODE" = light ]; then
   alias peco="peco --rcfile ~/.peco/config_for_light.json"
 fi
 alias e='cd $(ghq list -p | {peco || pwd;})'
-alias ev='cd $(find ~/.vim/bundle/repos -maxdepth 4 -name .git -type d | sed "s:/.git::" | {peco || pwd;})'
+alias ev='cd $(find ~/.vim/plugged -maxdepth 1 -type d | {peco || pwd;})'
 alias bundlep='cd $(bundler_gems | {peco || pwd;})'
 alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/origin/||"`'
 alias -g X='| xargs -I %'

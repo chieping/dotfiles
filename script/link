@@ -52,6 +52,9 @@ rest() {
   ln -sf $DOTFILES_DIR/atom/snippets.cson ~/.atom/snippets.cson
   ln -sf $DOTFILES_DIR/atom/styles.less ~/.atom/styles.less
 
+  mkdir -p ~/.lein
+  ln -sf $DOTFILES_DIR/profiles.clj ~/.lein/profiles.clj
+
   mkdir -p ~/.rbenv
   ln -sf $DOTFILES_DIR/rbenv/default-gems ~/.rbenv/default-gems
 
