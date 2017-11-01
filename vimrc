@@ -54,6 +54,7 @@ if filereadable(".nrepl-port")
   Plug 'tpope/vim-fireplace'
   Plug 'SevereOverfl0w/clojure-check', {'do': './install'}
 endif
+Plug 'kovisoft/paredit', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'venantius/vim-eastwood'
