@@ -8,7 +8,7 @@ vim() {
   ln -sf $DOTFILES_DIR/gvimrc ~/.gvimrc
   ln -sf $DOTFILES_DIR/vimrc ~/.vimrc
   ln -sfn ~/.vim ~/.config/nvim
-  ln -sf ~/.vimrc ~/.config/nvim/init.vim
+  ln -sf $DOTFILES_DIR/vimrc ~/.config/nvim/init.vim
   ln -sf $DOTFILES_DIR/vim/filetype.vim ~/.vim/filetype.vim
   ln -sfn $DOTFILES_DIR/vim/nerdtree_plugin ~/.vim/nerdtree_plugin
   ln -sfn $DOTFILES_DIR/vim/UltiSnips ~/.vim/UltiSnips
