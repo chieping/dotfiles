@@ -22,6 +22,9 @@ autocmd BufNewFile,BufRead *.gradle setfiletype groovy
 
 autocmd BufNewFile,BufRead *.mjs setfiletype javascript
 
-" rainbow_parentheses.vim
-autocmd VimEnter * RainbowParenthesesActivate
-autocmd Syntax clojure,lisp RainbowParenthesesLoadRound
+" if exists(":RainbowParenthesesActivate")
+if exists(":RainbowParentheses*")
+  " rainbow_parentheses.vim
+  autocmd VimEnter * RainbowParenthesesActivate
+  autocmd Syntax clojure RainbowParenthesesLoadRound
+endif
