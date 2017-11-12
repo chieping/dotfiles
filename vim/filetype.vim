@@ -21,10 +21,3 @@ autocmd BufNewFile,BufRead .tmux.conf*,tmux.conf* setfiletype tmux
 autocmd BufNewFile,BufRead *.gradle setfiletype groovy
 
 autocmd BufNewFile,BufRead *.mjs setfiletype javascript
-
-" if exists(":RainbowParenthesesActivate")
-if exists(":RainbowParentheses*")
-  " rainbow_parentheses.vim
-  autocmd VimEnter * RainbowParenthesesActivate
-  autocmd Syntax clojure RainbowParenthesesLoadRound
-endif

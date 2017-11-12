@@ -56,7 +56,7 @@ if filereadable(".nrepl-port")
 endif
 Plug 'kovisoft/paredit', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
-Plug 'kien/rainbow_parentheses.vim', { 'for': 'clojure' }
+Plug 'kien/rainbow_parentheses.vim'
 Plug 'venantius/vim-eastwood'
 Plug 'tpope/vim-classpath'
 " Plug 'kovisoft/slimv'
