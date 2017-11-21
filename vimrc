@@ -209,6 +209,10 @@ noremap S "_S
 noremap x "_x
 noremap X "_X
 
+if has('nvim')
+  tnoremap <silent> <ESC> <C-\><C-n>
+endif
+
 " TODO: not to use "normal" http://vi.stackexchange.com/a/8336
 function! SmartBeginningOfLine()
   let l:chars_left_side_of_cursor = getline('.')[0:col('.') - 2]
