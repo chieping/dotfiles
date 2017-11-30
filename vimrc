@@ -58,6 +58,7 @@ Plug 'kovisoft/paredit', { 'for': 'clojure' }
 Plug 'guns/vim-clojure-static'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'venantius/vim-eastwood'
+Plug 'rust-lang/rust.vim'
 Plug 'tpope/vim-classpath'
 " Plug 'kovisoft/slimv'
 Plug 'udalov/kotlin-vim'
