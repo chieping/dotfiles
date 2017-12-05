@@ -2,7 +2,9 @@ cask_args appdir: "/Applications"
 
 tap "caskroom/cask"
 tap "sanemat/font"
+tap "dart-lang/dart"
 
+brew "dart"
 brew "python3"
 brew "macvim", args: ["with-override-system-vim"]
 brew "fasd"
