@@ -132,7 +132,7 @@ set ignorecase
 set smartcase
 set showcmd
 set wildmenu
-set scrolloff=100
+set scrolloff=5
 set helpheight=100
 set backup
 set backupdir=~/.vim/backups
