@@ -1,0 +1,2 @@
+# link -s /etc/udev/rules.d/99-usb-kbd.rules 99-usb-kbd.rules
+ACTION=="add", ATTRS{idVendor}=="TODO", ATTRS{idProduct}=="TODO", ENV{XKBMODEL}="hhk", ENV{XKBLAYOUT}="us"
