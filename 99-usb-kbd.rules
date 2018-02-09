@@ -1,2 +1,2 @@
 # sudo ln -s $HOME/dotfiles_honda/99-usb-kbd.rules /etc/udev/rules.d/99-usb-kbd.rules
-ACTION=="add", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0100", ENV{XKBMODEL}="hhk", ENV{XKBLAYOUT}="us"
+ACTION=="add", ATTRS{idVendor}=="0853", ATTRS{idProduct}=="0100", RUN+="setxkbmap -device $(xinput --list --id-only 'Topre Corporation HHKB Professional') -layout us -model hhk"
