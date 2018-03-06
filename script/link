@@ -28,6 +28,12 @@ continue_on_error() {
   set -e
 }
 
+zsh() {
+  ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
+  ln -sf $DOTFILES_DIR/zshenv ~/.zshenv
+  ln -sfn $DOTFILES_DIR/zsh ~/.zsh
+}
+
 rest() {
   ln -sf $DOTFILES_DIR/bashrc ~/.bashrc
   ln -sf $DOTFILES_DIR/ctags ~/.ctags
@@ -39,9 +45,6 @@ rest() {
   ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml
   ln -sf $DOTFILES_DIR/tigrc ~/.tigrc
   ln -sf $DOTFILES_DIR/vimperatorrc ~/.vimperatorrc
-  ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
-  ln -sf $DOTFILES_DIR/zshrc.darwin ~/.zshrc.darwin
-  ln -sf $DOTFILES_DIR/zshrc.linux ~/.zshrc.linux
   ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
   ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
@@ -78,12 +81,12 @@ rest() {
 }
 
 is_valid_param() {
-  [[ $1 =~ ^(all|vim_only|tmux_only)$ ]]
+  [[ $1 =~ ^(all|(vim|tmux|zsh)_only)$ ]]
 }
 
 main() {
   if [ $# = 0 ] || ! is_valid_param $1; then
-    echo "Usage: ./link [all|vim_only|tmux_only]"
+    echo "Usage: ./link [all|vim_only|tmux_only|zsh_only]"
     exit
   fi
 
@@ -100,10 +103,13 @@ main() {
     vim
     tmux
     rest
+    zsh
   elif [ $1 = vim_only ]; then
     vim
   elif [ $1 = tmux_only ]; then
     tmux
+  elif [ $1 = zsh_only ]; then
+    zsh
   fi
 }
 
