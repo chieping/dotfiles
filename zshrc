@@ -60,6 +60,7 @@ alias -g X='| xargs -I %'
 alias -g FG='| grep -F'
 alias -g PG='| grep -P'
 alias -g P='"`!!`"'
+alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco)'
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
 
