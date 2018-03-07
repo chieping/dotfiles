@@ -76,5 +76,6 @@ if type assh > /dev/null 2>&1; then
 fi
 
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
+alias ls='ls -F --color=auto'
 
 zstyle ':completion:*:default' menu select=2
