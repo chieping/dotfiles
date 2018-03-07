@@ -2,6 +2,8 @@ setopt print_eight_bit
 setopt no_flow_control
 setopt nobeep
 
+bindkey -e
+
 # disable stop
 stty stop undef
 
@@ -72,3 +74,5 @@ alias xpanes='xpanes -l ev'
 if type assh > /dev/null 2>&1; then
   alias ssh="assh wrapper ssh"
 fi
+
+alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
