@@ -62,7 +62,7 @@ alias -g X='| xargs -I %'
 alias -g FG='| grep -F'
 alias -g PG='| grep -P'
 alias -g P='"`!!`"'
-alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco)'
+alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco --prompt "choose k8s context to set:")'
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
 
@@ -77,5 +77,9 @@ fi
 
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
 alias ls='ls -F --color=auto'
+
+source <(kubectl completion zsh)
+source <(minikube completion zsh)
+
 
 zstyle ':completion:*:default' menu select=2
