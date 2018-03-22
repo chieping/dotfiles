@@ -78,8 +78,12 @@ fi
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
 alias ls='ls -F --color=auto'
 
-source <(kubectl completion zsh)
-source <(minikube completion zsh)
+if type kubectl >/dev/null; then
+  source <(kubectl completion zsh)
+fi
 
+if type minikube >/dev/null; then
+  source <(minikube completion zsh)
+fi
 
 zstyle ':completion:*:default' menu select=2

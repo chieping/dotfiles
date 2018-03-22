@@ -1,4 +1,5 @@
 zplug "peco/peco", as:command, from:gh-r
+zplug "clvv/fasd", as:command, use:fasd
 zplug "superbrothers/zsh-kubectl-prompt"
 zplug "zsh-users/zsh-history-substring-search", use:"zsh-history-substring-search.plugin.zsh"
 zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.plugin.zsh"
