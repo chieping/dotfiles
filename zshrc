@@ -48,7 +48,8 @@ if [[ -f ~/.zplug/init.zsh ]]; then
   source ~/.zplug/init.zsh
   source ~/.zsh/zplug.zsh
 else
-  echo "cannot find zplug. https://github.com/zplug/zplug" >&2
+  echo "cannot find zplug. run following command." >&2
+  echo "curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh" >&2
 fi
 
 alias gg='ghq get'
