@@ -2,8 +2,7 @@ export TERM=xterm-256color
 export CC=gcc
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export PATH="$HOME/anaconda3/bin:$PATH"
-export PATH="$HOME/.pub-cache/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.pub-cache/bin:$HOME/anaconda3/bin:$PATH"
 export EDITOR=vim
 export GIT_EDITOR=vim
 
