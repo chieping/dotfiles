@@ -88,3 +88,7 @@ if type minikube >/dev/null; then
 fi
 
 zstyle ':completion:*:default' menu select=2
+
+if [ $(uname) = Darwin ]; then
+  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+fi
