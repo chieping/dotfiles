@@ -41,7 +41,7 @@ alias -g B='`git branch -a | grep -v HEAD | peco | sed -e "s|^\*\s*||;s|remotes/
 alias -g X='| xargs -I %'
 alias -g FG='| grep -F'
 alias -g PG='| grep -P'
-alias -g P='"`!!`"'
+alias -g P='| peco'
 alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco --prompt "choose k8s context to set:")'
 # make today's tmp dir and go there
 alias taket="take ~/tmp/`date +%Y%m%d`"
@@ -50,24 +50,11 @@ alias taket="take ~/tmp/`date +%Y%m%d`"
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
 alias xpanes='xpanes -l ev'
 
-# https://github.com/moul/advanced-ssh-config
-if type assh > /dev/null 2>&1; then
-  alias ssh="assh wrapper ssh"
-fi
-
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
 alias ls='ls -F --color=auto'
 
-if type kubectl >/dev/null; then
-  source <(kubectl completion zsh)
-fi
-
-if type minikube >/dev/null; then
-  source <(minikube completion zsh)
-fi
-
 zstyle ':completion:*:default' menu select=2
 
-if [ $(uname) = Darwin ]; then
-  PATH="$(brew --prefix coreutils)/libexec/gnubin:$PATH"
+if [[ $OSTYPE == *darwin* ]]; then
+  PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 fi
