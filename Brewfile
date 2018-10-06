@@ -3,11 +3,13 @@ cask_args appdir: "/Applications"
 tap "caskroom/cask"
 tap "sanemat/font"
 tap "dart-lang/dart"
+tap "d12frosted/emacs-plus"
 
 brew "dart"
 brew "python3"
 brew "macvim", args: ["with-override-system-vim"]
 brew "direnv"
+brew "emacs-plus"
 brew "fasd"
 brew "ghq"
 brew "git"
