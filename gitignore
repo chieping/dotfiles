@@ -33,6 +33,7 @@ Temporary Items
 TAGS
 !TAGS/
 tags
+tags.lock
 !tags/
 gtags.files
 GTAGS
