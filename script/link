@@ -48,13 +48,6 @@ rest() {
   ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
   ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
-  mkdir -p ~/.atom
-  ln -sf $DOTFILES_DIR/atom/config.cson ~/.atom/config.cson
-  ln -sf $DOTFILES_DIR/atom/init.coffee ~/.atom/init.coffee
-  ln -sf $DOTFILES_DIR/atom/keymap.cson ~/.atom/keymap.cson
-  ln -sf $DOTFILES_DIR/atom/snippets.cson ~/.atom/snippets.cson
-  ln -sf $DOTFILES_DIR/atom/styles.less ~/.atom/styles.less
-
   mkdir -p ~/.lein
   ln -sf $DOTFILES_DIR/profiles.clj ~/.lein/profiles.clj
 

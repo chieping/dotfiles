@@ -15,15 +15,6 @@ TODO: Use stow or make or something instead of scripts using ln command
 
 https://github.com/chriskempson/base16
 
-## Atom
-
-install starred packages
-```
-$ apm stars --install
-```
-
-See: https://discuss.atom.io/t/installed-packages-list-into-single-file/12227/2
-
 ## Tmux
 
 install [Tmux Plugin Manager](https://github.com/tmux-plugins/tpm)
