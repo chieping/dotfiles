@@ -20,24 +20,6 @@ bindkey '^[[B' history-substring-search-down
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
-# expand global aliases by space
-# http://blog.patshead.com/2012/11/automatically-expaning-zsh-global-aliases---simplified.html
-globalias() {
-  if [[ $LBUFFER =~ ' [A-Z0-9]+$' ]]; then
-    zle _expand_alias
-    # zle expand-word
-  fi
-  zle self-insert
-}
-
-zle -N globalias
-
-bindkey " " globalias
-# "^ " is reserved by IME switching. Besides, I can do with tab key to expand
-# history. (!! and all that) That's why below line is commented out.
-# bindkey "^ " magic-space           # control-space to bypass completion
-bindkey -M isearch " " magic-space # normal space during searches
-
 # delete characters just left side of the cursor.
 bindkey '^U' backward-kill-line
 

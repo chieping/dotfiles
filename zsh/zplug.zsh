@@ -12,6 +12,7 @@ zplug "~/.zsh", from:local, as:theme, use:gallois.zsh-theme
 zplug "~/.zsh", from:local, use:history.zsh
 zplug "~/.zsh", from:local, use:edit-command-line.zsh
 zplug "~/.zsh", from:local, use:direnv.zsh
+zplug "~/.zsh", from:local, use:expand-global-aliases.zsh
 zplug "chriskempson/base16-shell", use:base16-shell.plugin.zsh
 
 if ! zplug check --verbose; then
