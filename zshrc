@@ -7,9 +7,6 @@ bindkey -e
 # disable stop
 stty stop undef
 
-# setup direnv
-type direnv >/dev/null 2>&1 && eval "$(direnv hook zsh)"
-
 # zsh-history-substring-search
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
