@@ -10,6 +10,7 @@ zplug "plugins/rbenv", from:oh-my-zsh
 zplug "plugins/fasd", from:oh-my-zsh
 zplug "~/.zsh", from:local, as:theme, use:gallois.zsh-theme
 zplug "~/.zsh", from:local, use:history.zsh
+zplug "~/.zsh", from:local, use:edit-command-line.zsh
 zplug "chriskempson/base16-shell", use:base16-shell.plugin.zsh
 
 if ! zplug check --verbose; then
