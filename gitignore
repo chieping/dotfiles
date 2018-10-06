@@ -75,3 +75,7 @@ honda-*
 
 # embear/vim-localvimrc
 .lvimrc
+
+env
+.env
+.envrc

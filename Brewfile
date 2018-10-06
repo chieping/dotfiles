@@ -7,6 +7,7 @@ tap "dart-lang/dart"
 brew "dart"
 brew "python3"
 brew "macvim", args: ["with-override-system-vim"]
+brew "direnv"
 brew "fasd"
 brew "ghq"
 brew "git"
