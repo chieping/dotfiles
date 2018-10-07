@@ -30,8 +30,7 @@ alias -g FG='| grep -F'
 alias -g PG='| grep -P'
 alias -g P='| peco'
 alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco --prompt "choose k8s context to set:")'
-# make today's tmp dir and go there
-alias taket="take ~/tmp/`date +%Y%m%d`"
+alias taket='mkdir -p ~/tmp/$(date +%Y%m%d) && cd ~/tmp/$(date +%Y%m%d)'
 
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
