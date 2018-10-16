@@ -44,7 +44,6 @@ rest() {
   ln -sf $DOTFILES_DIR/pryrc ~/.pryrc
   ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml
   ln -sf $DOTFILES_DIR/tigrc ~/.tigrc
-  ln -sf $DOTFILES_DIR/vimperatorrc ~/.vimperatorrc
   ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
   ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
@@ -56,9 +55,6 @@ rest() {
 
   mkdir -p ~/.git_templates/hooks
   ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
-
-  mkdir -p ~/.vimperator/plugin
-  ln -sf ~/src/github.com/vimpr/vimperator-plugins/plugin_loader.js ~/.vimperator/plugin/plugin_loader.js
 
   ln -sfn $DOTFILES_DIR/peco ~/.peco
 

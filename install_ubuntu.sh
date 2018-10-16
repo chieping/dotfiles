@@ -40,7 +40,5 @@ fi
 
 # zeal( dash for Linux and Windows )
 
-# firefox plugins ( vimperator )
-
 # aws cli
 # aws_completer
