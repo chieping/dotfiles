@@ -2,6 +2,7 @@ export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=1000000
 export SAVEHIST=10000000
 
+setopt auto_pushd
 setopt append_history
 setopt extended_history
 setopt hist_expire_dups_first
