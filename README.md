@@ -52,6 +52,12 @@ https://gist.github.com/franklinjavier/50fe3f6eae29f86d3a75
 
 ## Ubuntu
 
+### Import CopyQ Configuration
+
+```
+copyq importData copyq.cpq
+```
+
 ### Building Vim
 
 [vim-jp » Linuxでのビルド方法](http://vim-jp.org/docs/build_linux.html)
