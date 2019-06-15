@@ -28,6 +28,11 @@ continue_on_error() {
   set -e
 }
 
+karabiner() {
+  find $DOTFILES_DIR/karabiner -type f -name '*.json' \
+    -exec ln -sf {} ~/.config/karabiner/assets/complex_modifications \;
+}
+
 zsh() {
   ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
   ln -sf $DOTFILES_DIR/zshenv ~/.zshenv
@@ -66,13 +71,9 @@ rest() {
   touch ~/.zshrc.local
 }
 
-is_valid_param() {
-  [[ $1 =~ ^(all|(vim|tmux|zsh)_only)$ ]]
-}
-
 main() {
-  if [ $# = 0 ] || ! is_valid_param $1; then
-    echo "Usage: ./link [all|vim_only|tmux_only|zsh_only]"
+  if [ $# = 0 ]; then
+    echo "Usage: ./link [all|APP]"
     exit
   fi
 
@@ -90,13 +91,9 @@ main() {
     tmux
     rest
     zsh
-  elif [ $1 = vim_only ]; then
-    vim
-  elif [ $1 = tmux_only ]; then
-    tmux
-  elif [ $1 = zsh_only ]; then
-    zsh
+  else
+    "$1"
   fi
 }
 
-main $*
+main "$@"
