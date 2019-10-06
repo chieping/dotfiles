@@ -49,28 +49,28 @@ Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-rsi'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
-Plug 'elixir-lang/vim-elixir'
+" Plug 'elixir-lang/vim-elixir'
 if filereadable(".nrepl-port")
   Plug 'tpope/vim-fireplace'
   Plug 'SevereOverfl0w/clojure-check', {'do': './install'}
 endif
 Plug 'kovisoft/paredit', { 'for': 'clojure' }
-Plug 'guns/vim-clojure-static'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'venantius/vim-eastwood'
-Plug 'rust-lang/rust.vim'
-Plug 'tpope/vim-classpath'
+" Plug 'guns/vim-clojure-static'
+" Plug 'kien/rainbow_parentheses.vim'
+" Plug 'venantius/vim-eastwood'
+" Plug 'rust-lang/rust.vim'
+" Plug 'tpope/vim-classpath'
 " Plug 'kovisoft/slimv'
-Plug 'udalov/kotlin-vim'
+" Plug 'udalov/kotlin-vim'
 Plug 'othree/yajs.vim'
 Plug 'elzr/vim-json'
 Plug 'vim-ruby/vim-ruby'
 Plug 'jgdavey/vim-blockle'
 " Plug 'rodjek/vim-puppet'
-Plug 'mv/mv-vim-puppet'
+" Plug 'mv/mv-vim-puppet'
 " Plug 'dougireton/vim-chef'
 " Plug 'thoughtbot/vim-rspec'
-Plug 'GEverding/vim-hocon'
+" Plug 'GEverding/vim-hocon'
 " Plug 'tsaleh/vim-matchit'
 " Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'taku-o/vim-toggle'
@@ -708,6 +708,8 @@ command! GGdiffHead call GGdiff('HEAD^')
 command! -nargs=? GGdiffAutoDetectSourceBranch call GGdiffAutoDetectSourceBranch('<f-args>')
 
 " ale
+
+let g:ale_sign_column_always = 1
 call submode#enter_with('ale', 'n', '', '<Leader>l')
 call submode#map('ale', 'n', 'r', 'j', ':<C-u>ALENext<CR>')
 call submode#map('ale', 'n', 'r', 'k', ':<C-u>ALEPrevious<CR>')
