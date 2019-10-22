@@ -37,10 +37,6 @@ time ( zsh -i -c exit )
 
 ## Google Chrome
 
-### [cVim](https://github.com/1995eaton/chromium-vim) theme inspired by Yosemite Spotlight
-
-https://gist.github.com/franklinjavier/50fe3f6eae29f86d3a75
-
 ### (Windows) Chrome52以降でMacTypeを有効にする
 
 - [【配布】MacTypeでDirectWriteの設定を変えるパッチ - しらいとブログ](http://silight.hatenablog.jp/entry/MacTypePatch)
