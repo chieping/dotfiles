@@ -85,6 +85,6 @@
 [color "diff"]
 	meta = black cyan
 [rebase]
-	autosquash = true
+	autoStash = true
 [svn]
 	rmdir = true
