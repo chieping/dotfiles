@@ -8,7 +8,7 @@ tap "d12frosted/emacs-plus"
 
 brew "dart"
 brew "python3"
-brew "macvim", args: ["with-override-system-vim"]
+brew "macvim"
 brew "direnv"
 brew "emacs-plus"
 brew "fasd"
