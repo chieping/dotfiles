@@ -11,7 +11,7 @@ Plug 'Shougo/neomru.vim'
 " Plug 'Shougo/vimshell'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'thinca/vim-quickrun'
-if has('python')
+if has('python3') || has('python')
   Plug 'SirVer/ultisnips'
 endif
 Plug 'honza/vim-snippets'
@@ -50,11 +50,11 @@ Plug 'tpope/vim-rsi'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jiangmiao/auto-pairs'
 " Plug 'elixir-lang/vim-elixir'
-if filereadable(".nrepl-port")
-  Plug 'tpope/vim-fireplace'
-  Plug 'SevereOverfl0w/clojure-check', {'do': './install'}
-endif
-Plug 'kovisoft/paredit', { 'for': 'clojure' }
+" if filereadable(".nrepl-port")
+"   Plug 'tpope/vim-fireplace'
+"   Plug 'SevereOverfl0w/clojure-check', {'do': './install'}
+" endif
+" Plug 'kovisoft/paredit', { 'for': 'clojure' }
 " Plug 'guns/vim-clojure-static'
 " Plug 'kien/rainbow_parentheses.vim'
 " Plug 'venantius/vim-eastwood'
