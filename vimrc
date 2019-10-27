@@ -64,6 +64,7 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'udalov/kotlin-vim'
 Plug 'othree/yajs.vim'
 Plug 'elzr/vim-json'
+Plug 'justmao945/vim-clang'
 Plug 'vim-ruby/vim-ruby'
 Plug 'jgdavey/vim-blockle'
 " Plug 'rodjek/vim-puppet'
@@ -310,6 +311,8 @@ function! QuickrunSetArgs(args)
 endfunction
 
 command! -nargs=1 QuickrunSetArgs call QuickrunSetArgs('<args>')
+
+nnoremap <Leader>r :QuickRun -input =@+<CR>
 
 " vim-smartword
 map w  <Plug>(smartword-w)
