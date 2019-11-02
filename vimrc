@@ -297,6 +297,14 @@ nnoremap <Leader>n :call NumberToggle()<cr>
 
 " vim-quickrun
 let g:quickrun_config = {}
+if has("textprop")
+  let g:quickrun_config['_'] = {
+    \ 'outputter': 'popup',
+    \ }
+endif
+let g:quickrun_config['cpp'] = {
+  \ 'cmdopt': '-std=c++14 -stdlib=libc++',
+  \ }
 let g:quickrun_config['ruby.rspec'] = {
   \ 'command': 'rspec',
   \ 'cmdopt': '--no-color',
