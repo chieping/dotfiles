@@ -1,9 +1,9 @@
-zplug "superbrothers/zsh-kubectl-prompt"
+# zplug "superbrothers/zsh-kubectl-prompt"
 zplug "zsh-users/zsh-history-substring-search", use:"zsh-history-substring-search.plugin.zsh"
 zplug "zsh-users/zsh-syntax-highlighting", use:"zsh-syntax-highlighting.plugin.zsh"
 zplug "plugins/git-prompt", from:oh-my-zsh
 zplug "plugins/common-aliases", from:oh-my-zsh
-# zplug "plugins/rbenv", from:oh-my-zsh
+zplug "plugins/rbenv", from:oh-my-zsh
 # zplug "plugins/tmux", from:oh-my-zsh  # Disable temporarily for startup time
 zplug "plugins/fasd", from:oh-my-zsh
 zplug "~/.zsh", from:local, as:theme, use:gallois.zsh-theme
