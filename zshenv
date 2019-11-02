@@ -21,6 +21,7 @@ case "$OSTYPE" in
   darwin*)
     # define a variable because `brew prefix` is super slow.
     export BREW_PREFIX=/usr/local
+    export HOMEBREW_ROOT=/usr/local
     export DIFF_HIGHLIGHT=/usr/local/opt/git/share/git-core/contrib/diff-highlight/diff-highlight
   ;;
   linux*)
