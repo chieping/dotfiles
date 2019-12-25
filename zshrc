@@ -37,10 +37,13 @@ alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.g
 alias xpanes='xpanes -l ev'
 
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
-alias ls='ls -F --color=auto'
 
 zstyle ':completion:*:default' menu select=2
 
 if [[ $OSTYPE == *darwin* ]]; then
   PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+fi
+
+if ! [[ $OSTYPE == *darwin* && $(which ls) =~ ^/bin/ls ]]; then
+  alias ls='ls -F --color=auto'
 fi
