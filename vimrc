@@ -165,6 +165,7 @@ if has('mac') || has('win32') || has('win64')
 elseif has('unix')
   set clipboard=unnamedplus
 endif
+set diffopt+=internal,algorithm:patience,context:5
 " ttimeoutlen is used for key code delays. This makes esc key to respond
 " immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set ttimeoutlen=0
@@ -327,11 +328,6 @@ map w  <Plug>(smartword-w)
 map b  <Plug>(smartword-b)
 map e  <Plug>(smartword-e)
 map ge <Plug>(smartword-ge)
-
-" vim-diff-enhanced
-" diff algorithm
-" 'histogram' algorithm is fast version of patience algorithm
-let &diffexpr='EnhancedDiff#Diff("git diff", "--diff-algorithm=histogram")'
 
 " vim-ruby
 augroup RubyRspec
