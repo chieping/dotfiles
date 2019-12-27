@@ -471,7 +471,9 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
-  )
+  (setq
+   evil-want-C-i-jump t
+   evil-cross-lines t))
 
 (defun dotspacemacs/user-load ()
   "Library to load while dumping.
@@ -487,6 +489,7 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (with-eval-after-load 'smartparens
+    (sp-use-smartparens-bindings)
     (sp-use-paredit-bindings))
   (add-hook 'clojure-mode-hook #'spacemacs/toggle-aggressive-indent-on)
   (cljr-add-keybindings-with-prefix "C-c j"))
