@@ -14,6 +14,10 @@ vim() {
   ln -sfn $DOTFILES_DIR/vim/UltiSnips ~/.vim/UltiSnips
 }
 
+emacs() {
+  ln -sf $DOTFILES_DIR/spacemacs ~/.spacemacs
+}
+
 tmux() {
   ln -sf $DOTFILES_DIR/tmux.conf ~/.tmux.conf
 }
@@ -29,6 +33,7 @@ continue_on_error() {
 }
 
 karabiner() {
+  mkdir -p ~/.config/karabiner/assets
   find $DOTFILES_DIR/karabiner -type f -name '*.json' \
     -exec ln -sf {} ~/.config/karabiner/assets/complex_modifications \;
 }
@@ -88,6 +93,7 @@ main() {
 
   if [ $1 = all ]; then
     vim
+    emacs
     tmux
     rest
     zsh
