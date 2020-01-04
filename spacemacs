@@ -32,7 +32,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
+   '(elixir
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
      ;; better-defaults
      emacs-lisp
      ;; git
-     ;; lsp
+     lsp
      ;; markdown
      multiple-cursors
      ;; org
@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Default font or prioritized list of fonts.
    dotspacemacs-default-font '("HackGen"
-                               :size 16.0
+                               :size 20.0
                                :weight normal
                                :width normal)
 
@@ -508,7 +508,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (ansi package-build shut-up epl git commander f dash s))))
+    (ob-elixir helm-gtags helm helm-core ggtags flycheck-mix flycheck-credo dap-mode bui tree-mode lsp-mode markdown-mode dash-functional counsel-gtags alchemist elixir-mode ansi package-build shut-up epl git commander f dash s))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

@@ -27,4 +27,6 @@ install github.com/nodenv/node-build                      ~/.nodenv/plugins/node
 
 install github.com/syl20bnr/spacemacs                     ~/.emacs.d
 
+install github.com/JakeBecker/elixir-ls
+
 # install github.com/seebi/dircolors-solarized
