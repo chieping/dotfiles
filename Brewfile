@@ -37,4 +37,5 @@ cask "istat-menus"
 cask "visual-studio-code"
 cask "slack"
 cask "emacs"
+Cask "karabiner-elements"
 mas "Xcode", id: 497799835
