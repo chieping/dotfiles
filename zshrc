@@ -35,6 +35,8 @@ alias taket='mkdir -p ~/tmp/$(date +%Y%m%d) && cd ~/tmp/$(date +%Y%m%d)'
 # git local ignore
 alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.git/info && $EDITOR $(git rev-parse --show-toplevel)/.git/info/exclude'
 alias xpanes='xpanes -l ev'
+alias show_compaudit_parmission_owner='for f in $(compaudit); do ls -l -d $f; done'
+alias fix_compaudit='for f in $(compaudit); do chown $(whoami):staff $f; chmod 755 $f; done'
 
 alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
 
