@@ -11,7 +11,7 @@ Plug 'Shougo/neomru.vim'
 " Plug 'Shougo/vimshell'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'thinca/vim-quickrun'
-if has('python3') || has('python')
+if has('python3')
   Plug 'SirVer/ultisnips'
 endif
 Plug 'honza/vim-snippets'
@@ -165,7 +165,7 @@ if has('mac') || has('win32') || has('win64')
 elseif has('unix')
   set clipboard=unnamedplus
 endif
-set diffopt+=internal,algorithm:patience,context:5
+"set diffopt+=internal,algorithm:patience,context:5
 " ttimeoutlen is used for key code delays. This makes esc key to respond
 " immediately. http://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set ttimeoutlen=0

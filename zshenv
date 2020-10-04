@@ -11,7 +11,7 @@ while [ -h "$SOURCE" ]; do
 done
 
 export DOTFILES_DIR="$(cd -P "$( dirname "$SOURCE" )" && pwd)"
-export PATH="$HOME/bin:$HOME/.pub-cache/bin:$HOME/anaconda3/bin:$DOTFILES_DIR/bin:$HOME/Library/Python/3.7/bin:$PATH"
+export PATH="$HOME/bin:$HOME/.pub-cache/bin:$HOME/anaconda3/bin:$DOTFILES_DIR/bin:$HOME/Library/Python/3.7/bin:/usr/local/bin:$PATH"
 export EDITOR=vim
 export GIT_EDITOR=vim
 export LSCOLORS=exfxcxdxbxegedabagacad
