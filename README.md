@@ -46,6 +46,16 @@ time ( zsh -i -c exit )
 
 [kenie 33 - JANSI: JANSI : Mac OS X 10.4 - 10.12](http://kenie33-jansi.blogspot.jp/p/mac-os-x-104-107-jisascii.html)
 
+## Enable SSH Agent on Mac
+
+~/.ssh/config
+
+```sshconfig
+Host *
+  AddKeysToAgent yes
+  UseKeychain yes
+```
+
 ## Ubuntu
 
 ### Import CopyQ Configuration
