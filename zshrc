@@ -30,6 +30,7 @@ alias -g FG='| grep -F'
 alias -g PG='| grep -P'
 alias -g P='| peco'
 alias c='kubectl config use-context $(kubectl config get-contexts -o=name | peco --prompt "choose k8s context to set:")'
+alias b='git checkout $(git branch -a | peco | sed -e "s|^\*\s*||;s|remotes/origin/||")'
 alias taket='mkdir -p ~/tmp/$(date +%Y%m%d) && cd ~/tmp/$(date +%Y%m%d)'
 
 # git local ignore

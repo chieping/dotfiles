@@ -22,16 +22,6 @@ tmux() {
   ln -sf $DOTFILES_DIR/tmux.conf ~/.tmux.conf
 }
 
-continue_on_error() {
-  set +e
-  $@
-  if ! [ $? = 0 ]; then
-    echo "a command failed: $@"
-    echo "continue anyway..."
-  fi
-  set -e
-}
-
 karabiner() {
   mkdir -p ~/.config/karabiner/assets
   find $DOTFILES_DIR/karabiner -type f -name '*.json' \
@@ -67,9 +57,6 @@ rest() {
   ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
 
   ln -sfn $DOTFILES_DIR/peco ~/.peco
-
-  # TODO: this is not working as intended
-  continue_on_error ln -s $DOTFILES_DIR/ssh ~/.ssh
 
   mkdir -p ~/bin
 
