@@ -6,7 +6,7 @@ set ignore-case = yes
 set main-view = date author id commit-title:graph=yes,refs=yes
 
 # Colors {{{
-color cursor white black
+color cursor white green bold
 color status white default
 color title-focus white black
 color date yellow default
