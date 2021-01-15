@@ -38,8 +38,9 @@ alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.g
 alias xpanes='xpanes -l ev'
 alias show_compaudit_parmission_owner='for f in $(compaudit); do ls -l -d $f; done'
 alias fix_compaudit='for f in $(compaudit); do sudo chown $(whoami):staff $f; chmod 755 $f; done'
+alias tigs='tig status'
+alias tigr='tig refs'
 
-alias setxkbmaphonda='setxkbmap -device $(xinput --list --id-only "Topre Corporation HHKB Professional") -layout us -model hhk'
 
 zstyle ':completion:*:default' menu select=2
 
