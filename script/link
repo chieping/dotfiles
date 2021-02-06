@@ -28,6 +28,10 @@ karabiner() {
     -exec ln -sf {} ~/.config/karabiner/assets/complex_modifications \;
 }
 
+hammerspoon() {
+  ln -sf $DOTFILES_DIR/hammerspoon/init.lua ~/.hammerspoon/init.lua
+}
+
 zsh() {
   ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
   ln -sf $DOTFILES_DIR/zshenv ~/.zshenv
@@ -40,6 +44,8 @@ rest() {
   ln -sf $DOTFILES_DIR/eslintrc ~/.eslintrc
   ln -sf $DOTFILES_DIR/gitconfig ~/.gitconfig
   ln -sf $DOTFILES_DIR/gitignore ~/.gitignore
+  # TODO: Linuxの場合の考慮
+  ln -sf $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
   ln -sf $DOTFILES_DIR/irbrc ~/.irbrc
   ln -sf $DOTFILES_DIR/pryrc ~/.pryrc
   ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml

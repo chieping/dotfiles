@@ -103,7 +103,7 @@ Plug 'terryma/vim-expand-region'
 Plug 'airblade/vim-gitgutter'
 " Plug 'closetag.vim'
 " Plug 'szw/vim-tags'
-Plug 'soramugi/auto-ctags.vim'
+" Plug 'soramugi/auto-ctags.vim'
 Plug 'kannokanno/previm'
 " Plug 'rizzatti/dash.vim'
 Plug 'tyru/open-browser.vim'
@@ -721,16 +721,6 @@ call submode#map('ale', 'n', 'r', 'j', ':<C-u>ALENext<CR>')
 call submode#map('ale', 'n', 'r', 'k', ':<C-u>ALEPrevious<CR>')
 call submode#map('ale', 'n', 'r', 'gg', 'gg:<C-u>ALENext<CR>')
 call submode#map('ale', 'n', 'r', 'G', 'G:<C-u>ALEPrevious<CR>')
-
-" auto-ctags.vim
-if has('mac')
-  " Use homebrew's ctags instead of kaoriya bundled one
-  let g:auto_ctags_bin_path = $HOMEBREW_ROOT . '/bin/ctags'
-endif
-
-if expand("%:p") =~ "/src/"
-  let g:auto_ctags = 1
-endif
 
 " lightline.vim
 let g:lightline = {
