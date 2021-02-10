@@ -36,7 +36,9 @@ bind refs C none
 bind refs C <!git checkout %(branch)
 
 bind main H none
-bind main H !@sh -c "f(){ if type xclip; then xclip -selection clipboard; elif type pbcopy; then pbcopy; fi }; printf '%s' %(commit) | f"
+bind main H +!bash -c "source $HOME/.tig_functions.sh; printf '%s' %(commit) | print_and_copy"
+bind diff p +!bash -c "source $HOME/.tig_functions.sh; printf '%s' %(directory)/%(file):%(lineno) | print_and_copy"
+
 # }}}
 
 # Tree {{{

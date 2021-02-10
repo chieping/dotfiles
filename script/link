@@ -50,6 +50,7 @@ rest() {
   ln -sf $DOTFILES_DIR/pryrc ~/.pryrc
   ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml
   ln -sf $DOTFILES_DIR/tigrc ~/.tigrc
+  ln -sf $DOTFILES_DIR/tig_functions.sh ~/.tig_functions.sh
   ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
   ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
