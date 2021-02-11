@@ -45,7 +45,7 @@ alias tigr='tig refs'
 zstyle ':completion:*:default' menu select=2
 
 if [[ $OSTYPE == *darwin* ]]; then
-  PATH="$BREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+  PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 fi
 
 if ! [[ $OSTYPE == *darwin* && $(which ls) =~ ^/bin/ls ]]; then
