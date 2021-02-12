@@ -38,7 +38,7 @@ alias gli='git status >/dev/null && mkdir -p $(git rev-parse --show-toplevel)/.g
 alias xpanes='xpanes -l ev'
 alias show_compaudit_parmission_owner='for f in $(compaudit); do ls -l -d $f; done'
 alias fix_compaudit='for f in $(compaudit); do sudo chown $(whoami):staff $f; chmod 755 $f; done'
-alias tigs='tig status'
+# alias tigs='tig status' tig statusで起動してからdでdiffを開くと意図しない差分となってしまう。tigで開いた後のsなら問題ない。微妙なので一旦封印する
 alias tigr='tig refs'
 
 
