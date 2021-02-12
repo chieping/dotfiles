@@ -37,7 +37,7 @@ bind refs C <!git checkout %(branch)
 
 bind main H none
 bind main H +!bash -c "source $HOME/.tig_functions.sh; printf '%s' %(commit) | print_and_copy"
-bind diff p +!bash -c "source $HOME/.tig_functions.sh; printf '%s' %(directory)/%(file):%(lineno) | print_and_copy"
+bind generic p +!bash -c "source $HOME/.tig_functions.sh; printf '%s' %(directory)/%(file):%(lineno) | print_and_copy"
 
 # }}}
 

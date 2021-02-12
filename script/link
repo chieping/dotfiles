@@ -35,6 +35,7 @@ hammerspoon() {
 zsh() {
   ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
   ln -sf $DOTFILES_DIR/zshenv ~/.zshenv
+  ln -sf $DOTFILES_DIR/zprofile ~/.zprofile
   ln -sfn $DOTFILES_DIR/zsh ~/.zsh
 }
 
