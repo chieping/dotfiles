@@ -40,6 +40,7 @@ zsh() {
 }
 
 rest() {
+  mkdir -p ~/bin
   ln -sf $DOTFILES_DIR/bashrc ~/.bashrc
   ln -sf $DOTFILES_DIR/ctags ~/.ctags
   ln -sf $DOTFILES_DIR/eslintrc ~/.eslintrc
@@ -65,8 +66,6 @@ rest() {
   ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
 
   ln -sfn $DOTFILES_DIR/peco ~/.peco
-
-  mkdir -p ~/bin
 
   touch ~/.zshrc.local
 }
