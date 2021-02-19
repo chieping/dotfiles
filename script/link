@@ -29,6 +29,7 @@ karabiner() {
 }
 
 hammerspoon() {
+  mkdir -p ~/.hammerspoon
   ln -sf $DOTFILES_DIR/hammerspoon/init.lua ~/.hammerspoon/init.lua
 }
 
@@ -46,8 +47,10 @@ rest() {
   ln -sf $DOTFILES_DIR/eslintrc ~/.eslintrc
   ln -sf $DOTFILES_DIR/gitconfig ~/.gitconfig
   ln -sf $DOTFILES_DIR/gitignore ~/.gitignore
-  # TODO: Linuxの場合の考慮
-  ln -sf $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
+  if [[ $OSTYPE =~ darwin.* ]]; then
+    # TODO: Linuxの場合の考慮
+    ln -sf $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight ~/bin/diff-highlight
+  fi
   ln -sf $DOTFILES_DIR/irbrc ~/.irbrc
   ln -sf $DOTFILES_DIR/pryrc ~/.pryrc
   ln -sf $DOTFILES_DIR/rubocop.yml ~/.rubocop.yml
@@ -91,6 +94,10 @@ main() {
     tmux
     rest
     zsh
+    if [[ $OSTYPE =~ darwin.* ]]; then
+      karabiner
+      hammerspoon
+    fi
   else
     "$1"
   fi
