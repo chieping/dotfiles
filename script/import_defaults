@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+DOTFILES_DIR=$(cd $(dirname $0)/.. && pwd)
+
+# import keyboard shortcuts
+defaults import com.apple.symbolichotkeys $DOTFILES_DIR/mac_defaults/symbolichotkeys.xml
