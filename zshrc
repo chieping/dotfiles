@@ -51,3 +51,5 @@ fi
 if ! [[ $OSTYPE == *darwin* && $(which ls) =~ ^/bin/ls ]]; then
   alias ls='ls -F --color=auto'
 fi
+
+source $HOME/.zshrc.local

@@ -6,6 +6,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 " Plug 'Shougo/vimshell'
@@ -104,7 +105,7 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'closetag.vim'
 " Plug 'szw/vim-tags'
 " Plug 'soramugi/auto-ctags.vim'
-Plug 'kannokanno/previm'
+" Plug 'kannokanno/previm'
 " Plug 'rizzatti/dash.vim'
 Plug 'tyru/open-browser.vim'
 Plug 'dhruvasagar/vim-table-mode'
