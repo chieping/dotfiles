@@ -55,7 +55,7 @@
 	rhu = reset --hard @{upstream}
 	pushf = push --force-with-lease
 [interactive]
-	diffFilter = $DIFF_HIGHLIGHT
+	diffFilter = diff-highlight
 [push]
 	default = simple
 
