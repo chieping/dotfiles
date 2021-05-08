@@ -19,14 +19,14 @@ install github.com/tmux-plugins/tpm                       ~/.tmux/plugins/tpm
 
 install github.com/sstephenson/rbenv                      ~/.rbenv
 install github.com/sstephenson/ruby-build                 ~/.rbenv/plugins/ruby-build
-install github.com/sstephenson/rbenv-default-gems         ~/.rbenv/plugins/rbenv-default-gems
-install github.com/amatsuda/gem-src                       ~/.rbenv/plugins/gem-src
+# install github.com/sstephenson/rbenv-default-gems         ~/.rbenv/plugins/rbenv-default-gems
+# install github.com/amatsuda/gem-src                       ~/.rbenv/plugins/gem-src
 
 install github.com/nodenv/nodenv                          ~/.nodenv
 install github.com/nodenv/node-build                      ~/.nodenv/plugins/node-build
 
 install github.com/syl20bnr/spacemacs                     ~/.emacs.d
 
-install github.com/JakeBecker/elixir-ls
+# install github.com/JakeBecker/elixir-ls
 
 # install github.com/seebi/dircolors-solarized

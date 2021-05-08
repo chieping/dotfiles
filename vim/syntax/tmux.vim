@@ -1,1 +1,0 @@
-/opt/boxen/homebrew/share/tmux/examples/tmux.vim
