@@ -40,7 +40,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
 Plug 'jszakmeister/vim-togglecursor'
 " Plug 'altercation/vim-colors-solarized'
-Plug 'chriskempson/base16-vim'
+" Plug 'chriskempson/base16-vim'
 " Plug 'tpope/vim-dispatch'
 " Plug 'Lokaltog/vim-easymotion'
 " Plug 'justinmk/vim-sneak'
@@ -155,9 +155,6 @@ set list
 set shell=zsh               "to use zsh in :terminal
 set listchars=tab:›\        "dummy comment to suppress trailing white space
 set comments=:#
-if exists('+colorcolumn')
-  set colorcolumn=80
-endif
 " Get rid of comment leaders when joining lines
 " Tips: to do opposite, *gq* handles very well!
 set formatoptions+=j
@@ -787,32 +784,10 @@ endfunction
 
 syntax enable
 
-" base16
-if filereadable(expand("~/.vimrc_background"))
-  let base16colorspace=256
-  source ~/.vimrc_background
-  colorscheme base16-tomorrow-night
-endif
-
 set background=dark
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
-
-if get(g:, 'colors_name', 'default') == 'base16-tomorrow-night'
-  let g:indent_guides_auto_colors = 0
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1d1f21 ctermbg=0
-  autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#282a2e ctermbg=18
-elseif get(g:, 'colors_name', 'default') == 'solarized'
-  let g:indent_guides_auto_colors = 0
-  if &background == 'light'
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#ffffd7 ctermbg=230
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#e4e4e4 ctermbg=254
-  else
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  guibg=#1c1c1c ctermbg=234
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven guibg=#585858 ctermbg=240
-  endif
-endif
 
 " highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=22
 " highlight DiffDelete cterm=bold ctermfg=10 ctermbg=52
