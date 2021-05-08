@@ -19,14 +19,18 @@ end
 
 function set_paths
   echo '> Setting paths'
-  fish_add_path -v $HOMEBREW_PREFIX/bin
-  fish_add_path -v /usr/local/bin
-  fish_add_path -v $HOME/bin
+
+  fish_add_path -mv $HOMEBREW_PREFIX/bin
+  fish_add_path -mv /usr/local/bin
+  fish_add_path -mv $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
+  fish_add_path -mv $HOME/bin
+  fish_add_path -mv $HOME/opt/anaconda3/bin
 end
 
 function set_abbrs
   echo '> Setting abbreviations'
   abbr --add e 'cd (ghq list -p | peco)'
+  abbr --add ls 'ls --color=auto'
 end
 
 function set_greet

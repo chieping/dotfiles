@@ -33,13 +33,6 @@ hammerspoon() {
   ln -sf $DOTFILES_DIR/hammerspoon/init.lua ~/.hammerspoon/init.lua
 }
 
-zsh() {
-  ln -sf $DOTFILES_DIR/zshrc ~/.zshrc
-  ln -sf $DOTFILES_DIR/zshenv ~/.zshenv
-  ln -sf $DOTFILES_DIR/zprofile ~/.zprofile
-  ln -sfn $DOTFILES_DIR/zsh ~/.zsh
-}
-
 rest() {
   mkdir -p ~/bin
   ln -sf $DOTFILES_DIR/bashrc ~/.bashrc
@@ -69,8 +62,6 @@ rest() {
   ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
 
   ln -sfn $DOTFILES_DIR/peco ~/.peco
-
-  touch ~/.zshrc.local
 }
 
 main() {
@@ -93,7 +84,6 @@ main() {
     emacs
     tmux
     rest
-    zsh
     if [[ $OSTYPE =~ darwin.* ]]; then
       karabiner
       hammerspoon

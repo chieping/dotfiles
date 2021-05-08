@@ -151,8 +151,6 @@ set backspace=2             "Make backspace work like most other apps
 set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
-" set shell=bash              "Workaround for zsh's awkward $PATH"
-set shell=zsh               "to use zsh in :terminal
 set listchars=tab:›\        "dummy comment to suppress trailing white space
 set comments=:#
 " Get rid of comment leaders when joining lines

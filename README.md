@@ -27,12 +27,6 @@ Build dependency packages
 
 https://github.com/sstephenson/ruby-build/wiki
 
-## [Tip] Measure Zsh Startup Time
-
-```
-time ( zsh -i -c exit )
-```
-
 # Further Settings
 
 ## Google Chrome
