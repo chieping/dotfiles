@@ -42,6 +42,7 @@ end
 function install_plugins
   echo '> Install fisher plugins'
   fisher list jethrokuan/z || fisher install jethrokuan/z
+  fisher list cafedomancer/fish-nodenv || fisher install cafedomancer/fish-nodenv
 end
 
 check_fisher_installed
