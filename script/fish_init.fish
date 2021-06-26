@@ -31,6 +31,9 @@ function set_abbrs
   echo '> Setting abbreviations'
   abbr --add e 'cd (ghq list -p | peco)'
   abbr --add ls 'ls --color=auto'
+  abbr --add ojt 'oj test -c "python3 main.py"'
+  abbr --add accs 'acc s --skip-filename -- --guess-python-interpreter pypy'
+  abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
 end
 
 function set_greet
