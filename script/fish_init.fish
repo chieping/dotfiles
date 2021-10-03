@@ -40,6 +40,7 @@ function set_greet
   echo '> Setting greeting message'
   set --local fish_trace 1
   set -U fish_greeting
+  set -U fish_prompt_pwd_dir_length 10
 end
 
 function install_plugins
