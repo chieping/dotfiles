@@ -32,7 +32,6 @@ function set_abbrs
   abbr --add e 'cd (ghq list -p | peco)'
   abbr --add ls 'ls --color=auto'
   abbr --add ojt 'oj test -c "python3 main.py"'
-  abbr --add accs 'acc s --skip-filename -- -y --guess-python-interpreter pypy'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
 end
 

@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+interpreter=${1:-pypy}
+
+# This is a wrapper script for atcoder-cli's submit command.
+# Checks import statement which you can't use in AtCoder Python environment
+
+if [[ ! $interpreter =~ (pypy|cpython) ]]; then
+  echo 'interpreter must be pypy or cpython'
+  exit 1
+fi
+
+if ggrep -P '^(?!#).*import (UnionFind|Sorted(List|Set|Map))' main.py; then
+  echo 'check import statement'
+  exit 1
+fi
+
+acc s --skip-filename -- -y --guess-python-interpreter "$interpreter"
