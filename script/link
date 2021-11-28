@@ -14,10 +14,6 @@ vim() {
   ln -sfn $DOTFILES_DIR/vim/UltiSnips ~/.vim/UltiSnips
 }
 
-emacs() {
-  ln -sf $DOTFILES_DIR/spacemacs ~/.spacemacs
-}
-
 tmux() {
   ln -sf $DOTFILES_DIR/tmux.conf ~/.tmux.conf
 }
@@ -75,7 +71,6 @@ main() {
 
   if [ $1 = all ]; then
     vim
-    emacs
     tmux
     rest
     if [[ $OSTYPE =~ darwin.* ]]; then
