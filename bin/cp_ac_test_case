@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -eu
+
+paths="$@"
+dist_dir="test"
+
+if [[ $paths == "" ]]; then
+  echo "AtCoderのテストケース ( https://atcoder.jp/posts/20 ) のファイルをoj用にコピーします。"
+  echo ""
+  echo "SYNOPSIS"
+  echo "    $0 [file ...]"
+  exit
+fi
+
+for path in $paths; do
+  filename="${path#*/}"
+  cp in/$filename $dist_dir/${filename}.in
+  cp out/$filename $dist_dir/${filename}.out
+done
