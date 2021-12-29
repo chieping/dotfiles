@@ -10,7 +10,8 @@ if ggrep -P '^(?!#).*import (UnionFind|Sorted(List|Set|Map))' $filename; then
   exit 1
 fi
 
-if ggrep sys.setrecursionlimit $filename; then
+if ggrep -e sys.setrecursionlimit -e 'import numpy' -q $filename
+then
   interpreter=cpython
 else
   interpreter=pypy
