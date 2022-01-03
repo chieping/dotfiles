@@ -31,8 +31,10 @@ function set_abbrs
   echo '> Setting abbreviations'
   abbr --add e 'cd (ghq list -p | peco)'
   abbr --add ls 'ls --color=auto'
-  abbr --add ojt 'oj test -c "python3 main.py"'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
+  for i in (seq 1 9)
+    abbr --add ojt$i oj test -c \"python3 main$i.py\"
+  end
 end
 
 function set_greet
