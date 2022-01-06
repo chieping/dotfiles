@@ -32,7 +32,7 @@ function set_abbrs
   abbr --add e 'cd (ghq list -p | peco)'
   abbr --add ls 'ls --color=auto'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
-  for i in (seq 1 9)
+  for i in "" 1 2 3 4 5
     abbr --add ojt$i oj test -c \"python3 main$i.py\"
   end
 end
