@@ -21,6 +21,7 @@ function set_paths
   echo '> Setting paths'
 
   fish_add_path -mv $HOMEBREW_PREFIX/bin
+  fish_add_path -mv $HOMEBREW_PREFIX/sbin
   fish_add_path -mv /usr/local/bin
   fish_add_path -mv $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
   fish_add_path -mv $HOME/bin
