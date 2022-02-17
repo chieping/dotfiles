@@ -58,29 +58,12 @@
 	diffFilter = diff-highlight
 [push]
 	default = simple
-
 [credential]
 	helper = my-os-compatible-keychain
-
 [hub]
 	protocol = https
 [ghq]
 	root = ~/src
-
-[diff]
-	tool = p4merge
-	algorithm = histogram
-	compactionHeuristic = true
-[difftool]
-	prompt = false
-[difftool "p4merge"]
-	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
-[merge]
-	tool = p4merge
-[mergetool "p4merge"]
-	path = /Applications/p4merge.app/Contents/Resources/launchp4merge
-	trustExitCode = false
-
 [color "diff"]
 	meta = black cyan
 [rebase]
