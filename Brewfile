@@ -3,6 +3,7 @@ cask_args appdir: "/Applications"
 tap "caskroom/cask"
 tap "homebrew/cask-fonts"
 
+brew "asdf"
 brew "ghq"
 brew "git"
 brew "gnu-sed", args: ["with-default-names"]

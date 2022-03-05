@@ -25,7 +25,6 @@ function set_paths
   fish_add_path -mv /usr/local/bin
   fish_add_path -mv $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
   fish_add_path -mv $HOME/bin
-  fish_add_path -mv $HOME/opt/anaconda3/bin
 end
 
 function set_abbrs
