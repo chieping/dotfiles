@@ -50,6 +50,22 @@ function install_plugins
   echo '> Install fisher plugins'
   fisher list jethrokuan/z || fisher install jethrokuan/z
   fisher list cafedomancer/fish-nodenv || fisher install cafedomancer/fish-nodenv
+  fisher list IlanCosman/tide@v5 || fisher install IlanCosman/tide@v5
+end
+
+function tide_custom
+  echo '> Customize tide'
+
+  function _tide_item_python
+    # print item       with this name  and this icon          with this text
+    _tide_print_item   python          $tide_python_icon' '   (grep ^python ~/.tool-versions | cut -d\  -f2)
+  end
+  funcsave _tide_item_python # Save it to ~/.config/fish/functions
+
+  set -U tide_python_icon ''
+  set -U tide_python_color black
+  set -U tide_python_bg_color yellow
+  set -U tide_left_prompt_items pwd python git newline character
 end
 
 check_fisher_installed
@@ -58,5 +74,6 @@ set_paths
 set_abbrs
 set_greet
 install_plugins
+tide_custom
 
 echo '> Run "fish_config" to choice color (Tomorrow Night) and prompt (Informative Vcs). '
