@@ -7,17 +7,17 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/unite.vim'
+" Plug 'Shougo/unite.vim'
 Plug 'Shougo/neomru.vim'
 " Plug 'Shougo/vimshell'
 Plug 'Shougo/vimproc.vim', {'do': 'make'}
 Plug 'thinca/vim-quickrun'
-if has('python3')
-  Plug 'SirVer/ultisnips'
-endif
-Plug 'honza/vim-snippets'
-Plug 'Shougo/unite-outline'
-Plug 'tsukkee/unite-help'
+" if has('python3')
+"   Plug 'SirVer/ultisnips'
+" endif
+" Plug 'honza/vim-snippets'
+" Plug 'Shougo/unite-outline'
+" Plug 'tsukkee/unite-help'
 " Plug 'sorah/unite-ghq'
 " Plug 'rhysd/accelerated-jk'
 " Plug 'rking/ag.vim'
@@ -63,10 +63,10 @@ Plug 'jiangmiao/auto-pairs'
 " Plug 'tpope/vim-classpath'
 " Plug 'kovisoft/slimv'
 " Plug 'udalov/kotlin-vim'
-Plug 'othree/yajs.vim'
+" Plug 'othree/yajs.vim'
 Plug 'elzr/vim-json'
-Plug 'justmao945/vim-clang'
-Plug 'vim-ruby/vim-ruby'
+" Plug 'justmao945/vim-clang'
+" Plug 'vim-ruby/vim-ruby'
 Plug 'jgdavey/vim-blockle'
 " Plug 'rodjek/vim-puppet'
 " Plug 'mv/mv-vim-puppet'
@@ -101,7 +101,7 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'chrisbra/vim-diff-enhanced'
 Plug 'terryma/vim-expand-region'
 " Plug 'mhinz/vim-signify'
-Plug 'airblade/vim-gitgutter'
+" Plug 'airblade/vim-gitgutter'
 " Plug 'closetag.vim'
 " Plug 'szw/vim-tags'
 " Plug 'soramugi/auto-ctags.vim'
@@ -331,15 +331,6 @@ augroup RubyRspec
   autocmd BufNewFile,BufRead *_spec.rb set filetype=ruby.rspec
 augroup END
 
-" ultisnips
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=['UltiSnips', '~/.vim/UltiSnips']
-let g:snips_github="https://github.com/chieping"
-let g:snips_author="chieping"
-let g:snips_email="takashi.honda.01@gmail.com"
-let g:UltiSnipsJumpForwardTrigger="<Tab>"
-let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
-
 " vim-localvimrc
 let g:localvimrc_ask=0
 let g:localvimrc_sandbox=0
@@ -409,10 +400,6 @@ let g:NERDTreeMapToggleFilters = ''     " f
 let g:NERDTreeMapToggleFiles = ''       " F
 let g:NERDTreeMapCWD = ''               " CD
 
-" this makes possible to use unite in nerdtree window
-autocmd FileType nerdtree nnoremap <buffer> <silent> mg  :wincmd w<CR>:<C-u>Unite
-        \ grep:. -buffer-name=search-buffer<CR>
-
 " vim-fugitive
 nnoremap gst :<C-u>Gstatus<CR>
 nnoremap gb  :<C-u>Gblame<CR>
@@ -451,16 +438,6 @@ vmap <Leader>a: :Tabularize /^[^:]*\w:\zs/l0l1<CR>
 nmap <Leader>as :Tabularize /:\w\+,\?<CR>
 vmap <Leader>as :Tabularize /:\w\+,\?<CR>
 
-" unite.vim
-" The prefix key.
-nnoremap    [unite]   <Nop>
-nmap    m [unite]
-
-let g:unite_source_menu_menus = {}
-let g:unite_source_menu_menus.my = {
-        \   'description': 'my menu',
-        \ }
-
 function! ToggleIwhite()
   if (&diffopt =~ 'iwhite')
     set diffopt-=iwhite
@@ -468,172 +445,6 @@ function! ToggleIwhite()
     set diffopt+=iwhite
   endif
 endfunction
-
-let g:unite_source_menu_menus.my.command_candidates = {
-        \   'remove extra whitespaces': '%s/\s\+$//g',
-        \   'remove empty lines': '%g/^\s*$/d',
-        \   'force write': 'w !sudo tee %',
-        \   'toggle ignore whitespace in diff': 'call ToggleIwhite()',
-        \   'make this file excutable': '!chmod +x %:p',
-        \ }
-
-let g:unite_source_alias_aliases = {
-        \   'messages' : {
-        \     'source': 'output',
-        \     'args': 'message',
-        \   },
-        \ }
-call unite#custom#source('messages', 'sorters', 'sorter_reverse')
-
-nnoremap <silent> [unite]p  :<C-u>Unite file_rec/async<CR>
-nnoremap <silent> [unite]P  :<C-u>new<CR>:<C-u>Unite file_rec/async<CR>
-nnoremap <silent> [unite]b  :<C-u>UniteWithBufferDir
-        \ -buffer-name=files -prompt=%\  buffer file_mru bookmark file<CR>
-nnoremap <silent> [unite]r  :<C-u>Unite
-        \ -buffer-name=register register<CR>
-" outline
-nnoremap <silent> [unite]o  :<C-u>Unite
-        \ -vertical -winwidth=61 -direction=botright -no-focus -toggle -no-quit -no-start-insert outline<CR>
-" grep
-nnoremap <silent> [unite]g  :<C-u>Unite
-        \ grep:. -buffer-name=search-buffer<CR>
-" file_mru
-nnoremap <silent> [unite]u  :<C-u>Unite
-        \ file_mru<CR>
-" diff
-nnoremap <silent> [unite]d  :<C-u>Unite
-        \ file_rec/async -default-action=diff<CR>
-" unite-help
-nnoremap <silent> [unite]h  :<C-u>Unite
-        \ help -default-action=tabopen<CR>
-" set
-nnoremap <silent> [unite]c  :<C-u>Unite
-        \ output:set\ all<CR>
-" variables:all
-nnoremap <silent> [unite]va  :<C-u>Unite
-        \ output:let<CR>
-nnoremap <silent> [unite]vg  :<C-u>Unite
-        \ output:let\ g\:<CR>
-nnoremap <silent> [unite]vb  :<C-u>Unite
-        \ output:let\ b\:<CR>
-nnoremap <silent> [unite]vw  :<C-u>Unite
-        \ output:let\ w\:<CR>
-nnoremap <silent> [unite]vt  :<C-u>Unite
-        \ output:let\ t\:<CR>
-nnoremap <silent> [unite]vs  :<C-u>Unite
-        \ output:let\ s\:<CR>
-nnoremap <silent> [unite]vl  :<C-u>Unite
-        \ output:let\ l\:<CR>
-nnoremap <silent> [unite]vv  :<C-u>Unite
-        \ output:let\ v\:<CR>
-nnoremap <silent> [unite]ma :<C-u>Unite
-        \ mapping<CR>
-nnoremap <silent> [unite]me :<C-u>Unite
-        \ messages<CR>
-" snippets
-nnoremap <silent> [unite]s :<C-u>Unite
-        \ ultisnips<CR>
-
-nnoremap <silent> [unite]my :<C-u>Unite menu:my<CR>
-
-" See FAQ - Unite does not respect 'splitright' option
-call unite#custom#profile('default', 'context', {
-        \   'prompt_direction': 'top'
-        \ })
-
-" Start insert.
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-
-" To track long mru history.
-let g:neomru#file_mru_limit = 3000
-let g:neomru#directory_mru_limit = 3000
-
-" Like ctrlp.vim settings.
-let g:unite_enable_start_insert = 1
-let g:unite_winheight = 10
-let g:unite_split_rule = 'botright'
-
-" Prompt choices.
-let g:unite_prompt = '>>> '
-
-autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
-  " Overwrite settings.
-
-  nmap <buffer> <ESC>      <Plug>(unite_exit)
-  imap <buffer> jj      <Plug>(unite_insert_leave)
-  imap <buffer> kk      <Plug>(unite_insert_leave)
-  "imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
-
-  imap <buffer><expr> j unite#smart_map('j', '')
-  imap <buffer> <TAB>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-w>     <Plug>(unite_delete_backward_path)
-  imap <buffer> '     <Plug>(unite_quick_match_default_action)
-  nmap <buffer> '     <Plug>(unite_quick_match_default_action)
-  imap <buffer><expr> x
-          \ unite#smart_map('x', "\<Plug>(unite_quick_match_choose_action)")
-  nmap <buffer> x     <Plug>(unite_quick_match_choose_action)
-  nmap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
-  imap <buffer> <C-z>     <Plug>(unite_toggle_transpose_window)
-  imap <buffer> <C-y>     <Plug>(unite_narrowing_path)
-  nmap <buffer> <C-y>     <Plug>(unite_narrowing_path)
-  nmap <buffer> <C-p>     <Plug>(unite_toggle_auto_preview)
-  nmap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
-  imap <buffer> <C-r>     <Plug>(unite_narrowing_input_history)
-  nnoremap <silent><buffer><expr> l
-          \ unite#smart_map('l', unite#do_action('default'))
-
-  let unite = unite#get_current_unite()
-  if unite.profile_name ==# 'search'
-    nnoremap <silent><buffer><expr> r     unite#do_action('replace')
-  else
-    nnoremap <silent><buffer><expr> r     unite#do_action('rename')
-  endif
-
-  nnoremap <silent><buffer><expr> cd     unite#do_action('lcd')
-  nnoremap <silent><buffer><expr> o      unite#do_action('persist_open')
-  nnoremap <buffer><expr> S      unite#mappings#set_current_filters(
-          \ empty(unite#mappings#get_current_filters()) ?
-          \ ['sorter_reverse'] : [])
-
-  " Runs 'split' action by <C-s>.
-  imap <silent><buffer><expr> <C-s>     unite#do_action('split')
-
-  nmap <buffer> <C-h> <C-w>h
-  nmap <buffer> <C-l> <C-w>l
-  nmap <buffer> <C-k> <C-w>k
-  nmap <buffer> <C-j> <C-w>j
-endfunction"}}}
-
-let g:unite_source_file_mru_limit = 200
-let g:unite_cursor_line_highlight = 'TabLineSel'
-let g:unite_abbr_highlight = 'TabLine'
-
-" For optimize.
-let g:unite_source_file_mru_filename_format = ''
-
-if executable('ag')
-  let g:unite_source_grep_command = 'ag'
-  let g:unite_source_grep_default_opts = '--column --smart-case --nogroup --nocolor --column'
-  let g:unite_source_grep_recursive_opt = ''
-  let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
-endif
-
-" Open by NerdTree
-let nerdtree = { 'is_selectable' : 1 }
-function! nerdtree.func(candidate)
-  execute "lcd" a:candidate[0].word
-  execute "NERDTree" a:candidate[0].word
-endfunction
-call unite#custom#action('directory', 'nerdtree', nerdtree)
-
-let g:unite_source_history_yank_enable = 1
-let g:unite_source_history_yank_limit = 100
-
-" Emphasize cursorline on unite buffer
-autocmd BufEnter,BufWinEnter \[unite\]* highlight! link CursorLine PmenuSel
-autocmd BufLeave \[unite\]* highlight! link CursorLine NONE
 
 " vim-surround
 " erb
@@ -748,7 +559,6 @@ endfunction
 function! MyFilename()
   return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
         \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'unite' ? unite#get_status_string() :
         \  &ft == 'vimshell' ? vimshell#get_status_string() :
         \ '' != expand('%') ? expand('%') : '[No Name]') .
         \ ('' != MyModified() ? ' ' . MyModified() : '')

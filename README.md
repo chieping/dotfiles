@@ -27,6 +27,12 @@ Build dependency packages
 
 https://github.com/sstephenson/ruby-build/wiki
 
+## Turn off acceleration on a Mac mouse
+
+```bash
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
+```
+
 # Further Settings
 
 ## Google Chrome
