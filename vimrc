@@ -6,6 +6,22 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-surround'
+Plug 'tomtom/tcomment_vim'
+Plug 'jszakmeister/vim-togglecursor'
+Plug 'tpope/vim-endwise'
+Plug 'vim-scripts/matchit.zip'
+Plug 'kana/vim-smartword'
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-line'
+Plug 'kana/vim-textobj-entire'
+Plug 'thinca/vim-textobj-between'
+Plug 'lucapette/vim-textobj-underscore'
+Plug 'kana/vim-operator-user'
+Plug 'kana/vim-operator-replace'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/neomru.vim'
@@ -21,7 +37,6 @@ call plug#begin('~/.vim/plugged')
 " Plug 'sorah/unite-ghq'
 " Plug 'rhysd/accelerated-jk'
 " Plug 'rking/ag.vim'
-Plug 'itchyny/lightline.vim'
 " Plug 'scrooloose/nerdtree'
 " Plug 'Xuyuanp/nerdtree-git-plugin'
 " Plug 'scrooloose/syntastic'
@@ -36,9 +51,6 @@ Plug 'itchyny/lightline.vim'
 " Plug 'godlygeek/tabular'
 " Plug 'vim-scripts/taglist.vim'
 " Plug 'majutsushi/tagbar'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tomtom/tcomment_vim'
-" Plug 'jszakmeister/vim-togglecursor'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'chriskempson/base16-vim'
 " Plug 'tpope/vim-dispatch'
@@ -46,9 +58,7 @@ Plug 'tomtom/tcomment_vim'
 " Plug 'justinmk/vim-sneak'
 " Plug 'haya14busa/incsearch.vim'
 " Plug 'vim-scripts/star-search'
-Plug 'tpope/vim-endwise'
 " Plug 'tpope/vim-rsi'
-Plug 'vim-scripts/matchit.zip'
 " Plug 'jiangmiao/auto-pairs'
 " Plug 'elixir-lang/vim-elixir'
 " if filereadable(".nrepl-port")
@@ -76,30 +86,17 @@ Plug 'vim-scripts/matchit.zip'
 " Plug 'tsaleh/vim-matchit'
 " Plug 'ecomba/vim-ruby-refactoring'
 " Plug 'taku-o/vim-toggle'
-Plug 'kana/vim-smartword'
-Plug 'kana/vim-submode'
-
-" vim-textobj-user list
-" https://github.com/kana/vim-textobj-user/wiki
-Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-line'
-Plug 'kana/vim-textobj-entire'
-Plug 'lucapette/vim-textobj-underscore'
-Plug 'kana/vim-operator-user'
-Plug 'kana/vim-operator-replace'
 " Plug 'tommcdo/vim-exchange'
-Plug 'thinca/vim-textobj-between'
 " Plug 'rhysd/vim-textobj-word-column'
 " http://vimcasts.org/episodes/supercharged-substitution-with-subvert/
+" Plug 'kana/vim-submode'
 " Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-surround'
 " Plug 'tpope/vim-repeat'
 " Plug 'wesleyche/SrcExpl'
 " Plug 'wesleyche/Trinity'
 " Plug 'tpope/vim-fugitive'
 " Plug 'tpope/vim-unimpaired'
 " Plug 'chrisbra/vim-diff-enhanced'
-Plug 'terryma/vim-expand-region'
 " Plug 'mhinz/vim-signify'
 " Plug 'airblade/vim-gitgutter'
 " Plug 'closetag.vim'
@@ -107,7 +104,6 @@ Plug 'terryma/vim-expand-region'
 " Plug 'soramugi/auto-ctags.vim'
 " Plug 'kannokanno/previm'
 " Plug 'rizzatti/dash.vim'
-Plug 'tyru/open-browser.vim'
 " Plug 'dhruvasagar/vim-table-mode'
 " Plug 'glidenote/memolist.vim'
 " Plug 'lambdalisue/vim-gista'
@@ -119,7 +115,6 @@ filetype plugin indent on
 
 set nocompatible
 set hlsearch
-set laststatus=2            " This helps lightline.vim visible
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -264,83 +259,34 @@ endfunc
 
 nnoremap <Leader>n :call NumberToggle()<cr>
 
-" vim-smartword
-map w  <Plug>(smartword-w)
-map b  <Plug>(smartword-b)
-map e  <Plug>(smartword-e)
-map ge <Plug>(smartword-ge)
+if has_key(plugs, 'lightline.vim')
+  set laststatus=2            " This helps lightline.vim visible
+  set noshowmode
+  let g:lightline = {
+          \ 'colorscheme': 'Tomorrow_Night',
+          \ }
+endif
 
-" vim-operator-replace
-map r <Plug>(operator-replace)
+if has_key(plugs, 'vim-smartword')
+  map w  <Plug>(smartword-w)
+  map b  <Plug>(smartword-b)
+  map e  <Plug>(smartword-e)
+  map ge <Plug>(smartword-ge)
+endif
 
-" vim-multiple-cursors
-let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
+if has_key(plugs, 'vim-operator-replace')
+  map r <Plug>(operator-replace)
+endif
 
-" open-browser.vim
-let g:netrw_nogx = 1 " disable netrw's gx mapping.
-nmap gx <Plug>(openbrowser-smart-search)
-vmap gx <Plug>(openbrowser-smart-search)
+if has_key(plugs, 'vim-multiple-cursors')
+  let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
+endif
 
-" lightline.vim
-let g:lightline = {
-        \ 'colorscheme': 'Tomorrow_Night',
-        \ 'mode_map': {'c': 'NORMAL'},
-        \ 'active': {
-        \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
-        \ },
-        \ 'component_function': {
-        \   'modified': 'MyModified',
-        \   'readonly': 'MyReadonly',
-        \   'fugitive': 'MyFugitive',
-        \   'filename': 'MyFilename',
-        \   'fileformat': 'MyFileformat',
-        \   'filetype': 'MyFiletype',
-        \   'fileencoding': 'MyFileencoding',
-        \   'mode': 'MyMode'
-        \ }
-        \ }
-
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-
-function! MyReadonly()
-  return &ft !~? 'help\|vimfiler\|gundo' && &readonly ? '[RO]' : ''
-endfunction
-
-function! MyFilename()
-  return ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
-        \ (&ft == 'vimfiler' ? vimfiler#get_status_string() :
-        \  &ft == 'vimshell' ? vimshell#get_status_string() :
-        \ '' != expand('%') ? expand('%') : '[No Name]') .
-        \ ('' != MyModified() ? ' ' . MyModified() : '')
-endfunction
-
-function! MyFugitive()
-  try
-    if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head')
-      return fugitive#head()
-    endif
-  catch
-  endtry
-  return ''
-endfunction
-
-function! MyFileformat()
-  return winwidth(0) > 70 ? &fileformat : ''
-endfunction
-
-function! MyFiletype()
-  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
-endfunction
-
-function! MyFileencoding()
-  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
-endfunction
-
-function! MyMode()
-  return winwidth(0) > 60 ? lightline#mode() : ''
-endfunction
+if has_key(plugs, 'open-browser.vim')
+  let g:netrw_nogx = 1 " disable netrw's gx mapping.
+  nmap gx <Plug>(openbrowser-smart-search)
+  vmap gx <Plug>(openbrowser-smart-search)
+endif
 
 syntax enable
 
