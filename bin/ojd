@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -eu
+trap "echo 'example: ojd https://codeforces.com/contest/1674/problem {A,B,C,D,E,F}'" DEBUG
+
+base_url=$1
+echo $base_url
+
+shift
+
+for dir in $*; do
+  (
+    mkdir -p $dir
+    cd $dir
+    oj d "${base_url%/}/$dir"
+  )
+done
