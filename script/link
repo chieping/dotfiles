@@ -45,9 +45,6 @@ rest() {
   ln -sf $DOTFILES_DIR/gemrc ~/.gemrc
   ln -sf $DOTFILES_DIR/agignore ~/.agignore
 
-  mkdir -p ~/.lein
-  ln -sf $DOTFILES_DIR/profiles.clj ~/.lein/profiles.clj
-
   mkdir -p ~/.git_templates/hooks
   ls $DOTFILES_DIR/git_templates/hooks | xargs -I% ln -sf $DOTFILES_DIR/git_templates/hooks/% ~/.git_templates/hooks/%
 
