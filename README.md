@@ -7,8 +7,6 @@
 
 # Setup
 
-TODO: one-liner install script
-
 TODO: Use stow or make or something instead of scripts using ln command
 
 ## Base16
@@ -34,13 +32,6 @@ defaults write .GlobalPreferences com.apple.mouse.scaling -1
 ```
 
 # Further Settings
-
-## Google Chrome
-
-### (Windows) Chrome52以降でMacTypeを有効にする
-
-- [【配布】MacTypeでDirectWriteの設定を変えるパッチ - しらいとブログ](http://silight.hatenablog.jp/entry/MacTypePatch)
-- [Chrome で MacType を効かせる MacTypePatch がすごい　のこと](http://uwagakisimasuka.blog.fc2.com/blog-entry-4781.html)
 
 ## MacのJIS配列キーボードをUS配列に
 
@@ -91,10 +82,6 @@ Import `google-ime-mosc-keymap/keymap.txt`
 sudo apt-get install clipit
 ```
 
-### Use 1password (via Wine)
-
-[Ubuntuで1Passwordを使ってみる - Ry0 Note](http://ry0.github.io/blog/2015/04/12/ubuntu-1password/)
-
 ### Disable HUD Search Menu
 
 http://askubuntu.com/a/133777
@@ -102,10 +89,6 @@ http://askubuntu.com/a/133777
 System Settings --> Keyboard --> Short-cuts
 
 Select "Key to show the HUD" and press Backspace to disable
-
-### Install Golang up-to-date version
-
-https://github.com/golang/go/wiki/Ubuntu
 
 ### Installing fonts
 
