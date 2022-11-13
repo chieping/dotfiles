@@ -6,11 +6,13 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
+
 Plug 'itchyny/lightline.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
+Plug 'tyru/open-browser.vim'
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'tpope/vim-endwise'
 Plug 'vim-scripts/matchit.zip'
