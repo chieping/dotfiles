@@ -12,7 +12,12 @@ fi
 
 if ggrep -e sys.setrecursionlimit -e 'import numpy' -e 'cpython' -e ':=' -e '@lru_cache' -q $filename
 then
-  interpreter=cpython
+  if ggrep -q pypyjit $filename
+  then
+    interpreter=pypy
+  else
+    interpreter=cpython
+  fi
 else
   interpreter=pypy
 fi

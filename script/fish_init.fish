@@ -36,7 +36,8 @@ function set_abbrs
   for i in "" 1 2 3 4 5
     abbr --add ojt$i oj test -c \"python main$i.py\"
   end
-  abbr --add acp asdf global python 3.10.2
+  abbr --add acp asdf global python 3.11.0
+  abbr --add acy asdf global python 3.11.0
   abbr --add apy asdf global python pypy3.8-7.3.7
 end
 
