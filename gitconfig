@@ -46,12 +46,11 @@
 	oops = commit --amend --reset-author
 	squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
 	fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
-	delete-merged-branches = !git branch --merged | egrep -v '\\*|master|develop' | xargs git branch -d
+	delete-merged-branches = !git branch --merged | egrep -v '\\*|main|master|develop' | xargs git branch -d
 	up = !git remote update -p && git merge --ff-only @{u}
 	# find-merge-commit prints merge commit hash from a specific commit or branch
 	find-merge-commit = !bash -c 'git rev-list $1..${2:-master} --ancestry-path | grep -f <(git rev-list $1..${2:-master} --first-parent) | tail -1' -
 	show-merge-commit = !bash -c 'git find-merge-commit "$1" "$2" | xargs git show' -
-	credential-my-os-compatible-keychain = !my-git-credential-helper
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
 	pushf = push --force-with-lease
