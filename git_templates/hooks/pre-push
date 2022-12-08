@@ -5,10 +5,17 @@ if git config hooks.pre-push.disabled >/dev/null; then
   exit 0
 fi
 
-while read local_ref local_sha1 remote_ref remote_sha1
+prohibited_branches="(master|develop|main)"
+while read local_ref local_sha remote_ref remote_sha
 do
-  if [[ "${remote_ref##refs/heads/}" =~ "master|main" ]]; then
-    echo "Do not push the branch!"
+  if [[ "$remote_ref" =~ ^.*/$prohibited_branches$ ]]; then
+    cat <<-EOS
+--------------------------------------------------
+
+DO NOT PUSH TO $remote_ref DIRECTLY!
+
+--------------------------------------------------
+EOS
     exit 1
   fi
 done
