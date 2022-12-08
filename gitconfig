@@ -8,6 +8,7 @@
 	pager = diff-highlight | less -i
 	quotepath = false
 	precomposeunicode = true
+	editor = vim
 [pager]
 	log  = diff-highlight | less -i
 	show = diff-highlight | less -i
