@@ -115,6 +115,7 @@ call plug#end()
 
 filetype plugin indent on
 
+set encoding=utf-8
 set nocompatible
 set hlsearch
 set expandtab
@@ -143,8 +144,9 @@ set backspace=2             "Make backspace work like most other apps
 set whichwrap=h,l,<,>,[,]   "Keys which can stride over
 set helplang=en
 set list
-set listchars=tab:›\        "dummy comment to suppress trailing white space
+set listchars=tab:›\ ,trail:･
 set comments=:#
+
 " Get rid of comment leaders when joining lines
 " Tips: to do opposite, *gq* handles very well!
 set formatoptions+=j
