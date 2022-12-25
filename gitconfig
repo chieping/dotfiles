@@ -53,7 +53,7 @@
 	show-merge-commit = !bash -c 'git find-merge-commit "$1" "$2" | xargs git show' -
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
-	pushf = push --force-with-lease
+	pushf = push --force-with-lease --force-if-includes
 [interactive]
 	diffFilter = diff-highlight
 [push]
