@@ -58,8 +58,6 @@
 	diffFilter = diff-highlight
 [push]
 	default = simple
-[credential]
-	helper = my-os-compatible-keychain
 [hub]
 	protocol = https
 [ghq]
