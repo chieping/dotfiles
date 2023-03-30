@@ -53,6 +53,7 @@ function install_plugins
   fisher list jethrokuan/z || fisher install jethrokuan/z
   fisher list cafedomancer/fish-nodenv || fisher install cafedomancer/fish-nodenv
   fisher list IlanCosman/tide@v5 || fisher install IlanCosman/tide@v5
+  fisher list jomik/fish-gruvbox || fisher install jomik/fish-gruvbox
 end
 
 function tide_custom
@@ -66,7 +67,7 @@ function tide_custom
 
   set -U tide_python_icon ''
   set -U tide_python_color black
-  set -U tide_python_bg_color yellow
+  set -U tide_python_bg_color cyan
   set -U tide_left_prompt_items pwd python git newline character
 end
 
