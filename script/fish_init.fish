@@ -1,4 +1,5 @@
 #!/usr/bin/env fish
+# set fish_trace 1
 
 function check_fisher_installed
   echo '> Check if fisher is installed'
@@ -26,19 +27,6 @@ function set_paths
   fish_add_path -mv $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
   fish_add_path -mv $HOME/bin
   fish_add_path -mv $HOME/.cargo/bin
-end
-
-function set_abbrs
-  echo '> Setting abbreviations'
-  abbr --add e 'cd (ghq list -p | peco)'
-  abbr --add ls 'ls --color=auto'
-  abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
-  for i in "" 1 2 3 4 5
-    abbr --add ojt$i oj test -c \"python main$i.py\"
-  end
-  abbr --add acp asdf global python 3.11.0
-  abbr --add acy asdf global python 3.11.0
-  abbr --add apy asdf global python pypy3.8-7.3.7
 end
 
 function set_greet
@@ -74,7 +62,6 @@ end
 check_fisher_installed
 set_variables
 set_paths
-set_abbrs
 set_greet
 install_plugins
 tide_custom

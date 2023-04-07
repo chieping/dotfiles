@@ -18,6 +18,13 @@ tmux() {
   ln -sf $DOTFILES_DIR/tmux.conf ~/.tmux.conf
 }
 
+fish() {
+  ln -sf $DOTFILES_DIR/fish/config.fish ~/.config/fish/my_config.fish
+  if ! grep -q my_config.fish ~/.config/fish/config.fish ; then
+    echo "source ~/.config/fish/my_config.fish" >> ~/.config/fish/config.fish
+  fi
+}
+
 karabiner() {
   mkdir -p ~/.config/karabiner/assets
   find $DOTFILES_DIR/karabiner -type f -name '*.json' \
