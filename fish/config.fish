@@ -17,4 +17,12 @@ function set_abbrs
   abbr --add dotdot --regex '^\.\.+$' --function multicd
 end
 
+function set_paths
+#   fish_add_path -m $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
+  fish_add_path -m $HOME/bin
+  fish_add_path -m $HOME/.cargo/bin
+end
+
 set_abbrs
+set_paths
+theme_gruvbox dark medium

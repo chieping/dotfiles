@@ -18,17 +18,6 @@ function set_variables
   set -Ux HOMEBREW_PREFIX /opt/homebrew
 end
 
-function set_paths
-  echo '> Setting paths'
-
-  fish_add_path -mv $HOMEBREW_PREFIX/bin
-  fish_add_path -mv $HOMEBREW_PREFIX/sbin
-  fish_add_path -mv /usr/local/bin
-  fish_add_path -mv $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
-  fish_add_path -mv $HOME/bin
-  fish_add_path -mv $HOME/.cargo/bin
-end
-
 function set_greet
   echo '> Setting greeting message'
   set --local fish_trace 1
@@ -39,8 +28,7 @@ end
 function install_plugins
   echo '> Install fisher plugins'
   fisher list jethrokuan/z || fisher install jethrokuan/z
-  fisher list cafedomancer/fish-nodenv || fisher install cafedomancer/fish-nodenv
-  fisher list IlanCosman/tide@v5 || fisher install IlanCosman/tide@v5
+  fisher list ilancosman/tide@v5 || fisher install IlanCosman/tide@v5
   fisher list jomik/fish-gruvbox || fisher install jomik/fish-gruvbox
 end
 
@@ -61,7 +49,6 @@ end
 
 check_fisher_installed
 set_variables
-set_paths
 set_greet
 install_plugins
 tide_custom
