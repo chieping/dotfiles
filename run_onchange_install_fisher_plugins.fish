@@ -7,4 +7,4 @@ end
 
 fisher list jethrokuan/z || fisher install jethrokuan/z
 fisher list ilancosman/tide@v5 || fisher install ilancosman/tide@v5
-fisher list jomik/fish-gruvbox || fisher install jomik/fish-gruvbox
+fisher list jorgebucaran/replay.fish || fisher install jorgebucaran/replay.fish
