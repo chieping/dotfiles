@@ -3,7 +3,7 @@ function set_abbrs
   abbr --add ls 'ls --color=auto'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
   for i in "" 1 2 3 4 5
-    abbr --add ojt$i oj test -c \"python main$i.py\"
+    abbr --add ojt$i "oj test -c \"python main$i.py\""
   end
   abbr --add acp asdf global python 3.11.0
   abbr --add acy asdf global python 3.11.0
@@ -18,12 +18,15 @@ function set_abbrs
 end
 
 function custom_prompt
-  set --global tide_pwd_bg_color          7cafc2
-  set --global tide_pwd_color_dirs        181818
-  set --global tide_pwd_color_anchors     282828
-  set --global tide_git_bg_color          a1b56c
-  set --global tide_git_bg_color_unstable dc9656
-  set --global tide_git_bg_color_urgent   ba8baf
+  set --global tide_pwd_color_dirs        7cafc2
+  set --global tide_pwd_color_anchors     7cafc2
+  set --global tide_git_color_branch      a1b56c
+  set --global tide_git_color_conflicted  c5c8c6
+  set --global tide_git_color_dirty       c5c8c6
+  set --global tide_git_color_staged      c5c8c6
+  set --global tide_git_color_stash       c5c8c6
+  set --global tide_git_color_untracked   c5c8c6
+  set --global tide_git_color_upstream    c5c8c6
 end
 
 set_abbrs
