@@ -17,4 +17,14 @@ function set_abbrs
   abbr --add dotdot --regex '^\.\.+$' --function multicd
 end
 
+function custom_prompt
+  set --global tide_pwd_bg_color          7cafc2
+  set --global tide_pwd_color_dirs        181818
+  set --global tide_pwd_color_anchors     282828
+  set --global tide_git_bg_color          a1b56c
+  set --global tide_git_bg_color_unstable dc9656
+  set --global tide_git_bg_color_urgent   ba8baf
+end
+
 set_abbrs
+custom_prompt
