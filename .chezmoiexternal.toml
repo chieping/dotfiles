@@ -1,4 +1,16 @@
 [".tmux/plugins/tpm"]
-	type = "git-repo"
-	url = "https://github.com/tmux-plugins/tpm"
-	refreshPeriod = "168h"
+type = "git-repo"
+url = "https://github.com/tmux-plugins/tpm"
+refreshPeriod = "672h"
+
+[".hammerspoon/Spoons/ShiftIt.spoon"]
+type = "archive"
+url = "https://github.com/peterklijn/hammerspoon-shiftit/raw/master/Spoons/ShiftIt.spoon.zip"
+stripComponents = 1
+refreshPeriod = "672h"
+
+[".hammerspoon/Spoons/Caffeine.spoon"]
+type = "archive"
+url = "https://github.com/Hammerspoon/Spoons/raw/master/Spoons/Caffeine.spoon.zip"
+stripComponents = 1
+refreshPeriod = "672h"

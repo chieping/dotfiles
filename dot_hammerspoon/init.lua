@@ -2,9 +2,6 @@
 hs.loadSpoon("ShiftIt")
 spoon.ShiftIt:bindHotkeys({})
 
--- ToggleScreenRotation
--- hs.loadSpoon("ToggleScreenRotation")
--- spoon.ToggleScreenRotation:bindHotkeys({[".*"] = { {"ctrl", "cmd", "alt"}, "f12" }})
-
--- amphetamine
-amphetamine = require "amphetamine"
+-- Caffeine
+hs.loadSpoon("Caffeine")
+spoon.Caffeine:start()
