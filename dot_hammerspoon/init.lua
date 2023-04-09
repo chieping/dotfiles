@@ -1,4 +1,4 @@
--- ShiftId
+-- ShiftIt
 hs.loadSpoon("ShiftIt")
 spoon.ShiftIt:bindHotkeys({})
 
