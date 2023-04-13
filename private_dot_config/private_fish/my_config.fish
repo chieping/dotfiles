@@ -15,6 +15,14 @@ function set_abbrs
       echo cd (string repeat -n (math (string length -- $argv[1]) - 1) ../)
   end
   abbr --add dotdot --regex '^\.\.+$' --function multicd
+
+  # docker compose
+  abbr --add dco       docker compose
+  abbr --add dcup      docker compose up
+  abbr --add dcupd     docker compose up -d
+  abbr --add dcdn      docker compose down
+  abbr --add dcl       docker compose logs
+  abbr --add dclf      docker compose logs -f
 end
 
 function custom_prompt
