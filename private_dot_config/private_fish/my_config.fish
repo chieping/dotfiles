@@ -28,6 +28,7 @@ end
 function custom_prompt
   set --global tide_pwd_color_dirs        7cafc2
   set --global tide_pwd_color_anchors     7cafc2
+
   set --global tide_git_color_branch      a1b56c
   set --global tide_git_color_conflicted  c5c8c6
   set --global tide_git_color_dirty       c5c8c6
@@ -35,6 +36,17 @@ function custom_prompt
   set --global tide_git_color_stash       c5c8c6
   set --global tide_git_color_untracked   c5c8c6
   set --global tide_git_color_upstream    c5c8c6
+
+  set --global tide_python_icon           ''
+  set --global tide_python_color          c5c8c6
+  set --global tide_python_bg_color       444444
+
+  set --global tide_left_prompt_items pwd python git newline character
+end
+
+function _tide_item_python
+  # print item      with this name  and this icon         with this text
+  _tide_print_item  python          $tide_python_icon' '  (grep ^python ~/.tool-versions | cut -d\  -f2)
 end
 
 set_abbrs
