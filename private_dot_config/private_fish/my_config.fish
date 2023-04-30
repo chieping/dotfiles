@@ -3,7 +3,7 @@ function set_abbrs
   abbr --add ls 'ls --color=auto'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
   for i in "" 1 2 3 4 5
-    abbr --add ojt$i "oj test -c \"python main$i.py\""
+    abbr --add ojt$i "oj test --mle 1024 -c \"python main$i.py\""
   end
   abbr --add acp asdf global python 3.11.0
   abbr --add acy asdf global python 3.11.0

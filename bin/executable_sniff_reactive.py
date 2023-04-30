@@ -7,6 +7,9 @@ import sys
 [CONTESTANT, JUDGE] = range(2)
 COLUMNS = os.get_terminal_size().columns
 
+def usage():
+    print('example usage: sniff_reactive.py python main.py -- python judge.py')
+
 
 def output(left, right, *, preleft='', preright=''):
     wl = COLUMNS // 2 - 4
@@ -86,4 +89,8 @@ async def main():
 
 
 if __name__ == '__main__':
+    if '--' not in sys.argv:
+        usage()
+        exit()
+
     asyncio.run(main())
