@@ -14,3 +14,10 @@ type = "archive"
 url = "https://github.com/Hammerspoon/Spoons/raw/master/Spoons/Caffeine.spoon.zip"
 stripComponents = 1
 refreshPeriod = "672h"
+
+["bin/RotateDisplay"]
+type = "file"
+url = "https://github.com/alin23/mac-utils/raw/main/bin/RotateDisplay"
+executable = true
+refreshPeriod = "672h"
+
