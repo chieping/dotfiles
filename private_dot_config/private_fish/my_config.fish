@@ -3,7 +3,7 @@ function set_abbrs
   abbr --add ls 'ls --color=auto'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
   for i in "" 1 2 3 4 5
-    abbr --add ojt$i "oj test --mle 1024 -e 1e-5 -c \"bash -c 'python <(echo -e '\''import sys\nsys.setrecursionlimit(20)\n'\''; cat main.py)'\""
+    abbr --add ojt$i "oj test --mle 1024 -e 1e-5 -c \"bash -c 'python <(echo -e '\''import sys\nsys.setrecursionlimit(20)\n'\''; cat main$i.py)'\""
   end
 
   abbr --add acp asdf global python 3.11.0
