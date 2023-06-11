@@ -38,7 +38,7 @@ function custom_prompt
   set --global tide_git_color_untracked   c5c8c6
   set --global tide_git_color_upstream    c5c8c6
 
-  set --global tide_python_icon           ''
+  set --global tide_python_icon           \ue606
   set --global tide_python_color          c5c8c6
   set --global tide_python_bg_color       444444
 
