@@ -8,7 +8,7 @@ function set_abbrs
 
   abbr --add acp asdf global python 3.11.0
   abbr --add acy asdf global python 3.11.0
-  abbr --add apy asdf global python pypy3.8-7.3.7
+  abbr --add apy asdf global python pypy3.10-7.3.12
   # git-top-level: ex) rg some_text gtl
   abbr --add gtl --position anywhere '(git rev-parse --show-toplevel)'
 
