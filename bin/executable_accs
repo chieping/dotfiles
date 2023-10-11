@@ -2,6 +2,8 @@
 set -e
 
 filename="${1-main.py}"
+CPYTHON_ID=5055
+PYPY_ID=5078
 
 # This is a wrapper script for atcoder-cli's submit command.
 # Checks import statement which you can't use in AtCoder Python environment
@@ -16,12 +18,12 @@ if ggrep -e sys.setrecursionlimit -e 'import numpy' -e 'cpython' -e ':=' -q $fil
 then
   if ggrep -q pypyjit $filename
   then
-    interpreter=pypy
+    language=$PYPY_ID
   else
-    interpreter=cpython
+    language=$CPYTHON_ID
   fi
 else
-  interpreter=pypy
+  language=$PYPY_ID
 fi
 
-acc s "$filename" -- -y --guess-python-interpreter "$interpreter"
+acc s "$filename" -- -y -l $language --no-guess
