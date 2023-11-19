@@ -8,7 +8,7 @@ PYPY_ID=5078
 # This is a wrapper script for atcoder-cli's submit command.
 # Checks import statement which you can't use in AtCoder Python environment
 
-if ggrep -P -e '^(from|import) (combination|deletable(_max)?_heapq|lca|pt|union_find(_dict)?)\b' $filename
+if ggrep -P -e '^(from|import) my\.' $filename
 then
   echo 'Check the following line'
   exit 1
