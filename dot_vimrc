@@ -222,6 +222,9 @@ nmap <C-h> <C-w>h
 
 inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
+inoremap <C-e> <C-o>$
+inoremap <C-a> <C-o>^
+
 " display candidates by default
 nnoremap <C-]> g<C-]>
 vnoremap <C-]> g<C-]>
