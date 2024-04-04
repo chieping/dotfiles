@@ -14,7 +14,7 @@ then
   exit 1
 fi
 
-if ggrep -e sys.setrecursionlimit -e 'import numpy' -e 'cpython' -e ':=' -q $filename
+if ggrep -e setrecursionlimit -e 'import numpy' -e 'cpython' -q $filename
 then
   if ggrep -q pypyjit $filename
   then

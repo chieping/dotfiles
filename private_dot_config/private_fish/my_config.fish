@@ -6,8 +6,8 @@ function set_abbrs
     abbr --add ojt$i "oj test --mle 1024 -e 1e-5 -c \"python main$i.py\""
   end
 
-  abbr --add acp asdf global python 3.11.0
-  abbr --add acy asdf global python 3.11.0
+  abbr --add acp asdf global python 3.11.4
+  abbr --add acy asdf global python 3.11.4
   abbr --add apy asdf global python pypy3.10-7.3.12
   # git-top-level: ex) rg some_text gtl
   abbr --add gtl --position anywhere '(git rev-parse --show-toplevel)'
