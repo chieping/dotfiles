@@ -8,7 +8,8 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'terryma/vim-multiple-cursors'
+" Plug 'terryma/vim-multiple-cursors'
+" Plug 'mg979/vim-visual-multi'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
 Plug 'tomtom/tcomment_vim'
@@ -285,9 +286,6 @@ if has_key(plugs, 'vim-operator-replace')
   map r <Plug>(operator-replace)
 endif
 
-if has_key(plugs, 'vim-multiple-cursors')
-  let g:multi_cursor_next_key='<C-d>'  " default mapping <C-n> is reserved
-endif
 
 if has_key(plugs, 'open-browser.vim')
   let g:netrw_nogx = 1 " disable netrw's gx mapping.
