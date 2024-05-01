@@ -27,16 +27,16 @@ function set_abbrs
 end
 
 function custom_prompt
-  set --global tide_pwd_color_dirs        7cafc2
-  set --global tide_pwd_color_anchors     7cafc2
+  set --global tide_pwd_color_dirs        c5c8c6
+  set --global tide_pwd_color_anchors     c5c8c6
 
-  set --global tide_git_color_branch      a1b56c
-  set --global tide_git_color_conflicted  c5c8c6
-  set --global tide_git_color_dirty       c5c8c6
-  set --global tide_git_color_staged      c5c8c6
-  set --global tide_git_color_stash       c5c8c6
-  set --global tide_git_color_untracked   c5c8c6
-  set --global tide_git_color_upstream    c5c8c6
+  set --global tide_git_color_branch      000000
+  set --global tide_git_color_conflicted  000000
+  set --global tide_git_color_dirty       000000
+  set --global tide_git_color_staged      000000
+  set --global tide_git_color_stash       000000
+  set --global tide_git_color_untracked   000000
+  set --global tide_git_color_upstream    000000
 
   set --global tide_python_icon           \ue606
   set --global tide_python_color          c5c8c6
