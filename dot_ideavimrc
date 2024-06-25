@@ -1,1 +1,8 @@
+set surround
+set textobj-entire
+
+set clipboard+=unnamed
+
 map gh <Action>(ShowHoverInfo)
+
+set ideajoin
