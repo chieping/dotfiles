@@ -42,7 +42,7 @@ function custom_prompt
   set --global tide_python_color          c5c8c6
   set --global tide_python_bg_color       444444
 
-  set --global tide_left_prompt_items pwd python git newline character
+  set --global tide_left_prompt_items pwd git newline character
 end
 
 function _tide_item_python
@@ -52,3 +52,4 @@ end
 
 set_abbrs
 custom_prompt
+functions -q load_env_vars && load_env_vars
