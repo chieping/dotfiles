@@ -8,3 +8,4 @@ end
 fisher list jethrokuan/z || fisher install jethrokuan/z
 fisher list ilancosman/tide@v5 || fisher install ilancosman/tide@v5
 fisher list jorgebucaran/replay.fish || fisher install jorgebucaran/replay.fish
+fisher list franciscolourenco/done || fisher install franciscolourenco/done
