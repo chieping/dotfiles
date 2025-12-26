@@ -33,7 +33,7 @@ bind generic G move-last-line
 bind generic C none
 bind reflog C none
 bind refs C none
-bind refs C <!git checkout %(branch)
+bind refs C <!git switch %(branch)
 bind refs D none
 bind refs D >?git branch -D %(branch)
 

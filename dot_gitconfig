@@ -28,6 +28,7 @@
 	st = status
 	co = checkout
 	b = browse
+	cp = cherry-pick
 	tree = log --graph --all --pretty='format:%>|(5)%x09%C(cyan)%<|(32)%an %Creset%C(yellow)%h%Creset %C(auto)%d%Creset %s'
 	tre = !git tree
 	tr = !git tree
@@ -52,6 +53,9 @@
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
 	pushf = push --force-with-lease --force-if-includes
+	fmo = !git remote update -p && git merge origin/main
+	fro = !git remote update -p && git rebase origin/main
+
 [interactive]
 	diffFilter = diff-highlight
 [push]
@@ -68,3 +72,8 @@
 	rmdir = true
 [rerere]
 	enabled = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

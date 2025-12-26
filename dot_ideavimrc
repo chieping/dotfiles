@@ -11,4 +11,6 @@ map <C-o> :action Back<CR>
 map <C-i> :action Forward<CR>
 nnoremap 0 ^
 
+inoremap <C-]> <Esc>:action EditorEscape<CR><A-\>
+
 set ideajoin
