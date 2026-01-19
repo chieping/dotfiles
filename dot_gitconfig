@@ -53,8 +53,8 @@
 	dt = !sh -c 'git diff-tree -r --name-only ${1-HEAD}' -
 	rhu = reset --hard @{upstream}
 	pushf = push --force-with-lease --force-if-includes
-	fmo = !git remote update -p && git merge origin/main
-	fro = !git remote update -p && git rebase origin/main
+	fmo = !git remote update -p && git merge origin/main --autostash
+	fro = !git remote update -p && git rebase origin/main --autostash
 
 [interactive]
 	diffFilter = diff-highlight
