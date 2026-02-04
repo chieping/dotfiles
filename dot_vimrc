@@ -24,7 +24,7 @@ Plug 'thinca/vim-textobj-between'
 Plug 'lucapette/vim-textobj-underscore'
 Plug 'kana/vim-operator-user'
 Plug 'kana/vim-operator-replace'
-" Plug 'jszakmeister/vim-togglecursor'
+Plug 'jszakmeister/vim-togglecursor'
 " Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/unite.vim'
 " Plug 'Shougo/neomru.vim'
@@ -274,6 +274,9 @@ if has_key(plugs, 'lightline.vim')
           \ 'colorscheme': 'Tomorrow_Night',
           \ }
 endif
+
+" for jszakmeister/vim-togglecursor
+let g:togglecursor_force = 'xterm'
 
 if has_key(plugs, 'vim-smartword')
   map w  <Plug>(smartword-w)
