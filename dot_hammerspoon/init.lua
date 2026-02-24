@@ -13,6 +13,7 @@ hs.hotkey.bind({"cmd", "option"}, "r", function() hs.execute("ToggleRotateDispla
 hs.loadSpoon("InputSourceSwitch")
 spoon.InputSourceSwitch:setApplications({
     ["iTerm2"] = "Alphanumeric (Google)",
+    ["Ghostty"] = "Alphanumeric (Google)",
 })
 
 spoon.InputSourceSwitch:start()
