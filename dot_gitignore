@@ -80,3 +80,6 @@ honda-*
 env
 .env
 .envrc
+
+.claude/worktrees/
+/.local/
