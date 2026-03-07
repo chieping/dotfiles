@@ -82,4 +82,5 @@ env
 .envrc
 
 .claude/worktrees/
+.claude/settings.local.json
 /.local/
