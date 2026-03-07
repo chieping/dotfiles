@@ -5,7 +5,9 @@ if status is-interactive
   # Commands to run in interactive sessions can go here
   # source /opt/homebrew/opt/asdf/libexec/asdf.fish
 
-  # fzf のシェル統合（**<Tab> fuzzy completion と Ctrl+R/T/Alt+C キーバインド）
+  # fzf のシェル統合（Shift+Tab fuzzy completion と Ctrl+R/Alt+C キーバインド）
+  # Ctrl+T はtmuxのprefixと競合するため無効化
+  set -x FZF_CTRL_T_COMMAND ""
   fzf --fish | source
 
   # ASDF configuration code
