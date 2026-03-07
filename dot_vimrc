@@ -147,6 +147,7 @@ set helplang=en
 set list
 set listchars=tab:›\ ,trail:･
 set comments=:#
+set t_BE=
 
 " Get rid of comment leaders when joining lines
 " Tips: to do opposite, *gq* handles very well!
@@ -173,9 +174,6 @@ set complete-=i
 let g:is_bash=1
 
 let g:mapleader="\<Space>"
-
-nnoremap <Leader>p :set invpaste<CR>
-set pastetoggle=<Leader>p
 
 nnoremap U :redo<CR>
 
