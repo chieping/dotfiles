@@ -1,5 +1,12 @@
+function ghq_cd
+  # ghq リポジトリを fzf で選択して cd する
+  # fzf をキャンセルした場合（空文字）は cd しない
+  set dir (ghq list -p | fzf)
+  test -n "$dir"; and cd $dir
+end
+
 function set_abbrs
-  abbr --add e 'cd (ghq list -p | peco)'
+  abbr --add e ghq_cd
   abbr --add ls 'ls --color=auto'
   abbr --add acco 'acc task | grep -Eo https://.+ | xargs open'
   for i in "" 1 2 3 4 5
