@@ -17,5 +17,4 @@ fisher list jethrokuan/z || fisher install jethrokuan/z                    # デ
 fisher list ilancosman/tide@v5 || fisher install ilancosman/tide@v5        # プロンプトテーマ Tide
 fisher list jorgebucaran/replay.fish || fisher install jorgebucaran/replay.fish  # bash/zsh スクリプトを fish で実行
 fisher list franciscolourenco/done || fisher install franciscolourenco/done      # 長時間コマンド完了通知
-fisher list PatrickF1/fzf.fish || fisher install PatrickF1/fzf.fish        # fzf との fish 統合
 
