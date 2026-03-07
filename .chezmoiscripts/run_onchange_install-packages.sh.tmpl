@@ -1,0 +1,29 @@
+{{- if eq .chezmoi.os "darwin" -}}
+#!/bin/bash
+
+# このスクリプトは chezmoi の run_onchange_ スクリプトです。
+# スクリプトの内容が変更されたとき（パッケージを追加・削除したとき）だけ実行されます。
+# パッケージを増やすときはここに追記して chezmoi apply を実行してください。
+
+brew bundle --file=/dev/stdin <<EOF
+brew "asdf"
+brew "bat"
+brew "fd"
+brew "fzf"
+brew "ghq"
+brew "git"
+brew "gnu-sed", args: ["with-default-names"]
+brew "jq"
+brew "ripgrep"
+brew "terminal-notifier"
+brew "tig"
+brew "tmux"
+cask "1password"
+cask "cleanshot"
+cask "font-hackgen"
+cask "font-hackgen-nerd"
+cask "google-japanese-ime"
+cask "karabiner-elements"
+cask "raycast"
+EOF
+{{ end -}}
