@@ -3,3 +3,4 @@ shell-integration = fish
 command = /opt/homebrew/bin/fish -l -c "exec tmux"
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 macos-option-as-alt = true
+confirm-close-surface = false
