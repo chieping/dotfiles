@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'itchyny/lightline.vim'
 " Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " Plug 'mg979/vim-visual-multi'
 Plug 'terryma/vim-expand-region'
 Plug 'tpope/vim-surround'
@@ -134,8 +135,6 @@ set helpheight=100
 set backup
 set backupdir=~/.vim/backups
 set directory=~/.vim/swaps
-set undofile
-set undodir=~/.vim/undo
 set cursorline
 set number
 set modeline
@@ -148,6 +147,13 @@ set list
 set listchars=tab:›\ ,trail:･
 set comments=:#
 set t_BE=
+
+set undofile
+if has('nvim')
+  set undodir=~/.local/state/nvim/undo
+else
+  set undodir=~/.vim/undodir
+endif
 
 " Get rid of comment leaders when joining lines
 " Tips: to do opposite, *gq* handles very well!
