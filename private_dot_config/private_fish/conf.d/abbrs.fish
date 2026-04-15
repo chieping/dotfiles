@@ -28,3 +28,9 @@ abbr --add dcupd     docker compose up -d
 abbr --add dcdn      docker compose down
 abbr --add dcl       docker compose logs
 abbr --add dclf      docker compose logs -f
+
+# 最後にダウンロードしたファイルのファイルパスを `dl` で展開する
+function _abbr_dl
+    echo "'"(ls -t ~/Downloads | head -1 | string replace -r '^' "$HOME/Downloads/")"'"
+end
+abbr --add dl --position anywhere --function _abbr_dl
