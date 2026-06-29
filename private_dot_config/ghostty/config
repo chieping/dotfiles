@@ -1,6 +1,6 @@
 font-family = HackGen Console NF
 shell-integration = fish
-command = /opt/homebrew/bin/fish -l -c "exec tmux"
+command = /opt/homebrew/bin/fish -l -c "exec tmux new-session -A -s main"
 keybind = global:ctrl+grave_accent=toggle_quick_terminal
 macos-option-as-alt = true
 confirm-close-surface = false

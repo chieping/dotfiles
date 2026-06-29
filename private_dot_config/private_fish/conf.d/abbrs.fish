@@ -34,3 +34,7 @@ function _abbr_dl
     echo "'"(ls -t ~/Downloads | head -1 | string replace -r '^' "$HOME/Downloads/")"'"
 end
 abbr --add dl --position anywhere --function _abbr_dl
+
+abbr --add F --position anywhere '| fzf'
+abbr --add C --position anywhere '| pbcopy'
+abbr --add G --position anywhere '| grep'
