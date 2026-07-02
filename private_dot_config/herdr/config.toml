@@ -1,0 +1,14 @@
+onboarding = false
+[theme]
+name = "cappuccin"
+auto_switch = false
+[terminal]
+default_shell = "/opt/homebrew/bin/fish"
+[update]
+[keys]
+prefix = "ctrl+t"
+copy_mode = "prefix+t"
+[ui]
+confirm_close = true
+prompt_new_tab_name = false
+show_agent_labels_on_pane_borders = true
