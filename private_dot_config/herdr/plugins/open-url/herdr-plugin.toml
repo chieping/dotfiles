@@ -1,0 +1,11 @@
+id = "local.open-url"
+name = "Open URL"
+version = "0.1.0"
+min_herdr_version = "0.7.0"
+platforms = ["macos"]
+
+[[actions]]
+id = "open-selected-url"
+title = "Open selected URL in browser"
+contexts = ["pane"]
+command = ["bash", "open-selected-url.sh"]

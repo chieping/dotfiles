@@ -8,7 +8,14 @@ default_shell = "/opt/homebrew/bin/fish"
 [keys]
 prefix = "ctrl+t"
 copy_mode = "prefix+t"
+open_notification_target = "prefix+shift+o"
 [ui]
 confirm_close = true
 prompt_new_tab_name = false
 show_agent_labels_on_pane_borders = true
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "local.open-url.open-selected-url"
+description = "Open selected URL in browser"
