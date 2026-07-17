@@ -6,16 +6,16 @@ auto_switch = false
 default_shell = "/opt/homebrew/bin/fish"
 [update]
 [keys]
+# https://herdr.dev/docs/configuration/#keybindings
 prefix = "ctrl+t"
-copy_mode = "prefix+t"
-open_notification_target = "prefix+shift+o"
+next_tab = "prefix+n"
+new_workspace = "prefix+C"
+previous_tab = "prefix+shift+n"
+next_workspace = "prefix+ctrl+n"
+previous_workspace = "prefix+ctrl+shift+n"
+split_vertical = "prefix+|"
+
 [ui]
 confirm_close = true
 prompt_new_tab_name = false
 show_agent_labels_on_pane_borders = true
-
-[[keys.command]]
-key = "prefix+o"
-type = "plugin_action"
-command = "local.open-url.open-selected-url"
-description = "Open selected URL in browser"
