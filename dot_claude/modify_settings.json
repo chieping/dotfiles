@@ -1,0 +1,9 @@
+#!/bin/bash
+# settings.json のうち statusLine キーだけを chezmoi 管理する。
+# 他のキーはマシンローカルの値をそのまま素通しする。
+json=$(cat)
+[ -z "$json" ] && json='{}'
+printf '%s' "$json" | jq '.statusLine = {
+  "type": "command",
+  "command": "bash ~/.claude/statusline-command.sh"
+}'
