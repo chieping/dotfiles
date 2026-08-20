@@ -1,6 +1,6 @@
 onboarding = false
 [theme]
-name = "cappuccin"
+name = "catppuccin"
 auto_switch = false
 [terminal]
 default_shell = "/opt/homebrew/bin/fish"
