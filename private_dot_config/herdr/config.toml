@@ -15,6 +15,48 @@ next_workspace = "prefix+ctrl+n"
 previous_workspace = "prefix+ctrl+shift+n"
 split_vertical = "prefix+|"
 
+# Annotate — comment on terminal text / review documents, and send it back to the agent.
+# https://github.com/plannotator/herdr-annotate
+#   herdr plugin install plannotator/herdr-annotate
+# Bundles plannotator-tui (https://github.com/plannotator/plannotator-tui) for document review.
+[[keys.command]]
+key = "prefix+a"
+type = "plugin_action"
+command = "annotate.capture"
+description = "annotate text"
+
+[[keys.command]]
+key = "prefix+shift+a"
+type = "plugin_action"
+command = "annotate.copy-context"
+description = "copy annotations as context"
+
+[[keys.command]]
+key = "prefix+m"
+type = "plugin_action"
+command = "annotate.manage"
+description = "manage annotations"
+
+# Open the file path in the clipboard (select a path to copy it)
+[[keys.command]]
+key = "prefix+p"
+type = "shell"
+command = "bash /Users/honda/.config/herdr/bin/annotate-path.sh"
+description = "annotate the path in the clipboard"
+
+# Document review (plannotator-tui)
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "annotate.open"
+description = "review documents in this folder"
+
+[[keys.command]]
+key = "prefix+shift+o"
+type = "plugin_action"
+command = "annotate.last"
+description = "review the agent's last reply"
+
 [ui]
 confirm_close = true
 prompt_new_tab_name = false
