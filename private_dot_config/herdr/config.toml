@@ -15,6 +15,14 @@ next_workspace = "prefix+ctrl+n"
 previous_workspace = "prefix+ctrl+shift+n"
 split_vertical = "prefix+|"
 
+[[keys.command]]
+key = "prefix+t"
+type = "popup"
+command = "exec \"${SHELL:-sh}\""
+description = "open scratch terminal"
+width = "80%"
+height = "80%"
+
 # Annotate — comment on terminal text / review documents, and send it back to the agent.
 # https://github.com/plannotator/herdr-annotate
 #   herdr plugin install plannotator/herdr-annotate
