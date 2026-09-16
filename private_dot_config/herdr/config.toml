@@ -70,3 +70,6 @@ confirm_close = true
 prompt_new_tab_name = false
 show_agent_labels_on_pane_borders = true
 agent_panel_sort = "spaces"
+
+[ui.sidebar.agents]
+rows = [["state_icon", "machine", "workspace"], ["agent"]]
