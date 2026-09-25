@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+# 日々更新したいツールをまとめて更新する
+set -uo pipefail
+
+failed=()
+step() { printf '\n\033[1;34m==> %s\033[0m\n' "$1"; }
+run() { "$@" || failed+=("$*"); }
+
+step "Homebrew: herdr, crit, pup, codex"
+run brew update --quiet
+run brew upgrade herdr crit pup
+run brew upgrade --cask codex
+
+step "herdr plugin: annotate"
+run herdr plugin install plannotator/herdr-annotate --yes
+
+step "Claude Code"
+run claude update
+
+step "Claude Code plugins"
+run claude plugin marketplace update
+for id in $(claude plugin list --json | jq -r '.[].id'); do
+  run claude plugin update "$id"
+done
+
+step "Agent skills (npx skills)"
+run npx -y skills update --global --yes
+
+step "Datadog skills (pup)"
+run pup --no-agent skills install claude-code --type skill --yes -o table
+
+step "gh extensions"
+run gh extension upgrade --all
+
+if ((${#failed[@]})); then
+  printf '\n\033[1;31m失敗:\033[0m\n'
+  printf '  %s\n' "${failed[@]}"
+  exit 1
+fi
+printf '\n\033[1;32m完了\033[0m (herdr は再起動、Claude Code はセッション再起動で反映)\n'
