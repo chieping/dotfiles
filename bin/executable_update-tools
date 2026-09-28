@@ -13,6 +13,19 @@ run brew upgrade --cask codex
 
 step "herdr plugin: annotate"
 run herdr plugin install plannotator/herdr-annotate --yes
+# plannotator-tui のダウンロード失敗は install 成功扱いになり、annotate.open / last が黙って動かなくなる
+ensure_plannotator_tui() {
+  local root
+  root="$(jq -r '.[] | select(.plugin_id == "annotate") | .plugin_root' \
+    "${XDG_CONFIG_HOME:-$HOME/.config}/herdr/plugins.json")" || return 1
+  for _ in 1 2 3; do
+    [ -x "$root/bin/plannotator-tui.exe" ] && return 0
+    echo "plannotator-tui が見つからないので再取得します"
+    bash "$root/scripts/fetch-plannotator-tui.sh"
+  done
+  [ -x "$root/bin/plannotator-tui.exe" ]
+}
+run ensure_plannotator_tui
 
 step "Claude Code"
 run claude update
