@@ -61,6 +61,9 @@ end
 
 set -x ASDF_GOLANG_MOD_VERSION_ENABLED true
 
+# ripgrep はこの変数がないと設定ファイルを読まない
+set -x RIPGREP_CONFIG_PATH "$HOME/.ripgreprc"
+
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
