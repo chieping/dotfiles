@@ -6,10 +6,9 @@ failed=()
 step() { printf '\n\033[1;34m==> %s\033[0m\n' "$1"; }
 run() { "$@" || failed+=("$*"); }
 
-step "Homebrew: herdr, crit, pup, codex"
+step "Homebrew: herdr, crit, pup"
 run brew update --quiet
 run brew upgrade herdr crit pup
-run brew upgrade --cask codex
 
 step "herdr plugin: annotate"
 run herdr plugin install plannotator/herdr-annotate --yes
