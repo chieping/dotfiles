@@ -10,6 +10,9 @@ step "Homebrew: herdr, crit, pup"
 run brew update --quiet
 run brew upgrade herdr crit pup
 
+step "Nix profile: claude-recall"
+run nix profile upgrade claude-recall
+
 step "herdr plugin: annotate"
 run herdr plugin install plannotator/herdr-annotate --yes
 # plannotator-tui のダウンロード失敗は install 成功扱いになり、annotate.open / last が黙って動かなくなる
