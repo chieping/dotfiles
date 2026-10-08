@@ -8,7 +8,7 @@ run() { "$@" || failed+=("$*"); }
 
 step "Homebrew: herdr, crit, pup"
 run brew update --quiet
-run brew upgrade herdr crit pup
+run brew upgrade --yes herdr crit pup
 
 step "Nix profile: claude-recall"
 run nix profile upgrade claude-recall
